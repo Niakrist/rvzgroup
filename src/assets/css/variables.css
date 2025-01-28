@@ -1,0 +1,22 @@
+:root {
+  /* colors */
+  --black: #2c2b2b;
+  --white: #fff;
+  --grey1: #f9f9f9;
+  --grey2: #f6f7fc;
+  --grey3: #c4c5ca;
+  --grey4: #868585;
+  --blue: #0277bd;
+  --blue2: #00599f;
+  --blue3: #e1f4ff;
+  --green: #26e63c;
+  --orange: #ff9500;
+
+  /* fonts */
+  --font-family: "Montserrat", sans-serif;
+  --second-family: "Roboto", sans-serif;
+  --third-family: "Rubik", sans-serif;
+  --font3: "Open Sans", sans-serif;
+  --font4: "Roboto Mono", sans-serif;
+  --font5: "Manrope", sans-serif;
+}

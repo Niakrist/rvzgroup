@@ -9,8 +9,8 @@ const IconLogo: React.FC<IIconLogoProps> = ({ className, ...props }) => {
     <svg
       {...props}
       className={className}
-      width="65"
-      height="60"
+      width="0"
+      height="0"
       viewBox="0 0 65 60"
       fill="none"
       xmlns="http://www.w3.org/2000/svg">
