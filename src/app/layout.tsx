@@ -1,5 +1,4 @@
-import { Header } from "@/components";
-import TopNav from "@/components/TopNav/TopNav";
+import { TopNav, Header } from "@/components";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";

@@ -1,4 +1,4 @@
-import BreadCrumbs from "@/components/BreadCrumbs/BreadCrumbs";
+import { BreadCrumbs } from "@/components";
 import React from "react";
 import styles from "./ServicesLayout.module.css";
 

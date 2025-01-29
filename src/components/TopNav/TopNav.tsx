@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import styles from "./TopNav.module.css";
 
-const TopNav = () => {
+export const TopNav = () => {
   return (
     <section className={styles.topNav}>
       <div className={styles.container}>
@@ -25,5 +25,3 @@ const TopNav = () => {
     </section>
   );
 };
-
-export default TopNav;

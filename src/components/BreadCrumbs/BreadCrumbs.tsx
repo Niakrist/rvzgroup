@@ -6,7 +6,7 @@ import React from "react";
 
 import styles from "./BreadCrumbs.module.css";
 
-const BreadCrumbs = () => {
+export const BreadCrumbs = () => {
   const params = usePathname();
 
   const name: IServicesPages | undefined = servicesPages.find(
@@ -23,5 +23,3 @@ const BreadCrumbs = () => {
     </ul>
   );
 };
-
-export default BreadCrumbs;
