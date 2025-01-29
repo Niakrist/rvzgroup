@@ -39,7 +39,6 @@
 
 .content {
   width: 100%;
-  max-width: 370px;
   position: absolute;
   left: 0;
   top: 200px;
@@ -147,6 +146,7 @@
   }
 
   .content {
+    max-width: 370px;
     top: 70px;
     left: 0px;
   }
