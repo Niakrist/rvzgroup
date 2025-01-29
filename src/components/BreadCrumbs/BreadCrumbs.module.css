@@ -1,0 +1,31 @@
+.container {
+  max-width: 1304px;
+  margin: 0 auto;
+  padding: 30px 20px;
+
+  display: flex;
+  column-gap: 5px;
+}
+
+.item:first-child {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--grey3);
+}
+
+.item:not(:first-child) {
+  padding-left: 8px;
+  position: relative;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--black);
+}
+
+.item:not(:first-child)::before {
+  content: "/";
+  position: absolute;
+  left: 0;
+}

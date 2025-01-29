@@ -1,4 +1,5 @@
 import { Header } from "@/components";
+import TopNav from "@/components/TopNav/TopNav";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -26,8 +27,9 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <TopNav />
         <Header />
-        {children}
+        <main>{children}</main>
       </body>
     </html>
   );
