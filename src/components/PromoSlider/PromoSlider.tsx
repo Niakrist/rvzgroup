@@ -1,5 +1,4 @@
 import { BubbleList, Button } from "@/ui";
-import Image from "next/image";
 import React from "react";
 import { Icon } from "../Icon/Icon";
 import styles from "./PromoSlider.module.css";
