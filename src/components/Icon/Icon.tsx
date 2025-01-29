@@ -1,4 +1,5 @@
 import React from "react";
+import IconArrow from "./icons/IconArrow";
 import IconArrowDown from "./icons/IconArrowDown";
 import IconBookmark from "./icons/IconBookmark";
 import IconCart from "./icons/IconCart";
@@ -11,7 +12,8 @@ interface IIconProps extends React.SVGProps<SVGSVGElement> {
     | "iconArrowDown"
     | "iconBookmark"
     | "iconCart"
-    | "iconSearch";
+    | "iconSearch"
+    | "iconArrow";
   className?: string;
 }
 
@@ -22,6 +24,7 @@ export const Icon: React.FC<IIconProps> = ({ name, className }) => {
     iconBookmark: <IconBookmark className={className} />,
     iconCart: <IconCart className={className} />,
     iconSearch: <IconSearch className={className} />,
+    iconArrow: <IconArrow className={className} />,
   };
 
   return icons[name];

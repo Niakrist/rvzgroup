@@ -1,3 +1,9 @@
+import { PromoSlider } from "@/components";
+
 export default function Home() {
-  return <div>Home Page</div>;
+  return (
+    <main>
+      <PromoSlider />
+    </main>
+  );
 }

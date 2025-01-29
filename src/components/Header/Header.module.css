@@ -108,6 +108,12 @@
 .iconSearch {
   width: 20px;
   height: 20px;
+  color: #bdc3c9;
+  transition: color 0.2s;
+}
+
+.form:hover .iconSearch {
+  color: var(--blue);
 }
 
 .forCustomer {
@@ -184,7 +190,7 @@
 }
 
 .burgerMenu {
-  display: flex;
+  display: none;
   align-items: center;
   width: 28px;
   height: 24px;
@@ -238,8 +244,8 @@
   .container {
     grid-template-columns: auto 170px 1fr 1fr;
     grid-template-rows: auto auto;
-    column-gap: 20px;
-    row-gap: 12px;
+    column-gap: 64px;
+    row-gap: 26px;
   }
   .logoLink {
     grid-column: 1 / 2;
@@ -268,6 +274,8 @@
   .container {
     padding: 14px 20px;
     grid-template-columns: 98px 1fr;
+    column-gap: 20px;
+    row-gap: 12px;
   }
 
   .logoLink {
@@ -333,5 +341,9 @@
   .iconCart {
     width: 15px;
     height: 15px;
+  }
+
+  .burgerMenu {
+    display: flex;
   }
 }
