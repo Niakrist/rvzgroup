@@ -16,7 +16,7 @@ const IconArrow: React.FC<IIconArrowProps> = ({ className, ...props }) => {
       xmlns="http://www.w3.org/2000/svg">
       <path
         d="M15.5 5L8.5 12L15.5 19"
-        stroke="#2C2B2B"
+        stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"

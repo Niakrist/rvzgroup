@@ -1,0 +1,16 @@
+.title {
+}
+
+.small {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--black);
+}
+
+.medium {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.4;
+  color: #333;
+}
