@@ -6,7 +6,7 @@ import React from "react";
 
 import styles from "./BreadCrumbs.module.css";
 
-export const BreadCrumbs = () => {
+export const BreadCrumbs: React.FC = () => {
   const params = usePathname();
 
   const name: IServicesPages | undefined = servicesPages.find(

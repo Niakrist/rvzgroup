@@ -4,7 +4,7 @@ import React from "react";
 import { Icon } from "../Icon/Icon";
 import styles from "./CategoryList.module.css";
 import { categoryList } from "./CategoryList.props";
-export const CategoryList = () => {
+export const CategoryList: React.FC = () => {
   return (
     <section className={styles.section}>
       <div className={styles.container}>

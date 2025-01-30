@@ -6,5 +6,7 @@ export interface IButtonProps
     HTMLButtonElement
   > {
   children: ReactNode;
-  color: "blue" | "white";
+  color: "blue" | "white" | "border";
+  size?: "big";
+  className?: string;
 }
