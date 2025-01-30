@@ -12,7 +12,8 @@
 .list {
   margin-top: 40px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+
   gap: 20px;
 }
 
@@ -74,4 +75,17 @@
 
 .item:hover .iconArrow {
   color: var(--blue);
+}
+
+@media (max-width: 767px) {
+  .list {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .item {
+    min-width: 300px;
+  }
 }
