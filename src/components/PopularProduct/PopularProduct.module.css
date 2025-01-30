@@ -14,10 +14,6 @@
   display: flex;
   flex-wrap: nowrap;
   column-gap: 20px;
-
-  overflow-x: auto;
-  overflow-y: hidden;
-  scrollbar-color: var(--blue) var(--blue2);
 }
 
 .card {
@@ -120,4 +116,12 @@
 
 .btn {
   margin-bottom: 10px;
+}
+
+@media (max-width: 767px) {
+  .list {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-color: var(--blue) var(--blue2);
+  }
 }
