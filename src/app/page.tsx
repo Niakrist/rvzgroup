@@ -1,4 +1,5 @@
 import {
+  AboutCompany,
   Advantage,
   CategoryList,
   PopularProduct,
@@ -12,6 +13,7 @@ export default function Home() {
       <CategoryList />
       <PopularProduct />
       <Advantage />
+      <AboutCompany />
     </main>
   );
 }
