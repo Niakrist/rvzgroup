@@ -14,11 +14,16 @@
   display: flex;
   flex-wrap: nowrap;
   column-gap: 20px;
+
+  overflow: hidden;
 }
 
 .card {
   width: 300px;
   padding-bottom: 5px;
+  /* padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--grey3); */
 }
 
 .imgWrapper {
