@@ -83,6 +83,8 @@
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
+    padding-bottom: 10px;
+    scrollbar-color: var(--blue) var(--blue2);
   }
 
   .item {
