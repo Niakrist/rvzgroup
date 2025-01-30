@@ -14,8 +14,9 @@
   display: flex;
   flex-wrap: nowrap;
   column-gap: 20px;
-
-  overflow: hidden;
+  overflow-x: hidden;
+  /* overflow-x: auto;
+  overflow-y: hidden; */
 }
 
 .card {
