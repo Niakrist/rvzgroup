@@ -2,7 +2,7 @@ import { Button, Htag } from "@/ui";
 import Link from "next/link";
 import React from "react";
 import styles from "./PopularProduct.module.css";
-import { IProduct, products } from "./PopularProduct.props";
+import { products } from "./PopularProduct.props";
 
 export const PopularProduct: React.FC = () => {
   return (
