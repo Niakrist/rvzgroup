@@ -1,4 +1,9 @@
-import { CategoryList, PopularProduct, PromoSlider } from "@/components";
+import {
+  Advantage,
+  CategoryList,
+  PopularProduct,
+  PromoSlider,
+} from "@/components";
 
 export default function Home() {
   return (
@@ -6,6 +11,7 @@ export default function Home() {
       <PromoSlider />
       <CategoryList />
       <PopularProduct />
+      <Advantage />
     </main>
   );
 }
