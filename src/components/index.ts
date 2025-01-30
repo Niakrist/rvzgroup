@@ -7,3 +7,4 @@ export * from "./CategoryList/CategoryList";
 export * from "./PopularProduct/PopularProduct";
 export * from "./Advantage/Advantage";
 export * from "./AboutCompany/AboutCompany";
+export * from "./WeWork/WeWork";

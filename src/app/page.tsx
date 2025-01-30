@@ -4,6 +4,7 @@ import {
   CategoryList,
   PopularProduct,
   PromoSlider,
+  WeWork,
 } from "@/components";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <PopularProduct />
       <Advantage />
       <AboutCompany />
+      <WeWork />
     </main>
   );
 }
