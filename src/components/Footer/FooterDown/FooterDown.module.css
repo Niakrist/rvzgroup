@@ -1,0 +1,49 @@
+.wrapperDown {
+  padding: 10px 0;
+  background-color: #e6e7eb;
+}
+
+.container {
+  max-width: 1304px;
+  margin: 0 auto;
+  padding: 0px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.forUsers {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.copy,
+.forUser {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--black);
+  transition: color 0.2s;
+}
+
+.forUser:hover {
+  color: var(--blue);
+}
+
+@media (max-width: 767px) {
+  .container,
+  .forUsers {
+    column-gap: 0;
+    row-gap: 10px;
+  }
+
+  .container {
+    flex-direction: column-reverse;
+  }
+  .forUsers {
+    flex-direction: column;
+  }
+}

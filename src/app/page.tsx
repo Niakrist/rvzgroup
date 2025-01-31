@@ -2,6 +2,7 @@ import {
   AboutCompany,
   Advantage,
   CategoryList,
+  Footer,
   PopularProduct,
   PromoSlider,
   Subscribe,
@@ -18,6 +19,7 @@ export default function Home() {
       <AboutCompany />
       <WeWork />
       <Subscribe />
+      <Footer />
     </main>
   );
 }
