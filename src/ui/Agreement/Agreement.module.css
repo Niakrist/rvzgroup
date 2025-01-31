@@ -43,7 +43,7 @@
   border: 2px solid var(--blue);
 }
 
-@media (max-width) {
+@media (max-width: 767px) {
   .label {
     font-size: 10px;
     color: var(--grey3);
