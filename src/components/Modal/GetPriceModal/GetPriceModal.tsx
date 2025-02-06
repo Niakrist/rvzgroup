@@ -3,7 +3,7 @@ import { useKeyPress } from "@/hooks/useKeayPress";
 import { isGetPriceModal } from "@/store/openModalSlice/openModalSlice";
 import { RootState } from "@/store/store";
 import { Agreement, Button, Htag, InputText } from "@/ui";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { Modal } from "../Modal";
