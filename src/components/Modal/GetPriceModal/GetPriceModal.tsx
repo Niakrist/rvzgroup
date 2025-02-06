@@ -11,7 +11,7 @@ import { Modal } from "../Modal";
 import styles from "./GetPriceModal.module.css";
 
 export const GetPriceModal = () => {
-  const refModal = useRef(null);
+  const refModal = useRef<HTMLDivElement>(null);
   const dispatch = useDispatch();
   const { getPriceModal } = useSelector((state: RootState) => state.openModal);
 
@@ -26,7 +26,11 @@ export const GetPriceModal = () => {
   }
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (e.target === refModal.current) {
+    if (
+      refModal.current &&
+      e.target instanceof HTMLDivElement &&
+      e.target === refModal.current
+    ) {
       dispatch(isGetPriceModal(!getPriceModal));
     }
   };
