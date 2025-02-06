@@ -11,9 +11,10 @@ export const useKeyPress = (key: string, callback: () => void) => {
   );
 
   useEffect(() => {
-    window.addEventListener("keydown", handleClick),
-      () => {
-        return window.removeEventListener("keydown", handleClick);
-      };
+    window.addEventListener("keydown", handleClick);
+
+    return () => {
+      window.removeEventListener("keydown", handleClick);
+    };
   }, [handleClick]);
 };
