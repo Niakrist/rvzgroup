@@ -1,0 +1,25 @@
+.input {
+  width: 100%;
+  padding: 20px 15px;
+  background-color: var(--grey1);
+  border-radius: 10px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  border: 1px solid var(--grey1);
+  transition: border 0.2s ease;
+}
+
+.input::placeholder {
+  color: var(--grey4);
+}
+
+.input:hover {
+  border: 1px solid var(--blue2);
+}
+
+.input:active,
+.input:focus {
+  border: 1px solid var(--blue);
+}

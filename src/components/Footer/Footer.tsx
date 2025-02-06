@@ -1,4 +1,5 @@
 import React from "react";
+import { GetPriceModal } from "../Modal/GetPriceModal/GetPriceModal";
 
 import styles from "./Footer.module.css";
 import FooterDown from "./FooterDown/FooterDown";
@@ -10,6 +11,7 @@ export const Footer = () => {
     <footer className={styles.footer}>
       <FooterUp />
       <FooterDown />
+      <GetPriceModal />
     </footer>
   );
 };

@@ -1,4 +1,6 @@
-export const products = [
+import { IProduct } from "@/types/product";
+
+export const products: IProduct[] = [
   {
     name: "Подшипник 214",
     title: "Подшипник 214 - Купить в СПБ",
@@ -50,13 +52,3 @@ export const products = [
     stock: 180,
   },
 ];
-
-export interface IProduct {
-  name: string;
-  title: string;
-  description: string;
-  price: number;
-  article: string;
-  img: string;
-  inStock: boolean;
-}

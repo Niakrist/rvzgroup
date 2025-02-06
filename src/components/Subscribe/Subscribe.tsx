@@ -19,7 +19,7 @@ export const Subscribe = () => {
               />
               <button className={styles.button}>Подписаться</button>
               <div className={styles.agreement}>
-                <Agreement color="grey" />
+                <Agreement id="subscribe" color="grey" />
               </div>
             </form>
           </div>
