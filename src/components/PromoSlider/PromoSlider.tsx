@@ -7,13 +7,19 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { Icon } from "../Icon/Icon";
 import styles from "./PromoSlider.module.css";
+import { useRouter } from "next/navigation";
 
 export const PromoSlider = () => {
   const dispatch = useDispatch();
   const { getPriceModal } = useSelector((state: RootState) => state.openModal);
+  const router = useRouter();
 
   const handleToggleModal = () => {
     dispatch(isGetPriceModal(!getPriceModal));
+  };
+
+  const handleClick = () => {
+    router.push("/catalog");
   };
 
   return (
@@ -30,7 +36,9 @@ export const PromoSlider = () => {
             Большой выбор товара Доставим за 7–14 дней
           </p>
           <div className={styles.btnGroup}>
-            <Button color="blue">Перейти в каталог</Button>
+            <Button onClick={handleClick} color="blue">
+              Перейти в каталог
+            </Button>
             <Button onClick={handleToggleModal} color="white">
               Оставить заявку
             </Button>
