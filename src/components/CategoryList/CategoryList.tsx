@@ -1,6 +1,5 @@
 import { categoryList } from "@/mockdata/mockdata";
 import { ICategory } from "@/types/types";
-import { Htag } from "@/ui";
 import React from "react";
 import CategoryItem from "../CategoryItem/CategoryItem";
 import styles from "./CategoryList.module.css";
