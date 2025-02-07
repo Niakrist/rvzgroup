@@ -3,15 +3,13 @@ import { useKeyPress } from "@/hooks/useKeayPress";
 import { isGetPriceModal } from "@/store/openModalSlice/openModalSlice";
 import { RootState } from "@/store/store";
 import { Agreement, Button, Htag, InputText } from "@/ui";
-import React, { useRef } from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Modal } from "../Modal";
 
 import styles from "./GetPriceModal.module.css";
 
 export const GetPriceModal = () => {
-  const refModal = useRef<HTMLDivElement>(null);
   const dispatch = useDispatch();
   const { getPriceModal } = useSelector((state: RootState) => state.openModal);
 
@@ -21,22 +19,12 @@ export const GetPriceModal = () => {
 
   useKeyPress("Escape", handleCloseModal);
 
-  if (getPriceModal) {
+  if (!getPriceModal) {
     return null;
   }
 
-  const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (
-      refModal.current &&
-      e.target instanceof HTMLDivElement &&
-      e.target === refModal.current
-    ) {
-      dispatch(isGetPriceModal(!getPriceModal));
-    }
-  };
-
   return (
-    <Modal onClick={handleClick} ref={refModal} width="width">
+    <Modal width="medium">
       <button onClick={handleCloseModal} className={styles.close} />
       <Htag size="medium" position="center">
         Запрос цены! Куда вам прислать КП?

@@ -8,12 +8,15 @@ export const Htag: React.FC<IHtagProps> = ({
   children,
   size,
   position,
+  className,
   ...props
 }) => {
   return (
     <h2
       {...props}
-      className={cn(styles.title, styles[size], { [styles.center]: position })}>
+      className={cn(styles.title, styles[size], className, {
+        [styles.center]: position,
+      })}>
       {children}
     </h2>
   );

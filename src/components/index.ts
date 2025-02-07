@@ -14,3 +14,4 @@ export * from "./Footer/Footer";
 export * from "./Modal/Modal";
 export * from "./ProductItem/ProductItem";
 export * from "./Modal/GetPriceModal/GetPriceModal";
+export * from "./Modal/ThanksModal/ThanksModal";

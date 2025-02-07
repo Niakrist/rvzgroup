@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import { GetPriceModal } from "../Modal/GetPriceModal/GetPriceModal";
+import { ThanksModal } from "../Modal/ThanksModal/ThanksModal";
 
 import styles from "./Footer.module.css";
 import FooterDown from "./FooterDown/FooterDown";
@@ -12,6 +14,7 @@ export const Footer = () => {
       <FooterUp />
       <FooterDown />
       <GetPriceModal />
+      <ThanksModal />
     </footer>
   );
 };

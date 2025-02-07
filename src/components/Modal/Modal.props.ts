@@ -6,5 +6,5 @@ export interface IModalProps
     HTMLDivElement
   > {
   children: React.ReactNode;
-  width: string;
+  width: "small" | "medium";
 }

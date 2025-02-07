@@ -1,5 +1,5 @@
 "use client";
-import { isGetPriceModal } from "@/store/openModalSlice/openModalSlice";
+import { toggleThanksModal } from "@/store/openModalSlice/openModalSlice";
 import { RootState } from "@/store/store";
 import { IProduct } from "@/types/product";
 import { Button } from "@/ui";
@@ -15,10 +15,11 @@ interface IProductItemProps {
 
 export const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
   const dispatch = useDispatch();
-  const { getPriceModal } = useSelector((state: RootState) => state.openModal);
+  const { isThanksModal } = useSelector((state: RootState) => state.openModal);
 
   const handleGetCP = () => {
-    dispatch(isGetPriceModal(!getPriceModal));
+    console.log("isThanksModal: ", isThanksModal);
+    dispatch(toggleThanksModal(!isThanksModal));
   };
 
   return (

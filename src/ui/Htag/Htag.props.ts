@@ -8,4 +8,5 @@ export interface IHtagProps
   children: React.ReactNode;
   size: "small" | "medium" | "large";
   position?: "center";
+  className?: string;
 }

@@ -4,10 +4,12 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 
 interface iModalState {
   getPriceModal: boolean;
+  isThanksModal: boolean;
 }
 
 const initialState: iModalState = {
   getPriceModal: false,
+  isThanksModal: false,
 };
 
 const openModalSlice = createSlice({
@@ -17,8 +19,11 @@ const openModalSlice = createSlice({
     isGetPriceModal: (state, action: PayloadAction<boolean>) => {
       state.getPriceModal = action.payload;
     },
+    toggleThanksModal: (state, action: PayloadAction<boolean>) => {
+      state.isThanksModal = action.payload;
+    },
   },
 });
-export const { isGetPriceModal } = openModalSlice.actions;
+export const { isGetPriceModal, toggleThanksModal } = openModalSlice.actions;
 
 export default openModalSlice.reducer;
