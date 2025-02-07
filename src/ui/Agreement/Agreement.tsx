@@ -6,7 +6,7 @@ import cn from "classnames";
 import styles from "./Agreement.module.css";
 import { IAgreementProps } from "./Agreement.props";
 export const Agreement: React.FC<IAgreementProps> = ({ color, id }) => {
-  const [isCheck, setIsCheck] = useState<boolean>(false);
+  const [isCheck, setIsCheck] = useState<boolean>(true);
 
   const handleChange = () => {
     console.log("Agreement: ", isCheck);
@@ -27,8 +27,8 @@ export const Agreement: React.FC<IAgreementProps> = ({ color, id }) => {
         <div className={styles.iconCheckbox}>
           {isCheck && <Icon name="iconCheckbox" className={styles.icon} />}
         </div>
-        Нажимая на кнопку, вы подписываетесь на рассылку и соглашаетесь с
-        условиями оферты и политикой конфиденциальности
+        Нажимая на кнопку вы соглашаетесь с обработкой персональных данных и
+        политикой конфиденциальности.
       </label>
     </>
   );

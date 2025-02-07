@@ -19,5 +19,15 @@
 }
 
 .width {
-  max-width: 695px;
+  width: 695px;
+}
+
+@media (max-width: 767px) {
+  .modal {
+    padding: 20px;
+  }
+
+  .width {
+    width: 350px;
+  }
 }
