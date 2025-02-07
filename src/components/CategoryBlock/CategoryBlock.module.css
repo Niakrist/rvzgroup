@@ -1,0 +1,10 @@
+.section {
+  background-color: var(--grey1);
+  padding: 100px 0;
+}
+
+.container {
+  max-width: 1304px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}

@@ -20,10 +20,10 @@ export const Header = () => {
         <Icon name="iconLogo" className={styles.iconLogo} />
         РВЗ
       </Link>
-      <button className={styles.buttonCatalog}>
+      <Link href={"/catalog"} className={styles.buttonCatalog}>
         <span className={styles.openClose} />
         Каталог
-      </button>
+      </Link>
       <form className={styles.form}>
         <input
           className={styles.search}

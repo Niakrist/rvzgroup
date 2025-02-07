@@ -1,0 +1,14 @@
+.block {
+  border-radius: 8px;
+  padding: 14px;
+  background-color: var(--white);
+}
+
+.name {
+  margin-bottom: 8px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--black);
+}

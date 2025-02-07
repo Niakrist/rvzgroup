@@ -14,7 +14,7 @@ export const GetPriceModal = () => {
   const { getPriceModal } = useSelector((state: RootState) => state.openModal);
 
   const handleCloseModal = () => {
-    dispatch(isGetPriceModal(!getPriceModal));
+    dispatch(isGetPriceModal(false));
   };
 
   useKeyPress("Escape", handleCloseModal);

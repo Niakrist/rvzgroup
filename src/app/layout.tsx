@@ -1,4 +1,4 @@
-import { TopNav, Header } from "@/components";
+import { TopNav, Header, Footer } from "@/components";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ClientProvider } from "./ClientProvider/ClientProvider";
@@ -31,6 +31,7 @@ export default function RootLayout({
           <TopNav />
           <Header />
           <main>{children}</main>
+          <Footer />
         </body>
       </ClientProvider>
     </html>

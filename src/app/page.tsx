@@ -1,8 +1,7 @@
 import {
   AboutCompany,
   Advantage,
-  CategoryList,
-  Footer,
+  CategoryBlock,
   PopularProduct,
   PromoSlider,
   Subscribe,
@@ -13,13 +12,12 @@ export default function Home() {
   return (
     <main>
       <PromoSlider />
-      <CategoryList />
+      <CategoryBlock />
       <PopularProduct />
       <Advantage />
       <AboutCompany />
       <WeWork />
       <Subscribe />
-      <Footer />
     </main>
   );
 }

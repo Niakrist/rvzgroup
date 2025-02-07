@@ -15,11 +15,13 @@ export const BreadCrumbs: React.FC = () => {
 
   console.log("params: ", params);
   return (
-    <ul className={styles.container}>
-      <li className={styles.item}>
-        <Link href="/">Главная</Link>
-      </li>
-      <li className={styles.item}>{name?.name}</li>
-    </ul>
+    <section className={styles.section}>
+      <ul className={styles.container}>
+        <li className={styles.item}>
+          <Link href="/">Главная</Link>
+        </li>
+        <li className={styles.item}>{name?.name}</li>
+      </ul>
+    </section>
   );
 };
