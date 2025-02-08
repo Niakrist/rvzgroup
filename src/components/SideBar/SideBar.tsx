@@ -1,10 +1,26 @@
 "use client";
-import { InputFilter } from "@/ui";
+import { DropDown, InputFilter } from "@/ui";
 import WhiteBlock from "@/ui/WhiteBlock/WhiteBlock";
 import React, { useState } from "react";
 
 import styles from "./SideBar.module.css";
-import { IFilter } from "@/types/types";
+import { IFilter, IList } from "@/types/types";
+
+const standartName = "Стандарт";
+const rollingName = "Тело качения";
+
+const rollingList = [
+  { id: "ball-bearings", name: "Шариковые", isCheck: false },
+  { id: "roller-bearings", name: "Роликовые", isCheck: false },
+  { id: "articulated", name: "Шарнирные", isCheck: false },
+  { id: "needle-shaped", name: "Игольчатые", isCheck: false },
+  { id: "housing", name: "Корпусные", isCheck: false },
+];
+
+const standartList = [
+  { id: "gost", name: "ГОСТ", isCheck: false },
+  { id: "iso", name: "ISO", isCheck: false },
+];
 
 export const SideBar = () => {
   const [filter, setFilter] = useState<IFilter>({
@@ -17,6 +33,9 @@ export const SideBar = () => {
     minWidth: "",
     maxWidth: "",
   });
+
+  const [rollingBody, setRollingBody] = useState<IList[]>(rollingList);
+  const [standart, setStandart] = useState<IList[]>(standartList);
 
   const handleChangeFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -115,6 +134,12 @@ export const SideBar = () => {
           />
         </div>
       </WhiteBlock>
+      <DropDown name={standartName} list={standart} setList={setStandart} />
+      <DropDown
+        name={rollingName}
+        list={rollingBody}
+        setList={setRollingBody}
+      />
     </aside>
   );
 };

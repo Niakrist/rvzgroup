@@ -14,3 +14,9 @@ export interface IFilter {
   minWidth: number | "";
   maxWidth: number | "";
 }
+
+export interface IList {
+  id: string;
+  name: string;
+  isCheck: boolean;
+}
