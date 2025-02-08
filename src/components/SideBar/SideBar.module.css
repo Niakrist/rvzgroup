@@ -1,3 +1,9 @@
+.aside {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
 .wrapper {
   display: flex;
   align-items: center;

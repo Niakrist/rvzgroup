@@ -1,9 +1,5 @@
+import { IFilter } from "@/types/types";
 import React from "react";
-
-export interface IRange {
-  minPrice: number | "";
-  maxPrice: number | "";
-}
 
 export interface IInputDilterProps
   extends React.DetailedHTMLProps<
@@ -11,7 +7,7 @@ export interface IInputDilterProps
     HTMLInputElement
   > {
   type: string;
-  name: keyof IRange;
+  name: keyof IFilter;
   value: number | "";
   placeholder: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
