@@ -35,7 +35,7 @@ export const DropDown: React.FC<IDropDownProps> = ({ list, setList, name }) => {
   };
 
   return (
-    <div>
+    <div className={styles.wrapperDwopDown}>
       <button
         onClick={handleToggleModal}
         className={cn(styles.button, { [styles.open]: isOpen })}

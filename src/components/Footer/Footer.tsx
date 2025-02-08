@@ -7,6 +7,7 @@ import styles from "./Footer.module.css";
 import FooterDown from "./FooterDown/FooterDown";
 
 import FooterUp from "./FooterUp/FooterUp";
+import { FilterModal } from "../Modal/FilterModal/FilterModal";
 
 export const Footer = () => {
   return (
@@ -15,6 +16,7 @@ export const Footer = () => {
       <FooterDown />
       <GetPriceModal />
       <ThanksModal />
+      <FilterModal />
     </footer>
   );
 };

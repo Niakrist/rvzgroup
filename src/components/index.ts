@@ -19,3 +19,5 @@ export * from "./Modal/ThanksModal/ThanksModal";
 export * from "./CatalogNavBar/CatalogNavBar";
 export * from "./SideBar/SideBar";
 export * from "./Products/Products";
+export * from "./Filter/Filter";
+export * from "./Modal/FilterModal/FilterModal";

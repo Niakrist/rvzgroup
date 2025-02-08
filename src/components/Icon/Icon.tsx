@@ -6,6 +6,7 @@ import IconCart from "./icons/IconCart";
 import IconCheckbox from "./icons/IconCheckbox";
 import IconLogo from "./icons/IconLogo";
 import IconSearch from "./icons/IconSearch";
+import IconFilter from "./icons/IconFilter";
 
 interface IIconProps extends React.SVGProps<SVGSVGElement> {
   name:
@@ -15,7 +16,8 @@ interface IIconProps extends React.SVGProps<SVGSVGElement> {
     | "iconCart"
     | "iconSearch"
     | "iconArrow"
-    | "iconCheckbox";
+    | "iconCheckbox"
+    | "iconFilter";
   className?: string;
 }
 
@@ -28,6 +30,7 @@ export const Icon: React.FC<IIconProps> = ({ name, className }) => {
     iconSearch: <IconSearch className={className} />,
     iconArrow: <IconArrow className={className} />,
     iconCheckbox: <IconCheckbox className={className} />,
+    iconFilter: <IconFilter className={className} />,
   };
 
   return icons[name];
