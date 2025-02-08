@@ -1,5 +1,6 @@
 .card {
-  width: 300px;
+  min-width: 300px;
+  max-width: 100%;
   padding-bottom: 5px;
   /* padding: 10px;
   border-radius: 8px;
@@ -8,6 +9,8 @@
 
 .imgWrapper {
   margin-bottom: 20px;
+  background-color: var(--white);
+  border-radius: 8px;
 }
 
 .img {

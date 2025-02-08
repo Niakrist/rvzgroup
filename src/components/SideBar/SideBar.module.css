@@ -56,3 +56,9 @@
   background-color: var(--blue);
   cursor: pointer;
 }
+
+@media (max-width: 921.9px) {
+  .aside {
+    display: none;
+  }
+}

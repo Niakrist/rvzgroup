@@ -12,3 +12,10 @@
   margin: 0 auto;
   padding: 0 20px;
 }
+
+@media (max-width: 921.9px) {
+  .container {
+    grid-template-columns: 1fr;
+    column-gap: 0px;
+  }
+}
