@@ -12,7 +12,7 @@
 
 @media (max-width: 767.9px) {
   .list {
-    gap: 0px 20px;
+    gap: 40px 0px;
     grid-template-columns: 1fr;
   }
 }

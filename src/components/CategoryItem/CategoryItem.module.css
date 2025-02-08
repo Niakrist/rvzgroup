@@ -56,7 +56,8 @@
 }
 
 @media (max-width: 767px) {
-  .link {
+  /* .link {
     min-width: 300px;
-  }
+    
+  } */
 }

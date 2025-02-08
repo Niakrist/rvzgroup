@@ -9,12 +9,18 @@
   display: flex;
   flex-wrap: nowrap;
   overflow-x: hidden;
-
   gap: 20px;
 }
 
 .item {
   min-width: 270px;
+}
+
+@media (max-width: 1023px) {
+  .listCategory {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
 }
 
 @media (max-width: 767px) {
