@@ -8,6 +8,7 @@ export const InputFilter: React.FC<IInputDilterProps> = ({
   value,
   type,
   name,
+  onChange,
   ...props
 }) => {
   return (
@@ -18,6 +19,7 @@ export const InputFilter: React.FC<IInputDilterProps> = ({
       name={name}
       value={value}
       placeholder={placeholder}
+      onChange={onChange}
     />
   );
 };
