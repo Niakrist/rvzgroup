@@ -17,7 +17,8 @@
   column-gap: 10px;
 }
 
-.button {
+.buttonBlue,
+.buttonBorder {
   width: 100%;
   white-space: nowrap;
 }
@@ -73,4 +74,16 @@
 }
 .link:hover {
   color: var(--blue2);
+}
+
+@media (max-width: 767.9px) {
+  .buttonsGroup {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 14px;
+  }
+  .buttonBorder {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+  }
 }

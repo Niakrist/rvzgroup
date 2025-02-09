@@ -57,10 +57,10 @@ export const InfoCard: React.FC<IInfoCardProps> = ({ product }) => {
             <Icon name="iconPlus" className={styles.iconPlus} />
           </button>
         </div>
-        <Button className={styles.button} color="blue">
+        <Button className={styles.buttonBlue} color="blue">
           В корзину
         </Button>
-        <Button className={styles.button} color="border">
+        <Button className={styles.buttonBorder} color="border">
           Получить КП в 1 клик
         </Button>
       </div>

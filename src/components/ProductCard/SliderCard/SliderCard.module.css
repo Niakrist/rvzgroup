@@ -15,7 +15,7 @@
 
 .bigImg {
   max-width: 400px;
-  height: 400px;
+  height: auto;
   object-fit: contain;
 }
 
@@ -51,4 +51,24 @@
 
 .active {
   border: 1px solid var(--blue);
+}
+
+@media (max-width: 1239px) {
+  .slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slide {
+    max-width: 592px;
+    width: 100%;
+  }
+
+  .smallSlider {
+    display: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: auto;
+  }
 }
