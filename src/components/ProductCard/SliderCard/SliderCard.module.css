@@ -15,7 +15,7 @@
 
 .bigImg {
   max-width: 400px;
-  height: auto;
+  height: 400px;
   object-fit: contain;
 }
 
@@ -63,6 +63,10 @@
   .slide {
     max-width: 592px;
     width: 100%;
+  }
+
+  .bigImg {
+    height: auto;
   }
 
   .smallSlider {
