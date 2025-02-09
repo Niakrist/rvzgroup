@@ -39,3 +39,9 @@
     gap: 6px;
   }
 }
+
+@media (max-width: 921.9px) {
+  .big {
+    font-size: 12px;
+  }
+}

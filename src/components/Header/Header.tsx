@@ -11,7 +11,6 @@ export const Header = () => {
 
   const handleOpen = () => {
     setIsMenu((prev) => !prev);
-    console.log("+++++");
   };
 
   return (
