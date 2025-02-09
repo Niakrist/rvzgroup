@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import styles from "./FilterModal.module.css";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
+import { Icon } from "@/components/Icon/Icon";
 
 export const FilterModal = () => {
   const dispatch = useDispatch();
@@ -29,6 +30,10 @@ export const FilterModal = () => {
   return (
     <Modal width="big">
       <button onClick={handleCloseModal} className={styles.close} />
+      <div className={styles.title}>
+        <Icon name="iconFilter" className={styles.iconFilter} />
+        Фильтр
+      </div>
       <Filter />
     </Modal>
   );

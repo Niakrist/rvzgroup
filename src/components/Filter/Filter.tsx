@@ -1,5 +1,5 @@
 "use client";
-import { DropDown, InputFilter } from "@/ui";
+import { Button, DropDown, InputFilter } from "@/ui";
 import WhiteBlock from "@/ui/WhiteBlock/WhiteBlock";
 import React, { useState } from "react";
 
@@ -49,7 +49,7 @@ export const Filter = () => {
   };
 
   return (
-    <>
+    <div className={styles.filter}>
       <WhiteBlock text="Цена">
         <div className={styles.wrapper}>
           <InputFilter
@@ -140,6 +140,8 @@ export const Filter = () => {
         list={rollingBody}
         setList={setRollingBody}
       />
-    </>
+      <Button color="blue">Применить</Button>
+      <button className={styles.button}>Сбросить фильтр</button>
+    </div>
   );
 };

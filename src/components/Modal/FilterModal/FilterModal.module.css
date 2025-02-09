@@ -30,3 +30,24 @@
 .close:hover::after {
   background-color: var(--blue);
 }
+
+.iconFilter {
+  min-width: 20px;
+  min-height: 20px;
+  color: var(--blue);
+}
+
+.title {
+  width: 335px;
+  margin: 0 auto;
+  padding: 14px;
+
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--black);
+}
