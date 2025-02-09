@@ -1,0 +1,33 @@
+.inStock {
+  display: flex;
+  align-items: center;
+  column-gap: 6px;
+
+  padding: 4px 8px;
+
+  border: 1px solid var(--grey2);
+  border-radius: 3px;
+
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 1.33;
+  color: #0e0d0d;
+  background-color: var(--white);
+}
+
+.green {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  background-color: var(--green);
+}
+
+.orange {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  background-color: var(--orange);
+}

@@ -1,0 +1,35 @@
+.container {
+  max-width: 1304px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.wrapper {
+  border-radius: 8px;
+  padding: 40px 60px;
+  background-color: var(--grey1);
+}
+
+.nav {
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  padding: 8px 20px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--black);
+  transition: color 0.2s;
+}
+
+.button:hover {
+  color: var(--blue);
+}
+
+.active {
+  background-color: var(--white);
+}

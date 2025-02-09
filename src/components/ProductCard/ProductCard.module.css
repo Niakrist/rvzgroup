@@ -1,0 +1,12 @@
+.section {
+  padding: 50px 0px;
+}
+.container {
+  max-width: 1304px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  display: grid;
+  grid-template-columns: 592px 1fr;
+  column-gap: 40px;
+}

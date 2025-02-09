@@ -5,9 +5,9 @@ import { IProduct } from "@/types/product";
 import { Button } from "@/ui";
 import Link from "next/link";
 import React from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import styles from "./ProductItem.module.css";
+import { ArticleInStock, Price } from "@/components";
 
 interface IProductItemProps {
   product: IProduct;
@@ -25,30 +25,13 @@ export const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
   return (
     <article className={styles.card}>
       <div className={styles.imgWrapper}>
-        <img className={styles.img} src={product.img} alt="" />
+        <img className={styles.img} src={`/${product.img}`} alt="" />
       </div>
-      <div className={styles.info}>
-        <div className={styles.inStock}>
-          <span className={product.inStock ? styles.green : styles.orange} />
-          <span>{product.inStock ? "В наличие" : "Под заказ 1-3 дня"}</span>
-        </div>
-        <div className={styles.article}>Артикул: {product.article}</div>
-      </div>
-      <Link className={styles.link} href="#">
+      <ArticleInStock product={product} />
+      <Link className={styles.link} href="/catalog/product">
         {product.name}
       </Link>
-      <div className={styles.price}>
-        {!!product.inStock ? (
-          <>
-            <span>{product.price} ₽/шт.</span>
-            {!!product.stock && (
-              <span className={styles.stock}> {product.stock} ₽/шт.</span>
-            )}
-          </>
-        ) : (
-          "Цена по запросу"
-        )}
-      </div>
+      <Price product={product} fontSize="fs16" className={styles.price} />
       <Button className={styles.btn} color="blue" size="big">
         В корзину
       </Button>

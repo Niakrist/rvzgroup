@@ -1,0 +1,28 @@
+.price {
+  /* margin-bottom: 20px; */
+  font-family: var(--font-family);
+  color: var(--black);
+}
+
+.stock {
+  position: relative;
+  bottom: 10px;
+  left: 5px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  text-decoration: line-through;
+  color: var(--grey3);
+}
+
+.fs16 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.56;
+}
+.fs18 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.4;
+}

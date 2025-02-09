@@ -1,3 +1,8 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
 .wrapper {
   display: flex;
   align-items: center;
@@ -60,6 +65,11 @@
   text-align: center;
   color: var(--black);
   width: 100%;
+  transition: color 0.2s;
+}
+
+.button:hover {
+  color: var(--blue);
 }
 
 @media (max-width: 921.9px) {

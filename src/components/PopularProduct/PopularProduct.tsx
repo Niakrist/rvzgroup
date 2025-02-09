@@ -2,8 +2,8 @@ import { Htag } from "@/ui";
 import React from "react";
 import { ProductItem } from "@/components";
 import styles from "./PopularProduct.module.css";
-import { products } from "./PopularProduct.props";
 import { IProduct } from "@/types/product";
+import { products } from "@/mockdata/mockdata";
 
 export const PopularProduct: React.FC = () => {
   return (

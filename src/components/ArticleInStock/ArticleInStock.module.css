@@ -1,0 +1,14 @@
+.info {
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.article {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 1.33;
+  color: #0e0d0d;
+}

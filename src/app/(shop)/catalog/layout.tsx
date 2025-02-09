@@ -1,4 +1,4 @@
-import { BreadCrumbs, CatalogNavBar } from "@/components";
+import { BreadCrumbs } from "@/components";
 import React from "react";
 
 export default function CatalogLayout({
@@ -7,7 +7,6 @@ export default function CatalogLayout({
   return (
     <>
       <BreadCrumbs />
-      <CatalogNavBar />
       <div>{children}</div>
     </>
   );

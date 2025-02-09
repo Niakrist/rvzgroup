@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { products } from "../PopularProduct/PopularProduct.props";
 import styles from "./Products.module.css";
 import { IProduct } from "@/types/product";
 import { ProductItem } from "../ProductItem/ProductItem";
@@ -8,6 +7,7 @@ import { PaginationList } from "../PaginationList/PaginationList";
 import { Icon } from "../Icon/Icon";
 import { useDispatch } from "react-redux";
 import { toggleOpenMobileFilter } from "@/store/openModalSlice/openModalSlice";
+import { products } from "@/mockdata/mockdata";
 
 const Products = () => {
   const dispatch = useDispatch();

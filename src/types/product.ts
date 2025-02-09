@@ -5,6 +5,8 @@ export interface IProduct {
   price: number;
   article: string;
   img: string;
+  images?: string[];
+  characteristic?: { key: string; value: string | number }[];
   inStock: boolean;
   stock: number;
 }

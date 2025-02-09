@@ -6,3 +6,4 @@ export * from "./InputText/InputText";
 export * from "./WhiteBlock/WhiteBlock";
 export * from "./InputFilter/InputFilter";
 export * from "./DropDown/DropDown";
+export * from "./BadgeInStock/BadgeInStock";

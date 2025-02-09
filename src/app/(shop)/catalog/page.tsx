@@ -1,4 +1,4 @@
-import { SideBar } from "@/components";
+import { CatalogNavBar, SideBar } from "@/components";
 import Products from "@/components/Products/Products";
 import { Metadata } from "next";
 import React from "react";
@@ -11,11 +11,14 @@ export const metadata: Metadata = {
 
 export default function CatalogPage() {
   return (
-    <div className={styles.section}>
-      <div className={styles.container}>
-        <SideBar />
-        <Products />
+    <>
+      <CatalogNavBar />
+      <div className={styles.section}>
+        <div className={styles.container}>
+          <SideBar />
+          <Products />
+        </div>
       </div>
-    </div>
+    </>
   );
 }

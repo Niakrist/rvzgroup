@@ -1,0 +1,13 @@
+import React from "react";
+import styles from "./ArticleInStock.module.css";
+import { BadgeInStock } from "@/ui";
+import { IArticleInStockProps } from "./ArticleInStock.props";
+
+export const ArticleInStock: React.FC<IArticleInStockProps> = ({ product }) => {
+  return (
+    <div className={styles.info}>
+      <BadgeInStock product={product} />
+      <div className={styles.article}>Артикул: {product.article}</div>
+    </div>
+  );
+};
