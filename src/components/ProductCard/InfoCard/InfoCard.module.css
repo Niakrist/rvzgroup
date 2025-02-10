@@ -11,49 +11,10 @@
   column-gap: 10px;
 }
 
-.counterQuantity {
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
-  padding: 0 10px;
-}
-
 .buttonBlue,
 .buttonBorder {
   width: 100%;
   white-space: nowrap;
-}
-
-.input {
-  width: 60px;
-  text-align: center;
-  border: none;
-
-  font-family: var(--third-family);
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.4;
-  color: var(--black);
-  opacity: 0.8;
-}
-
-.iconMinus {
-  width: 16px;
-  height: 1px;
-  color: var(--black);
-  transition: color 0.2s;
-}
-
-.iconPlus {
-  width: 18px;
-  height: 17px;
-  color: var(--black);
-  transition: color 0.2s;
-}
-
-.iconMinus:hover,
-.iconPlus:hover {
-  color: var(--blue);
 }
 
 .email {

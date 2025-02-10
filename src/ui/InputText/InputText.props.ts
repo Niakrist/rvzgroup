@@ -3,6 +3,6 @@ export interface IInputTextProps
     React.InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
   > {
-  type: "text";
+  type: "text" | "email";
   placeholder: string;
 }

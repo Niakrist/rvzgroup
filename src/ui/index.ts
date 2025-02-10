@@ -7,3 +7,5 @@ export * from "./WhiteBlock/WhiteBlock";
 export * from "./InputFilter/InputFilter";
 export * from "./DropDown/DropDown";
 export * from "./BadgeInStock/BadgeInStock";
+export * from "./Checkbox/Checkbox";
+export * from "./Textarea/Textarea";

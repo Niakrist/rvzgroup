@@ -6,5 +6,5 @@ export interface IAgreementProps
     HTMLLabelElement
   > {
   color: "grey" | "blue";
-  id: "getPriceModal" | "subscribe";
+  id: "getPriceModal" | "subscribe" | "order";
 }

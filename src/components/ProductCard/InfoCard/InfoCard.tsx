@@ -5,8 +5,7 @@ import { Button, Htag } from "@/ui";
 import { IInfoCardProps } from "./InfoCard.props";
 import { ArticleInStock } from "@/components/ArticleInStock/ArticleInStock";
 import { Price } from "@/components/Price/Price";
-import { Icon } from "@/components/Icon/Icon";
-import { CharacteristicList } from "@/components";
+import { CharacteristicList, CounterQuantity } from "@/components";
 
 export const InfoCard: React.FC<IInfoCardProps> = ({ product }) => {
   const [quantity, setQuantity] = useState<number>(1);
@@ -34,29 +33,13 @@ export const InfoCard: React.FC<IInfoCardProps> = ({ product }) => {
       <ArticleInStock product={product} />
       <Price fontSize="fs18" product={product} />
       <CharacteristicList />
-      {/* <ul className={styles.characteristic}>
-        {product.characteristic?.map((item) => (
-          <li key={item.key} className={styles.item}>
-            <span className={styles.key}>{item.key}</span>
-            <span className={styles.value}>{item.value}</span>
-          </li>
-        ))}
-      </ul> */}
       <div className={styles.buttonsGroup}>
-        <div className={styles.counterQuantity}>
-          <button onClick={handleDecrement}>
-            <Icon name="iconMinus" className={styles.iconMinus} />
-          </button>
-          <input
-            className={styles.input}
-            type="text"
-            value={quantity}
-            onChange={handleChangeQuantity}
-          />
-          <button onClick={handleIncrement}>
-            <Icon name="iconPlus" className={styles.iconPlus} />
-          </button>
-        </div>
+        <CounterQuantity
+          quantity={quantity}
+          handleChangeQuantity={handleChangeQuantity}
+          handleDecrement={handleDecrement}
+          handleIncrement={handleIncrement}
+        />
         <Button className={styles.buttonBlue} color="blue">
           В корзину
         </Button>
@@ -69,8 +52,7 @@ export const InfoCard: React.FC<IInfoCardProps> = ({ product }) => {
         <a
           className={styles.link}
           href="mailto:sales@rvzgroup.ru"
-          target="_blank"
-        >
+          target="_blank">
           sales@rvzgroup.ru
         </a>
       </address>

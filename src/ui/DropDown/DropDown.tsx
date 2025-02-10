@@ -5,6 +5,7 @@ import { Icon } from "@/components";
 import cn from "classnames";
 import { IDropDownProps } from "./DropDown.props";
 import { IList } from "@/types/types";
+import { Checkbox } from "@/ui";
 
 export const DropDown: React.FC<IDropDownProps> = ({ list, setList, name }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -38,8 +39,7 @@ export const DropDown: React.FC<IDropDownProps> = ({ list, setList, name }) => {
     <div className={styles.wrapperDwopDown}>
       <button
         onClick={handleToggleModal}
-        className={cn(styles.button, { [styles.open]: isOpen })}
-      >
+        className={cn(styles.button, { [styles.open]: isOpen })}>
         {name}
         <div className={styles.wrapper}>
           {!!quantityIsCheck && (
@@ -55,26 +55,12 @@ export const DropDown: React.FC<IDropDownProps> = ({ list, setList, name }) => {
         <ul className={styles.list}>
           {list.map((item) => (
             <li key={item.id}>
-              <input
+              <Checkbox
                 id={item.id}
-                onChange={() => handleCheck(item.id)}
-                checked={item.isCheck}
-                className={styles.checkbox}
-                type="checkbox"
-              />
-              <label
-                className={cn(styles.label, { [styles.check]: item.isCheck })}
-                htmlFor={item.id}
-              >
-                <div
-                  className={cn(styles.iconCheckbox, {
-                    [styles.check]: item.isCheck,
-                  })}
-                >
-                  <Icon name="iconCheckbox" className={styles.icon} />
-                </div>
+                isCheck={item.isCheck}
+                handleCheck={handleCheck}>
                 {item.name}
-              </label>
+              </Checkbox>
             </li>
           ))}
         </ul>

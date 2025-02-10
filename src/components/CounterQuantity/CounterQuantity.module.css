@@ -1,0 +1,57 @@
+.counterQuantity {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  border-radius: 8px;
+  padding: 6px 14px;
+  background-color: var(--grey1);
+}
+
+.input {
+  width: 60px;
+  text-align: center;
+  border: none;
+
+  background-color: transparent;
+
+  font-family: var(--third-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--black);
+  opacity: 0.8;
+}
+
+.button {
+  width: 20px;
+  height: 20px;
+}
+
+.iconMinus {
+  width: 16px;
+  height: 1px;
+  color: var(--black);
+  transition: color 0.2s;
+}
+
+.iconPlus {
+  width: 18px;
+  height: 17px;
+  color: var(--black);
+  transition: color 0.2s;
+}
+
+.button:hover .iconMinus,
+.button:hover .iconPlus {
+  color: var(--blue);
+}
+
+@media (max-width: 767.9px) {
+  .counterQuantity {
+    padding: 8px;
+    column-gap: 5px;
+  }
+  .input {
+    width: 50px;
+  }
+}

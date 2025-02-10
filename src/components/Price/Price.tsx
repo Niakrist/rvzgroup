@@ -20,7 +20,7 @@ export const Price: React.FC<IPriceProps> = ({
           )}
         </>
       ) : (
-        "Цена по запросу"
+        "Под заказ"
       )}
     </div>
   );
