@@ -10,7 +10,7 @@ interface IMenuList {
   url: string;
   img: string;
   name: string;
-  subCategories: subCategories[];
+  subCategories?: subCategories[];
 }
 
 interface subCategories {}
