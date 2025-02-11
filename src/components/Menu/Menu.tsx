@@ -369,7 +369,6 @@ const Menu = () => {
       setIsMobile(window.innerWidth < 768);
     };
 
-    console.log("isMobile: ", isMobile);
     window.addEventListener("resize", handleResize);
 
     return () => {
