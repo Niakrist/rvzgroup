@@ -6,7 +6,16 @@ import styles from "./Menu.module.css";
 // import cn from "classnames";
 import MenuCatalog from "./MenuCatalog/MenuCatalog";
 
-const menuList = [
+interface IMenuList {
+  url: string;
+  img: string;
+  name: string;
+  subCategories: subCategories[];
+}
+
+interface subCategories {}
+
+const menuList: IMenuList[] = [
   {
     url: "/sharikovye",
     img: "iconSharikovye.png",
