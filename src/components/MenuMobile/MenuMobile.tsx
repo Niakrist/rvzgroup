@@ -1,8 +1,6 @@
 "use client";
-import { toggleMenuForMobile } from "@/store/openModalSlice/openModalSlice";
 import { RootState } from "@/store/store";
 import React from "react";
-import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import Menu from "../Menu/Menu";
 
