@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import { Modal } from "../Modal";
 import { Filter } from "@/components/Filter/Filter";
 import { toggleOpenMobileFilter } from "@/store/openModalSlice/openModalSlice";
