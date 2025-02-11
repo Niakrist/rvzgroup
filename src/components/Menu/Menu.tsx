@@ -13,7 +13,14 @@ interface IMenuList {
   subCategories?: subCategories[];
 }
 
-interface subCategories {}
+interface subCategories {
+  subName: string;
+  categories: ICategory[];
+}
+interface ICategory {
+  url: string;
+  name: string;
+}
 
 const menuList: IMenuList[] = [
   {

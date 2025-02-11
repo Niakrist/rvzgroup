@@ -1,5 +1,5 @@
 export interface IMenuCatalogProps {
-  menuList: [];
+  menuList: IMenuList[];
   onClick: (
     url: string,
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
@@ -8,8 +8,18 @@ export interface IMenuCatalogProps {
   activeUrl: string;
 }
 
-export interface IItepProps {
+export interface IMenuList {
   url: string;
   img: string;
+  name: string;
+  subCategories?: subCategories[];
+}
+
+interface subCategories {
+  subName: string;
+  categories: ICategory[];
+}
+interface ICategory {
+  url: string;
   name: string;
 }
