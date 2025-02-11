@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./MenuCatalog.module.css";
 import cn from "classnames";
 import Link from "next/link";
-import { IItepProps, IMenuCatalogProps } from "./MenuCatalog.props";
+import { IMenuCatalogProps } from "./MenuCatalog.props";
 const MenuCatalog: React.FC<IMenuCatalogProps> = ({
   menuList,
   onClick,
@@ -13,7 +13,7 @@ const MenuCatalog: React.FC<IMenuCatalogProps> = ({
   return (
     <nav>
       <ul className={styles.list}>
-        {menuList.map((item: IItepProps) => (
+        {menuList.map((item) => (
           <li onMouseEnter={() => onMouseEnter(item.url)} key={item.url}>
             <Link
               onClick={(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) =>
