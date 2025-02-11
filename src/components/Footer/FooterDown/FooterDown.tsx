@@ -3,7 +3,7 @@ import React from "react";
 
 import styles from "./FooterDown.module.css";
 
-const FooterDown: React.FC = () => {
+export const FooterDown: React.FC = () => {
   const currentYear = new Date().getFullYear();
   return (
     <div className={styles.wrapperDown}>
@@ -21,5 +21,3 @@ const FooterDown: React.FC = () => {
     </div>
   );
 };
-
-export default FooterDown;

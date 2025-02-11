@@ -1,10 +1,10 @@
-import { categoryList } from "@/mockdata/mockdata";
-import { ICategory } from "@/types/types";
 import React from "react";
-import CategoryItem from "../CategoryItem/CategoryItem";
-import styles from "./CategoryList.module.css";
+import { categoryList } from "@/mockdata/mockdata";
 import cn from "classnames";
+import { CategoryItem } from "@/components";
 import { IListProps } from "./CategoryList.props";
+import { ICategory } from "@/types/types";
+import styles from "./CategoryList.module.css";
 
 export const CategoryList: React.FC<IListProps> = ({ list }) => {
   return (

@@ -1,15 +1,15 @@
 "use client";
 import React from "react";
-import { GetPriceModal } from "../Modal/GetPriceModal/GetPriceModal";
-import { ThanksModal } from "../Modal/ThanksModal/ThanksModal";
-
+import {
+  GetPriceModal,
+  ThanksModal,
+  FilterModal,
+  MenuMobile,
+  ModalMenu,
+  FooterDown,
+  FooterUp,
+} from "@/components";
 import styles from "./Footer.module.css";
-import FooterDown from "./FooterDown/FooterDown";
-
-import FooterUp from "./FooterUp/FooterUp";
-import { FilterModal } from "../Modal/FilterModal/FilterModal";
-import ModalMenu from "../Modal/ModalMenu/ModalMenu";
-import { MenuMobile } from "../MenuMobile/MenuMobile";
 
 export const Footer = () => {
   return (

@@ -1,10 +1,9 @@
 "use client";
-import { Button, DropDown, InputFilter } from "@/ui";
-import WhiteBlock from "@/ui/WhiteBlock/WhiteBlock";
 import React, { useState } from "react";
+import { Button, DropDown, InputFilter, WhiteBlock } from "@/ui";
 
-import styles from "./Filter.module.css";
 import { IFilter, IList } from "@/types/types";
+import styles from "./Filter.module.css";
 
 const standartName = "Стандарт";
 const rollingName = "Тело качения";

@@ -1,6 +1,6 @@
-import { Htag } from "@/ui";
 import React from "react";
-import { CategoryList } from "../CategoryList/CategoryList";
+import { CategoryList } from "@/components";
+import { Htag } from "@/ui";
 import styles from "./CategoryBlock.module.css";
 
 export const CategoryBlock = () => {

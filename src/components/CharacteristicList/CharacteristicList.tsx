@@ -1,7 +1,6 @@
 import React from "react";
-
-import styles from "./CharacteristicList.module.css";
 import { products } from "@/mockdata/mockdata";
+import styles from "./CharacteristicList.module.css";
 
 export const CharacteristicList = () => {
   const product = products[0];

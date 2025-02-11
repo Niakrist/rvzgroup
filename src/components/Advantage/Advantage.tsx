@@ -1,6 +1,5 @@
-import { Htag } from "@/ui";
 import React from "react";
-
+import { Htag } from "@/ui";
 import styles from "./Advantage.module.css";
 
 export const Advantage = () => {

@@ -1,9 +1,8 @@
 "use client";
-import { IServicesPages, servicesPages } from "@/types/servicesPages";
+import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
-
+import { IServicesPages, servicesPages } from "@/types/servicesPages";
 import styles from "./BreadCrumbs.module.css";
 
 export const BreadCrumbs: React.FC = () => {

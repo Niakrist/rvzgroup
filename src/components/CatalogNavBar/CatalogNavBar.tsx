@@ -1,5 +1,5 @@
 import React from "react";
-import { CategoryList } from "../CategoryList/CategoryList";
+import { CategoryList } from "@/components";
 
 import styles from "./CatalogNavBar.module.css";
 

@@ -1,16 +1,15 @@
-import { ICategory } from "@/types/types";
-import { Htag } from "@/ui";
-import Link from "next/link";
 import React from "react";
-import { Icon } from "../Icon/Icon";
-
+import Link from "next/link";
+import { Icon } from "@/components";
+import { Htag } from "@/ui";
+import { ICategory } from "@/types/types";
 import styles from "./CategoryItem.module.css";
 
 interface ICategoryProps {
   category: ICategory;
 }
 
-const CategoryItem: React.FC<ICategoryProps> = ({ category }) => {
+export const CategoryItem: React.FC<ICategoryProps> = ({ category }) => {
   return (
     <Link className={styles.link} href={category.path}>
       <div className={styles.imgWrapper}>
@@ -27,5 +26,3 @@ const CategoryItem: React.FC<ICategoryProps> = ({ category }) => {
     </Link>
   );
 };
-
-export default CategoryItem;

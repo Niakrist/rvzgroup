@@ -1,8 +1,7 @@
 import React from "react";
-import { Icon } from "../Icon/Icon";
-
-import styles from "./CounterQuantity.module.css";
+import { Icon } from "@/components";
 import { ICounterQuantityProps } from "./CounterQuantity.props";
+import styles from "./CounterQuantity.module.css";
 
 export const CounterQuantity: React.FC<ICounterQuantityProps> = ({
   quantity,

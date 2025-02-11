@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./ArticleInStock.module.css";
 import { BadgeInStock } from "@/ui";
 import { IArticleInStockProps } from "./ArticleInStock.props";
+import styles from "./ArticleInStock.module.css";
 
 export const ArticleInStock: React.FC<IArticleInStockProps> = ({ product }) => {
   return (

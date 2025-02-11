@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Icon, TopNavMenu } from "@/components";
 import styles from "./FooterUp.module.css";
 
-const FooterUp = () => {
+export const FooterUp = () => {
   return (
     <div className={styles.container}>
       <div className={styles.logo}>
@@ -23,5 +23,3 @@ const FooterUp = () => {
     </div>
   );
 };
-
-export default FooterUp;

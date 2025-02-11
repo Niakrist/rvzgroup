@@ -4,7 +4,8 @@ import styles from "./MenuCatalog.module.css";
 import cn from "classnames";
 import Link from "next/link";
 import { IMenuCatalogProps } from "./MenuCatalog.props";
-const MenuCatalog: React.FC<IMenuCatalogProps> = ({
+
+export const MenuCatalog: React.FC<IMenuCatalogProps> = ({
   menuList,
   onClick,
   onMouseEnter,
@@ -36,5 +37,3 @@ const MenuCatalog: React.FC<IMenuCatalogProps> = ({
     </nav>
   );
 };
-
-export default MenuCatalog;

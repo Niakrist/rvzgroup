@@ -1,8 +1,7 @@
-import { Htag } from "@/ui";
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
 import cn from "classnames";
-
+import { Htag } from "@/ui";
 import styles from "./AboutCompany.module.css";
 
 export const AboutCompany = () => {

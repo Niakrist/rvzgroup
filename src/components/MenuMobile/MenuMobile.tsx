@@ -2,7 +2,7 @@
 import { RootState } from "@/store/store";
 import React from "react";
 import { useSelector } from "react-redux";
-import Menu from "../Menu/Menu";
+import { Menu } from "../Menu/Menu";
 
 import { Modal } from "../Modal/Modal";
 

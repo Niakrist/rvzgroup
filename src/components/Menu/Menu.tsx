@@ -1,10 +1,8 @@
-import Link from "next/link";
+"use client";
 import React, { useEffect, useState } from "react";
-
+import Link from "next/link";
 import styles from "./Menu.module.css";
-
-// import cn from "classnames";
-import MenuCatalog from "./MenuCatalog/MenuCatalog";
+import { MenuCatalog } from "@/components";
 
 interface IMenuList {
   url: string;
@@ -376,7 +374,7 @@ const menuList: IMenuList[] = [
   // { url: "/zakrytye", img: "iconZakrytye.png", name: "Закрытые" },
 ];
 
-const Menu = () => {
+export const Menu = () => {
   const [activeUrl, setActiveUrl] = useState<string>("/sharikovye");
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1025);
 
@@ -469,5 +467,3 @@ const Menu = () => {
     </div>
   );
 };
-
-export default Menu;
