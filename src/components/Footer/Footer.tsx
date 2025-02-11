@@ -9,6 +9,7 @@ import FooterDown from "./FooterDown/FooterDown";
 import FooterUp from "./FooterUp/FooterUp";
 import { FilterModal } from "../Modal/FilterModal/FilterModal";
 import ModalMenu from "../Modal/ModalMenu/ModalMenu";
+import { MenuMobile } from "../MenuMobile/MenuMobile";
 
 export const Footer = () => {
   return (
@@ -19,6 +20,7 @@ export const Footer = () => {
       <GetPriceModal />
       <ThanksModal />
       <FilterModal />
+      <MenuMobile />
     </footer>
   );
 };

@@ -8,15 +8,19 @@ import Link from "next/link";
 import { useDispatch } from "react-redux";
 // import { useSelector } from "react-redux";
 // import { RootState } from "@/store/store";
-import { toggleMenuModal } from "@/store/openModalSlice/openModalSlice";
+import {
+  toggleMenuForMobile,
+  toggleMenuModal,
+} from "@/store/openModalSlice/openModalSlice";
 
 export const Header = () => {
   const [isMenu, setIsMenu] = useState<boolean>(false);
   const dispatch = useDispatch();
-  // const { isMenuModal } = useSelector((state: RootState) => state.openModal);
 
   const handleOpen = () => {
     setIsMenu((prev) => !prev);
+    console.log("++++");
+    dispatch(toggleMenuForMobile(true));
   };
 
   const handleClose = () => {

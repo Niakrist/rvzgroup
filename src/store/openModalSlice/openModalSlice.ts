@@ -7,6 +7,7 @@ interface iModalState {
   isThanksModal: boolean;
   isFilterModal: boolean;
   isMenuModal: boolean;
+  isMenuForMobile: boolean;
 }
 
 const initialState: iModalState = {
@@ -14,6 +15,7 @@ const initialState: iModalState = {
   isThanksModal: false,
   isFilterModal: false,
   isMenuModal: false,
+  isMenuForMobile: false,
 };
 
 const openModalSlice = createSlice({
@@ -32,6 +34,9 @@ const openModalSlice = createSlice({
     toggleMenuModal: (state, action: PayloadAction<boolean>) => {
       state.isMenuModal = action.payload;
     },
+    toggleMenuForMobile: (state, action: PayloadAction<boolean>) => {
+      state.isMenuForMobile = action.payload;
+    },
   },
 });
 export const {
@@ -39,6 +44,7 @@ export const {
   toggleThanksModal,
   toggleOpenMobileFilter,
   toggleMenuModal,
+  toggleMenuForMobile,
 } = openModalSlice.actions;
 
 export default openModalSlice.reducer;
