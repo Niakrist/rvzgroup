@@ -5,12 +5,22 @@ import { Icon } from "@/components";
 
 import styles from "./Header.module.css";
 import Link from "next/link";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+import { toggleMenuModal } from "@/store/openModalSlice/openModalSlice";
 
 export const Header = () => {
   const [isMenu, setIsMenu] = useState<boolean>(false);
+  const dispatch = useDispatch();
+  const { isMenuModal } = useSelector((state: RootState) => state.openModal);
 
   const handleOpen = () => {
     setIsMenu((prev) => !prev);
+  };
+
+  const handleClose = () => {
+    dispatch(toggleMenuModal(true));
   };
 
   return (
@@ -19,10 +29,14 @@ export const Header = () => {
         <Icon name="iconLogo" className={styles.iconLogo} />
         РВЗ
       </Link>
-      <Link href={"/catalog"} className={styles.buttonCatalog}>
+      <button onClick={handleClose} className={styles.buttonCatalog}>
         <span className={styles.openClose} />
         Каталог
-      </Link>
+      </button>
+      {/* <Link href={"/catalog"} className={styles.buttonCatalog}>
+        <span className={styles.openClose} />
+        Каталог
+      </Link> */}
       <form className={styles.form}>
         <input
           className={styles.search}

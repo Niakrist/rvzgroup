@@ -8,12 +8,14 @@ import FooterDown from "./FooterDown/FooterDown";
 
 import FooterUp from "./FooterUp/FooterUp";
 import { FilterModal } from "../Modal/FilterModal/FilterModal";
+import ModalMenu from "../Modal/ModalMenu/ModalMenu";
 
 export const Footer = () => {
   return (
     <footer className={styles.footer}>
       <FooterUp />
       <FooterDown />
+      <ModalMenu />
       <GetPriceModal />
       <ThanksModal />
       <FilterModal />

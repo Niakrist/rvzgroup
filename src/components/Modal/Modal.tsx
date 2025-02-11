@@ -3,7 +3,10 @@ import React, { useRef } from "react";
 import styles from "./Modal.module.css";
 import { IModalProps } from "./Modal.props";
 import { useDispatch } from "react-redux";
-import { isGetPriceModal } from "@/store/openModalSlice/openModalSlice";
+import {
+  isGetPriceModal,
+  toggleMenuModal,
+} from "@/store/openModalSlice/openModalSlice";
 import cn from "classnames";
 
 export const Modal: React.FC<IModalProps> = ({ children, width, ...props }) => {
@@ -17,6 +20,7 @@ export const Modal: React.FC<IModalProps> = ({ children, width, ...props }) => {
       e.target === refModal.current
     ) {
       dispatch(isGetPriceModal(false));
+      dispatch(toggleMenuModal(false));
     }
   };
 

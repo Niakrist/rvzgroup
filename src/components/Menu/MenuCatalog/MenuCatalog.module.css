@@ -1,0 +1,52 @@
+.list {
+  background-color: var(--grey1);
+  border-radius: 6px;
+  padding: 10px 0px;
+}
+
+.link {
+  padding: 6px 20px 6px 20px;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  background-color: transparent;
+
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--black);
+  white-space: nowrap;
+
+  transition: background-color 0.2s, color 0.2s;
+  position: relative;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background-color: transparent;
+}
+
+.link:hover::after {
+  background-color: var(--blue);
+}
+
+.link.active::after {
+  background-color: var(--blue);
+}
+
+.link:hover {
+  background-color: var(--white);
+  color: var(--blue);
+}
+
+.images {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}

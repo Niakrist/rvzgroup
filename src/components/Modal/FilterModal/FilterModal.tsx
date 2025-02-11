@@ -15,13 +15,8 @@ export const FilterModal = () => {
   const { isFilterModal } = useSelector((state: RootState) => state.openModal);
 
   const handleCloseModal = () => {
-    console.log("+++");
     dispatch(toggleOpenMobileFilter(false));
   };
-
-  useEffect(() => {
-    console.log("isFilterModal: ", isFilterModal);
-  }, [handleCloseModal]);
 
   if (!isFilterModal) {
     return null;
