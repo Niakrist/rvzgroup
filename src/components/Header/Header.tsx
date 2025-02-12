@@ -5,21 +5,22 @@ import cn from "classnames";
 import { useDispatch } from "react-redux";
 import { Icon } from "@/components";
 import {
-  toggleMenuForMobile,
+  toggleMenuBurger,
   toggleMenuModal,
 } from "@/store/openModalSlice/openModalSlice";
 import styles from "./Header.module.css";
 
 export const Header = () => {
-  const [isMenu, setIsMenu] = useState<boolean>(false);
   const dispatch = useDispatch();
 
-  const handleOpen = () => {
-    setIsMenu((prev) => !prev);
-    dispatch(toggleMenuForMobile(true));
+  // Открывает закрывает бургер мобильное меню
+  const handletoggleBurger = () => {
+    // setIsMenu((prev) => !prev);
+    dispatch(toggleMenuBurger(true));
   };
 
-  const handleClose = () => {
+  // Открывает закрывает каталог на desctop
+  const handleToggleCatalog = () => {
     dispatch(toggleMenuModal(true));
   };
 
@@ -29,7 +30,7 @@ export const Header = () => {
         <Icon name="iconLogo" className={styles.iconLogo} />
         РВЗ
       </Link>
-      <button onClick={handleClose} className={styles.buttonCatalog}>
+      <button onClick={handleToggleCatalog} className={styles.buttonCatalog}>
         <span className={styles.openClose} />
         Каталог
       </button>
@@ -54,12 +55,8 @@ export const Header = () => {
           </a>
           <span className={styles.textEmail}>почта для заявок</span>
         </div>
-        <button onClick={handleOpen} className={styles.burgerMenu}>
-          <span
-            className={cn(styles.burgerLine, {
-              [styles.burgerLineOpen]: isMenu,
-            })}
-          />
+        <button onClick={handletoggleBurger} className={styles.burgerMenu}>
+          <span className={cn(styles.burgerLine)} />
         </button>
         <Link href="/bookmark" className={styles.block}>
           <Icon name="iconBookmark" className={styles.iconBookmark} />

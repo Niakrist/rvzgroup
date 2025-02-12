@@ -20,3 +20,19 @@ export interface IList {
   name: string;
   isCheck: boolean;
 }
+
+export interface IMenuList {
+  url: string;
+  img: string;
+  name: string;
+  subCategories?: subCategories[];
+}
+
+interface subCategories {
+  subName: string;
+  categories: ICategoryMune[];
+}
+interface ICategoryMune {
+  url: string;
+  name: string;
+}

@@ -4,10 +4,10 @@ import {
   GetPriceModal,
   ThanksModal,
   FilterModal,
-  MenuMobile,
   ModalMenu,
   FooterDown,
   FooterUp,
+  MenuBurger,
 } from "@/components";
 import styles from "./Footer.module.css";
 
@@ -20,7 +20,7 @@ export const Footer = () => {
       <GetPriceModal />
       <ThanksModal />
       <FilterModal />
-      <MenuMobile />
+      <MenuBurger />
     </footer>
   );
 };
