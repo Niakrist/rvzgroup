@@ -32,28 +32,33 @@
 }
 
 .nav {
+  width: 100%;
   margin-bottom: auto;
 }
 
-.list {
+.list,
+.listCatalog {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
   max-height: 480px;
-  overflow-x: hidden;
-  overflow-y: scroll;
   width: 100%;
 }
 
-.list::-webkit-scrollbar {
+.listCatalog {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.listCatalog::-webkit-scrollbar {
   width: 4px;
 }
 
-.list::-webkit-scrollbar-track {
+.listCatalog::-webkit-scrollbar-track {
   background-color: var(--grey2);
 }
 
-.list::-webkit-scrollbar-thumb {
+.listCatalog::-webkit-scrollbar-thumb {
   background-color: var(--blue);
   border-radius: 20px;
 }

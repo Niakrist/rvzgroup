@@ -37,8 +37,8 @@ export const MenuBurger = () => {
           <button onClick={toggleMobileCatalog} className={styles.back}>
             <Icon className={styles.iconArrowDown} name="iconArrowDown" /> Назад
           </button>
-          <nav>
-            <ul className={styles.list}>
+          <nav className={styles.nav}>
+            <ul className={styles.listCatalog}>
               {menuCatalogList.map((item) => (
                 <li key={item.url}>
                   <Link className={styles.linkCatalog} href={`.${item.url}`}>
