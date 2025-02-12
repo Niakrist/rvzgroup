@@ -1,4 +1,4 @@
-import { Htag, WhiteBlock } from "@/ui";
+import { Htag } from "@/ui";
 import React from "react";
 import styles from "./RvzGroup.module.css";
 
