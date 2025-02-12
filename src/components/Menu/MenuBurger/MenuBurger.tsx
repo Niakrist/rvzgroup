@@ -17,6 +17,7 @@ export const MenuBurger = () => {
 
   const handleCloseModal = () => {
     dispatch(toggleMenuBurger(false));
+    setIsOpenMobileCatalog(false);
   };
 
   if (!isMenuBurger) {
