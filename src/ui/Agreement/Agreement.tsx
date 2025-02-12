@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import { Icon } from "@/components";
 import cn from "classnames";
-
-import styles from "./Agreement.module.css";
 import { IAgreementProps } from "./Agreement.props";
+import styles from "./Agreement.module.css";
+
 export const Agreement: React.FC<IAgreementProps> = ({ color, id }) => {
   const [isCheck, setIsCheck] = useState<boolean>(true);
 

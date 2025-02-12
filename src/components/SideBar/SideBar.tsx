@@ -1,6 +1,6 @@
 import React from "react";
+import { Filter } from "@/components";
 import styles from "./SideBar.module.css";
-import { Filter } from "../Filter/Filter";
 
 export const SideBar = () => {
   return (

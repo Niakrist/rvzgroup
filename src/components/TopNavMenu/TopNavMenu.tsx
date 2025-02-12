@@ -1,9 +1,9 @@
 import React from "react";
-import { servicesPages } from "@/types/servicesPages";
-import styles from "./TopNavMenu.module.css";
 import Link from "next/link";
-import { ITopNavMenuProps } from "./TopNavMenu.props";
 import cn from "classnames";
+import { servicesPages } from "@/types/servicesPages";
+import { ITopNavMenuProps } from "./TopNavMenu.props";
+import styles from "./TopNavMenu.module.css";
 
 export const TopNavMenu: React.FC<ITopNavMenuProps> = ({ size, vertical }) => {
   return (

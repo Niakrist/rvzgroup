@@ -39,3 +39,4 @@ export * from "./MenuMobile/MenuMobile";
 export * from "./Modal/ModalMenu/ModalMenu";
 export * from "./Footer/FooterUp/FooterUp";
 export * from "./Footer/FooterDown/FooterDown";
+export * from "./PaginationList/PaginationList";

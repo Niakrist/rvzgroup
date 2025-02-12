@@ -1,11 +1,14 @@
 "use client";
 import React, { useState } from "react";
-import styles from "./InfoCard.module.css";
+import {
+  ArticleInStock,
+  Price,
+  CharacteristicList,
+  CounterQuantity,
+} from "@/components";
 import { Button, Htag } from "@/ui";
 import { IInfoCardProps } from "./InfoCard.props";
-import { ArticleInStock } from "@/components/ArticleInStock/ArticleInStock";
-import { Price } from "@/components/Price/Price";
-import { CharacteristicList, CounterQuantity } from "@/components";
+import styles from "./InfoCard.module.css";
 
 export const InfoCard: React.FC<IInfoCardProps> = ({ product }) => {
   const [quantity, setQuantity] = useState<number>(1);

@@ -1,13 +1,13 @@
 "use client";
 import React, { useRef } from "react";
-import styles from "./Modal.module.css";
-import { IModalProps } from "./Modal.props";
 import { useDispatch } from "react-redux";
+import cn from "classnames";
 import {
   isGetPriceModal,
   toggleMenuModal,
 } from "@/store/openModalSlice/openModalSlice";
-import cn from "classnames";
+import { IModalProps } from "./Modal.props";
+import styles from "./Modal.module.css";
 
 export const Modal: React.FC<IModalProps> = ({ children, width, ...props }) => {
   const refModal = useRef<HTMLDivElement>(null);

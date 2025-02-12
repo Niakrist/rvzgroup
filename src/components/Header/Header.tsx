@@ -1,17 +1,14 @@
 "use client";
 import React, { useState } from "react";
-import cn from "classnames";
-import { Icon } from "@/components";
-
-import styles from "./Header.module.css";
 import Link from "next/link";
+import cn from "classnames";
 import { useDispatch } from "react-redux";
-// import { useSelector } from "react-redux";
-// import { RootState } from "@/store/store";
+import { Icon } from "@/components";
 import {
   toggleMenuForMobile,
   toggleMenuModal,
 } from "@/store/openModalSlice/openModalSlice";
+import styles from "./Header.module.css";
 
 export const Header = () => {
   const [isMenu, setIsMenu] = useState<boolean>(false);
@@ -19,7 +16,6 @@ export const Header = () => {
 
   const handleOpen = () => {
     setIsMenu((prev) => !prev);
-    console.log("++++");
     dispatch(toggleMenuForMobile(true));
   };
 

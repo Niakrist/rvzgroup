@@ -8,7 +8,7 @@ import IconLogo from "./icons/IconLogo";
 import IconSearch from "./icons/IconSearch";
 import IconFilter from "./icons/IconFilter";
 import IconMinus from "./icons/IconMinus";
-import { IconPlus } from "./icons/IconPlus";
+import IconPlus from "./icons/IconPlus";
 
 interface IIconProps extends React.SVGProps<SVGSVGElement> {
   name:

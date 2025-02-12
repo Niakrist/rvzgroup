@@ -1,7 +1,6 @@
 import React from "react";
-
-import styles from "./InputText.module.css";
 import { IInputTextProps } from "./InputText.props";
+import styles from "./InputText.module.css";
 
 export const InputText: React.FC<IInputTextProps> = ({
   type,

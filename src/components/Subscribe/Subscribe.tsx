@@ -1,6 +1,5 @@
-import { Agreement, Htag } from "@/ui";
 import React from "react";
-
+import { Agreement, Htag } from "@/ui";
 import styles from "./Subscribe.module.css";
 
 export const Subscribe = () => {

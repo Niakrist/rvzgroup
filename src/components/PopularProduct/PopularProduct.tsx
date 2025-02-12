@@ -1,9 +1,9 @@
-import { Htag } from "@/ui";
 import React from "react";
 import { ProductItem } from "@/components";
-import styles from "./PopularProduct.module.css";
+import { Htag } from "@/ui";
 import { IProduct } from "@/types/product";
 import { products } from "@/mockdata/mockdata";
+import styles from "./PopularProduct.module.css";
 
 export const PopularProduct: React.FC = () => {
   return (

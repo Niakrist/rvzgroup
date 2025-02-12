@@ -1,9 +1,9 @@
 import React from "react";
-
-import styles from "./MenuCatalog.module.css";
-import cn from "classnames";
 import Link from "next/link";
+import cn from "classnames";
+
 import { IMenuCatalogProps } from "./MenuCatalog.props";
+import styles from "./MenuCatalog.module.css";
 
 export const MenuCatalog: React.FC<IMenuCatalogProps> = ({
   menuList,

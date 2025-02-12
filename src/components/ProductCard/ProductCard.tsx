@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import styles from "./ProductCard.module.css";
 import { InfoCard, SliderCard } from "@/components";
 import { products } from "@/mockdata/mockdata";
 import { IProduct } from "@/types/product";
+import styles from "./ProductCard.module.css";
 
 export const ProductCard = () => {
   const product: IProduct = products[0];

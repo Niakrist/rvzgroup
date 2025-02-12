@@ -1,13 +1,13 @@
 "use client";
-import { toggleThanksModal } from "@/store/openModalSlice/openModalSlice";
-import { RootState } from "@/store/store";
-import { IProduct } from "@/types/product";
-import { Button } from "@/ui";
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
 import { useSelector, useDispatch } from "react-redux";
-import styles from "./ProductItem.module.css";
 import { ArticleInStock, Price } from "@/components";
+import { Button } from "@/ui";
+import { RootState } from "@/store/store";
+import { toggleThanksModal } from "@/store/openModalSlice/openModalSlice";
+import { IProduct } from "@/types/product";
+import styles from "./ProductItem.module.css";
 
 interface IProductItemProps {
   product: IProduct;

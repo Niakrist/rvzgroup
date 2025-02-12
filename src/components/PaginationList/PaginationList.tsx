@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import styles from "./PaginationList.module.css";
 import cn from "classnames";
+import styles from "./PaginationList.module.css";
 
 const pages = [1, 2, 3, 4, 5, 15];
 
@@ -20,8 +20,7 @@ export const PaginationList = () => {
             onClick={() => handleChangePage(page)}
             className={cn(styles.btn, {
               [styles.active]: page === currentPage,
-            })}
-          >
+            })}>
             {page}
           </button>
         </li>

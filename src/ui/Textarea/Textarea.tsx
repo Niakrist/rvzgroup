@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "./Textarea.module.css";
 import { ITextAreaProps } from "./Textarea.props";
+import styles from "./Textarea.module.css";
 
 export const Textarea: React.FC<ITextAreaProps> = ({
   value,

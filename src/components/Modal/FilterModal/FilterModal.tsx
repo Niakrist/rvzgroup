@@ -1,14 +1,10 @@
 "use client";
 import React from "react";
-import { Modal } from "../Modal";
-import { Filter } from "@/components/Filter/Filter";
-import { toggleOpenMobileFilter } from "@/store/openModalSlice/openModalSlice";
-import { useDispatch } from "react-redux";
-
-import styles from "./FilterModal.module.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Filter, Modal, Icon } from "@/components";
 import { RootState } from "@/store/store";
-import { Icon } from "@/components/Icon/Icon";
+import { toggleOpenMobileFilter } from "@/store/openModalSlice/openModalSlice";
+import styles from "./FilterModal.module.css";
 
 export const FilterModal = () => {
   const dispatch = useDispatch();

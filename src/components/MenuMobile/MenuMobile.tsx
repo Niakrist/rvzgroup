@@ -1,11 +1,8 @@
 "use client";
-import { RootState } from "@/store/store";
 import React from "react";
 import { useSelector } from "react-redux";
-import { Menu } from "../Menu/Menu";
-
-import { Modal } from "../Modal/Modal";
-
+import { RootState } from "@/store/store";
+import { Menu, Modal } from "@/components";
 import styles from "./MenuMobile.module.css";
 
 export const MenuMobile = () => {

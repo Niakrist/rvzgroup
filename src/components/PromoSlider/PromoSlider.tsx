@@ -1,13 +1,12 @@
 "use client";
-import { isGetPriceModal } from "@/store/openModalSlice/openModalSlice";
-import { RootState } from "@/store/store";
-import { BubbleList, Button } from "@/ui";
 import React from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { Icon } from "../Icon/Icon";
-import styles from "./PromoSlider.module.css";
 import { useRouter } from "next/navigation";
+import { useSelector, useDispatch } from "react-redux";
+import { Icon } from "@/components";
+import { BubbleList, Button } from "@/ui";
+import { RootState } from "@/store/store";
+import { isGetPriceModal } from "@/store/openModalSlice/openModalSlice";
+import styles from "./PromoSlider.module.css";
 
 export const PromoSlider = () => {
   const dispatch = useDispatch();

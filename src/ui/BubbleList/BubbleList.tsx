@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "./BubbleList.module.css";
 import cn from "classnames";
+import styles from "./BubbleList.module.css";
 
 export const BubbleList = () => {
   const bubbles = [1, 2, 3, 4, 5];

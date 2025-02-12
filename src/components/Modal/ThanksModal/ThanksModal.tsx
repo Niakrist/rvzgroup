@@ -1,11 +1,11 @@
 "use client";
-import { toggleThanksModal } from "@/store/openModalSlice/openModalSlice";
-import { RootState } from "@/store/store";
-import { Button, Htag } from "@/ui";
-import { useRouter } from "next/navigation";
 import React from "react";
+import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
-import { Modal } from "../Modal";
+import { Modal } from "@/components";
+import { Button, Htag } from "@/ui";
+import { RootState } from "@/store/store";
+import { toggleThanksModal } from "@/store/openModalSlice/openModalSlice";
 import styles from "./ThanksModal.module.css";
 
 export const ThanksModal = () => {

@@ -1,7 +1,6 @@
 import React from "react";
-
-import styles from "./InputFilter.module.css";
 import { IInputDilterProps } from "./InputFilter.props";
+import styles from "./InputFilter.module.css";
 
 export const InputFilter: React.FC<IInputDilterProps> = ({
   placeholder,

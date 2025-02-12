@@ -1,9 +1,7 @@
 import React from "react";
-
 import cn from "classnames";
-
-import styles from "./Button.module.css";
 import { IButtonProps } from "./Button.props";
+import styles from "./Button.module.css";
 
 export const Button: React.FC<IButtonProps> = ({
   children,

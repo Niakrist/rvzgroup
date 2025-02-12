@@ -1,11 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import styles from "./DropDown.module.css";
-import { Icon } from "@/components";
 import cn from "classnames";
-import { IDropDownProps } from "./DropDown.props";
-import { IList } from "@/types/types";
+import { Icon } from "@/components";
 import { Checkbox } from "@/ui";
+import { IList } from "@/types/types";
+import { IDropDownProps } from "./DropDown.props";
+import styles from "./DropDown.module.css";
 
 export const DropDown: React.FC<IDropDownProps> = ({ list, setList, name }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);

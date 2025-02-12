@@ -1,9 +1,7 @@
 import React from "react";
-
-import styles from "./Price.module.css";
-import { IPriceProps } from "./Price.props";
-
 import cn from "classnames";
+import { IPriceProps } from "./Price.props";
+import styles from "./Price.module.css";
 
 export const Price: React.FC<IPriceProps> = ({
   product,

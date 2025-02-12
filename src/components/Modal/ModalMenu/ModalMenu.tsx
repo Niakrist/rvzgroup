@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Menu, Modal } from "@/components";
 import { useKeyPress } from "@/hooks/useKeayPress";
 import { toggleMenuModal } from "@/store/openModalSlice/openModalSlice";
 import { RootState } from "@/store/store";
-import { useDispatch, useSelector } from "react-redux";
 import styles from "./ModalMenu.module.css";
 
 export const ModalMenu = () => {

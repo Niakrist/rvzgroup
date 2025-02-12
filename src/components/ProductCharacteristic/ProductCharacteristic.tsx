@@ -1,9 +1,8 @@
 "use client";
 import React, { useState } from "react";
-
-import styles from "./ProductCharacteristic.module.css";
-import { CharacteristicList } from "@/components";
 import cn from "classnames";
+import { CharacteristicList } from "@/components";
+import styles from "./ProductCharacteristic.module.css";
 
 export const ProductCharacteristic = () => {
   const [isActiveButton, setIsActiveButton] = useState<string>("c");
@@ -18,8 +17,7 @@ export const ProductCharacteristic = () => {
                 onClick={() => setIsActiveButton("c")}
                 className={cn(styles.button, {
                   [styles.active]: isActiveButton === "c",
-                })}
-              >
+                })}>
                 Характеристики
               </button>
             </li>
@@ -28,8 +26,7 @@ export const ProductCharacteristic = () => {
                 onClick={() => setIsActiveButton("o")}
                 className={cn(styles.button, {
                   [styles.active]: isActiveButton === "o",
-                })}
-              >
+                })}>
                 Описание
               </button>
             </li>
@@ -38,8 +35,7 @@ export const ProductCharacteristic = () => {
                 onClick={() => setIsActiveButton("d")}
                 className={cn(styles.button, {
                   [styles.active]: isActiveButton === "d",
-                })}
-              >
+                })}>
                 Доставка и оплата
               </button>
             </li>

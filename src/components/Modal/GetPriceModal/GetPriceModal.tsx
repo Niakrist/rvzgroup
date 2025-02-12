@@ -1,12 +1,11 @@
 "use client";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Agreement, Button, Htag, InputText } from "@/ui";
+import { Modal } from "@/components";
 import { useKeyPress } from "@/hooks/useKeayPress";
 import { isGetPriceModal } from "@/store/openModalSlice/openModalSlice";
 import { RootState } from "@/store/store";
-import { Agreement, Button, Htag, InputText } from "@/ui";
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Modal } from "../Modal";
-
 import styles from "./GetPriceModal.module.css";
 
 export const GetPriceModal = () => {

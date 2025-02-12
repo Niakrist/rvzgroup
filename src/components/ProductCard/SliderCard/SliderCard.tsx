@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import styles from "./SliderCard.module.css";
 import cn from "classnames";
 import { ISliderCardProps } from "./SliderCard.props";
+import styles from "./SliderCard.module.css";
 
 export const SliderCard: React.FC<ISliderCardProps> = ({ product }) => {
   const [currentSlid, setCurrentSlide] = useState<string>(product.img);
@@ -23,8 +23,7 @@ export const SliderCard: React.FC<ISliderCardProps> = ({ product }) => {
             className={cn(styles.smallSlide, {
               [styles.active]: currentSlid === item,
             })}
-            onClick={() => handleChangeSlide(item)}
-          >
+            onClick={() => handleChangeSlide(item)}>
             <img className={styles.smallImg} src={`/${item}`} alt="" />
           </li>
         ))}

@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import cn from "classnames";
-import styles from "./Checkbox.module.css";
 import { Icon } from "@/components";
 import { ICheckboxProps } from "./Checkbox.props";
+import styles from "./Checkbox.module.css";
 
 export const Checkbox: React.FC<ICheckboxProps> = ({
   id,

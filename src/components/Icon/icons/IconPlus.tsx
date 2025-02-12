@@ -4,7 +4,7 @@ interface IIconPlusProps extends React.SVGProps<SVGSVGElement> {
   className?: string;
 }
 
-export const IconPlus: React.FC<IIconPlusProps> = ({ className }) => {
+const IconPlus: React.FC<IIconPlusProps> = ({ className }) => {
   return (
     <svg
       className={className}
@@ -12,8 +12,7 @@ export const IconPlus: React.FC<IIconPlusProps> = ({ className }) => {
       height="0"
       viewBox="0 0 18 17"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M1 8.5H17M9 16.5V0.5"
         stroke="currentColor"
@@ -23,3 +22,5 @@ export const IconPlus: React.FC<IIconPlusProps> = ({ className }) => {
     </svg>
   );
 };
+
+export default IconPlus;

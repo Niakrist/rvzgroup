@@ -1,13 +1,11 @@
 "use client";
 import React from "react";
-import styles from "./Products.module.css";
-import { IProduct } from "@/types/product";
-import { ProductItem } from "../ProductItem/ProductItem";
-import { PaginationList } from "../PaginationList/PaginationList";
-import { Icon } from "../Icon/Icon";
 import { useDispatch } from "react-redux";
+import { PaginationList, ProductItem, Icon } from "@/components";
 import { toggleOpenMobileFilter } from "@/store/openModalSlice/openModalSlice";
+import { IProduct } from "@/types/product";
 import { products } from "@/mockdata/mockdata";
+import styles from "./Products.module.css";
 
 const Products = () => {
   const dispatch = useDispatch();

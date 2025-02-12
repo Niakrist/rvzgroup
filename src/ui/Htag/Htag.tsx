@@ -1,8 +1,7 @@
 import React from "react";
+import cn from "classnames";
 import { IHtagProps } from "./Htag.props";
 import styles from "./Htag.module.css";
-
-import cn from "classnames";
 
 export const Htag: React.FC<IHtagProps> = ({
   children,
