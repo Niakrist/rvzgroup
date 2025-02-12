@@ -1,6 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useSelector, useDispatch } from "react-redux";
 import { Modal, Icon } from "@/components";
 import { RootState } from "@/store/store";
@@ -11,6 +12,9 @@ import styles from "./MenuBurger.module.css";
 export const MenuBurger = () => {
   const [isOpenMobileCatalog, setIsOpenMobileCatalog] =
     useState<boolean>(false);
+  const params = usePathname();
+
+  console.log("params:", params);
 
   const dispatch = useDispatch();
   const { isMenuBurger } = useSelector((state: RootState) => state.openModal);
@@ -19,6 +23,11 @@ export const MenuBurger = () => {
     dispatch(toggleMenuBurger(false));
     setIsOpenMobileCatalog(false);
   };
+
+  useEffect(() => {
+    dispatch(toggleMenuBurger(false));
+    setIsOpenMobileCatalog(false);
+  }, [params]);
 
   if (!isMenuBurger) {
     return null;
