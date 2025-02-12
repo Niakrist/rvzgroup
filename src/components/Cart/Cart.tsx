@@ -1,4 +1,4 @@
-"use cliient";
+"use client";
 import React from "react";
 import { CartList, CartOrder } from "@/components";
 import styles from "./Cart.module.css";

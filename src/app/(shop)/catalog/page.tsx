@@ -1,5 +1,6 @@
-import { CatalogNavBar, SideBar } from "@/components";
+import { CatalogNavBar } from "@/components";
 import Products from "@/components/Products/Products";
+import { SideBar } from "@/components/SideBar/SideBar";
 import { Metadata } from "next";
 import React from "react";
 import styles from "./CatalogPage.module.css";

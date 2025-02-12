@@ -40,3 +40,7 @@ export * from "./Footer/FooterUp/FooterUp";
 export * from "./Footer/FooterDown/FooterDown";
 export * from "./PaginationList/PaginationList";
 export * from "./Menu/MenuBurger/MenuBurger";
+export * from "./About/RvzGroup/RvzGroup";
+export * from "./About/RvzValue/RvzValue";
+export * from "./About/RvzMission/RvzMission";
+export * from "./About/RvzVision/RvzVision";

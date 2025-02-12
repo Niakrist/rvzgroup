@@ -1,0 +1,47 @@
+.section {
+  padding: 50px 0;
+  background-color: var(--grey1);
+}
+
+.container {
+  max-width: 1304px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 515px;
+  background-color: var(--white);
+  column-gap: 30px;
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.mb {
+  margin-bottom: 14px;
+}
+
+.item {
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.item::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--blue);
+  border-radius: 100%;
+}
+
+.img {
+  border-radius: 8px;
+  padding: 10px;
+  width: 515px;
+  height: 334px;
+  object-fit: contain;
+}
