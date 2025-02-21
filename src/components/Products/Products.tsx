@@ -1,18 +1,27 @@
 "use client";
-import React from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { PaginationList, ProductItem, Icon } from "@/components";
 import { toggleOpenMobileFilter } from "@/store/openModalSlice/openModalSlice";
 import { IProduct } from "@/types/product";
 import { products } from "@/mockdata/mockdata";
 import styles from "./Products.module.css";
+import { fetchBearingList } from "@/store/bearingsSlice/bearingsSlice";
+import { RootState } from "@/store/store";
 
 const Products = () => {
   const dispatch = useDispatch();
+  const { bearingList } = useSelector((state: RootState) => state.bearingList);
 
   const handleToggle = () => {
     dispatch(toggleOpenMobileFilter(true));
   };
+
+  useEffect(() => {
+    dispatch(fetchBearingList());
+  }, []);
+
+  console.log("bearingList: ", bearingList);
 
   return (
     <div className={styles.wrapper}>
