@@ -1,15 +1,22 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import {
+  createAsyncThunk,
+  createSlice,
+  SerializedError,
+} from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
+import { IBearing } from "@/types/types";
 
 interface IBearingListState {
   isLoadingBearingList: boolean;
-  bearingList: [];
-  errorBearingList: object | null;
+  bearingList: IBearing[];
+  count: number;
+  errorBearingList: SerializedError | null;
 }
 
 const initialState: IBearingListState = {
   isLoadingBearingList: false,
   bearingList: [],
+  count: 0,
   errorBearingList: null,
 };
 
@@ -34,7 +41,8 @@ const bearingsSlice = createSlice({
       })
       .addCase(fetchBearingList.fulfilled, (state, action) => {
         state.isLoadingBearingList = false;
-        state.bearingList = action.payload;
+        state.bearingList = action.payload.rows;
+        state.count = action.payload.const;
       })
       .addCase(fetchBearingList.rejected, (state, action) => {
         state.isLoadingBearingList = false;
