@@ -3,7 +3,6 @@ import {
   createSlice,
   SerializedError,
 } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
 import { IBearing } from "@/types/types";
 
 interface IBearingListState {
@@ -20,7 +19,7 @@ const initialState: IBearingListState = {
   errorBearingList: null,
 };
 
-export const fetchBearingList = createAsyncThunk(
+export const fetchBearingList = createAsyncThunk<IBearing[], void>(
   "bearingList/fetchBearingList",
   async () => {
     const response = await fetch("http://localhost:4000/api/v1/bearing");

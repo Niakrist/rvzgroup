@@ -1,16 +1,15 @@
 "use client";
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { PaginationList, ProductItem, Icon } from "@/components";
 import { toggleOpenMobileFilter } from "@/store/openModalSlice/openModalSlice";
-import { IProduct } from "@/types/product";
-import { products } from "@/mockdata/mockdata";
 import styles from "./Products.module.css";
 import { fetchBearingList } from "@/store/bearingsSlice/bearingsSlice";
-import { RootState } from "@/store/store";
+import { RootState, useAppDispatch } from "@/store/store";
+import { IBearing } from "@/types/types";
 
 const Products = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { bearingList } = useSelector((state: RootState) => state.bearingList);
 
   const handleToggle = () => {
@@ -31,8 +30,8 @@ const Products = () => {
         <Icon name="iconArrow" className={styles.iconArrow} />
       </button>
       <ul className={styles.list}>
-        {products.map((product: IProduct) => (
-          <li key={product.article}>
+        {bearingList.map((product: IBearing) => (
+          <li key={product.id}>
             <ProductItem product={product} />
           </li>
         ))}

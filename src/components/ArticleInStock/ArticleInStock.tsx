@@ -7,7 +7,9 @@ export const ArticleInStock: React.FC<IArticleInStockProps> = ({ product }) => {
   return (
     <div className={styles.info}>
       <BadgeInStock product={product} />
-      <div className={styles.article}>Артикул: {product.article}</div>
+      <div className={styles.article}>
+        Артикул: {product.id1cRvz || product.id1c || "n/a"}
+      </div>
     </div>
   );
 };

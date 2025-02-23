@@ -1,7 +1,7 @@
-import { IProduct } from "@/types/product";
+import { IBearing } from "@/types/types";
 
 export interface IPriceProps {
-  product: IProduct;
+  product: IBearing;
   fontSize: "fs16" | "fs18";
   className?: string;
 }

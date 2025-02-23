@@ -11,7 +11,7 @@ interface ICategoryProps {
 
 export const CategoryItem: React.FC<ICategoryProps> = ({ category }) => {
   return (
-    <Link className={styles.link} href={category.path}>
+    <Link className={styles.link} href={`/catalog/${category.path}`}>
       <div className={styles.imgWrapper}>
         <img className={styles.img} src={category.img} alt="" />
       </div>

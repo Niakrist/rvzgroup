@@ -1,5 +1,5 @@
-import { IProduct } from "@/types/product";
+import { IBearing } from "@/types/types";
 
 export interface IArticleInStockProps {
-  product: IProduct;
+  product: IBearing;
 }

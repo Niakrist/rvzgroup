@@ -6,11 +6,11 @@ import { ArticleInStock, Price } from "@/components";
 import { Button } from "@/ui";
 import { RootState } from "@/store/store";
 import { toggleThanksModal } from "@/store/openModalSlice/openModalSlice";
-import { IProduct } from "@/types/product";
 import styles from "./ProductItem.module.css";
+import { IBearing } from "@/types/types";
 
 interface IProductItemProps {
-  product: IProduct;
+  product: IBearing;
 }
 
 export const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
@@ -25,11 +25,15 @@ export const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
   return (
     <article className={styles.card}>
       <div className={styles.imgWrapper}>
-        <img className={styles.img} src={`/${product.img}`} alt="" />
+        <img
+          className={styles.img}
+          src={`http://localhost:4000/${product.images}`}
+          alt=""
+        />
       </div>
       <ArticleInStock product={product} />
       <Link className={styles.link} href="/catalog/product">
-        {product.name}
+        Подшипник {product.name}
       </Link>
       <Price product={product} fontSize="fs16" className={styles.price} />
       <Button className={styles.btn} color="blue" size="big">
