@@ -7,7 +7,7 @@ import { IBearing } from "@/types/types";
 
 interface IBearingListState {
   isLoadingBearingList: boolean;
-  bearingList: IBearing[];
+  bearingList: IBearing[] | [];
   count: number;
   errorBearingList: SerializedError | null;
 }
@@ -19,7 +19,7 @@ const initialState: IBearingListState = {
   errorBearingList: null,
 };
 
-export const fetchBearingList = createAsyncThunk<IBearing[], void>(
+export const fetchBearingList = createAsyncThunk(
   "bearingList/fetchBearingList",
   async () => {
     const response = await fetch("http://localhost:4000/api/v1/bearing");
@@ -41,7 +41,7 @@ const bearingsSlice = createSlice({
       .addCase(fetchBearingList.fulfilled, (state, action) => {
         state.isLoadingBearingList = false;
         state.bearingList = action.payload.rows;
-        state.count = action.payload.const;
+        state.count = action.payload.count;
       })
       .addCase(fetchBearingList.rejected, (state, action) => {
         state.isLoadingBearingList = false;
