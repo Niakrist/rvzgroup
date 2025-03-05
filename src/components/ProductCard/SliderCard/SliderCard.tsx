@@ -5,18 +5,24 @@ import { ISliderCardProps } from "./SliderCard.props";
 import styles from "./SliderCard.module.css";
 
 export const SliderCard: React.FC<ISliderCardProps> = ({ product }) => {
-  const [currentSlid, setCurrentSlide] = useState<string>(product.img);
+  console.log("product: ", product);
 
-  const handleChangeSlide = (slide: string) => {
-    setCurrentSlide(slide);
-  };
+  // const [currentSlid, setCurrentSlide] = useState<string>(product.images);
+
+  // const handleChangeSlide = (slide: string) => {
+  //   setCurrentSlide(slide);
+  // };
 
   return (
     <div className={styles.slider}>
       <div className={styles.slide}>
-        <img className={styles.bigImg} src={`/${currentSlid}`} alt="" />
+        <img
+          className={styles.bigImg}
+          src={`http://localhost:4000/${product?.images}`}
+          alt=""
+        />
       </div>
-      <ul className={styles.smallSlider}>
+      {/* <ul className={styles.smallSlider}>
         {product.images?.map((item) => (
           <li
             key={item}
@@ -27,7 +33,7 @@ export const SliderCard: React.FC<ISliderCardProps> = ({ product }) => {
             <img className={styles.smallImg} src={`/${item}`} alt="" />
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 };

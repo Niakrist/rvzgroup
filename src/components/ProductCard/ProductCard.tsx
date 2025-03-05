@@ -1,30 +1,38 @@
 "use client";
 import React, { useEffect } from "react";
-import { useRouter } from "next/router";
-import { InfoCard, SliderCard } from "@/components";
-import { products } from "@/mockdata/mockdata";
-import { IProduct } from "@/types/product";
-import styles from "./ProductCard.module.css";
-import { useAppDispatch } from "@/store/store";
-import { fetchBbearingItem } from "@/store/bearingItemSlice/bearingItemSlice";
 
-export const ProductCard = () => {
-  const product: IProduct = products[0];
+import styles from "./ProductCard.module.css";
+import { SliderCard } from "./SliderCard/SliderCard";
+import { InfoCard } from "./InfoCard/InfoCard";
+import { RootState, useAppDispatch } from "@/store/store";
+import { fetchBbearingItem } from "@/store/bearingItemSlice/bearingItemSlice";
+import { useSelector } from "react-redux";
+import { notFound } from "next/navigation";
+
+interface IProductCardProps {
+  url: string;
+}
+
+export const ProductCard: React.FC<IProductCardProps> = ({ url }) => {
+  const { bearingItem, errorBearingItem, loadingBearingItem } = useSelector(
+    (state: RootState) => state.bearingItem
+  );
 
   const dispatch = useAppDispatch();
-  const router = useRouter();
-
-  console.log("!!!: ", router.query.slug);
 
   useEffect(() => {
-    dispatch(fetchBbearingItem());
-  }, []);
+    dispatch(fetchBbearingItem(url));
+  }, [dispatch, url]);
+
+  console.log("bearingItem:", bearingItem);
+
+  if (loadingBearingItem || !bearingItem) return <div>Загрузка</div>;
 
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <SliderCard product={product} />
-        <InfoCard product={product} />
+        <SliderCard product={bearingItem} />
+        <InfoCard product={bearingItem} />
       </div>
     </section>
   );

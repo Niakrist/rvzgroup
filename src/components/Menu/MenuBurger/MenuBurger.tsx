@@ -14,8 +14,6 @@ export const MenuBurger = () => {
     useState<boolean>(false);
   const params = usePathname();
 
-  console.log("params:", params);
-
   const dispatch = useDispatch();
   const { isMenuBurger } = useSelector((state: RootState) => state.openModal);
 

@@ -11,7 +11,7 @@ export const Advantage = () => {
           <li className={styles.item}>
             <img
               className={styles.img}
-              src="./icons/brand.png"
+              src="/icons/brand.png"
               alt="Бренд РВЗ"
             />
             <div>
@@ -25,7 +25,7 @@ export const Advantage = () => {
           <li className={styles.item}>
             <img
               className={styles.img}
-              src="./icons/factory.png"
+              src="/icons/factory.png"
               alt="Производство"
             />
             <div>
@@ -40,7 +40,7 @@ export const Advantage = () => {
           <li className={styles.item}>
             <img
               className={styles.img}
-              src="./icons/gost.png"
+              src="/icons/gost.png"
               alt="ГОСТ 520-2011"
             />
             <div>
@@ -54,7 +54,7 @@ export const Advantage = () => {
           <li className={styles.item}>
             <img
               className={styles.img}
-              src="./icons/certificate.png"
+              src="/icons/certificate.png"
               alt="Сертификаты и паспорта"
             />
             <div>
@@ -68,7 +68,7 @@ export const Advantage = () => {
           <li className={styles.item}>
             <img
               className={styles.img}
-              src="./icons/warehouse.png"
+              src="/icons/warehouse.png"
               alt="Большой склад"
             />
             <div>
@@ -81,7 +81,7 @@ export const Advantage = () => {
           <li className={styles.item}>
             <img
               className={styles.img}
-              src="./icons/assortment.png"
+              src="/icons/assortment.png"
               alt="Ассортимент"
             />
             <div>
@@ -96,7 +96,7 @@ export const Advantage = () => {
           <li className={styles.item}>
             <img
               className={styles.img}
-              src="./icons/conditions.png"
+              src="/icons/conditions.png"
               alt="Индивидуальные условия"
             />
             <div>
@@ -110,7 +110,7 @@ export const Advantage = () => {
           <li className={styles.item}>
             <img
               className={styles.img}
-              src="./icons/expert.png"
+              src="/icons/expert.png"
               alt="Экспертность"
             />
             <div>
@@ -124,7 +124,7 @@ export const Advantage = () => {
           <li className={styles.item}>
             <img
               className={styles.img}
-              src="./icons/service.png"
+              src="/icons/service.png"
               alt="Высокий уровень сервиса"
             />
             <div>

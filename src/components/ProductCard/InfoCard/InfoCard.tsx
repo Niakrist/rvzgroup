@@ -32,7 +32,7 @@ export const InfoCard: React.FC<IInfoCardProps> = ({ product }) => {
 
   return (
     <div className={styles.content}>
-      <Htag size="medium">{product.name}</Htag>
+      <Htag size="medium">Пошипник {product.name}</Htag>
       <ArticleInStock product={product} />
       <Price fontSize="fs18" product={product} />
       <CharacteristicList />

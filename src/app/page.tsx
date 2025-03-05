@@ -13,7 +13,7 @@ export default function Home() {
     <main>
       <PromoSlider />
       <CategoryBlock />
-      <PopularProduct />
+      {/* <PopularProduct /> */}
       <Advantage />
       <AboutCompany />
       <WeWork />

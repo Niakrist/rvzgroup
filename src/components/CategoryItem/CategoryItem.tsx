@@ -13,7 +13,7 @@ export const CategoryItem: React.FC<ICategoryProps> = ({ category }) => {
   return (
     <Link className={styles.link} href={`/catalog/${category.path}`}>
       <div className={styles.imgWrapper}>
-        <img className={styles.img} src={category.img} alt="" />
+        <img className={styles.img} src={`/${category.img}`} alt="" />
       </div>
 
       <div className={styles.wrapper}>

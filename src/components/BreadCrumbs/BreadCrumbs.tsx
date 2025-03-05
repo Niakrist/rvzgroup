@@ -12,7 +12,6 @@ export const BreadCrumbs: React.FC = () => {
     (page) => page.path === params
   );
 
-  console.log("params: ", params);
   return (
     <section className={styles.section}>
       <ul className={styles.container}>

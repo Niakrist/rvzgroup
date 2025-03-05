@@ -5,6 +5,7 @@ import {
 } from "@/components";
 
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import React from "react";
 
 export const metadata: Metadata = {
@@ -12,10 +13,16 @@ export const metadata: Metadata = {
   description: "Описание подшипника 6205",
 };
 
-export default function ProductPage() {
+interface IProductPageProps {
+  params: Promise<{ url: string }>;
+}
+
+export default async function ProductPage({ params }: IProductPageProps) {
+  const { url } = await params;
+
   return (
     <>
-      <ProductCard />
+      <ProductCard url={url} />
       <ProductCharacteristic />
       <PopularProduct />
     </>

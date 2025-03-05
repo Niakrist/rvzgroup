@@ -5,7 +5,7 @@ export interface IProduct {
   price: number;
   article: string;
   img: string;
-  images?: string[];
+  images?: string[] | string;
   characteristic?: { key: string; value: string | number }[];
   inStock: boolean;
   stock: number;

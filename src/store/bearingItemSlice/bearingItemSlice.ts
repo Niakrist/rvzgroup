@@ -7,19 +7,19 @@ import {
 
 interface IBearingItemSlice {
   loadingBearingItem: boolean;
-  bearingItem: object | IBearing;
+  bearingItem: null | IBearing;
   errorBearingItem: SerializedError | null;
 }
 
 const initialState: IBearingItemSlice = {
   loadingBearingItem: false,
-  bearingItem: {},
+  bearingItem: null,
   errorBearingItem: null,
 };
 
 export const fetchBbearingItem = createAsyncThunk(
   "bearingItem/fetchBbearingItem",
-  async (url) => {
+  async (url: string) => {
     const response = await fetch(`http://localhost:4000/api/v1/bearing/${url}`);
     const data = await response.json();
     return data;
