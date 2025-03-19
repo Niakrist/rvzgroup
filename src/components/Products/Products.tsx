@@ -8,19 +8,19 @@ import { fetchBearingList } from "@/store/bearingsSlice/bearingsSlice";
 import { RootState, useAppDispatch } from "@/store/store";
 import { IBearing } from "@/types/types";
 
-const Products = () => {
+const Products = ({ bearingList }) => {
   const dispatch = useAppDispatch();
-  const { bearingList } = useSelector((state: RootState) => state.bearingList);
+  // const { bearingList } = useSelector((state: RootState) => state.bearingList);
 
   const handleToggle = () => {
     dispatch(toggleOpenMobileFilter(true));
   };
 
-  useEffect(() => {
-    dispatch(fetchBearingList());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(fetchBearingList());
+  // }, []);
 
-  console.log("bearingList: ", bearingList);
+  // console.log("bearingList: ", bearingList);
 
   return (
     <div className={styles.wrapper}>

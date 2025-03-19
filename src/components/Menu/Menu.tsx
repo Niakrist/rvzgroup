@@ -51,7 +51,7 @@ export const Menu = () => {
         <div className={styles.activeItem}>
           <img
             className={styles.images}
-            src={`./icons/${activeItem?.img}`}
+            src={`/icons/${activeItem?.img}`}
             alt=""
           />{" "}
           {activeItem?.name}
@@ -66,7 +66,9 @@ export const Menu = () => {
                   <ul>
                     {el.categories?.map((item) => (
                       <li className={styles.elItem} key={item.url}>
-                        <Link className={styles.sublink} href={item.url}>
+                        <Link
+                          className={styles.sublink}
+                          href={`/catalog/${item.url}`}>
                           {item.name}
                         </Link>
                       </li>

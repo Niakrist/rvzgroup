@@ -32,7 +32,7 @@ export const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
         />
       </div>
       <ArticleInStock product={product} />
-      <Link className={styles.link} href={`/catalog/product/${product.url}`}>
+      <Link className={styles.link} href={`/product/${product.url}`}>
         Подшипник {product.name}
       </Link>
       <Price product={product} fontSize="fs16" className={styles.price} />

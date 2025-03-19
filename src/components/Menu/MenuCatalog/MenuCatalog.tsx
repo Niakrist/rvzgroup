@@ -23,10 +23,10 @@ export const MenuCatalog: React.FC<IMenuCatalogProps> = ({
               className={cn(styles.link, {
                 [styles.active]: activeUrl === item.url,
               })}
-              href={`.${item.url}`}>
+              href={`/catalog${item.url}`}>
               <img
                 className={styles.images}
-                src={`./icons/${item.img}`}
+                src={`/icons/${item.img}`}
                 alt=""
               />{" "}
               {item.name}
