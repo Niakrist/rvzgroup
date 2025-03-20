@@ -48,7 +48,9 @@ export const MenuBurger = () => {
             <ul className={styles.listCatalog}>
               {menuCatalogList.map((item) => (
                 <li key={item.url}>
-                  <Link className={styles.linkCatalog} href={`.${item.url}`}>
+                  <Link
+                    className={styles.linkCatalog}
+                    href={`/catalog/${item.url}`}>
                     <img
                       className={styles.images}
                       src={`./icons/${item.img}`}

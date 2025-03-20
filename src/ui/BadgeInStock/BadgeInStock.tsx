@@ -6,7 +6,7 @@ export const BadgeInStock: React.FC<IBadgeInStockProps> = ({ product }) => {
   return (
     <div className={styles.inStock}>
       <span className={product.quantity ? styles.green : styles.orange} />
-      <span>{product.quantity ? "В наличие" : "Под заказ 1-3 дня"}</span>
+      <span>{product.quantity ? "В наличие" : "Под заказ"}</span>
     </div>
   );
 };

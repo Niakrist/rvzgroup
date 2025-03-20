@@ -1,3 +1,5 @@
+import { IBearing } from "./bearing";
+
 export interface IProduct {
   name: string;
   title: string;
@@ -9,4 +11,9 @@ export interface IProduct {
   characteristic?: { key: string; value: string | number }[];
   inStock: boolean;
   stock: number;
+}
+
+export interface IBearinData {
+  counter: number;
+  rows: IBearing[];
 }

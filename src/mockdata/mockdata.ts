@@ -6,8 +6,8 @@ export const categoryList: ICategory[] = [
   { path: "sharikovye", name: "Шариковые", img: "ball-bearings.jpg" },
   { path: "rolikovye", name: "Роликовые", img: "roller-bearings.jpg" },
   { path: "igolchatye", name: "Игольчатые", img: "needle-shaped.jpg" },
-  { path: "sharnirnyye", name: "Шарнирные", img: "articulated.jpg" },
-  { path: "korpusnye-suzly", name: "Корпусные", img: "housing.jpg" },
+  { path: "sharnirnye", name: "Шарнирные", img: "articulated.jpg" },
+  { path: "korpusnye-uzly", name: "Корпусные", img: "housing.jpg" },
   {
     path: "razemnye-korpusa",
     name: "Разъёмные корпуса",

@@ -24,13 +24,13 @@ export const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
 
   return (
     <article className={styles.card}>
-      <div className={styles.imgWrapper}>
+      <Link href={`/product/${product.url}`} className={styles.imgWrapper}>
         <img
           className={styles.img}
           src={`http://localhost:4000/${product.images}`}
           alt=""
         />
-      </div>
+      </Link>
       <ArticleInStock product={product} />
       <Link className={styles.link} href={`/product/${product.url}`}>
         Подшипник {product.name}
