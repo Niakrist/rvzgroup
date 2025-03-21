@@ -4,11 +4,28 @@
   column-gap: 10px;
   border-radius: 8px;
   padding: 6px 14px;
+}
+
+.medium {
+  width: 120px;
+  height: 40px;
+}
+
+.large {
+  width: 150px;
+  height: 45px;
+}
+
+.grey {
   background-color: var(--grey1);
 }
 
+.white {
+  background-color: var(--white);
+}
+
 .input {
-  width: 60px;
+  width: 100%;
   text-align: center;
   border: none;
 

@@ -1,5 +1,4 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 import {
   ArticleInStock,
   Price,
@@ -11,25 +10,6 @@ import { IInfoCardProps } from "./InfoCard.props";
 import styles from "./InfoCard.module.css";
 
 export const InfoCard: React.FC<IInfoCardProps> = ({ product }) => {
-  const [quantity, setQuantity] = useState<number>(1);
-
-  const handleChangeQuantity = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    if (/^\d+$/.test(value)) {
-      const parsedValue = parseInt(value, 10);
-      setQuantity(parsedValue);
-    }
-  };
-
-  const handleIncrement = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1);
-  };
-  const handleDecrement = () => {
-    if (quantity > 1) {
-      setQuantity((prevQuantity) => prevQuantity - 1);
-    }
-  };
-
   return (
     <div className={styles.content}>
       <Htag size="medium">Пошипник {product.name}</Htag>
@@ -37,12 +17,7 @@ export const InfoCard: React.FC<IInfoCardProps> = ({ product }) => {
       <Price fontSize="fs18" product={product} />
       <CharacteristicList />
       <div className={styles.buttonsGroup}>
-        <CounterQuantity
-          quantity={quantity}
-          handleChangeQuantity={handleChangeQuantity}
-          handleDecrement={handleDecrement}
-          handleIncrement={handleIncrement}
-        />
+        <CounterQuantity size="large" bgColor="grey" />
         <Button className={styles.buttonBlue} color="blue">
           В корзину
         </Button>

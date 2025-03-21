@@ -5,23 +5,6 @@ import React, { useState } from "react";
 import styles from "./CartList.module.css";
 
 export const CartList = () => {
-  const [quantity, setQuantity] = useState<number>(1);
-  const handleChangeQuantity = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    if (/^\d+$/.test(value)) {
-      const parsedValue = parseInt(value, 10);
-      setQuantity(parsedValue);
-    }
-  };
-
-  const handleIncrement = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1);
-  };
-  const handleDecrement = () => {
-    if (quantity > 1) {
-      setQuantity((prevQuantity) => prevQuantity - 1);
-    }
-  };
   return (
     <section>
       <ul className={styles.list}>
@@ -35,13 +18,7 @@ export const CartList = () => {
               </div>
             </div>
             <div className={styles.priceInfo}>
-              <CounterQuantity
-                quantity={quantity}
-                handleIncrement={handleIncrement}
-                handleDecrement={handleDecrement}
-                handleChangeQuantity={handleChangeQuantity}
-              />
-
+              <CounterQuantity size="large" bgColor="grey" />
               <div className={item.price ? styles.price : styles.zakaz}>
                 {!!item.price ? item.price + " ₽/шт." : "Под заказ"}
               </div>

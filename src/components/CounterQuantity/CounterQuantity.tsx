@@ -1,16 +1,36 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { Icon } from "@/components";
 import { ICounterQuantityProps } from "./CounterQuantity.props";
+import cn from "classnames";
 import styles from "./CounterQuantity.module.css";
 
-export const CounterQuantity: React.FC<ICounterQuantityProps> = ({
-  quantity,
-  handleDecrement,
-  handleChangeQuantity,
-  handleIncrement,
-}) => {
+export const CounterQuantity = ({
+  size,
+  bgColor,
+}: ICounterQuantityProps): React.JSX.Element => {
+  const [quantity, setQuantity] = useState<number>(1);
+
+  const handleChangeQuantity = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    if (/^\d+$/.test(value)) {
+      const parsedValue = parseInt(value, 10);
+      setQuantity(parsedValue);
+    }
+  };
+
+  const handleIncrement = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  const handleDecrement = () => {
+    if (quantity > 1) {
+      setQuantity((prevQuantity) => prevQuantity - 1);
+    }
+  };
+
   return (
-    <div className={styles.counterQuantity}>
+    <div className={cn(styles.counterQuantity, styles[bgColor], styles[size])}>
       <button className={styles.button} onClick={handleDecrement}>
         <Icon name="iconMinus" className={styles.iconMinus} />
       </button>

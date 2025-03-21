@@ -22,6 +22,10 @@ export const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
     dispatch(toggleThanksModal(!isThanksModal));
   };
 
+  const addInCart = (id: number) => {
+    console.log("id: ", id);
+  };
+
   return (
     <article className={styles.card}>
       <Link href={`/product/${product.url}`} className={styles.imgWrapper}>
@@ -36,7 +40,11 @@ export const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
         Подшипник {product.name}
       </Link>
       <Price product={product} fontSize="fs16" className={styles.price} />
-      <Button className={styles.btn} color="blue" size="big">
+      <Button
+        onClick={() => addInCart(product.id)}
+        className={styles.btn}
+        color="blue"
+        size="big">
         В корзину
       </Button>
       <Button onClick={handleGetCP} color="border" size="big">
