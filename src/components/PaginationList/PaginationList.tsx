@@ -2,15 +2,19 @@
 import React, { useState } from "react";
 import cn from "classnames";
 import styles from "./PaginationList.module.css";
-import { usePathname } from "next/navigation";
+import Link from "next/link";
 
-const pages = [1, 2, 3, 4, 5, 15];
+interface IPaginationListProps {
+  count: number;
+}
 
-export const PaginationList = () => {
+export const PaginationList = ({
+  count,
+}: IPaginationListProps): React.JSX.Element => {
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const limit = 16;
 
-  const path = usePathname();
-  console.log("path: ", path);
+  const totalPage = Math.ceil(count / limit);
 
   const handleChangePage = (p: number) => {
     setCurrentPage(p);
@@ -18,17 +22,32 @@ export const PaginationList = () => {
 
   return (
     <ul className={styles.list}>
-      {pages.map((page) => (
+      <li>
+        <Link
+          onClick={() => handleChangePage(1)}
+          className={styles.btn}
+          href={`?page=${1}`}>
+          {"<"}
+        </Link>
+      </li>
+      {Array.from({ length: totalPage }, (_, i) => i + 1).map((page) => (
         <li key={page}>
-          <button
+          <Link
             onClick={() => handleChangePage(page)}
             className={cn(styles.btn, {
               [styles.active]: page === currentPage,
-            })}>
+            })}
+            href={`?page=${page}`}>
             {page}
-          </button>
+          </Link>
         </li>
       ))}
+      <Link
+        onClick={() => handleChangePage(totalPage)}
+        className={styles.btn}
+        href={`?page=${totalPage}`}>
+        {">"}
+      </Link>
     </ul>
   );
 };

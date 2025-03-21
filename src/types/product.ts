@@ -14,6 +14,6 @@ export interface IProduct {
 }
 
 export interface IBearinData {
-  counter: number;
+  count: number;
   rows: IBearing[];
 }

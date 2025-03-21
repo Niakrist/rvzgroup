@@ -5,6 +5,7 @@ import React from "react";
 
 interface ICategoryPageProps {
   params: Promise<{ category: string }>;
+  searchParams: Promise<{ page: string }>;
 }
 
 type UrlPaths = {
@@ -23,13 +24,20 @@ type ParamsToSend = {
   formaId?: string;
   standartId?: string;
   openId?: string;
+  page?: string;
 };
 
-export default async function CategoryPage({ params }: ICategoryPageProps) {
+export default async function CategoryPage({
+  params,
+  searchParams,
+}: ICategoryPageProps) {
   const { category } = await params;
   if (!category) {
     notFound();
   }
+
+  const { page } = await searchParams;
+  console.log("page: ", page);
 
   const urlPaths: UrlPaths = {
     bodyId: {
@@ -72,7 +80,7 @@ export default async function CategoryPage({ params }: ICategoryPageProps) {
   const regex = /(?<!radialno|razemnye|korpusnye|zakrytye)-/;
   const categories = category.split(regex);
   const paramsToSend: ParamsToSend = {};
-
+  let allPartsFound = true;
   for (const cat of categories) {
     if (urlPaths.bodyId[cat]) {
       paramsToSend.bodyId = urlPaths.bodyId[cat];
@@ -86,7 +94,17 @@ export default async function CategoryPage({ params }: ICategoryPageProps) {
       paramsToSend.standartId = urlPaths.standartId[cat];
     } else if (urlPaths.openId[cat]) {
       paramsToSend.openId = urlPaths.openId[cat];
+    } else {
+      allPartsFound = false;
     }
+  }
+
+  if (!allPartsFound) {
+    return notFound();
+  }
+
+  if (page) {
+    paramsToSend.page = page;
   }
 
   const products = await getCategories(paramsToSend);
@@ -94,7 +112,7 @@ export default async function CategoryPage({ params }: ICategoryPageProps) {
 
   return (
     <>
-      <Products bearingList={products.rows} />
+      <Products bearingList={products.rows} count={products.count} />
     </>
   );
 }

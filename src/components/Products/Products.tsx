@@ -9,10 +9,13 @@ import { useAppDispatch } from "@/store/store";
 
 interface IProductsProps {
   bearingList: IBearing[];
+  count?: number;
 }
 
-const Products = ({ bearingList }: IProductsProps) => {
+const Products = ({ bearingList, count }: IProductsProps) => {
   const dispatch = useAppDispatch();
+
+  console.log("count:", count);
 
   const handleToggle = () => {
     dispatch(toggleOpenMobileFilter(true));
@@ -32,7 +35,7 @@ const Products = ({ bearingList }: IProductsProps) => {
           </li>
         ))}
       </ul>
-      <PaginationList />
+      {count && count > 16 && <PaginationList count={count} />}
     </div>
   );
 };
