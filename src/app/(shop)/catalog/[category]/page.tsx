@@ -36,8 +36,8 @@ export default async function CategoryPage({
     notFound();
   }
 
-  const { page } = await searchParams;
-  console.log("page: ", page);
+  const { page, standartId, bodyId, loadId, rowId, formaId, openId } =
+    await searchParams;
 
   const urlPaths: UrlPaths = {
     bodyId: {
@@ -105,6 +105,25 @@ export default async function CategoryPage({
 
   if (page) {
     paramsToSend.page = page;
+  }
+  if (standartId) {
+    console.log(standartId); // 1|2
+    paramsToSend.standartId = standartId;
+  }
+  if (bodyId) {
+    paramsToSend.bodyId = bodyId;
+  }
+  if (loadId) {
+    paramsToSend.loadId = loadId;
+  }
+  if (rowId) {
+    paramsToSend.rowId = rowId;
+  }
+  if (formaId) {
+    paramsToSend.formaId = formaId;
+  }
+  if (openId) {
+    paramsToSend.openId = openId;
   }
 
   const products = await getCategories(paramsToSend);

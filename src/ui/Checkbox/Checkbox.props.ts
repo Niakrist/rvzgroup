@@ -6,7 +6,7 @@ export interface ICheckboxProps
     HTMLInputElement
   > {
   id: string;
-  isCheck: boolean;
+  isCheck?: boolean;
   children: React.ReactNode;
   handleCheck: (id: string) => void;
 }

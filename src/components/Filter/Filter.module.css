@@ -3,20 +3,6 @@
   flex-direction: column;
   row-gap: 8px;
 }
-.wrapper {
-  display: flex;
-  align-items: center;
-  column-gap: 8px;
-  /* margin-bottom: 18px; */
-}
-
-.line {
-  display: inline-block;
-  border-radius: 10000px;
-  width: 18px;
-  height: 1px;
-  background-color: var(--grey3);
-}
 
 .range {
   margin-top: 18px;

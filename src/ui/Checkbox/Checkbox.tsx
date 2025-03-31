@@ -11,6 +11,8 @@ export const Checkbox: React.FC<ICheckboxProps> = ({
   children,
   handleCheck,
 }) => {
+  console.log("isCheck: ", isCheck);
+
   return (
     <>
       <input

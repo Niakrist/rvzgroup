@@ -44,3 +44,4 @@ export * from "./About/RvzGroup/RvzGroup";
 export * from "./About/RvzValue/RvzValue";
 export * from "./About/RvzMission/RvzMission";
 export * from "./About/RvzVision/RvzVision";
+export * from "./Filter/InnerDiameter/InnerDiameter";

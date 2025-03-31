@@ -3,12 +3,14 @@ import bearingsSlice from "./bearingsSlice/bearingsSlice";
 import openModalSlice from "./openModalSlice/openModalSlice";
 import { useDispatch } from "react-redux";
 import bearingItemSlice from "./bearingItemSlice/bearingItemSlice";
+import filterSlice from "./filterSlice/filterSlice";
 
 export const store = configureStore({
   reducer: {
     openModal: openModalSlice,
     bearingList: bearingsSlice,
     bearingItem: bearingItemSlice,
+    filters: filterSlice,
   },
 });
 

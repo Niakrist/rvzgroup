@@ -1,8 +1,8 @@
-import { IList } from "@/types/types";
-import React from "react";
+import { IFilterDropsownList } from "@/types/filters.interface";
+import { IQueryParams } from "@/types/queryParams.interface";
 
 export interface IDropDownProps {
-  list: IList[];
-  setList: React.Dispatch<React.SetStateAction<IList[]>>;
+  list: IFilterDropsownList[];
   name: string;
+  filter: keyof IQueryParams;
 }

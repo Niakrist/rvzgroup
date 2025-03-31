@@ -15,8 +15,6 @@ interface IProductsProps {
 const Products = ({ bearingList, count }: IProductsProps) => {
   const dispatch = useAppDispatch();
 
-  console.log("count:", count);
-
   const handleToggle = () => {
     dispatch(toggleOpenMobileFilter(true));
   };
