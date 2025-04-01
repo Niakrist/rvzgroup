@@ -19,6 +19,8 @@ interface ICategoryPageProps {
     maxOuterDiameter?: string;
     minWidth?: string;
     maxWidth?: string;
+    minPrice?: string;
+    maxPrice?: string;
   }>;
 }
 
@@ -45,6 +47,8 @@ type ParamsToSend = {
   maxOuterDiameter?: string;
   minWidth?: string;
   maxWidth?: string;
+  minPrice?: string;
+  maxPrice?: string;
 };
 
 export default async function CategoryPage({
@@ -70,6 +74,8 @@ export default async function CategoryPage({
     maxOuterDiameter,
     minWidth,
     maxWidth,
+    minPrice,
+    maxPrice,
   } = await searchParams;
 
   const urlPaths: UrlPaths = {
@@ -174,6 +180,12 @@ export default async function CategoryPage({
   }
   if (maxWidth) {
     paramsToSend.maxWidth = maxWidth;
+  }
+  if (minPrice) {
+    paramsToSend.minPrice = minPrice;
+  }
+  if (maxPrice) {
+    paramsToSend.maxPrice = maxPrice;
   }
 
   const products = await getCategories(paramsToSend);

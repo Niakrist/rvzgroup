@@ -1,21 +1,14 @@
 "use client";
-import React, { useState } from "react";
-import { Button, DropDown, InputFilter, WhiteBlock } from "@/ui";
+import React from "react";
+import { Button, DropDown } from "@/ui";
 
-import { IFilter } from "@/types/types";
 import styles from "./Filter.module.css";
-import { useFilter } from "@/hooks/useFilters";
 import { IFilterDropsownList } from "@/types/filters.interface";
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "@/store/store";
-import {
-  resetFilter,
-  updateQueryParamAsync,
-} from "@/store/filterSlice/filterSlice";
-import { usePathname, useRouter } from "next/navigation";
 import { InnerDiameter } from "./InnerDiameter/InnerDiameter";
 import { OuterDiameter } from "./OuterDiameter/OuterDiameter";
 import { WidthBearing } from "./WidthBearing/WidthBearing";
+import { RangePrice } from "./RangePrice/RangePrice";
+import ResetButton from "./ResetButton/ResetButton";
 
 const bodyList: IFilterDropsownList[] = [
   { id: "1", name: "Шариковые" },
@@ -56,48 +49,9 @@ const rowList: IFilterDropsownList[] = [
 ];
 
 export const Filter = () => {
-  const dispatch = useDispatch<AppDispatch>();
-
-  const router = useRouter();
-  const pathname = usePathname();
-
-  const handleResetFilter = (): void => {
-    dispatch(resetFilter());
-    router.replace(pathname);
-  };
-
   return (
     <div className={styles.filter}>
-      {/* <WhiteBlock text="Цена">
-        <div className={styles.wrapper}>
-          <InputFilter
-            placeholder="0"
-            value={filter.minPrice}
-            onChange={handleChangeFilter}
-            type="text"
-            name="minPrice"
-          />
-          <span className={styles.line} />
-          <InputFilter
-            placeholder="4000000"
-            value={filter.maxPrice}
-            onChange={handleChangeFilter}
-            type="text"
-            name="maxPrice"
-          />
-        </div>
-        <div className={styles.range}>
-          <div className={styles.left} style={{ left: "40px" }} />
-          <div
-            className={styles.lineRange}
-            style={{ left: "66px", right: "66px" }}
-          />
-          <div className={styles.right} style={{ right: "40px" }} />
-        </div>
-      </WhiteBlock>
-
-     */}
-
+      {/* <RangePrice /> */}
       <InnerDiameter />
       <OuterDiameter />
       <WidthBearing />
@@ -107,11 +61,8 @@ export const Filter = () => {
       <DropDown name="Рядность" filter="rowId" list={rowList} />
       <DropDown name="Форма" filter="formaId" list={formaList} />
       <DropDown name="Заглушка" filter="openId" list={openList} />
-
       <Button color="blue">Применить</Button>
-      <button onClick={handleResetFilter} className={styles.button}>
-        Сбросить фильтр
-      </button>
+      <ResetButton />
     </div>
   );
 };

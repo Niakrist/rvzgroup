@@ -42,22 +42,6 @@
   cursor: pointer;
 }
 
-.button {
-  margin-top: 8px;
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.4;
-  text-align: center;
-  color: var(--black);
-  width: 100%;
-  transition: color 0.2s;
-}
-
-.button:hover {
-  color: var(--blue);
-}
-
 @media (max-width: 921.9px) {
   .filter {
     max-width: 335px;
