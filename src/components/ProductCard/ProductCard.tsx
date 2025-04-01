@@ -24,8 +24,6 @@ export const ProductCard: React.FC<IProductCardProps> = ({ url }) => {
     dispatch(fetchBbearingItem(url));
   }, [dispatch, url]);
 
-  console.log("bearingItem:", bearingItem);
-
   if (loadingBearingItem || !bearingItem) return <div>Загрузка</div>;
 
   return (

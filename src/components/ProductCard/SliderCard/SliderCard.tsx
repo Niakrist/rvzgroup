@@ -5,8 +5,6 @@ import { ISliderCardProps } from "./SliderCard.props";
 import styles from "./SliderCard.module.css";
 
 export const SliderCard: React.FC<ISliderCardProps> = ({ product }) => {
-  console.log("product: ", product);
-
   // const [currentSlid, setCurrentSlide] = useState<string>(product.images);
 
   // const handleChangeSlide = (slide: string) => {

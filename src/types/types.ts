@@ -7,8 +7,8 @@ export interface ICategory {
 export interface IFilter {
   minPrice: number | "";
   maxPrice: number | "";
-  minInnerDiameter: number | "";
-  maxInnerDiameter: number | "";
+  min: number | "";
+  max: number | "";
   minOuterDiameter: number | "";
   maxOuterDiameter: number | "";
   minWidth: number | "";

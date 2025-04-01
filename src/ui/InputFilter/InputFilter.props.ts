@@ -8,7 +8,7 @@ export interface IInputDilterProps
   > {
   type: string;
   name: keyof IFilter;
-  value: number | "";
+  value: string;
   placeholder: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }

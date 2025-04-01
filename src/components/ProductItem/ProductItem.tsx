@@ -18,7 +18,6 @@ export const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
   const { isThanksModal } = useSelector((state: RootState) => state.openModal);
 
   const handleGetCP = () => {
-    console.log("isThanksModal: ", isThanksModal);
     dispatch(toggleThanksModal(!isThanksModal));
   };
 

@@ -15,7 +15,7 @@ export const InfoCard: React.FC<IInfoCardProps> = ({ product }) => {
       <Htag size="medium">Пошипник {product.name}</Htag>
       <ArticleInStock product={product} />
       <Price fontSize="fs18" product={product} />
-      <CharacteristicList />
+      <CharacteristicList product={product} />
       <div className={styles.buttonsGroup}>
         <CounterQuantity size="large" bgColor="grey" />
         <Button className={styles.buttonBlue} color="blue">

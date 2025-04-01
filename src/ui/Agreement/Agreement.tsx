@@ -9,7 +9,6 @@ export const Agreement: React.FC<IAgreementProps> = ({ color, id }) => {
   const [isCheck, setIsCheck] = useState<boolean>(true);
 
   const handleChange = () => {
-    console.log("Agreement: ", isCheck);
     setIsCheck(!isCheck);
   };
 

@@ -4,33 +4,33 @@ import { useFilter } from "@/hooks/useFilters";
 import { InputFilter, WhiteBlock } from "@/ui";
 import { useEffect, useState } from "react";
 
-import styles from "./InnerDiameter.module.css";
+import styles from "./OuterDiameter.module.css";
 
 interface IDiameter {
   min: string;
   max: string;
 }
 
-export const InnerDiameter = () => {
+export const OuterDiameter = () => {
   const { queryParams, updateQueryParams } = useFilter();
-  const [innerDiameter, setInnerDiameter] = useState<IDiameter>({
+  const [outerDiameter, setOuterDiameter] = useState<IDiameter>({
     min: "",
     max: "",
   });
 
   useEffect(() => {
-    setInnerDiameter({
-      min: queryParams.minInnerDiameter || "",
-      max: queryParams.maxInnerDiameter || "",
+    setOuterDiameter({
+      min: queryParams.minOuterDiameter || "",
+      max: queryParams.maxOuterDiameter || "",
     });
-  }, [queryParams.minInnerDiameter, queryParams.maxInnerDiameter]);
+  }, [queryParams.minOuterDiameter, queryParams.maxOuterDiameter]);
 
   const handleChangeFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     const name = e.target.name as keyof IDiameter;
     if (!/^\d*$/.test(value)) return;
 
-    setInnerDiameter((prev) => {
+    setOuterDiameter((prev) => {
       const newState = { ...prev, [name]: value };
 
       if (newState.min === "" || newState.max === "") return newState;
@@ -47,18 +47,18 @@ export const InnerDiameter = () => {
   };
 
   useEffect(() => {
-    updateQueryParams("minInnerDiameter", innerDiameter.min);
-  }, [innerDiameter.min]);
+    updateQueryParams("minOuterDiameter", outerDiameter.min);
+  }, [outerDiameter.min]);
   useEffect(() => {
-    updateQueryParams("maxInnerDiameter", innerDiameter.max);
-  }, [innerDiameter.max]);
+    updateQueryParams("maxOuterDiameter", outerDiameter.max);
+  }, [outerDiameter.max]);
 
   return (
-    <WhiteBlock text="Внутренний диаметр (мм)">
+    <WhiteBlock text="Наружный диаметр (мм)">
       <div className={styles.wrapper}>
         <InputFilter
           placeholder="от"
-          value={innerDiameter.min}
+          value={outerDiameter.min}
           onChange={handleChangeFilter}
           type="text"
           name="min"
@@ -66,7 +66,7 @@ export const InnerDiameter = () => {
         <span className={styles.line} />
         <InputFilter
           placeholder="до"
-          value={innerDiameter.max}
+          value={outerDiameter.max}
           onChange={handleChangeFilter}
           type="text"
           name="max"

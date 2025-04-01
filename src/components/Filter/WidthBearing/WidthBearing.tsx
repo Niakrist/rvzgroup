@@ -4,33 +4,33 @@ import { useFilter } from "@/hooks/useFilters";
 import { InputFilter, WhiteBlock } from "@/ui";
 import { useEffect, useState } from "react";
 
-import styles from "./InnerDiameter.module.css";
+import styles from "./WidthBearing.module.css";
 
 interface IDiameter {
   min: string;
   max: string;
 }
 
-export const InnerDiameter = () => {
+export const WidthBearing = () => {
   const { queryParams, updateQueryParams } = useFilter();
-  const [innerDiameter, setInnerDiameter] = useState<IDiameter>({
+  const [widthBearing, setWidthBearing] = useState<IDiameter>({
     min: "",
     max: "",
   });
 
   useEffect(() => {
-    setInnerDiameter({
-      min: queryParams.minInnerDiameter || "",
-      max: queryParams.maxInnerDiameter || "",
+    setWidthBearing({
+      min: queryParams.minWidth || "",
+      max: queryParams.maxWidth || "",
     });
-  }, [queryParams.minInnerDiameter, queryParams.maxInnerDiameter]);
+  }, [queryParams.minWidth, queryParams.maxWidth]);
 
   const handleChangeFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     const name = e.target.name as keyof IDiameter;
     if (!/^\d*$/.test(value)) return;
 
-    setInnerDiameter((prev) => {
+    setWidthBearing((prev) => {
       const newState = { ...prev, [name]: value };
 
       if (newState.min === "" || newState.max === "") return newState;
@@ -47,18 +47,18 @@ export const InnerDiameter = () => {
   };
 
   useEffect(() => {
-    updateQueryParams("minInnerDiameter", innerDiameter.min);
-  }, [innerDiameter.min]);
+    updateQueryParams("minWidth", widthBearing.min);
+  }, [widthBearing.min]);
   useEffect(() => {
-    updateQueryParams("maxInnerDiameter", innerDiameter.max);
-  }, [innerDiameter.max]);
+    updateQueryParams("maxWidth", widthBearing.max);
+  }, [widthBearing.max]);
 
   return (
-    <WhiteBlock text="Внутренний диаметр (мм)">
+    <WhiteBlock text="Ширина (мм)">
       <div className={styles.wrapper}>
         <InputFilter
           placeholder="от"
-          value={innerDiameter.min}
+          value={widthBearing.min}
           onChange={handleChangeFilter}
           type="text"
           name="min"
@@ -66,7 +66,7 @@ export const InnerDiameter = () => {
         <span className={styles.line} />
         <InputFilter
           placeholder="до"
-          value={innerDiameter.max}
+          value={widthBearing.max}
           onChange={handleChangeFilter}
           type="text"
           name="max"

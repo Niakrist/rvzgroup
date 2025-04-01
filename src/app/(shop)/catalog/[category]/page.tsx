@@ -5,7 +5,21 @@ import React from "react";
 
 interface ICategoryPageProps {
   params: Promise<{ category: string }>;
-  searchParams: Promise<{ page: string }>;
+  searchParams: Promise<{
+    page?: string;
+    standartId?: string;
+    bodyId?: string;
+    loadId?: string;
+    rowId?: string;
+    formaId?: string;
+    openId?: string;
+    minInnerDiameter?: string;
+    maxInnerDiameter?: string;
+    minOuterDiameter?: string;
+    maxOuterDiameter?: string;
+    minWidth?: string;
+    maxWidth?: string;
+  }>;
 }
 
 type UrlPaths = {
@@ -25,6 +39,12 @@ type ParamsToSend = {
   standartId?: string;
   openId?: string;
   page?: string;
+  minInnerDiameter?: string;
+  maxInnerDiameter?: string;
+  minOuterDiameter?: string;
+  maxOuterDiameter?: string;
+  minWidth?: string;
+  maxWidth?: string;
 };
 
 export default async function CategoryPage({
@@ -36,8 +56,21 @@ export default async function CategoryPage({
     notFound();
   }
 
-  const { page, standartId, bodyId, loadId, rowId, formaId, openId } =
-    await searchParams;
+  const {
+    page,
+    standartId,
+    bodyId,
+    loadId,
+    rowId,
+    formaId,
+    openId,
+    minInnerDiameter,
+    maxInnerDiameter,
+    minOuterDiameter,
+    maxOuterDiameter,
+    minWidth,
+    maxWidth,
+  } = await searchParams;
 
   const urlPaths: UrlPaths = {
     bodyId: {
@@ -107,7 +140,6 @@ export default async function CategoryPage({
     paramsToSend.page = page;
   }
   if (standartId) {
-    console.log(standartId); // 1|2
     paramsToSend.standartId = standartId;
   }
   if (bodyId) {
@@ -124,6 +156,24 @@ export default async function CategoryPage({
   }
   if (openId) {
     paramsToSend.openId = openId;
+  }
+  if (minInnerDiameter) {
+    paramsToSend.minInnerDiameter = minInnerDiameter;
+  }
+  if (maxInnerDiameter) {
+    paramsToSend.maxInnerDiameter = maxInnerDiameter;
+  }
+  if (minOuterDiameter) {
+    paramsToSend.minOuterDiameter = minOuterDiameter;
+  }
+  if (maxOuterDiameter) {
+    paramsToSend.maxOuterDiameter = maxOuterDiameter;
+  }
+  if (minWidth) {
+    paramsToSend.minWidth = minWidth;
+  }
+  if (maxWidth) {
+    paramsToSend.maxWidth = maxWidth;
   }
 
   const products = await getCategories(paramsToSend);

@@ -14,6 +14,8 @@ import {
 } from "@/store/filterSlice/filterSlice";
 import { usePathname, useRouter } from "next/navigation";
 import { InnerDiameter } from "./InnerDiameter/InnerDiameter";
+import { OuterDiameter } from "./OuterDiameter/OuterDiameter";
+import { WidthBearing } from "./WidthBearing/WidthBearing";
 
 const bodyList: IFilterDropsownList[] = [
   { id: "1", name: "Шариковые" },
@@ -59,28 +61,6 @@ export const Filter = () => {
   const router = useRouter();
   const pathname = usePathname();
 
-  const [filter, setFilter] = useState<IFilter>({
-    minPrice: "",
-    maxPrice: "",
-    minInnerDiameter: "",
-    maxInnerDiameter: "",
-    minOuterDiameter: "",
-    maxOuterDiameter: "",
-    minWidth: "",
-    maxWidth: "",
-  });
-
-  const handleChangeFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    if (/^\d+$/.test(value)) {
-      const parsedValue = parseInt(value, 10);
-      setFilter((prevFilter) => ({
-        ...prevFilter,
-        [e.target.name]: parsedValue,
-      }));
-    }
-  };
-
   const handleResetFilter = (): void => {
     dispatch(resetFilter());
     router.replace(pathname);
@@ -115,68 +95,12 @@ export const Filter = () => {
           <div className={styles.right} style={{ right: "40px" }} />
         </div>
       </WhiteBlock>
-      <WhiteBlock text="Внутренний диаметр (мм)">
-        <div className={styles.wrapper}>
-          <InputFilter
-            placeholder="от"
-            value={filter.minInnerDiameter}
-            onChange={handleChangeFilter}
-            type="text"
-            name="minInnerDiameter"
-          />
-          <span className={styles.line} />
-          <InputFilter
-            placeholder="до"
-            value={filter.maxInnerDiameter}
-            onChange={handleChangeFilter}
-            type="text"
-            name="maxInnerDiameter"
-          />
-        </div>
-      </WhiteBlock>
-      <WhiteBlock text="Внешний диаметр (мм)">
-        <div className={styles.wrapper}>
-          <InputFilter
-            placeholder="от"
-            value={filter.minOuterDiameter}
-            onChange={handleChangeFilter}
-            type="text"
-            name="minOuterDiameter"
-          />
-          <span className={styles.line} />
-          <InputFilter
-            placeholder="до"
-            value={filter.maxOuterDiameter}
-            onChange={handleChangeFilter}
-            type="text"
-            name="maxOuterDiameter"
-          />
-        </div>
-      </WhiteBlock>
-      <WhiteBlock text="Ширина (мм)">
-        <div className={styles.wrapper}>
-          <InputFilter
-            placeholder="от"
-            value={filter.minWidth}
-            onChange={handleChangeFilter}
-            type="text"
-            name="minWidth"
-          />
-          <span className={styles.line} />
-          <InputFilter
-            placeholder="до"
-            value={filter.maxWidth}
-            onChange={handleChangeFilter}
-            type="text"
-            name="maxWidth"
-          />
-        </div>
-      </WhiteBlock>
 
      */}
 
       <InnerDiameter />
-
+      <OuterDiameter />
+      <WidthBearing />
       <DropDown name="Стандарт" filter="standartId" list={standartList} />
       <DropDown name="Тело качения" filter="bodyId" list={bodyList} />
       <DropDown name="Нагрузка" filter="loadId" list={loadList} />
