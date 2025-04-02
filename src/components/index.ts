@@ -31,7 +31,6 @@ export * from "./ProductCharacteristic/ProductCharacteristic";
 export * from "./Cart/Cart";
 export * from "./Cart/CartList/CartList";
 export * from "./Cart/CartOrder/CartOrder";
-export * from "./CounterQuantity/CounterQuantity";
 export * from "./Menu/Menu";
 export * from "./Menu/MenuCatalog/MenuCatalog";
 export * from "./CategoryItem/CategoryItem";

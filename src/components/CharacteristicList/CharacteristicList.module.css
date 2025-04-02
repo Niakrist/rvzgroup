@@ -14,6 +14,7 @@
 }
 
 .key {
+  /* flex-basis: 80%; */
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 14px;
@@ -22,10 +23,20 @@
 }
 
 .value {
-  width: 50px;
+  /* flex-basis: 50%; */
+  white-space: nowrap;
   font-family: var(--font-family);
   font-weight: 300;
   font-size: 14px;
   line-height: 1.4;
   color: var(--black);
+}
+
+.analogLink {
+  font-weight: 500;
+  color: var(--blue);
+  transition: color 0.2s ease;
+}
+.analogLink:hover {
+  color: var(--blue2);
 }

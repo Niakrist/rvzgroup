@@ -1,3 +1,4 @@
+import { getItemBearing } from "@/api/getItemBearing";
 import {
   PopularProduct,
   ProductCard,
@@ -19,11 +20,11 @@ interface IProductPageProps {
 
 export default async function ProductPage({ params }: IProductPageProps) {
   const { url } = await params;
-
+  const bearingItem = await getItemBearing(url);
   return (
     <>
-      <ProductCard url={url} />
-      <ProductCharacteristic />
+      <ProductCard bearingItem={bearingItem} />
+      <ProductCharacteristic bearingItem={bearingItem} />
       <PopularProduct />
     </>
   );

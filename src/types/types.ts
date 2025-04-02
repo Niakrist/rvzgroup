@@ -36,35 +36,3 @@ interface ICategoryMune {
   url: string;
   name: string;
 }
-
-export interface IBearing {
-  id: number;
-  id1c: string | null;
-  id1cRvz: string | null;
-  price: number | null;
-  priceRvz: number | null;
-  quantity: number | null;
-  quantityRvz: number | null;
-  name: string;
-  url: string;
-  title: string;
-  h1: string;
-  description: string | null;
-  brand: string;
-  analog: string;
-  analogUrl: string;
-  images: string;
-  content: string;
-  innerDiameter: number;
-  outerDiameter: number;
-  width: number;
-  newBearing: boolean;
-  stockBearing: number | null;
-  popularBearing: boolean;
-  standartId: number;
-  bodyId: number;
-  formaId: number | null;
-  loadId: number;
-  rowId: number;
-  openId: number;
-}

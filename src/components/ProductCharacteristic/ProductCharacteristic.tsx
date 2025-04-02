@@ -3,9 +3,17 @@ import React, { useState } from "react";
 import cn from "classnames";
 import { CharacteristicList } from "@/components";
 import styles from "./ProductCharacteristic.module.css";
+import { IBearing } from "@/types/bearing";
 
-export const ProductCharacteristic = () => {
-  const [isActiveButton, setIsActiveButton] = useState<string>("c");
+interface IProductCharacteristicProps {
+  bearingItem: IBearing;
+}
+
+export const ProductCharacteristic = ({
+  bearingItem,
+}: IProductCharacteristicProps): React.JSX.Element => {
+  const [isActiveButton, setIsActiveButton] =
+    useState<string>("characteristic");
 
   return (
     <section>
@@ -14,35 +22,44 @@ export const ProductCharacteristic = () => {
           <ul className={styles.nav}>
             <li>
               <button
-                onClick={() => setIsActiveButton("c")}
+                onClick={() => setIsActiveButton("characteristic")}
                 className={cn(styles.button, {
-                  [styles.active]: isActiveButton === "c",
+                  [styles.active]: isActiveButton === "characteristic",
                 })}>
                 Характеристики
               </button>
             </li>
             <li>
               <button
-                onClick={() => setIsActiveButton("o")}
+                onClick={() => setIsActiveButton("content")}
                 className={cn(styles.button, {
-                  [styles.active]: isActiveButton === "o",
+                  [styles.active]: isActiveButton === "content",
                 })}>
                 Описание
               </button>
             </li>
             <li>
               <button
-                onClick={() => setIsActiveButton("d")}
+                onClick={() => setIsActiveButton("delivery")}
                 className={cn(styles.button, {
-                  [styles.active]: isActiveButton === "d",
+                  [styles.active]: isActiveButton === "delivery",
                 })}>
                 Доставка и оплата
               </button>
             </li>
           </ul>
-          {isActiveButton === "c" && <CharacteristicList />}
-          {isActiveButton === "o" && <CharacteristicList />}
-          {isActiveButton === "d" && <CharacteristicList />}
+          {isActiveButton === "characteristic" && (
+            <CharacteristicList
+              type="characteristic"
+              bearingItem={bearingItem}
+            />
+          )}
+          {isActiveButton === "content" && (
+            <CharacteristicList type="content" bearingItem={bearingItem} />
+          )}
+          {isActiveButton === "delivery" && (
+            <CharacteristicList type="delivery" bearingItem={bearingItem} />
+          )}
         </div>
       </div>
     </section>

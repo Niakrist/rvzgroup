@@ -1,4 +1,4 @@
-import { IBearing } from "@/types/types";
+import { IBearing } from "@/types/bearing";
 
 export interface IInfoCardProps {
   product: IBearing;

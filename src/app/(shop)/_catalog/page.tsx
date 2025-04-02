@@ -1,25 +1,134 @@
-import { CatalogNavBar } from "@/components";
+import { getFilter } from "@/api/getFilter";
 import Products from "@/components/Products/Products";
-import { SideBar } from "@/components/SideBar/SideBar";
-import { Metadata } from "next";
 import React from "react";
-import styles from "./CatalogPage.module.css";
 
-export const metadata: Metadata = {
-  title: "Каталог подшипников РВЗ",
-  description: "Каталог подшипников РВЗ",
-};
+interface ISearchParamsToSend {
+  bodyId?: string;
+  loadId?: string;
+  rowId?: string;
+  formaId?: string;
+  standartId?: string;
+  openId?: string;
+  page?: string;
+  minInnerDiameter?: string;
+  maxInnerDiameter?: string;
+  minOuterDiameter?: string;
+  maxOuterDiameter?: string;
+  minWidth?: string;
+  maxWidth?: string;
+  minPrice?: string;
+  maxPrice?: string;
+}
 
-export default function CatalogPage() {
+interface ICatalogPageProps {
+  searchParams: Promise<ISearchParamsToSend>;
+}
+
+export default async function CatalogPage({
+  searchParams,
+}: ICatalogPageProps): Promise<React.JSX.Element> {
+  const {
+    page,
+    standartId,
+    bodyId,
+    loadId,
+    rowId,
+    formaId,
+    openId,
+    minInnerDiameter,
+    maxInnerDiameter,
+    minOuterDiameter,
+    maxOuterDiameter,
+    minWidth,
+    maxWidth,
+    minPrice,
+    maxPrice,
+  } = await searchParams;
+
+  const searchParamsToSend = new URLSearchParams();
+
+  if (page) {
+    searchParamsToSend.set("page", page);
+  } else {
+    searchParamsToSend.delete("page");
+  }
+  if (standartId) {
+    searchParamsToSend.set("standartId", standartId);
+  } else {
+    searchParamsToSend.delete("standartId");
+  }
+  if (bodyId) {
+    searchParamsToSend.set("pabodyIdge", bodyId);
+  } else {
+    searchParamsToSend.delete("pabodyIdge");
+  }
+  if (loadId) {
+    searchParamsToSend.set("loadId", loadId);
+  } else {
+    searchParamsToSend.delete("loadId");
+  }
+  if (rowId) {
+    searchParamsToSend.set("rowId", rowId);
+  } else {
+    searchParamsToSend.delete("rowId");
+  }
+  if (formaId) {
+    searchParamsToSend.set("formaId", formaId);
+  } else {
+    searchParamsToSend.delete("formaId");
+  }
+  if (openId) {
+    searchParamsToSend.set("openId", openId);
+  } else {
+    searchParamsToSend.delete("openId");
+  }
+  if (minInnerDiameter) {
+    searchParamsToSend.set("minInnerDiameter", minInnerDiameter);
+  } else {
+    searchParamsToSend.delete("minInnerDiameter");
+  }
+  if (maxInnerDiameter) {
+    searchParamsToSend.set("maxInnerDiameter", maxInnerDiameter);
+  } else {
+    searchParamsToSend.delete("maxInnerDiameter");
+  }
+  if (minOuterDiameter) {
+    searchParamsToSend.set("minOuterDiameter", minOuterDiameter);
+  } else {
+    searchParamsToSend.delete("minOuterDiameter");
+  }
+  if (maxOuterDiameter) {
+    searchParamsToSend.set("maxOuterDiameter", maxOuterDiameter);
+  } else {
+    searchParamsToSend.delete("maxOuterDiameter");
+  }
+  if (minWidth) {
+    searchParamsToSend.set("minWidth", minWidth);
+  } else {
+    searchParamsToSend.delete("minWidth");
+  }
+  if (maxWidth) {
+    searchParamsToSend.set("maxWidth", maxWidth);
+  } else {
+    searchParamsToSend.delete("maxWidth");
+  }
+  if (minPrice) {
+    searchParamsToSend.set("minPrice", minPrice);
+  } else {
+    searchParamsToSend.delete("staminPricendartId");
+  }
+  if (maxPrice) {
+    searchParamsToSend.set("maxPrice", maxPrice);
+  } else {
+    searchParamsToSend.delete("maxPrice");
+  }
+
+  const products = await getFilter(searchParamsToSend);
+  if (!products) return <div>Загрузка products</div>;
+
   return (
     <>
-      <CatalogNavBar />
-      <div className={styles.section}>
-        <div className={styles.container}>
-          <SideBar />
-          <Products />
-        </div>
-      </div>
+      <Products bearingList={products.rows} />
     </>
   );
 }

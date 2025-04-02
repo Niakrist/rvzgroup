@@ -1,7 +1,8 @@
 "use client";
-import { ArticleInStock, CounterQuantity } from "@/components";
+import { ArticleInStock } from "@/components";
+import { CounterQuantity } from "@/components/CounterQuantity/CounterQuantity";
 import { products } from "@/mockdata/mockdata";
-import React, { useState } from "react";
+import React from "react";
 import styles from "./CartList.module.css";
 
 export const CartList = () => {

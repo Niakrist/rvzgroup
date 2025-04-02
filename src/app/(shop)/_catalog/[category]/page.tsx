@@ -5,6 +5,23 @@ import React from "react";
 
 interface ICategoryPageProps {
   params: Promise<{ category: string }>;
+  searchParams: Promise<{
+    page?: string;
+    standartId?: string;
+    bodyId?: string;
+    loadId?: string;
+    rowId?: string;
+    formaId?: string;
+    openId?: string;
+    minInnerDiameter?: string;
+    maxInnerDiameter?: string;
+    minOuterDiameter?: string;
+    maxOuterDiameter?: string;
+    minWidth?: string;
+    maxWidth?: string;
+    minPrice?: string;
+    maxPrice?: string;
+  }>;
 }
 
 type UrlPaths = {
@@ -34,11 +51,32 @@ type ParamsToSend = {
   maxPrice?: string;
 };
 
-export default async function CategoryPage({ params }: ICategoryPageProps) {
+export default async function CategoryPage({
+  params,
+  searchParams,
+}: ICategoryPageProps) {
   const { category } = await params;
   if (!category) {
     notFound();
   }
+
+  const {
+    page,
+    standartId,
+    bodyId,
+    loadId,
+    rowId,
+    formaId,
+    openId,
+    minInnerDiameter,
+    maxInnerDiameter,
+    minOuterDiameter,
+    maxOuterDiameter,
+    minWidth,
+    maxWidth,
+    minPrice,
+    maxPrice,
+  } = await searchParams;
 
   const urlPaths: UrlPaths = {
     bodyId: {
@@ -102,6 +140,52 @@ export default async function CategoryPage({ params }: ICategoryPageProps) {
 
   if (!allPartsFound) {
     return notFound();
+  }
+
+  if (page) {
+    paramsToSend.page = page;
+  }
+  if (standartId) {
+    paramsToSend.standartId = standartId;
+  }
+  if (bodyId) {
+    paramsToSend.bodyId = bodyId;
+  }
+  if (loadId) {
+    paramsToSend.loadId = loadId;
+  }
+  if (rowId) {
+    paramsToSend.rowId = rowId;
+  }
+  if (formaId) {
+    paramsToSend.formaId = formaId;
+  }
+  if (openId) {
+    paramsToSend.openId = openId;
+  }
+  if (minInnerDiameter) {
+    paramsToSend.minInnerDiameter = minInnerDiameter;
+  }
+  if (maxInnerDiameter) {
+    paramsToSend.maxInnerDiameter = maxInnerDiameter;
+  }
+  if (minOuterDiameter) {
+    paramsToSend.minOuterDiameter = minOuterDiameter;
+  }
+  if (maxOuterDiameter) {
+    paramsToSend.maxOuterDiameter = maxOuterDiameter;
+  }
+  if (minWidth) {
+    paramsToSend.minWidth = minWidth;
+  }
+  if (maxWidth) {
+    paramsToSend.maxWidth = maxWidth;
+  }
+  if (minPrice) {
+    paramsToSend.minPrice = minPrice;
+  }
+  if (maxPrice) {
+    paramsToSend.maxPrice = maxPrice;
   }
 
   const products = await getCategories(paramsToSend);
