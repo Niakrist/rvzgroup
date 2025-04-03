@@ -1,32 +1,8 @@
-import { getFilter } from "@/api/getFilter";
-import Products from "@/components/Products/Products";
-import React from "react";
+import { ISearchParams } from "@/types/ISearchParams.interface";
 
-interface ISearchParamsToSend {
-  bodyId?: string;
-  loadId?: string;
-  rowId?: string;
-  formaId?: string;
-  standartId?: string;
-  openId?: string;
-  page?: string;
-  minInnerDiameter?: string;
-  maxInnerDiameter?: string;
-  minOuterDiameter?: string;
-  maxOuterDiameter?: string;
-  minWidth?: string;
-  maxWidth?: string;
-  minPrice?: string;
-  maxPrice?: string;
-}
-
-interface ICatalogPageProps {
-  searchParams: Promise<ISearchParamsToSend>;
-}
-
-export default async function CatalogPage({
-  searchParams,
-}: ICatalogPageProps): Promise<React.JSX.Element> {
+export const getFilteredProducts = <T extends ISearchParams>(
+  searchParams: T
+) => {
   const {
     page,
     standartId,
@@ -43,7 +19,7 @@ export default async function CatalogPage({
     maxWidth,
     minPrice,
     maxPrice,
-  } = await searchParams;
+  } = searchParams;
 
   const searchParamsToSend = new URLSearchParams();
 
@@ -122,13 +98,5 @@ export default async function CatalogPage({
   } else {
     searchParamsToSend.delete("maxPrice");
   }
-
-  const products = await getFilter(searchParamsToSend);
-  if (!products) return <div>Загрузка products</div>;
-
-  return (
-    <>
-      <Products bearingList={products.rows} />
-    </>
-  );
-}
+  return searchParamsToSend;
+};

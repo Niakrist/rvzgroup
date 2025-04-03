@@ -1,10 +1,14 @@
 import { getCategories } from "@/api/getCategories";
+import { getFilter } from "@/api/getFilter";
 import Products from "@/components/Products/Products";
+import { ISearchParams } from "@/types/ISearchParams.interface";
+import { getFilteredProducts } from "@/utils/getFilteredProducts";
 import { notFound } from "next/navigation";
 import React from "react";
 
 interface ICategoryPageProps {
   params: Promise<{ category: string }>;
+  searchParams: Promise<ISearchParams>;
 }
 
 type UrlPaths = {
@@ -16,26 +20,16 @@ type UrlPaths = {
   openId: Record<string, string>;
 };
 
-type ParamsToSend = {
-  bodyId?: string;
-  loadId?: string;
-  rowId?: string;
-  formaId?: string;
-  standartId?: string;
-  openId?: string;
-  page?: string;
-  minInnerDiameter?: string;
-  maxInnerDiameter?: string;
-  minOuterDiameter?: string;
-  maxOuterDiameter?: string;
-  minWidth?: string;
-  maxWidth?: string;
-  minPrice?: string;
-  maxPrice?: string;
-};
-
-export default async function CategoryPage({ params }: ICategoryPageProps) {
+export default async function CategoryPage({
+  params,
+  searchParams,
+}: ICategoryPageProps) {
   const { category } = await params;
+
+  const search = await searchParams;
+
+  const searchParamsToSend = getFilteredProducts(search);
+
   if (!category) {
     notFound();
   }
@@ -80,7 +74,7 @@ export default async function CategoryPage({ params }: ICategoryPageProps) {
 
   const regex = /(?<!radialno|razemnye|korpusnye|zakrytye)-/;
   const categories = category.split(regex);
-  const paramsToSend: ParamsToSend = {};
+  const paramsToSend: ISearchParams = {};
   let allPartsFound = true;
   for (const cat of categories) {
     if (urlPaths.bodyId[cat]) {
@@ -104,7 +98,10 @@ export default async function CategoryPage({ params }: ICategoryPageProps) {
     return notFound();
   }
 
-  const products = await getCategories(paramsToSend);
+  let products = searchParamsToSend.size
+    ? await getFilter(searchParamsToSend)
+    : await getCategories(paramsToSend);
+
   if (!products) return;
 
   return (

@@ -1,7 +1,9 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, DropDown } from "@/ui";
 
+import { usePathname } from "next/navigation";
+import { useDispatch } from "react-redux";
 import styles from "./Filter.module.css";
 import { IFilterDropsownList } from "@/types/filters.interface";
 import { InnerDiameter } from "./InnerDiameter/InnerDiameter";
@@ -9,6 +11,7 @@ import { OuterDiameter } from "./OuterDiameter/OuterDiameter";
 import { WidthBearing } from "./WidthBearing/WidthBearing";
 import { RangePrice } from "./RangePrice/RangePrice";
 import ResetButton from "./ResetButton/ResetButton";
+import { resetFilter } from "@/store/filterSlice/filterSlice";
 
 const bodyList: IFilterDropsownList[] = [
   { id: "1", name: "Шариковые" },
@@ -49,6 +52,13 @@ const rowList: IFilterDropsownList[] = [
 ];
 
 export const Filter = () => {
+  const pathname = usePathname();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(resetFilter());
+  }, [pathname, dispatch]);
+
   return (
     <div className={styles.filter}>
       {/* <RangePrice /> */}

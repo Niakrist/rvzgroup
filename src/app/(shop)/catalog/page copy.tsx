@@ -1,6 +1,12 @@
+import { getCategories } from "@/api/getCategories";
 import { getFilter } from "@/api/getFilter";
 import Products from "@/components/Products/Products";
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Каталог подшипников",
+};
 
 interface ISearchParamsToSend {
   bodyId?: string;
@@ -44,7 +50,6 @@ export default async function CatalogPage({
     minPrice,
     maxPrice,
   } = await searchParams;
-
   const searchParamsToSend = new URLSearchParams();
 
   if (page) {
@@ -123,7 +128,12 @@ export default async function CatalogPage({
     searchParamsToSend.delete("maxPrice");
   }
 
-  const products = await getFilter(searchParamsToSend);
+  console.log("searchParamsToSend: ", searchParamsToSend);
+
+  const products = searchParamsToSend.keys.length
+    ? await getFilter(searchParamsToSend)
+    : await getCategories();
+
   if (!products) return <div>Загрузка products</div>;
 
   return (
