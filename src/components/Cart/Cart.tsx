@@ -1,7 +1,7 @@
-"use client";
 import React from "react";
-import { CartList, CartOrder } from "@/components";
 import styles from "./Cart.module.css";
+import { CartList } from "./CartList/CartList";
+import { CartOrder } from "./CartOrder/CartOrder";
 
 export const Cart = () => {
   return (

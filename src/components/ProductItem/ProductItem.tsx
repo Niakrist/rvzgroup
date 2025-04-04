@@ -4,25 +4,29 @@ import Link from "next/link";
 import { useSelector, useDispatch } from "react-redux";
 import { ArticleInStock, Price } from "@/components";
 import { Button } from "@/ui";
-import { RootState } from "@/store/store";
+import { AppDispatch, RootState } from "@/store/store";
 import { toggleThanksModal } from "@/store/openModalSlice/openModalSlice";
 import styles from "./ProductItem.module.css";
-import { IBearing } from "@/types/types";
+import { addToCart } from "@/store/cartSlice/cartSlice";
+import { ICartItem } from "@/types/cartItem.interface";
+import { IBearing } from "@/types/bearing";
+import { saveCartInLocalStorage } from "@/utils/localstorage";
 
 interface IProductItemProps {
   product: IBearing;
 }
 
-export const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
-  const dispatch = useDispatch();
+export const ProductItem = ({ product }: IProductItemProps) => {
+  const dispatch = useDispatch<AppDispatch>();
   const { isThanksModal } = useSelector((state: RootState) => state.openModal);
 
   const handleGetCP = () => {
     dispatch(toggleThanksModal(!isThanksModal));
   };
 
-  const addInCart = (id: number) => {
-    console.log("id: ", id);
+  const addInCart = (elem: ICartItem) => {
+    saveCartInLocalStorage(elem);
+    dispatch(addToCart(elem));
   };
 
   return (
@@ -40,7 +44,7 @@ export const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
       </Link>
       <Price product={product} fontSize="fs16" className={styles.price} />
       <Button
-        onClick={() => addInCart(product.id)}
+        onClick={() => addInCart({ product, count: 1 })}
         className={styles.btn}
         color="blue"
         size="big">

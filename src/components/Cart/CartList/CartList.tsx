@@ -1,31 +1,17 @@
 "use client";
-import { ArticleInStock } from "@/components";
-import { CounterQuantity } from "@/components/CounterQuantity/CounterQuantity";
-import { products } from "@/mockdata/mockdata";
 import React from "react";
+import { RootState } from "@/store/store";
+import { useSelector } from "react-redux";
+import { CartItem } from "./CartItem/CartItem";
 import styles from "./CartList.module.css";
 
 export const CartList = () => {
+  const { cart } = useSelector((state: RootState) => state.cart);
   return (
     <section>
       <ul className={styles.list}>
-        {products.map((item) => (
-          <li className={styles.item} key={item.article}>
-            <div className={styles.wrapper}>
-              <img className={styles.img} src={`/${item.img}`} alt="" />
-              <div className={styles.info}>
-                <h3 className={styles.tittle}>{item.name}</h3>
-                <ArticleInStock product={item} />
-              </div>
-            </div>
-            <div className={styles.priceInfo}>
-              <CounterQuantity size="large" bgColor="grey" />
-              <div className={item.price ? styles.price : styles.zakaz}>
-                {!!item.price ? item.price + " ₽/шт." : "Под заказ"}
-              </div>
-              <button className={styles.removeProduct} />
-            </div>
-          </li>
+        {cart.map((item) => (
+          <CartItem key={item.product.id} cart={item} />
         ))}
       </ul>
     </section>

@@ -9,9 +9,12 @@ import {
   toggleMenuModal,
 } from "@/store/openModalSlice/openModalSlice";
 import styles from "./Header.module.css";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
 export const Header = () => {
   const dispatch = useDispatch();
+  const { cart } = useSelector((state: RootState) => state.cart);
 
   // Открывает закрывает бургер мобильное меню
   const handletoggleBurger = () => {
@@ -66,7 +69,9 @@ export const Header = () => {
         <Link href="/cart" className={styles.block}>
           <Icon name="iconCart" className={styles.iconCart} />
           <span className={styles.text}>корзина</span>
-          <span className={styles.quantityCart}>10</span>
+          {!!cart.length && (
+            <span className={styles.quantityCart}>{cart.length}</span>
+          )}
         </Link>
       </div>
     </header>

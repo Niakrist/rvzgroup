@@ -4,6 +4,7 @@ import openModalSlice from "./openModalSlice/openModalSlice";
 import { useDispatch } from "react-redux";
 import bearingItemSlice from "./bearingItemSlice/bearingItemSlice";
 import filterSlice from "./filterSlice/filterSlice";
+import cartSlice from "./cartSlice/cartSlice";
 
 export const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
     bearingList: bearingsSlice,
     bearingItem: bearingItemSlice,
     filters: filterSlice,
+    cart: cartSlice,
   },
 });
 
