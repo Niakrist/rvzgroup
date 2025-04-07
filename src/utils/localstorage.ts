@@ -27,19 +27,20 @@ export const saveCartInLocalStorage = (cart: ICartItem) => {
     storageCart.push(cart);
     localStorage.setItem("cart", JSON.stringify(storageCart));
   }
+};
 
-  // if (storageCart) {
-  //   const currentCart = <ICartItem[]>JSON.parse(storageCart);
-  //   console.log("currentCart: ", currentCart);
-  //   currentCart.map((item) => {
-  //     if (item.product.id === cart.product.id) {
-  //       return cart;
-  //     } else {
-  //       return item;
-  //     }
-  //   });
-  //   localStorage.setItem("cart", JSON.stringify(currentCart));
-  // } else {
-  //   localStorage.setItem("cart", JSON.stringify(cart));
-  // }
+export const loadCartFromLocalStorage = (): ICartItem[] => {
+  if (typeof window !== "undefined") {
+    const savedCart = localStorage.getItem("cart");
+    if (savedCart) {
+      try {
+        const parsedCart = JSON.parse(savedCart) as ICartItem[];
+        return parsedCart;
+      } catch (error) {
+        console.error("Ошибка при парсинге cart из localStorage:", error);
+        return [];
+      }
+    }
+  }
+  return [];
 };

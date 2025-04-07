@@ -7,10 +7,8 @@ import { Button } from "@/ui";
 import { AppDispatch, RootState } from "@/store/store";
 import { toggleThanksModal } from "@/store/openModalSlice/openModalSlice";
 import styles from "./ProductItem.module.css";
-import { addToCart } from "@/store/cartSlice/cartSlice";
-import { ICartItem } from "@/types/cartItem.interface";
 import { IBearing } from "@/types/bearing";
-import { saveCartInLocalStorage } from "@/utils/localstorage";
+import { CounterQuantityGroup } from "../CounterQuantityGroup/CounterQuantityGroup";
 
 interface IProductItemProps {
   product: IBearing;
@@ -22,11 +20,6 @@ export const ProductItem = ({ product }: IProductItemProps) => {
 
   const handleGetCP = () => {
     dispatch(toggleThanksModal(!isThanksModal));
-  };
-
-  const addInCart = (elem: ICartItem) => {
-    saveCartInLocalStorage(elem);
-    dispatch(addToCart(elem));
   };
 
   return (
@@ -43,14 +36,16 @@ export const ProductItem = ({ product }: IProductItemProps) => {
         Подшипник {product.name}
       </Link>
       <Price product={product} fontSize="fs16" className={styles.price} />
+      <CounterQuantityGroup
+        className={styles.counterQuantityGroup}
+        product={product}
+      />
       <Button
-        onClick={() => addInCart({ product, count: 1 })}
         className={styles.btn}
-        color="blue"
-        size="big">
-        В корзину
-      </Button>
-      <Button onClick={handleGetCP} color="border" size="big">
+        onClick={handleGetCP}
+        color="blackText"
+        bgColor="border"
+        size="small">
         Получить КП в 1 клик
       </Button>
     </article>

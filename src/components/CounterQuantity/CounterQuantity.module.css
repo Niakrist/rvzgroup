@@ -1,18 +1,18 @@
 .counterQuantity {
   display: flex;
   align-items: center;
-  column-gap: 10px;
+  column-gap: 5px;
   border-radius: 8px;
-  padding: 6px 14px;
+  padding: 6px 10px;
 }
 
 .medium {
-  width: 120px;
+  min-width: 120px;
   height: 40px;
 }
 
 .large {
-  width: 150px;
+  min-width: 150px;
   height: 45px;
 }
 

@@ -35,10 +35,20 @@ export const PromoSlider = () => {
             Большой выбор товара Доставим за 7–14 дней
           </p>
           <div className={styles.btnGroup}>
-            <Button onClick={handleClick} color="blue">
+            <Button
+              className={styles.buttonPromo}
+              onClick={handleClick}
+              size="big"
+              bgColor="blue"
+              color="whiteText">
               Перейти в каталог
             </Button>
-            <Button onClick={handleToggleModal} color="white">
+            <Button
+              className={styles.buttonPromo}
+              onClick={handleToggleModal}
+              size="big"
+              bgColor="white"
+              color="whiteText">
               Оставить заявку
             </Button>
           </div>

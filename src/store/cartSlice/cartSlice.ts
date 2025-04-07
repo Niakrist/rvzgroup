@@ -6,14 +6,6 @@ interface ICartState {
   cart: ICartItem[];
 }
 
-const loadCartFromLocalStorage = (): ICartState => {
-  if (typeof window !== "undefined") {
-    const savedCart = localStorage.getItem("cart");
-    return savedCart ? JSON.parse(savedCart) : [];
-  }
-  return initialState;
-};
-
 const initialState: ICartState = {
   cart: [],
 };
@@ -22,6 +14,9 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
+    initialCart: (state, action) => {
+      state.cart = action.payload;
+    },
     addToCart: (
       state,
       action: PayloadAction<{ product: IBearing; count: number }>
@@ -39,16 +34,10 @@ export const cartSlice = createSlice({
       }
     },
     decrementCart: (state, action: PayloadAction<{ product: IBearing }>) => {
-      state.cart = state.cart.map((item) => {
-        if (item.product.id === action.payload.product.id) {
-          item.count = item.count - 1;
-          return item;
-        } else {
-          console.log("-");
-
-          return item;
-        }
-      });
+      const item = state.cart.find(
+        (item) => item.product.id === action.payload.product.id
+      );
+      item && item.count--;
     },
     changeInCart: (
       state,
@@ -70,7 +59,12 @@ export const cartSlice = createSlice({
   },
 });
 
-export const { addToCart, changeInCart, decrementCart, deleteFromCart } =
-  cartSlice.actions;
+export const {
+  addToCart,
+  changeInCart,
+  decrementCart,
+  deleteFromCart,
+  initialCart,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;

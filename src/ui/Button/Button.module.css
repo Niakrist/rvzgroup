@@ -2,9 +2,14 @@
   font-family: var(--font-family);
   padding: 10px 25px;
   border-radius: 6px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.4;
+}
+
+.whiteText {
+  color: var(--white);
+}
+
+.blackText {
+  color: var(--black);
 }
 
 .white {
@@ -32,12 +37,6 @@
 }
 
 .border {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.4;
-  color: var(--black);
-
-  border-radius: 6px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0);
   border: 1px solid var(--blue);
   transition: box-shadow 0.2s, border 0.2s;
@@ -48,12 +47,30 @@
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
-.big {
-  width: 100%;
+.small {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
 }
 
+.medium {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.big {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.56;
+}
+
+/* .big {
+  width: 100%;
+} */
+
 @media (max-width: 767px) {
-  .button {
+  /* .button {
     width: 100%;
-  }
+  } */
 }

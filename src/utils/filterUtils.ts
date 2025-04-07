@@ -110,10 +110,8 @@ export async function getFilteredProducts(
     for (const [key, value] of Object.entries(mergedParams)) {
       if (value) searchParams.append(key, value);
     }
-    console.log("searchParams: ", searchParams);
     return await getFilter(searchParams);
   } else {
-    console.log("categoryFilters: ", categoryFilters);
     return await getCategories(categoryFilters);
   }
 }

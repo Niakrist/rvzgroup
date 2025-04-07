@@ -67,6 +67,10 @@
   column-gap: 20px;
 }
 
+.buttonPromo {
+  height: 45px;
+}
+
 .buttonArrow,
 .buttonArrowRigth {
   position: absolute;

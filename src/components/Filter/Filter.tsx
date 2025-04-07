@@ -71,7 +71,13 @@ export const Filter = () => {
       <DropDown name="Рядность" filter="rowId" list={rowList} />
       <DropDown name="Форма" filter="formaId" list={formaList} />
       <DropDown name="Заглушка" filter="openId" list={openList} />
-      <Button color="blue">Применить</Button>
+      <Button
+        className={styles.button}
+        color="whiteText"
+        bgColor="blue"
+        size="small">
+        Применить
+      </Button>
       <ResetButton />
     </div>
   );

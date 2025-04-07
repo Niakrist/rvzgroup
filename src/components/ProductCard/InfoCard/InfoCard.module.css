@@ -11,9 +11,9 @@
   column-gap: 10px;
 }
 
-.buttonBlue,
-.buttonBorder {
+.button {
   width: 100%;
+  height: 45px;
   white-space: nowrap;
 }
 

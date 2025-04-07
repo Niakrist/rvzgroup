@@ -6,6 +6,7 @@ import styles from "./Button.module.css";
 export const Button: React.FC<IButtonProps> = ({
   children,
   color,
+  bgColor,
   size,
   className,
   ...props
@@ -13,12 +14,16 @@ export const Button: React.FC<IButtonProps> = ({
   return (
     <button
       {...props}
-      className={cn(
-        styles.button,
-        styles[color],
-        className,
-        size && styles[size]
-      )}>
+      className={cn(styles.button, className, {
+        [styles.whiteText]: color === "whiteText",
+        [styles.blackText]: color === "blackText",
+        [styles.white]: bgColor === "white",
+        [styles.blue]: bgColor === "blue",
+        [styles.border]: bgColor === "border",
+        [styles.small]: size === "small",
+        [styles.medium]: size === "medium",
+        [styles.big]: size === "big",
+      })}>
       {children}
     </button>
   );

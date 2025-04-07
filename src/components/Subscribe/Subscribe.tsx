@@ -1,5 +1,5 @@
 import React from "react";
-import { Agreement, Htag } from "@/ui";
+import { Agreement, Button, Htag } from "@/ui";
 import styles from "./Subscribe.module.css";
 
 export const Subscribe = () => {
@@ -16,7 +16,15 @@ export const Subscribe = () => {
                 type="text"
                 placeholder="Электронная почта"
               />
-              <button className={styles.button}>Подписаться</button>
+
+              <Button
+                className={styles.button}
+                bgColor="blue"
+                size="small"
+                color="whiteText">
+                Подписаться
+              </Button>
+
               <div className={styles.agreement}>
                 <Agreement id="subscribe" color="grey" />
               </div>

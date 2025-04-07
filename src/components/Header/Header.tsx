@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import cn from "classnames";
 import { useDispatch } from "react-redux";
@@ -11,6 +11,10 @@ import {
 import styles from "./Header.module.css";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
+import { ICartItem } from "@/types/cartItem.interface";
+import { initialCart } from "@/store/cartSlice/cartSlice";
+import { loadCartFromLocalStorage } from "@/utils/localstorage";
+import { Button } from "@/ui";
 
 export const Header = () => {
   const dispatch = useDispatch();
@@ -27,16 +31,31 @@ export const Header = () => {
     dispatch(toggleMenuModal(true));
   };
 
+  useEffect(() => {
+    const loadCart = loadCartFromLocalStorage();
+    dispatch(initialCart(loadCart));
+  }, []);
+
   return (
     <header className={styles.container}>
       <Link href="/" className={styles.logoLink}>
         <Icon name="iconLogo" className={styles.iconLogo} />
         РВЗ
       </Link>
-      <button onClick={handleToggleCatalog} className={styles.buttonCatalog}>
+      <Button
+        onClick={handleToggleCatalog}
+        className={styles.buttonCatalog}
+        color="whiteText"
+        bgColor="blue"
+        size="medium">
         <span className={styles.openClose} />
         Каталог
-      </button>
+      </Button>
+
+      {/* <button onClick={handleToggleCatalog} className={styles.buttonCatalog}>
+        <span className={styles.openClose} />
+        Каталог
+      </button> */}
       {/* <Link href={"/catalog"} className={styles.buttonCatalog}>
         <span className={styles.openClose} />
         Каталог
