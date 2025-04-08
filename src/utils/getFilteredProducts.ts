@@ -91,7 +91,7 @@ export const getFilteredProducts = <T extends ISearchParams>(
   if (minPrice) {
     searchParamsToSend.set("minPrice", minPrice);
   } else {
-    searchParamsToSend.delete("staminPricendartId");
+    searchParamsToSend.delete("minPrice");
   }
   if (maxPrice) {
     searchParamsToSend.set("maxPrice", maxPrice);

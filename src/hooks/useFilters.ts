@@ -29,8 +29,10 @@ export const useFilter = () => {
     await dispatch(updateQueryParamAsync({ key, value }));
     const newParams = new URLSearchParams(searchParams.toString());
     if (value) {
+      console.log("+++", value);
       newParams.set(key, String(value));
     } else {
+      console.log("---");
       newParams.delete(key);
     }
     replace(pathname + `?${newParams.toString()}`);

@@ -64,7 +64,6 @@ export const Range = ({
         />
       </div>
       <Slider
-        // className={styles.slider}
         trackStyle={[
           { backgroundColor: "#00599f", height: 4 },
           { backgroundColor: "#00599f", height: 4 },
@@ -104,13 +103,5 @@ export const Range = ({
         }}
       />
     </WhiteBlock>
-
-    // <div>
-
-    //   <div>
-    //     <span>От: ${fromValue}</span>
-    //     <span>До: ${toValue}</span>
-    //   </div>
-    // </div>
   );
 };

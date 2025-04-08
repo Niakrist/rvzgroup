@@ -9,17 +9,15 @@ export const RangePrice = () => {
   return (
     <Range
       max={10000}
-      fromInitialValue={
-        queryParams.minPrice ? Number(queryParams.minPrice) : undefined
-      }
+      fromInitialValue={queryParams.minPrice ? Number(queryParams.minPrice) : 0}
       toInitialValue={
-        queryParams.maxPrice ? Number(queryParams.maxPrice) : undefined
+        queryParams.maxPrice ? Number(queryParams.maxPrice) : 10000
       }
       onChangeFromValue={(value) => {
-        updateQueryParams("minPrice", value.toString());
+        updateQueryParams("minPrice", value === 0 ? "" : value.toString());
       }}
       onChangeToValue={(value) => {
-        updateQueryParams("maxPrice", value.toString());
+        updateQueryParams("maxPrice", value === 10000 ? "" : value.toString());
       }}
     />
   );

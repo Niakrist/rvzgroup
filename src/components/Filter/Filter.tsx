@@ -61,7 +61,7 @@ export const Filter = () => {
 
   return (
     <div className={styles.filter}>
-      {/* <RangePrice /> */}
+      <RangePrice />
       <InnerDiameter />
       <OuterDiameter />
       <WidthBearing />
