@@ -5,6 +5,7 @@ import { deleteFromCart } from "@/store/cartSlice/cartSlice";
 import { AppDispatch } from "@/store/store";
 import { IBearing } from "@/types/bearing";
 import { ICartItem } from "@/types/cartItem.interface";
+import { convertNumberInGroupNumber } from "@/utils/convertNumber";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
 import styles from "./CartItem.module.css";
@@ -41,7 +42,9 @@ export const CartItem = ({ cart }: ICartItemProps) => {
       <div className={styles.priceInfo}>
         <CounterQuantityForCart cart={cart} size="large" bgColor="grey" />
         <div className={product.price ? styles.price : styles.zakaz}>
-          {!!product.price ? product.price + " ₽/шт." : "Под заказ"}
+          {!!product.price
+            ? convertNumberInGroupNumber(product.price) + " ₽/шт."
+            : "Под заказ"}
         </div>
         <button
           onClick={() => handleDeleteFromCart(product)}

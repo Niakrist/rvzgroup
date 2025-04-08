@@ -11,6 +11,7 @@ import {
   changeInCart,
   decrementCart,
 } from "@/store/cartSlice/cartSlice";
+import { convertNumberInGroupNumber } from "@/utils/convertNumber";
 
 export const CounterQuantityForCart = ({
   size,
@@ -21,7 +22,8 @@ export const CounterQuantityForCart = ({
 
   const handleChangeQuantity = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    if (/^\d+$/.test(value)) {
+    console.log("value: ", typeof value);
+    if (/^([1-9]\d*)$/.test(value)) {
       const parsedValue = parseInt(value, 10);
       dispatch(changeInCart({ product: cart.product, count: parsedValue }));
     }
