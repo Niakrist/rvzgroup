@@ -1,5 +1,6 @@
 "use client";
 
+import { useDebounce } from "@/hooks/useDebounce";
 import { useFilter } from "@/hooks/useFilters";
 import { InputFilter, WhiteBlock } from "@/ui";
 import { useEffect, useState } from "react";
@@ -46,12 +47,15 @@ export const InnerDiameter = () => {
     });
   };
 
+  const debounceInnerDiameterMin = useDebounce(innerDiameter.min, 500);
+  const debounceInnerDiameterMax = useDebounce(innerDiameter.max, 500);
+
   useEffect(() => {
-    updateQueryParams("minInnerDiameter", innerDiameter.min);
-  }, [innerDiameter.min]);
+    updateQueryParams("minInnerDiameter", debounceInnerDiameterMin);
+  }, [debounceInnerDiameterMin]);
   useEffect(() => {
-    updateQueryParams("maxInnerDiameter", innerDiameter.max);
-  }, [innerDiameter.max]);
+    updateQueryParams("maxInnerDiameter", debounceInnerDiameterMax);
+  }, [debounceInnerDiameterMax]);
 
   return (
     <WhiteBlock text="Внутренний диаметр (мм)">

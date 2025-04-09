@@ -1,8 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import cn from "classnames";
 import styles from "./PaginationList.module.css";
 import Link from "next/link";
+import { useFilter } from "@/hooks/useFilters";
 
 interface IPaginationListProps {
   count: number;
@@ -11,15 +12,17 @@ interface IPaginationListProps {
 export const PaginationList = ({
   count,
 }: IPaginationListProps): React.JSX.Element => {
-  const [currentPage, setCurrentPage] = useState<number>(1);
-  const limit = 16;
+  const { queryParams, updateQueryParams } = useFilter();
 
+  console.log("queryParams.page: ", queryParams.page);
+
+  const currentPage = queryParams.page ? Number(queryParams.page) : 1;
+  const limit = 12;
   const totalPage = Math.ceil(count / limit);
 
   const handleChangePage = (p: number) => {
-    setCurrentPage(p);
+    updateQueryParams("page", p.toString());
   };
-
   const getVisiblePages = () => {
     let startPage = 0;
     let endPage = 0;

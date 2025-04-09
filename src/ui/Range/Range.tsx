@@ -4,6 +4,7 @@ import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import { WhiteBlock } from "../WhiteBlock/WhiteBlock";
 import styles from "./Range.module.css";
+import { useDebounce } from "@/hooks/useDebounce";
 
 interface IRangeProps {
   min?: number;
@@ -25,13 +26,16 @@ export const Range = ({
   const [fromValue, setFormValue] = useState(fromInitialValue);
   const [toValue, setToValue] = useState(toInitialValue);
 
-  useEffect(() => {
-    onChangeFromValue(fromValue);
-  }, [fromValue]);
+  const debounceFromValue = useDebounce(fromValue, 500);
+  const debounceToValue = useDebounce(toValue, 500);
 
   useEffect(() => {
-    onChangeToValue(toValue);
-  }, [toValue]);
+    onChangeFromValue(debounceFromValue);
+  }, [debounceFromValue]);
+
+  useEffect(() => {
+    onChangeToValue(debounceToValue);
+  }, [debounceToValue]);
 
   useEffect(() => {
     setToValue(toInitialValue);

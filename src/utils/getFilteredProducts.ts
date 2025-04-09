@@ -23,6 +23,8 @@ export const getFilteredProducts = <T extends ISearchParams>(
 
   const searchParamsToSend = new URLSearchParams();
 
+  console.log("page: ", page);
+
   if (page) {
     searchParamsToSend.set("page", page);
   } else {
@@ -98,5 +100,6 @@ export const getFilteredProducts = <T extends ISearchParams>(
   } else {
     searchParamsToSend.delete("maxPrice");
   }
+
   return searchParamsToSend;
 };

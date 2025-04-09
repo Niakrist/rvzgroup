@@ -1,5 +1,6 @@
 "use client";
 
+import { useDebounce } from "@/hooks/useDebounce";
 import { useFilter } from "@/hooks/useFilters";
 import { InputFilter, WhiteBlock } from "@/ui";
 import { useEffect, useState } from "react";
@@ -46,12 +47,15 @@ export const OuterDiameter = () => {
     });
   };
 
+  const debounceOuterDiameterMin = useDebounce(outerDiameter.min, 500);
+  const debounceOuterDiameterMax = useDebounce(outerDiameter.max, 500);
+
   useEffect(() => {
-    updateQueryParams("minOuterDiameter", outerDiameter.min);
-  }, [outerDiameter.min]);
+    updateQueryParams("minOuterDiameter", debounceOuterDiameterMin);
+  }, [debounceOuterDiameterMin]);
   useEffect(() => {
-    updateQueryParams("maxOuterDiameter", outerDiameter.max);
-  }, [outerDiameter.max]);
+    updateQueryParams("maxOuterDiameter", debounceOuterDiameterMax);
+  }, [debounceOuterDiameterMax]);
 
   return (
     <WhiteBlock text="Наружный диаметр (мм)">

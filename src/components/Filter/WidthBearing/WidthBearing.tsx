@@ -1,5 +1,6 @@
 "use client";
 
+import { useDebounce } from "@/hooks/useDebounce";
 import { useFilter } from "@/hooks/useFilters";
 import { InputFilter, WhiteBlock } from "@/ui";
 import { useEffect, useState } from "react";
@@ -46,12 +47,15 @@ export const WidthBearing = () => {
     });
   };
 
+  const debounceWidthBearingMin = useDebounce(widthBearing.min, 500);
+  const debounceWidthBearingMax = useDebounce(widthBearing.max, 500);
+
   useEffect(() => {
-    updateQueryParams("minWidth", widthBearing.min);
-  }, [widthBearing.min]);
+    updateQueryParams("minWidth", debounceWidthBearingMin);
+  }, [debounceWidthBearingMin]);
   useEffect(() => {
-    updateQueryParams("maxWidth", widthBearing.max);
-  }, [widthBearing.max]);
+    updateQueryParams("maxWidth", debounceWidthBearingMax);
+  }, [debounceWidthBearingMax]);
 
   return (
     <WhiteBlock text="Ширина (мм)">

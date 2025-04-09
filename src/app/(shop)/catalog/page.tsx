@@ -29,7 +29,7 @@ export default async function CatalogPage({
 
   return (
     <>
-      <Products bearingList={products.rows} />
+      <Products bearingList={products.rows} count={products.count} />
     </>
   );
 }

@@ -1,6 +1,9 @@
 "use client";
 
-import { updateQueryParamAsync } from "@/store/filterSlice/filterSlice";
+import {
+  resetQueryParamAsync,
+  updateQueryParamAsync,
+} from "@/store/filterSlice/filterSlice";
 import { AppDispatch, RootState } from "@/store/store";
 import { IQueryParams } from "@/types/queryParams.interface";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
@@ -28,11 +31,13 @@ export const useFilter = () => {
   const updateQueryParams = async (key: keyof IQueryParams, value: string) => {
     await dispatch(updateQueryParamAsync({ key, value }));
     const newParams = new URLSearchParams(searchParams.toString());
+
+    newParams.delete("page");
+    await dispatch(resetQueryParamAsync("page"));
+
     if (value) {
-      console.log("+++", value);
       newParams.set(key, String(value));
     } else {
-      console.log("---");
       newParams.delete(key);
     }
     replace(pathname + `?${newParams.toString()}`);

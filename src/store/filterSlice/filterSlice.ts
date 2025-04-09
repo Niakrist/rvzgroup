@@ -2,6 +2,7 @@ import { IQueryParams } from "@/types/queryParams.interface";
 import {
   createAsyncThunk,
   createSlice,
+  PayloadAction,
   SerializedError,
 } from "@reduxjs/toolkit";
 
@@ -28,6 +29,7 @@ const initialState: IFilterState = {
     loadId: "",
     rowId: "",
     openId: "",
+    page: "",
   },
   isLoading: false,
   isError: null,
@@ -37,6 +39,13 @@ export const updateQueryParamAsync = createAsyncThunk(
   "filter/updateQueryParam",
   async (payload: { key: keyof IQueryParams; value: string }) => {
     return payload;
+  }
+);
+
+export const resetQueryParamAsync = createAsyncThunk(
+  "filters/resetQueryParam",
+  async (key: keyof IQueryParams) => {
+    return key;
   }
 );
 
@@ -64,7 +73,13 @@ const filterSlice = createSlice({
       .addCase(updateQueryParamAsync.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = action.error;
-      });
+      })
+      .addCase(
+        resetQueryParamAsync.fulfilled,
+        (state, action: PayloadAction<keyof IQueryParams>) => {
+          state.queryParams[action.payload] = "";
+        }
+      );
   },
 });
 
