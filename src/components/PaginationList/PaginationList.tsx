@@ -20,6 +20,34 @@ export const PaginationList = ({
     setCurrentPage(p);
   };
 
+  const getVisiblePages = () => {
+    let startPage = 0;
+    let endPage = 0;
+
+    if (totalPage <= 5) {
+      startPage = 1;
+      endPage = totalPage;
+    } else {
+      if (currentPage <= 3) {
+        startPage = 1;
+        endPage = 5;
+      } else if (currentPage >= totalPage - 2) {
+        startPage = totalPage - 4;
+        endPage = totalPage;
+      } else {
+        startPage = currentPage - 2;
+        endPage = currentPage + 2;
+      }
+    }
+
+    return Array.from(
+      { length: endPage - startPage + 1 },
+      (_, i) => startPage + i
+    );
+  };
+
+  const visiblePages = getVisiblePages();
+
   return (
     <ul className={styles.list}>
       <li>
@@ -30,7 +58,7 @@ export const PaginationList = ({
           {"<"}
         </Link>
       </li>
-      {Array.from({ length: totalPage }, (_, i) => i + 1).map((page) => (
+      {visiblePages.map((page) => (
         <li key={page}>
           <Link
             onClick={() => handleChangePage(page)}
@@ -42,12 +70,14 @@ export const PaginationList = ({
           </Link>
         </li>
       ))}
-      <Link
-        onClick={() => handleChangePage(totalPage)}
-        className={styles.btn}
-        href={`?page=${totalPage}`}>
-        {">"}
-      </Link>
+      <li>
+        <Link
+          onClick={() => handleChangePage(totalPage)}
+          className={styles.btn}
+          href={`?page=${totalPage}`}>
+          {">"}
+        </Link>
+      </li>
     </ul>
   );
 };
