@@ -18,10 +18,10 @@ export const CategoryItem: React.FC<ICategoryProps> = ({ category }) => {
 
       <div className={styles.wrapper}>
         <Htag size="small">{category.name}</Htag>
-        <div className={styles.info}>
-          <p className={styles.quantity}>1020 шт.</p>
-          <Icon name="iconArrow" className={styles.iconArrow} />
-        </div>
+        {/* <div className={styles.info}> */}
+        {/* <p className={styles.quantity}>1020 шт.</p> */}
+        <Icon name="iconArrow" className={styles.iconArrow} />
+        {/* </div> */}
       </div>
     </Link>
   );

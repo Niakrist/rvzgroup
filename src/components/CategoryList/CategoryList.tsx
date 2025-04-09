@@ -1,9 +1,7 @@
 "use client";
 import React from "react";
 import { categoryList } from "@/mockdata/mockdata";
-import cn from "classnames";
 import { CategoryItem } from "@/components";
-import { IListProps } from "./CategoryList.props";
 import { ICategory } from "@/types/types";
 import styles from "./CategoryList.module.css";
 
@@ -13,12 +11,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 
-export const CategoryList = ({ list }: IListProps): React.JSX.Element => {
+export const CategoryList = (): React.JSX.Element => {
   return (
-    <div className={cn(styles[list])}>
+    <div className={styles.listCategory}>
       <Swiper
         modules={[Navigation, A11y]}
-        // spaceBetween={20}
         breakpoints={{
           0: {
             slidesPerView: 1.2,
