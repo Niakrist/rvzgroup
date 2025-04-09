@@ -1,9 +1,11 @@
+import { getCategories } from "@/api/getCategories";
 import { getItemBearing } from "@/api/getItemBearing";
 import {
   PopularProduct,
   ProductCard,
   ProductCharacteristic,
 } from "@/components";
+import { SwiperSliderProducts } from "@/components";
 
 import { Metadata } from "next";
 import React from "react";
@@ -19,12 +21,14 @@ interface IProductPageProps {
 
 export default async function ProductPage({ params }: IProductPageProps) {
   const { url } = await params;
+  const products = await getCategories();
   const bearingItem = await getItemBearing(url);
   return (
     <>
       <ProductCard bearingItem={bearingItem} />
       <ProductCharacteristic bearingItem={bearingItem} />
-      <PopularProduct />
+      {/* <SwiperSliderProducts products={products.rows} /> */}
+      <PopularProduct products={products.rows} />
     </>
   );
 }

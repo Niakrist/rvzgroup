@@ -84,7 +84,7 @@ export const CounterQuantityGroup = ({
         bgColor="blue"
         color="whiteText"
         size="small">
-        {isProductInCart?.count ? "Перейти в корзину" : "Добавить в корзину"}
+        {isProductInCart?.count ? "В корзину" : "Добавить в корзину"}
       </Button>
     </div>
   );

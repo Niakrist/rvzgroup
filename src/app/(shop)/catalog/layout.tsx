@@ -1,4 +1,4 @@
-import { CatalogNavBar } from "@/components";
+import CatalogNavBar from "@/components/CatalogNavBar/CatalogNavBar";
 import { SideBar } from "@/components/SideBar/SideBar";
 import React from "react";
 
@@ -9,15 +9,13 @@ export default function CatalogLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <>
-      <>
-        <CatalogNavBar />
-        <div className={styles.section}>
-          <div className={styles.container}>
-            <SideBar />
-            {children}
-          </div>
+      <CatalogNavBar />
+      <div className={styles.section}>
+        <div className={styles.container}>
+          <SideBar />
+          {children}
         </div>
-      </>
+      </div>
     </>
   );
 }

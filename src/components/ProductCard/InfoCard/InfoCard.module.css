@@ -6,7 +6,7 @@
 
 .buttonsGroup {
   display: grid;
-  grid-template-columns: auto 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   column-gap: 10px;
 }
@@ -36,8 +36,8 @@
 
 @media (max-width: 767.9px) {
   .buttonsGroup {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     row-gap: 14px;
   }
   .buttonBorder {

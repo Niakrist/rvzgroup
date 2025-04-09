@@ -1,3 +1,4 @@
+import { getCategories } from "@/api/getCategories";
 import {
   AboutCompany,
   Advantage,
@@ -8,12 +9,13 @@ import {
   WeWork,
 } from "@/components";
 
-export default function Home() {
+export default async function Home() {
+  const products = await getCategories();
   return (
     <main>
       <PromoSlider />
       <CategoryBlock />
-      {/* <PopularProduct /> */}
+      <PopularProduct products={products.rows} />
       <Advantage />
       <AboutCompany />
       <WeWork />

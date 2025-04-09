@@ -3,7 +3,7 @@ import { CategoryList } from "@/components";
 
 import styles from "./CatalogNavBar.module.css";
 
-export const CatalogNavBar = () => {
+const CatalogNavBar = () => {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -12,3 +12,5 @@ export const CatalogNavBar = () => {
     </section>
   );
 };
+
+export default CatalogNavBar;

@@ -1,4 +1,4 @@
-import { CatalogNavBar } from "@/components";
+import CatalogNavBar from "@/components/CatalogNavBar/CatalogNavBar";
 import { SideBar } from "@/components/SideBar/SideBar";
 import React from "react";
 

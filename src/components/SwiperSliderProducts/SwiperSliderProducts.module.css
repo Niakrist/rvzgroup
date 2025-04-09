@@ -14,9 +14,8 @@
   display: flex;
   flex-wrap: nowrap;
   overflow-x: hidden;
+  overflow-y: hidden;
   gap: 20px;
-  /* overflow-x: auto;
-  overflow-y: hidden; */
 }
 
 .item {
