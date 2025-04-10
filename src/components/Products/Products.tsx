@@ -33,7 +33,7 @@ const Products = ({ bearingList, count }: IProductsProps) => {
           </li>
         ))}
       </ul>
-      {count && count > 16 && <PaginationList count={count} />}
+      {count && count > 12 && <PaginationList count={count} />}
     </div>
   );
 };
