@@ -27,7 +27,11 @@ export const ThanksModal = () => {
       <Htag className={styles.title} position="center" size="medium">
         Спасибо за заказ!
       </Htag>
-      <Button onClick={handleCloseModal} color="blue">
+      <Button
+        onClick={handleCloseModal}
+        bgColor="blue"
+        color="whiteText"
+        size="big">
         На главную
       </Button>
     </Modal>
