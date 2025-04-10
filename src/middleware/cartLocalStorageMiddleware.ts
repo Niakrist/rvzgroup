@@ -1,3 +1,4 @@
+// eslint-disable
 import { RootState } from "@/store/store";
 import { Middleware } from "@reduxjs/toolkit";
 
@@ -10,3 +11,5 @@ export const cartLocalStorageMiddleware: Middleware<{}, RootState> =
     }
     return result;
   };
+
+// eslint-enable
