@@ -37,7 +37,9 @@ export const cartSlice = createSlice({
       const item = state.cart.find(
         (item) => item.product.id === action.payload.product.id
       );
-      item && item.count--;
+      if (item) {
+        item.count--;
+      }
     },
     changeInCart: (
       state,
