@@ -14,8 +14,6 @@ export const PaginationList = ({
 }: IPaginationListProps): React.JSX.Element => {
   const { queryParams, updateQueryParams } = useFilter();
 
-  console.log("queryParams.page: ", queryParams.page);
-
   const currentPage = queryParams.page ? Number(queryParams.page) : 1;
   const limit = 12;
   const totalPage = Math.ceil(count / limit);

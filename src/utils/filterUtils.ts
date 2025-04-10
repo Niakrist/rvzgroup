@@ -70,7 +70,7 @@ const urlPaths: UrlPaths = {
   },
 };
 
-export async function getFilteredProducts(
+async function getFilteredProducts(
   filterParams: Promise<IFilterParams>,
   categoryParams?: Promise<ICategoryParams>
 ) {

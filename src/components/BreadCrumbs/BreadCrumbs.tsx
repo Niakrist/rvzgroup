@@ -2,23 +2,49 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { IServicesPages, servicesPages } from "@/types/servicesPages";
+import {
+  IServicesPages,
+  servicesPages,
+  shopPages,
+} from "@/types/servicesPages";
 import styles from "./BreadCrumbs.module.css";
+import { getItemBearing } from "@/api/getItemBearing";
 
-export const BreadCrumbs: React.FC = () => {
+export const BreadCrumbs = () => {
   const params = usePathname();
 
-  const name: IServicesPages | undefined = servicesPages.find(
-    (page) => page.path === params
-  );
+  const urls = params.split("/");
+
+  const createBreadCrumbsUrl = () => {
+    const breadCrumbsUrl = [];
+    if (!urls.includes("product")) {
+      for (const item of shopPages) {
+        if (urls.includes(item.path)) {
+          breadCrumbsUrl.push(item);
+        }
+      }
+    } else if (urls.includes("product")) {
+      const url = urls.at(-1) as string;
+      console.log("url: ", url);
+    }
+
+    return breadCrumbsUrl;
+  };
+
+  const breadCrumbsUrl = createBreadCrumbsUrl();
 
   return (
     <section className={styles.section}>
       <ul className={styles.container}>
-        <li className={styles.item}>
+        {breadCrumbsUrl.map((item) => (
+          <li className={styles.item} key={item.name}>
+            <Link href={`/${item.path}`}>{item.name}</Link>
+          </li>
+        ))}
+        {/* <li className={styles.item}>
           <Link href="/">Главная</Link>
         </li>
-        <li className={styles.item}>{name?.name}</li>
+        <li className={styles.item}>{name?.name}</li> */}
       </ul>
     </section>
   );

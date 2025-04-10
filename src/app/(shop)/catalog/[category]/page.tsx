@@ -28,8 +28,6 @@ export default async function CategoryPage({
 
   const search = await searchParams;
 
-  const searchParamsToSend = getFilteredProducts(search);
-
   if (!category) {
     notFound();
   }
@@ -97,6 +95,8 @@ export default async function CategoryPage({
   if (!allPartsFound) {
     return notFound();
   }
+
+  const searchParamsToSend = getFilteredProducts(search, paramsToSend);
 
   let products = searchParamsToSend.size
     ? await getFilter(searchParamsToSend)
