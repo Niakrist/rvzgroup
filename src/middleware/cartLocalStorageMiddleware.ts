@@ -1,4 +1,5 @@
-// eslint-disable
+/* eslint-disable @typescript-eslint/no-empty-object-type, @typescript-eslint/no-explicit-any */
+
 import { RootState } from "@/store/store";
 import { Middleware } from "@reduxjs/toolkit";
 
@@ -11,5 +12,4 @@ export const cartLocalStorageMiddleware: Middleware<{}, RootState> =
     }
     return result;
   };
-
-// eslint-enable
+/* eslint-enable @typescript-eslint/no-empty-object-type, @typescript-eslint/no-explicit-any */
