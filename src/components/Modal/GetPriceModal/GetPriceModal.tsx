@@ -33,7 +33,9 @@ export const GetPriceModal = () => {
         <InputText type="text" placeholder="Номер телефона" />
         <InputText type="text" placeholder="Название компании" />
         <InputText type="text" placeholder="Адрес доставки" />
-        <Button color="blue">Получить КП</Button>
+        <Button bgColor="blue" color="whiteText" size="big">
+          Получить КП
+        </Button>
         <Agreement id="getPriceModal" color="grey" />
       </form>
     </Modal>
