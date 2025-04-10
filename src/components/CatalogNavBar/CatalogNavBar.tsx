@@ -7,7 +7,7 @@ const CatalogNavBar = () => {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <CategoryList list="listCategory" />
+        <CategoryList />
       </div>
     </section>
   );

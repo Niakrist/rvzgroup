@@ -1,6 +1,5 @@
 "use client";
-import React, { useState } from "react";
-import cn from "classnames";
+import React from "react";
 import { ISliderCardProps } from "./SliderCard.props";
 import styles from "./SliderCard.module.css";
 

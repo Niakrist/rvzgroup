@@ -15,12 +15,6 @@ export interface IFilter {
   maxWidth: number | "";
 }
 
-interface IList {
-  id: string;
-  name: string;
-  isCheck: boolean;
-}
-
 export interface IMenuList {
   url: string;
   img: string;

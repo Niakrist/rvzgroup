@@ -1,5 +1,4 @@
 import React from "react";
-import { products } from "@/mockdata/mockdata";
 import styles from "./CharacteristicList.module.css";
 import { IBearing } from "@/types/bearing";
 import Link from "next/link";

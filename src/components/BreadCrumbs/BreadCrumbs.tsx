@@ -2,13 +2,8 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  IServicesPages,
-  servicesPages,
-  shopPages,
-} from "@/types/servicesPages";
+import { shopPages } from "@/types/servicesPages";
 import styles from "./BreadCrumbs.module.css";
-import { getItemBearing } from "@/api/getItemBearing";
 
 export const BreadCrumbs = () => {
   const params = usePathname();

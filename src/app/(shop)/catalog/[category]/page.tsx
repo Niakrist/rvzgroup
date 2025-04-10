@@ -98,7 +98,7 @@ export default async function CategoryPage({
 
   const searchParamsToSend = getFilteredProducts(search, paramsToSend);
 
-  let products = searchParamsToSend.size
+  const products = searchParamsToSend.size
     ? await getFilter(searchParamsToSend)
     : await getCategories(paramsToSend);
 

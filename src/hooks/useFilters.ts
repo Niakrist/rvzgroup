@@ -32,8 +32,8 @@ export const useFilter = () => {
     await dispatch(updateQueryParamAsync({ key, value }));
     const newParams = new URLSearchParams(searchParams.toString());
 
-    // newParams.delete("page");
-    // await dispatch(resetQueryParamAsync("page"));
+    newParams.delete("page");
+    await dispatch(resetQueryParamAsync("page"));
 
     if (value) {
       newParams.set(key, String(value));

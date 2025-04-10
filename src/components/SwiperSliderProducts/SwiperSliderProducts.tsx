@@ -18,7 +18,6 @@ interface IPopularProduct {
 export const SwiperSliderProducts = ({
   products,
 }: IPopularProduct): React.JSX.Element => {
-  console.log("products: ", products);
   if (!products) return <div>Загрузка</div>;
 
   return (

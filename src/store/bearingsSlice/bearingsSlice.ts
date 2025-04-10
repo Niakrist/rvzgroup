@@ -1,9 +1,9 @@
+import { IBearing } from "@/types/bearing";
 import {
   createAsyncThunk,
   createSlice,
   SerializedError,
 } from "@reduxjs/toolkit";
-import { IBearing } from "@/types/types";
 
 interface IBearingListState {
   isLoadingBearingList: boolean;

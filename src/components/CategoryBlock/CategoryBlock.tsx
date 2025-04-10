@@ -1,5 +1,4 @@
 import React from "react";
-import { CategoryList } from "@/components";
 import { Htag } from "@/ui";
 import styles from "./CategoryBlock.module.css";
 import { OurProducts } from "../OurProducts/OurProducts";

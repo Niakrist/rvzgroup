@@ -11,7 +11,6 @@ import {
 import styles from "./Header.module.css";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
-import { ICartItem } from "@/types/cartItem.interface";
 import { initialCart } from "@/store/cartSlice/cartSlice";
 import { loadCartFromLocalStorage } from "@/utils/localstorage";
 import { Button } from "@/ui";

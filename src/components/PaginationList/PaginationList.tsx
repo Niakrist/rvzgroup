@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import cn from "classnames";
 import styles from "./PaginationList.module.css";
 import Link from "next/link";

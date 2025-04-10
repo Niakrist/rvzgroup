@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Icon } from "@/components";
 import { ICounterQuantityProps } from "./CounterQuantityForCart.props";
 import cn from "classnames";
@@ -11,7 +11,6 @@ import {
   changeInCart,
   decrementCart,
 } from "@/store/cartSlice/cartSlice";
-import { convertNumberInGroupNumber } from "@/utils/convertNumber";
 
 export const CounterQuantityForCart = ({
   size,

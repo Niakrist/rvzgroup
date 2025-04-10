@@ -1,4 +1,4 @@
-import { IBearing } from "@/types/types";
+import { IBearing } from "@/types/bearing";
 import {
   createAsyncThunk,
   createSlice,

@@ -5,7 +5,6 @@ import {
   ProductCard,
   ProductCharacteristic,
 } from "@/components";
-import { SwiperSliderProducts } from "@/components";
 
 import { Metadata } from "next";
 import React from "react";
@@ -27,7 +26,6 @@ export default async function ProductPage({ params }: IProductPageProps) {
     <>
       <ProductCard bearingItem={bearingItem} />
       <ProductCharacteristic bearingItem={bearingItem} />
-      {/* <SwiperSliderProducts products={products.rows} /> */}
       <PopularProduct products={products.rows} />
     </>
   );

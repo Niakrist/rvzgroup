@@ -1,4 +1,3 @@
-import { IBearing } from "@/types/bearing";
 import { ICartItem } from "@/types/cartItem.interface";
 
 export interface ICounterQuantityProps {
