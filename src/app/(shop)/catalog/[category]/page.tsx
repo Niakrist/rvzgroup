@@ -104,6 +104,8 @@ export default async function CategoryPage({
 
   if (!products) return;
 
+  console.log("products: ", products);
+
   return (
     <>
       <Products bearingList={products.rows} count={products.count} />

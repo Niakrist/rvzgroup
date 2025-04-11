@@ -1,0 +1,24 @@
+.openClose {
+  min-width: 19px;
+  height: 1px;
+  background-color: var(--white);
+  position: relative;
+}
+
+.openClose::before,
+.openClose::after {
+  content: "";
+  position: absolute;
+  min-width: 19px;
+  height: 1px;
+  background-color: var(--white);
+}
+
+.openClose::before {
+  left: 0;
+  top: 5px;
+}
+.openClose::after {
+  left: 0;
+  bottom: 5px;
+}

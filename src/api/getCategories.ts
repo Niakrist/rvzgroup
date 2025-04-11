@@ -7,5 +7,6 @@ export const getCategories = async (params?: object): Promise<IBearinData> => {
     body: JSON.stringify(params),
   });
   const data = await response.json();
+
   return data;
 };

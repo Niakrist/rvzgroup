@@ -15,4 +15,5 @@ export interface IQueryParams {
   rowId?: string;
   openId?: string;
   page?: string;
+  searchTerm?: string;
 }

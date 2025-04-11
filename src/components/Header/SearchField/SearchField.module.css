@@ -1,0 +1,126 @@
+/* .searchContainer {
+  position: relative;
+  width: 100%;
+} */
+
+.notFound {
+  padding: 1rem;
+  text-align: center;
+  color: #666;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+
+  width: 100%;
+  height: 50px;
+  padding: 0px 18px;
+  border: 1px solid #e8e9ed;
+  border-radius: 8px;
+
+  box-shadow: none;
+  transition: box-shadow 0.2s, border 0.2s;
+}
+
+.form:hover {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--blue);
+}
+
+.search {
+  padding: 15px 0;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.search::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #969fa8;
+}
+
+.iconSearch {
+  width: 20px;
+  height: 20px;
+  color: #bdc3c9;
+  transition: color 0.2s;
+}
+
+.iconSearch:hover {
+  color: var(--blue);
+}
+
+.searchListWrapper {
+  z-index: 8;
+  padding: 25px 15px;
+  border-radius: 8px;
+  border: 1px solid var(--blue);
+  position: absolute;
+  top: 60px;
+  left: 0px;
+  width: 100%;
+  background-color: var(--white);
+}
+
+.searchList {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 20px;
+}
+
+.searchList::-webkit-scrollbar {
+  width: 4px;
+}
+
+.searchList::-webkit-scrollbar-track {
+  background-color: var(--blue3);
+}
+
+.searchList::-webkit-scrollbar-thumb {
+  background-color: var(--blue);
+  border-radius: 20px;
+  border: 3px solid var(--blue);
+}
+
+.searchItemLink {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  border-bottom: 2px solid var(--blue3);
+  transition: border-bottom 0.2s ease;
+}
+
+.searchItemLink:hover {
+  border-bottom: 2px solid var(--blue);
+}
+
+.searchItemImg {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.button {
+  margin-top: 20px;
+}
+
+.title {
+  flex-grow: 1;
+}
+
+@media (max-width: 767px) {
+  .search::placeholder {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 639px) {
+  .searchItemPrice {
+    display: none;
+  }
+}

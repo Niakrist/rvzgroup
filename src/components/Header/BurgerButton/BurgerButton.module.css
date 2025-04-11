@@ -1,0 +1,43 @@
+.burgerLine {
+  width: 28px;
+  height: 2px;
+  background-color: var(--black);
+
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.burgerLine::before,
+.burgerLine::after {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 2px;
+  background-color: var(--black);
+  transform: rotate(0);
+  transition: transform 0.2s;
+}
+
+.burgerLine::before {
+  top: 7px;
+  left: 0;
+}
+.burgerLine::after {
+  bottom: 7px;
+  left: 0;
+}
+
+.burgerLineOpen.burgerLine {
+  background-color: transparent;
+}
+
+.burgerLineOpen.burgerLine::before {
+  top: 0px;
+  left: 0px;
+  transform: rotate(45deg);
+}
+.burgerLineOpen.burgerLine::after {
+  bottom: 0px;
+  left: 0px;
+  transform: rotate(-45deg);
+}
