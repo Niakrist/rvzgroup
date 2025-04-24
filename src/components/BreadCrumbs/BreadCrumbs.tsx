@@ -15,18 +15,20 @@ export const BreadCrumbs = () => {
     if (!urls.includes("product")) {
       for (const item of shopPages) {
         if (urls.includes(item.path)) {
+          console.log("item: ", item);
           breadCrumbsUrl.push(item);
         }
       }
     } else if (urls.includes("product")) {
       const url = urls.at(-1) as string;
-      console.log("url: ", url);
     }
 
     return breadCrumbsUrl;
   };
 
   const breadCrumbsUrl = createBreadCrumbsUrl();
+
+  console.log("urls: ", urls);
 
   return (
     <section className={styles.section}>

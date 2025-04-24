@@ -23,6 +23,7 @@ export const shopPages: IServicesPages[] = [
   { path: "contacts", name: "Контакты" },
   { path: "delivery", name: "Доставка и оплата" },
   { path: "vacancy", name: "Вакансии" },
+  { path: "cart", name: "Корзина" },
   { path: "dvuhryadnye", name: "Двухрядные" },
   { path: "gost", name: "ГОСТ" },
   { path: "igolchatye", name: "Игольчатые" },
