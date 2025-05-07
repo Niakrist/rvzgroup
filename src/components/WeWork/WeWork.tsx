@@ -6,7 +6,9 @@ export const WeWork = () => {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <Htag size="medium">Как мы работаем</Htag>
+        <Htag tag="h2" size="medium">
+          Как мы работаем
+        </Htag>
         <ul className={styles.list}>
           <li className={styles.item}>
             <span>1</span> <p>Оставляете заявку любым удобным способом</p>

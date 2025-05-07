@@ -6,7 +6,9 @@ export const Advantage = () => {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <Htag size="medium">Преимущества</Htag>
+        <Htag tag="h2" size="medium">
+          Преимущества
+        </Htag>
         <ul className={styles.list}>
           <li className={styles.item}>
             <img

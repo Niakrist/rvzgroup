@@ -23,7 +23,9 @@ export const PopularProduct = ({
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <Htag size="medium">Популярные товары</Htag>
+        <Htag tag="h2" size="medium">
+          Популярные товары
+        </Htag>
         <div className={styles.list}>
           <Swiper
             modules={[Navigation, A11y]}

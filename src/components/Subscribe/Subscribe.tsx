@@ -8,7 +8,9 @@ export const Subscribe = () => {
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.content}>
-            <Htag size="medium">Будьте в курсе последних новостей и акций</Htag>
+            <Htag tag="h2" size="medium">
+              Будьте в курсе последних новостей и акций
+            </Htag>
 
             <form className={styles.form}>
               <input

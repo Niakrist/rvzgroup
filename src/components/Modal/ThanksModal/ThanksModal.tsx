@@ -24,7 +24,7 @@ export const ThanksModal = () => {
 
   return (
     <Modal width="small">
-      <Htag className={styles.title} position="center" size="medium">
+      <Htag tag="h2" className={styles.title} position="center" size="medium">
         Спасибо за заказ!
       </Htag>
       <Button

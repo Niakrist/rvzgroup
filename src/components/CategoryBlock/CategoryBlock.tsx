@@ -7,7 +7,9 @@ export const CategoryBlock = () => {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <Htag size="medium">Наша продукция</Htag>
+        <Htag tag="h2" size="medium">
+          Наша продукция
+        </Htag>
         <OurProducts />
       </div>
     </section>

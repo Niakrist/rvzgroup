@@ -23,7 +23,9 @@ export const SwiperSliderProducts = ({
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <Htag size="medium">Популярные товары</Htag>
+        <Htag tag="h2" size="medium">
+          Популярные товары
+        </Htag>
         <div>
           <Swiper
             className={styles.list}

@@ -25,7 +25,7 @@ export const GetPriceModal = () => {
   return (
     <Modal width="medium">
       <button onClick={handleCloseModal} className={styles.close} />
-      <Htag size="medium" position="center">
+      <Htag tag="h2" size="medium" position="center">
         Запрос цены! Куда вам прислать КП?
       </Htag>
       <form className={styles.form}>

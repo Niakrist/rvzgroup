@@ -9,7 +9,9 @@ export const InfoCard = ({ product }: IInfoCardProps): React.JSX.Element => {
   if (!product) return <div>Загрузка InfoCard</div>;
   return (
     <div className={styles.content}>
-      <Htag size="medium">Пошипник {product.name}</Htag>
+      <Htag tag="h1" size="medium">
+        Пошипник {product.name}
+      </Htag>
       <ArticleInStock product={product} />
       <Price fontSize="fs18" product={product} />
       <CharacteristicList type="characteristic" bearingItem={product} />

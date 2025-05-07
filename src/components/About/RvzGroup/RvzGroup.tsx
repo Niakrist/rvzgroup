@@ -8,7 +8,7 @@ export const RvzGroup = () => {
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.content}>
-            <Htag className={styles.mb} size="large">
+            <Htag tag="h1" className={styles.mb} size="large">
               РВЗ групп
             </Htag>
             <p className={styles.text}>
@@ -22,7 +22,7 @@ export const RvzGroup = () => {
               стремление ведет нас вперед и заставляет постоянно
               совершенствоваться.
             </p>
-            <Htag className={styles.mb} size="medium">
+            <Htag tag="h2" className={styles.mb} size="small">
               Что нами движет:
             </Htag>
 

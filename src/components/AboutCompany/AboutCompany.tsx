@@ -10,7 +10,9 @@ export const AboutCompany = () => {
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.content}>
-            <Htag size="medium">О компании</Htag>
+            <Htag tag="h2" size="medium">
+              О компании
+            </Htag>
             <p className={cn(styles.text, styles.textFirst)}>
               РВЗ групп - ваш надежный поставщик подшипников. Мы производим и
               поставляем широкий спектр подшипников по всей России, а также

@@ -89,7 +89,7 @@ export const SearchField = () => {
       </form>
       {isOpenSearch && (
         <div className={styles.searchListWrapper}>
-          {searchList.length ? (
+          {searchList?.length && searchList.length ? (
             <>
               <ul className={styles.searchList}>
                 {searchList.map((item) => (

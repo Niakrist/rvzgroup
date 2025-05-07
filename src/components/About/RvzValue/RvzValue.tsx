@@ -8,7 +8,7 @@ export const RvzValue = () => {
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.content}>
-            <Htag className={styles.mb} size="large">
+            <Htag tag="h2" className={styles.mb} size="large">
               Видение РВЗ:
             </Htag>
             <ul>

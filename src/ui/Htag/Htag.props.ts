@@ -6,7 +6,8 @@ export interface IHtagProps
     HTMLHeadingElement
   > {
   children: React.ReactNode;
-  size: "small" | "medium" | "large";
+  size: "verySmall" | "small" | "medium" | "large";
+  tag: "h1" | "h2" | "h3" | "h4";
   position?: "center";
   className?: string;
 }
