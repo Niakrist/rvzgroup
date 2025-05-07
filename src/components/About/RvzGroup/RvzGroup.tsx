@@ -1,5 +1,5 @@
-import { Htag } from "@/ui";
 import React from "react";
+import { Htag, Text } from "@/ui";
 import styles from "./RvzGroup.module.css";
 
 export const RvzGroup = () => {
@@ -11,7 +11,7 @@ export const RvzGroup = () => {
             <Htag tag="h1" className={styles.mb} size="large">
               РВЗ групп
             </Htag>
-            <p className={styles.text}>
+            <Text className={styles.text} tag="p" size="medium">
               Это не просто компания, а команда единомышленников, которые с 2015
               года связали свою жизнь с производством и поставками подшипников.
               То, что начиналось как предпринимательская идея, переросло в нашу
@@ -21,32 +21,38 @@ export const RvzGroup = () => {
               долговечности, стандартом, которому доверяют. Именно это
               стремление ведет нас вперед и заставляет постоянно
               совершенствоваться.
-            </p>
+            </Text>
             <Htag tag="h2" className={styles.mb} size="small">
               Что нами движет:
             </Htag>
 
             <div className={styles.block}>
-              <p className={styles.name}>Ценности:</p>
-              <p className={styles.desc}>
+              <Text tag="p" size="large">
+                Ценности:
+              </Text>
+              <Text className={styles.text} tag="p" size="medium">
                 Качество, Надежность, Инновации, Профессионализм,
                 Ответственность, Развитие, Партнерство, Открытость.
-              </p>
+              </Text>
             </div>
 
             <div className={styles.block}>
-              <p className={styles.name}>Миссия:</p>
-              <p className={styles.desc}>
+              <Text tag="p" size="large">
+                Миссия:
+              </Text>
+              <Text className={styles.text} tag="p" size="medium">
                 Обеспечивать промышленные предприятия высококачественными и
                 надежными подшипниками, способствуя их развитию.
-              </p>
+              </Text>
             </div>
             <div className={styles.block}>
-              <p className={styles.name}>Видение:</p>
-              <p className={styles.desc}>
+              <Text tag="p" size="large">
+                Видение:
+              </Text>
+              <Text className={styles.text} tag="p" size="medium">
                 Стать ведущим производителем и поставщиком подшипников в России
                 и СНГ, признанным за качество, инновации и сервис.
-              </p>
+              </Text>
             </div>
           </div>
           <img className={styles.img} src="./rvz-about.jpg" alt="" />

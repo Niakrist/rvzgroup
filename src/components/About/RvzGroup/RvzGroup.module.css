@@ -23,11 +23,6 @@
 
 .text {
   margin-bottom: 16px;
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.4;
-  color: var(--black);
 }
 
 .block {
@@ -64,7 +59,30 @@
 .img {
   border-radius: 8px;
   padding: 10px;
-  width: 434px;
+  min-width: 434px;
   height: 515px;
-  object-fit: contain;
+  object-fit: cover;
+}
+
+@media (max-width: 1239px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    flex-direction: column-reverse;
+    column-gap: 0px;
+    row-gap: 30px;
+  }
+  .img {
+    min-width: 650px;
+    height: 600px;
+    margin: 0 auto;
+
+    order: -1;
+  }
+}
+
+@media (max-width: 767px) {
+  .img {
+    min-width: 325px;
+    height: 365px;
+  }
 }

@@ -1,4 +1,5 @@
 import { RvzGroup, RvzMission, RvzValue, RvzVision } from "@/components";
+import RvzContact from "@/components/About/RvzContact/RvzContact";
 import { Metadata } from "next";
 import React from "react";
 
@@ -13,6 +14,7 @@ const About = () => {
       <RvzValue />
       <RvzMission />
       <RvzVision />
+      <RvzContact />
     </>
   );
 };

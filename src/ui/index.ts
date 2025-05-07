@@ -10,3 +10,6 @@ export * from "./BadgeInStock/BadgeInStock";
 export * from "./Checkbox/Checkbox";
 export * from "./Textarea/Textarea";
 export * from "./Range/Range";
+export * from "./MapYandex/MapYandex";
+export * from "./P/P";
+export * from "./Text/Text";

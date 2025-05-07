@@ -1,4 +1,4 @@
-import { Htag } from "@/ui";
+import { Htag, Text } from "@/ui";
 import React from "react";
 import styles from "./RvzMission.module.css";
 
@@ -13,24 +13,24 @@ export const RvzMission = () => {
               Миссия РВЗ:
             </Htag>
             <ul>
-              <li className={styles.item}>
+              <Text className={styles.item} tag="li" size="medium">
                 Обеспечивать промышленные предприятия России и стран СНГ
                 высококачественными и надежными подшипниками, способствуя их
                 бесперебойной работе и развитию.
-              </li>
-              <li className={styles.item}>
+              </Text>
+              <Text className={styles.item} tag="li" size="medium">
                 Предоставлять нашим клиентам лучшие решения в области
                 подшипниковой продукции, основанные на инновационных
                 технологиях, высоком качестве и профессиональном обслуживании.
-              </li>
-              <li className={styles.item}>
+              </Text>
+              <Text className={styles.item} tag="li" size="medium">
                 Быть надежным партнером, предлагающим стабильные поставки,
                 широкий ассортимент и гибкие условия сотрудничества.
-              </li>
-              <li className={styles.item}>
+              </Text>
+              <Text className={styles.item} tag="li" size="medium">
                 Постоянно совершенствоваться, развиваться и вносить вклад в
                 развитие промышленности.
-              </li>
+              </Text>
             </ul>
           </div>
         </div>
