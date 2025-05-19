@@ -9,6 +9,7 @@ export const Text = ({
   tag: Tag,
   children,
   className,
+  weight = "normal",
   ...props
 }: ITextProps): React.JSX.Element => {
   return (
@@ -18,6 +19,8 @@ export const Text = ({
         [styles.small]: size === "small",
         [styles.medium]: size === "medium",
         [styles.large]: size === "large",
+        [styles.normalWeight]: weight === "normal",
+        [styles.mediumWeight]: weight === "medium",
       })}>
       {children}
     </Tag>

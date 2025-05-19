@@ -30,6 +30,10 @@
   object-fit: cover;
 }
 
+.mb {
+  margin-bottom: 10px;
+}
+
 .title {
   margin-bottom: 10px;
   font-family: var(--font-family);

@@ -1,5 +1,5 @@
 import React from "react";
-import { Htag } from "@/ui";
+import { Htag, Text } from "@/ui";
 import styles from "./Advantage.module.css";
 
 export const Advantage = () => {
@@ -17,11 +17,13 @@ export const Advantage = () => {
               alt="Бренд РВЗ"
             />
             <div>
-              <p className={styles.title}>Собственный бренд РВЗ</p>
-              <p className={styles.text}>
+              <Text className={styles.mb} weight="medium" tag="p" size="small">
+                Собственный бренд РВЗ
+              </Text>
+              <Text weight="normal" tag="p" size="small">
                 Мы дорожим своим именем и поставляем только качественную
                 продукцию по конкурентным ценам.
-              </p>
+              </Text>
             </div>
           </li>
           <li className={styles.item}>
@@ -31,12 +33,14 @@ export const Advantage = () => {
               alt="Производство"
             />
             <div>
-              <p className={styles.title}>Производство</p>
-              <p className={styles.text}>
+              <Text className={styles.mb} weight="medium" tag="p" size="small">
+                Производство
+              </Text>
+              <Text weight="normal" tag="p" size="small">
                 Наличие производственных мощностей позволяет нам держать самые
                 привлекательные цены на рынке, так как мы продукцию не
                 перекупаем, а производим
-              </p>
+              </Text>
             </div>
           </li>
           <li className={styles.item}>
@@ -46,11 +50,13 @@ export const Advantage = () => {
               alt="ГОСТ 520-2011"
             />
             <div>
-              <p className={styles.title}>ГОСТ 520-2011</p>
-              <p className={styles.text}>
+              <Text className={styles.mb} weight="medium" tag="p" size="small">
+                ГОСТ 520-2011
+              </Text>
+              <Text weight="normal" tag="p" size="small">
                 Качество и маркировка продукции полностью соответствует ГОСТ
                 520-2011.
-              </p>
+              </Text>
             </div>
           </li>
           <li className={styles.item}>
@@ -60,11 +66,13 @@ export const Advantage = () => {
               alt="Сертификаты и паспорта"
             />
             <div>
-              <p className={styles.title}>Сертификаты и паспорта</p>
-              <p className={styles.text}>
+              <Text className={styles.mb} weight="medium" tag="p" size="small">
+                Сертификаты и паспорта
+              </Text>
+              <Text weight="normal" tag="p" size="small">
                 Вся продукция поставляется с сертификатами и паспортами
                 качества.
-              </p>
+              </Text>
             </div>
           </li>
           <li className={styles.item}>
@@ -74,10 +82,12 @@ export const Advantage = () => {
               alt="Большой склад"
             />
             <div>
-              <p className={styles.title}>Большой склад</p>
-              <p className={styles.text}>
+              <Text className={styles.mb} weight="medium" tag="p" size="small">
+                Большой склад
+              </Text>
+              <Text weight="normal" tag="p" size="small">
                 Более 10 000 единиц товара на складе.
-              </p>
+              </Text>
             </div>
           </li>
           <li className={styles.item}>
@@ -87,12 +97,14 @@ export const Advantage = () => {
               alt="Ассортимент"
             />
             <div>
-              <p className={styles.title}>Расширение ассортимента</p>
-              <p className={styles.text}>
+              <Text className={styles.mb} weight="medium" tag="p" size="small">
+                Расширение ассортимента
+              </Text>
+              <Text weight="normal" tag="p" size="small">
                 Наша компания регулярно работает над расширением ассортимента,
                 увеличивая складские ресурсы и перечень поставляемой
                 номенклатуры.
-              </p>
+              </Text>
             </div>
           </li>
           <li className={styles.item}>
@@ -102,11 +114,13 @@ export const Advantage = () => {
               alt="Индивидуальные условия"
             />
             <div>
-              <p className={styles.title}>Индивидуальные условия</p>
-              <p className={styles.text}>
+              <Text className={styles.mb} weight="medium" tag="p" size="small">
+                Индивидуальные условия
+              </Text>
+              <Text weight="normal" tag="p" size="small">
                 Мы предлагаем индивидуальные условия для наших клиентов, мы
                 заинтересованы только в взаимовыгодном партнерстве.
-              </p>
+              </Text>
             </div>
           </li>
           <li className={styles.item}>
@@ -116,11 +130,13 @@ export const Advantage = () => {
               alt="Экспертность"
             />
             <div>
-              <p className={styles.title}>Экспертность</p>
-              <p className={styles.text}>
+              <Text className={styles.mb} weight="medium" tag="p" size="small">
+                Экспертность
+              </Text>
+              <Text weight="normal" tag="p" size="small">
                 В нашей команде только высококвалифицированные сотрудники,
                 которые проходят регулярные обучения.
-              </p>
+              </Text>
             </div>
           </li>
           <li className={styles.item}>
@@ -130,12 +146,14 @@ export const Advantage = () => {
               alt="Высокий уровень сервиса"
             />
             <div>
-              <p className={styles.title}>Высокий уровень сервиса</p>
-              <p className={styles.text}>
+              <Text className={styles.mb} weight="medium" tag="p" size="small">
+                Высокий уровень сервиса
+              </Text>
+              <Text weight="normal" tag="p" size="small">
                 Для наших клиентов мы предлагаем комплекс услуг - отсрочка
                 платежа, бесплатная доставка - чтобы сотрудничество с нами
                 приносило не только прибыль, но и удовольствие от работы.
-              </p>
+              </Text>
             </div>
           </li>
         </ul>

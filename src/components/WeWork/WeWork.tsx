@@ -1,5 +1,5 @@
 import React from "react";
-import { Htag } from "@/ui";
+import { Htag, Text } from "@/ui";
 import styles from "./WeWork.module.css";
 
 export const WeWork = () => {
@@ -11,7 +11,10 @@ export const WeWork = () => {
         </Htag>
         <ul className={styles.list}>
           <li className={styles.item}>
-            <span>1</span> <p>Оставляете заявку любым удобным способом</p>
+            <span>1</span>{" "}
+            <Text tag="p" size="large">
+              Оставляете заявку любым удобным способом
+            </Text>
           </li>
           <li className={styles.item}>
             <span>2</span> <p>С Вами связывается наш менеджер</p>
