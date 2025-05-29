@@ -1,10 +1,23 @@
 export interface ISearchParams {
-  bodyId?: string;
-  loadId?: string;
-  rowId?: string;
-  formaId?: string;
+  bearingDesignId?: string;
+  bearingSealId?: string;
+  bearingTypeId?: string;
+  cornerId?: string;
+  feature2Id?: string;
+  featureId?: string;
+  holeId?: string;
+  innerRingId?: string;
+  loadTypeId?: string;
+  materialId?: string;
+  outerRingId?: string;
+  rollerTypeId?: string;
+  rowCountId?: string;
+  sealId?: string;
+  sepId?: string;
   standartId?: string;
-  openId?: string;
+  bushingTypeId?: string;
+  lubricationHoleId?: string;
+  connectionId?: string;
   page?: string;
   minInnerDiameter?: string;
   maxInnerDiameter?: string;

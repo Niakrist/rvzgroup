@@ -103,7 +103,7 @@ export const SearchField = () => {
                         src={`http://localhost:4000/${item.images}`}
                         alt={item.title}
                       />
-                      <p className={styles.title}>{item.title}</p>
+                      <p className={styles.title}>{item.name}</p>
                       {item.price ? (
                         <p className={styles.searchItemPrice}>
                           {item.price} руб./шт

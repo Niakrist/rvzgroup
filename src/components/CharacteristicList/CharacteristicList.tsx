@@ -14,6 +14,8 @@ export const CharacteristicList = ({
 }: ICharacteristicListProps): React.JSX.Element => {
   if (!bearingItem) return <div>Загрузка...</div>;
 
+  console.log("bearingItem: ", bearingItem);
+
   switch (type) {
     case "characteristic":
       return (
@@ -32,17 +34,16 @@ export const CharacteristicList = ({
           </li>
           <li className={styles.item}>
             <span className={styles.key}>Ширина (мм)</span>
-            <span className={styles.value}>{bearingItem.width}</span>
+            <span className={styles.value}>{bearingItem.widthBearing}</span>
           </li>
           <li className={styles.item}>
-            <span className={styles.key}>Маркировка {bearingItem.name}</span>
+            <span className={styles.key}>Аналог </span>
             <span className={styles.value}>
-              Аналог{" "}
               {bearingItem.analog ? (
                 <Link
                   className={styles.analogLink}
                   href={bearingItem.analogUrl}>
-                  {bearingItem.analog}
+                  Подшипник {bearingItem.analog}
                 </Link>
               ) : (
                 "отсутствует"

@@ -15,7 +15,6 @@ export const BreadCrumbs = () => {
     if (!urls.includes("product")) {
       for (const item of shopPages) {
         if (urls.includes(item.path)) {
-          console.log("item: ", item);
           breadCrumbsUrl.push(item);
         }
       }
@@ -27,8 +26,6 @@ export const BreadCrumbs = () => {
   };
 
   const breadCrumbsUrl = createBreadCrumbsUrl();
-
-  console.log("urls: ", urls);
 
   return (
     <section className={styles.section}>

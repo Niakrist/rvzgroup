@@ -30,22 +30,8 @@ export const categoryList: ICategory[] = [
     img: "radial-thrust.jpg",
   },
   { path: "upornye", name: "Упорные", img: "persistent.jpg" },
-  { path: "open", name: "Открытые", img: "open.jpg" },
-  {
-    path: "xlosed-with-metal",
-    name: "Закрытые металлом",
-    img: "xlosed-with-metal.jpg",
-  },
-  {
-    path: "xovered-with-plastic",
-    name: "Закрытые пластиком",
-    img: "xovered-with-plastic.jpg",
-  },
-  {
-    path: "xlosed-on-one-side",
-    name: "Закрытые с одной стороны",
-    img: "xlosed-on-one-side.jpg",
-  },
+  { path: "otkrytye", name: "Открытые", img: "open.jpg" },
+  { path: "zakrytye", name: "Закрытые", img: "close.jpg" },
 ];
 
 export const products: IProduct[] = [

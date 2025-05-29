@@ -9,24 +9,24 @@ export const menuCatalogList: IMenuList[] = [
       {
         subName: "Стандарт",
         categories: [
-          { url: "gost-sharikovye", name: "ГОСТ" },
-          { url: "iso-sharikovye", name: "ISO" },
+          { url: "gost_sharikovye", name: "ГОСТ" },
+          { url: "iso_sharikovye", name: "ISO" },
         ],
       },
       {
         subName: "Рядность",
         categories: [
-          { url: "sharikovye-odnoryadnye", name: "Однорядные" },
-          { url: "sharikovye-dvuhryadnye", name: "Двухрядные" },
+          { url: "sharikovye_odnoryadnye", name: "Однорядные" },
+          { url: "sharikovye_dvuhryadnye", name: "Двухрядные" },
         ],
       },
       {
         subName: "Нагрузка",
         categories: [
-          { url: "sharikovye-radialnye", name: "Радиальные" },
-          { url: "sharikovye-radialno-upornye", name: "Радиально-упорные" },
+          { url: "sharikovye_radialnye", name: "Радиальные" },
+          { url: "sharikovye_radialno_upornye", name: "Радиально_упорные" },
           {
-            url: "sharikovye-upornye",
+            url: "sharikovye_upornye",
             name: "Упорные",
           },
         ],
@@ -34,17 +34,17 @@ export const menuCatalogList: IMenuList[] = [
       {
         subName: "Форма",
         categories: [
-          { url: "sharikovye-standartnye", name: "Обычные" },
+          { url: "sharikovye_standartnye", name: "Обычные" },
           { url: "samoustanavlivayushchiesya", name: "Самоустанавливающиеся" },
         ],
       },
       {
         subName: "Наличие заглушки",
         categories: [
-          { url: "sharikovye-otkrytye", name: "Открытые" },
-          { url: "sharikovye-zakrytye", name: "Закрытые" },
+          { url: "sharikovye_otkrytye", name: "Открытые" },
+          { url: "sharikovye_zakrytye", name: "Закрытые" },
           {
-            url: "sharikovye-zakrytye-s-odnoy-storony",
+            url: "sharikovye_zakrytye_s_odnoy_storony",
             name: "Закрытые с одной стороны",
           },
         ],
@@ -59,41 +59,41 @@ export const menuCatalogList: IMenuList[] = [
       {
         subName: "Стандарт",
         categories: [
-          { url: "gost-rolikovye", name: "ГОСТ" },
-          { url: "iso-rolikovye", name: "ISO" },
+          { url: "gost_rolikovye", name: "ГОСТ" },
+          { url: "iso_rolikovye", name: "ISO" },
         ],
       },
       {
         subName: "Рядность",
         categories: [
-          { url: "rolikovye-odnoryadnye", name: "Однорядные" },
-          { url: "rolikovye-dvuhryadnye", name: "Двухрядные" },
-          { url: "rolikovye-chetyrehryadnye", name: "Четырехрядные" },
+          { url: "rolikovye_odnoryadnye", name: "Однорядные" },
+          { url: "rolikovye_dvuhryadnye", name: "Двухрядные" },
+          { url: "rolikovye_chetyrehryadnye", name: "Четырехрядные" },
         ],
       },
       {
         subName: "Нагрузка",
         categories: [
-          { url: "rolikovye-radialnye", name: "Радиальные" },
-          { url: "rolikovye-radialno-upornye", name: "Радиально-упорные" },
-          { url: "rolikovye-upornye", name: "Упорные" },
+          { url: "rolikovye_radialnye", name: "Радиальные" },
+          { url: "rolikovye_radialno_upornye", name: "Радиально_упорные" },
+          { url: "rolikovye_upornye", name: "Упорные" },
         ],
       },
       {
         subName: "Форма",
         categories: [
-          { url: "rolikovye-standartnye", name: "Обычные" },
-          { url: "rolikovye-sfericheskie", name: "Сферические" },
-          { url: "rolikovye-konicheskie", name: "Конические" },
+          { url: "rolikovye_standartnye", name: "Обычные" },
+          { url: "rolikovye_sfericheskie", name: "Сферические" },
+          { url: "rolikovye_konicheskie", name: "Конические" },
         ],
       },
       {
         subName: "Наличие заглушки",
         categories: [
-          { url: "rolikovye-otkrytye", name: "Открытые" },
-          { url: "rolikovye-zakrytye", name: "Закрытые" },
+          { url: "rolikovye_otkrytye", name: "Открытые" },
+          { url: "rolikovye_zakrytye", name: "Закрытые" },
           {
-            url: "rolikovye-zakrytye-s-odnoy-storony",
+            url: "rolikovye_zakrytye_s_odnoy_storony",
             name: "Закрытые с одной стороны",
           },
         ],
@@ -108,36 +108,36 @@ export const menuCatalogList: IMenuList[] = [
       {
         subName: "Стандарт",
         categories: [
-          { url: "gost-igolchatye", name: "ГОСТ" },
-          { url: "iso-igolchatye", name: "ISO" },
+          { url: "gost_igolchatye", name: "ГОСТ" },
+          { url: "iso_igolchatye", name: "ISO" },
         ],
       },
       {
         subName: "Рядность",
         categories: [
-          { url: "igolchatye-odnoryadnye", name: "Однорядные" },
-          { url: "igolchatye-dvuhryadnye", name: "Двухрядные" },
+          { url: "igolchatye_odnoryadnye", name: "Однорядные" },
+          { url: "igolchatye_dvuhryadnye", name: "Двухрядные" },
         ],
       },
       {
         subName: "Нагрузка",
         categories: [
-          { url: "igolchatye-radialnye", name: "Радиальные" },
-          { url: "igolchatye-radialno-upornye", name: "Радиально-упорные" },
-          { url: "igolchatye-upornye", name: "Упорные" },
+          { url: "igolchatye_radialnye", name: "Радиальные" },
+          { url: "igolchatye_radialno_upornye", name: "Радиально_упорные" },
+          { url: "igolchatye_upornye", name: "Упорные" },
         ],
       },
       {
         subName: "Форма",
-        categories: [{ url: "igolchatye-standartnye", name: "Обычные" }],
+        categories: [{ url: "igolchatye_standartnye", name: "Обычные" }],
       },
       {
         subName: "Наличие заглушки",
         categories: [
-          { url: "igolchatye-otkrytye", name: "Открытые" },
-          { url: "igolchatye-zakrytye", name: "Закрытые" },
+          { url: "igolchatye_otkrytye", name: "Открытые" },
+          { url: "igolchatye_zakrytye", name: "Закрытые" },
           {
-            url: "igolchatye-zakrytye-s-odnoy-storony",
+            url: "igolchatye_zakrytye_s_odnoy_storony",
             name: "Закрытые с одной стороны",
           },
         ],
@@ -152,15 +152,15 @@ export const menuCatalogList: IMenuList[] = [
       {
         subName: "Стандарт",
         categories: [
-          { url: "gost-sfericheskie", name: "ГОСТ" },
-          { url: "iso-sfericheskie", name: "ISO" },
+          { url: "gost_sfericheskie", name: "ГОСТ" },
+          { url: "iso_sfericheskie", name: "ISO" },
         ],
       },
       {
         subName: "Рядность",
         categories: [
-          { url: "sfericheskie-odnoryadnye", name: "Однорядные" },
-          { url: "sfericheskie-dvuhryadnye", name: "Двухрядные" },
+          { url: "sfericheskie_odnoryadnye", name: "Однорядные" },
+          { url: "sfericheskie_dvuhryadnye", name: "Двухрядные" },
         ],
       },
     ],
@@ -173,31 +173,31 @@ export const menuCatalogList: IMenuList[] = [
       {
         subName: "Стандарт",
         categories: [
-          { url: "gost-radialnye", name: "ГОСТ" },
-          { url: "iso-rolikovye", name: "ISO" },
+          { url: "gost_radialnye", name: "ГОСТ" },
+          { url: "iso_rolikovye", name: "ISO" },
         ],
       },
       {
         subName: "Тело качения",
         categories: [
-          { url: "sharikovye-radialnye", name: "Шариковые" },
-          { url: "rolikovye-radialnye", name: "Роликовые" },
-          { url: "igolchatye-radialnye", name: "Игольчатые" },
+          { url: "sharikovye_radialnye", name: "Шариковые" },
+          { url: "rolikovye_radialnye", name: "Роликовые" },
+          { url: "igolchatye_radialnye", name: "Игольчатые" },
           { url: "sharnirnye", name: "Шарнирные" },
         ],
       },
       {
         subName: "Рядность",
         categories: [
-          { url: "radialnye-odnoryadnye", name: "Однорядные" },
-          { url: "radialnye-dvuhryadnye", name: "Двухрядные" },
-          { url: "radialnye-chetyrehryadnye", name: "Четырехрядные" },
+          { url: "radialnye_odnoryadnye", name: "Однорядные" },
+          { url: "radialnye_dvuhryadnye", name: "Двухрядные" },
+          { url: "radialnye_chetyrehryadnye", name: "Четырехрядные" },
         ],
       },
       {
         subName: "Форма",
         categories: [
-          { url: "radialnye-standartnye", name: "Обычные" },
+          { url: "radialnye_standartnye", name: "Обычные" },
           { url: "sfericheskie", name: "Сферические" },
           {
             url: "samoustanavlivayushchiesya",
@@ -208,47 +208,47 @@ export const menuCatalogList: IMenuList[] = [
     ],
   },
   {
-    url: "/radialno-upornye",
-    img: "iconRadialno-Upornye.png",
-    name: "Радиально-упорные",
+    url: "/radialno_upornye",
+    img: "iconRadialno_Upornye.png",
+    name: "Радиально_упорные",
     subCategories: [
       {
         subName: "Стандарт",
         categories: [
-          { url: "gost-radialno-upornye", name: "ГОСТ" },
-          { url: "iso-radialno-upornye", name: "ISO" },
+          { url: "gost_radialno_upornye", name: "ГОСТ" },
+          { url: "iso_radialno_upornye", name: "ISO" },
         ],
       },
       {
         subName: "Тело качения",
         categories: [
-          { url: "sharikovye-radialno-upornye", name: "Шариковые" },
-          { url: "rolikovye-radialnou-pornye", name: "Роликовые" },
-          { url: "igolchatye-radialno-upornye", name: "Игольчатые" },
+          { url: "sharikovye_radialno_upornye", name: "Шариковые" },
+          { url: "rolikovye_radialnou_pornye", name: "Роликовые" },
+          { url: "igolchatye_radialno_upornye", name: "Игольчатые" },
         ],
       },
       {
         subName: "Рядность",
         categories: [
-          { url: "odnoryadnye-radialno-upornye", name: "Однорядные" },
-          { url: "dvuhryadnye-radialno-upornye", name: "Двухрядные" },
-          { url: "chetyrehryadnye-radialno-upornye", name: "Четырехрядные" },
+          { url: "odnoryadnye_radialno_upornye", name: "Однорядные" },
+          { url: "dvuhryadnye_radialno_upornye", name: "Двухрядные" },
+          { url: "chetyrehryadnye_radialno_upornye", name: "Четырехрядные" },
         ],
       },
       {
         subName: "Форма",
         categories: [
-          { url: "standartnye-radialno-upornye", name: "Обычные" },
-          { url: "konicheskie-radialno-upornye", name: "Конические" },
+          { url: "standartnye_radialno_upornye", name: "Обычные" },
+          { url: "konicheskie_radialno_upornye", name: "Конические" },
         ],
       },
       {
         subName: "Наличие заглушки",
         categories: [
-          { url: "radialno-upornye-otkrytye", name: "Открытые" },
-          { url: "radialno-upornye-zakrytye", name: "Закрытые" },
+          { url: "radialno_upornye_otkrytye", name: "Открытые" },
+          { url: "radialno_upornye_zakrytye", name: "Закрытые" },
           {
-            url: "radialno-upornye-zakrytye-s-odnoy-storony",
+            url: "radialno_upornye_zakrytye_s_odnoy_storony",
             name: "Закрытые с одной стороны",
           },
         ],
@@ -263,23 +263,23 @@ export const menuCatalogList: IMenuList[] = [
       {
         subName: "Стандарт",
         categories: [
-          { url: "gost-upornye", name: "ГОСТ" },
-          { url: "iso-upornye", name: "ISO" },
+          { url: "gost_upornye", name: "ГОСТ" },
+          { url: "iso_upornye", name: "ISO" },
         ],
       },
       {
         subName: "Тело качения",
         categories: [
-          { url: "sharikovye-upornye", name: "Шариковые" },
-          { url: "rolikovye-upornye", name: "Роликовые" },
-          { url: "igolchatye-upornye", name: "Игольчатые" },
+          { url: "sharikovye_upornye", name: "Шариковые" },
+          { url: "rolikovye_upornye", name: "Роликовые" },
+          { url: "igolchatye_upornye", name: "Игольчатые" },
         ],
       },
       {
         subName: "Рядность",
         categories: [
-          { url: "upornye-odnoryadnye", name: "Однорядные" },
-          { url: "upornye-dvuhryadnye", name: "Двухрядные" },
+          { url: "upornye_odnoryadnye", name: "Однорядные" },
+          { url: "upornye_dvuhryadnye", name: "Двухрядные" },
         ],
       },
     ],
@@ -292,42 +292,42 @@ export const menuCatalogList: IMenuList[] = [
       {
         subName: "Стандарт",
         categories: [
-          { url: "gost-odnoryadnye", name: "ГОСТ" },
-          { url: "iso-odnoryadnye", name: "ISO" },
+          { url: "gost_odnoryadnye", name: "ГОСТ" },
+          { url: "iso_odnoryadnye", name: "ISO" },
         ],
       },
       {
         subName: "Тело качения",
         categories: [
-          { url: "sharikovye-odnoryadnye", name: "Шариковые" },
-          { url: "rolikovye-odnoryadnye", name: "Роликовые" },
-          { url: "igolchatye-odnoryadnye", name: "Игольчатые" },
-          { url: "sharnirnye-odnoryadnye", name: "Шарнирные" },
+          { url: "sharikovye_odnoryadnye", name: "Шариковые" },
+          { url: "rolikovye_odnoryadnye", name: "Роликовые" },
+          { url: "igolchatye_odnoryadnye", name: "Игольчатые" },
+          { url: "sharnirnye_odnoryadnye", name: "Шарнирные" },
         ],
       },
       {
         subName: "Нагрузка",
         categories: [
-          { url: "radialnye-odnoryadnye", name: "Радиальные" },
-          { url: "radialno-upornye-odnoryadnye", name: "Радиально-упорные" },
-          { url: "upornye-odnoryadnye", name: "Упорные" },
+          { url: "radialnye_odnoryadnye", name: "Радиальные" },
+          { url: "radialno_upornye_odnoryadnye", name: "Радиально_упорные" },
+          { url: "upornye_odnoryadnye", name: "Упорные" },
         ],
       },
       {
         subName: "Форма",
         categories: [
-          { url: "standartnye-odnoryadnye", name: "Обычные" },
-          { url: "konicheskie-odnoryadnye", name: "Конические" },
-          { url: "sfericheskie-odnoryadnye", name: "Сферические" },
+          { url: "standartnye_odnoryadnye", name: "Обычные" },
+          { url: "konicheskie_odnoryadnye", name: "Конические" },
+          { url: "sfericheskie_odnoryadnye", name: "Сферические" },
         ],
       },
       {
         subName: "Наличие заглушки",
         categories: [
-          { url: "odnoryadnye-otkrytye", name: "Открытые" },
-          { url: "odnoryadnye-zakrytye", name: "Закрытые" },
+          { url: "odnoryadnye_otkrytye", name: "Открытые" },
+          { url: "odnoryadnye_zakrytye", name: "Закрытые" },
           {
-            url: "odnoryadnye-zakrytye-s-odnoy-storony",
+            url: "odnoryadnye_zakrytye_s_odnoy_storony",
             name: "Закрытые с одной стороны",
           },
         ],
@@ -342,42 +342,42 @@ export const menuCatalogList: IMenuList[] = [
       {
         subName: "Стандарт",
         categories: [
-          { url: "gost-dvuhryadnye", name: "ГОСТ" },
-          { url: "iso-dvuhryadnye", name: "ISO" },
+          { url: "gost_dvuhryadnye", name: "ГОСТ" },
+          { url: "iso_dvuhryadnye", name: "ISO" },
         ],
       },
       {
         subName: "Тело качения",
         categories: [
-          { url: "sharikovye-dvuhryadnye", name: "Шариковые" },
-          { url: "rolikovye-dvuhryadnye", name: "Роликовые" },
-          { url: "igolchatye-dvuhryadnye", name: "Игольчатые" },
+          { url: "sharikovye_dvuhryadnye", name: "Шариковые" },
+          { url: "rolikovye_dvuhryadnye", name: "Роликовые" },
+          { url: "igolchatye_dvuhryadnye", name: "Игольчатые" },
         ],
       },
       {
         subName: "Нагрузка",
         categories: [
-          { url: "radialnye-dvuhryadnye", name: "Радиальные" },
-          { url: "radialno-upornye-dvuhryadnye", name: "Радиально-упорные" },
-          { url: "upornye-dvuhryadnye", name: "Упорные" },
+          { url: "radialnye_dvuhryadnye", name: "Радиальные" },
+          { url: "radialno_upornye_dvuhryadnye", name: "Радиально_упорные" },
+          { url: "upornye_dvuhryadnye", name: "Упорные" },
         ],
       },
       {
         subName: "Форма",
         categories: [
-          { url: "standartnye-dvuhryadnye", name: "Обычные" },
-          { url: "konicheskie-dvuhryadnye", name: "Конические" },
-          { url: "sfericheskie-dvuhryadnye", name: "Сферические" },
+          { url: "standartnye_dvuhryadnye", name: "Обычные" },
+          { url: "konicheskie_dvuhryadnye", name: "Конические" },
+          { url: "sfericheskie_dvuhryadnye", name: "Сферические" },
           { url: "samoustanavlivayushchiesya", name: "Самоустанавливающиеся" },
         ],
       },
       {
         subName: "Наличие заглушки",
         categories: [
-          { url: "dvuhryadnye-otkrytye", name: "Открытые" },
-          { url: "dvuhryadnye-zakrytye", name: "Закрытые" },
+          { url: "dvuhryadnye_otkrytye", name: "Открытые" },
+          { url: "dvuhryadnye_zakrytye", name: "Закрытые" },
           {
-            url: "dvuhryadnye-zakrytye-s-odnoy-storony",
+            url: "dvuhryadnye_zakrytye_s_odnoy_storony",
             name: "Закрытые с одной стороны",
           },
         ],
@@ -392,22 +392,22 @@ export const menuCatalogList: IMenuList[] = [
       {
         subName: "Стандарт",
         categories: [
-          { url: "gost-sharnirnye", name: "ГОСТ" },
-          { url: "iso-sharnirnye", name: "ISO" },
+          { url: "gost_sharnirnye", name: "ГОСТ" },
+          { url: "iso_sharnirnye", name: "ISO" },
         ],
       },
     ],
   },
   {
-    url: "/korpusnye-uzly",
+    url: "/korpusnye",
     img: "iconKorpusnyeUzly.png",
     name: "Корпусные узлы",
     subCategories: [
       {
         subName: "Стандарт",
         categories: [
-          { url: "gost-korpusnyeuzly", name: "ГОСТ" },
-          { url: "iso-korpusnyeuzly", name: "ISO" },
+          { url: "gost_korpusnye", name: "ГОСТ" },
+          { url: "iso_korpusnye", name: "ISO" },
         ],
       },
     ],
@@ -419,7 +419,7 @@ export const menuCatalogList: IMenuList[] = [
     subCategories: [
       {
         subName: "Стандарт",
-        categories: [{ url: "razemnye-korpusa", name: "ISO" }],
+        categories: [{ url: "razemnye_korpusa", name: "ISO" }],
       },
     ],
   },
@@ -431,36 +431,36 @@ export const menuCatalogList: IMenuList[] = [
       {
         subName: "Тело качения",
         categories: [
-          { url: "gost-sharikovye", name: "Шариковые" },
-          { url: "gost-rolikovye", name: "Роликовые" },
-          { url: "gost-igolchatye", name: "Игольчатые" },
-          { url: "gost-sharnirnye", name: "Шарнирные" },
+          { url: "gost_sharikovye", name: "Шариковые" },
+          { url: "gost_rolikovye", name: "Роликовые" },
+          { url: "gost_igolchatye", name: "Игольчатые" },
+          { url: "gost_sharnirnye", name: "Шарнирные" },
         ],
       },
       {
         subName: "Нагрузка",
         categories: [
-          { url: "gost-radialnye", name: "Радиальные" },
-          { url: "gost-radialno-upornye", name: "Радиально-упорные" },
-          { url: "gost-upornye", name: "Упорные" },
+          { url: "gost_radialnye", name: "Радиальные" },
+          { url: "gost_radialno_upornye", name: "Радиально_упорные" },
+          { url: "gost_upornye", name: "Упорные" },
         ],
       },
       {
         subName: "Рядность",
         categories: [
-          { url: "gost-odnoryadnye", name: "Однорядные" },
-          { url: "gost-dvuhryadnye", name: "Двухрядные" },
-          { url: "gost-chetyrehryadnye", name: "Четырехрядные" },
+          { url: "gost_odnoryadnye", name: "Однорядные" },
+          { url: "gost_dvuhryadnye", name: "Двухрядные" },
+          { url: "gost_chetyrehryadnye", name: "Четырехрядные" },
         ],
       },
       {
         subName: "Форма",
         categories: [
-          { url: "gost-standartnye", name: "Обычные" },
-          { url: "gost-konicheskie", name: "Конические" },
-          { url: "gost-sfericheskie", name: "Сферические" },
+          { url: "gost_standartnye", name: "Обычные" },
+          { url: "gost_konicheskie", name: "Конические" },
+          { url: "gost_sfericheskie", name: "Сферические" },
           {
-            url: "gost-samoustanavlivayushchiesya",
+            url: "gost_samoustanavlivayushchiesya",
             name: "Самоустанавливающиеся",
           },
         ],
@@ -468,10 +468,10 @@ export const menuCatalogList: IMenuList[] = [
       {
         subName: "Наличие заглушки",
         categories: [
-          { url: "gost-otkrytye", name: "Открытые" },
-          { url: "gost-zakrytye", name: "Закрытые" },
+          { url: "gost_otkrytye", name: "Открытые" },
+          { url: "gost_zakrytye", name: "Закрытые" },
           {
-            url: "gost-zakrytye-s-odnoy-storony",
+            url: "gost_zakrytye_s_odnoy_storony",
             name: "Закрытые с одной стороны",
           },
         ],
@@ -486,36 +486,36 @@ export const menuCatalogList: IMenuList[] = [
       {
         subName: "Тело качения",
         categories: [
-          { url: "iso-sharikovye", name: "Шариковые" },
-          { url: "iso-rolikovye", name: "Роликовые" },
-          { url: "iso-igolchatye", name: "Игольчатые" },
-          { url: "iso-sharnirnye", name: "Шарнирные" },
+          { url: "iso_sharikovye", name: "Шариковые" },
+          { url: "iso_rolikovye", name: "Роликовые" },
+          { url: "iso_igolchatye", name: "Игольчатые" },
+          { url: "iso_sharnirnye", name: "Шарнирные" },
         ],
       },
       {
         subName: "Нагрузка",
         categories: [
-          { url: "iso-radialnye", name: "Радиальные" },
-          { url: "iso-radialno-upornye", name: "Радиально-упорные" },
-          { url: "iso-upornye", name: "Упорные" },
+          { url: "iso_radialnye", name: "Радиальные" },
+          { url: "iso_radialno_upornye", name: "Радиально_упорные" },
+          { url: "iso_upornye", name: "Упорные" },
         ],
       },
       {
         subName: "Рядность",
         categories: [
-          { url: "iso-odnoryadnye", name: "Однорядные" },
-          { url: "iso-dvuhryadnye", name: "Двухрядные" },
-          { url: "iso-chetyrehryadnye", name: "Четырехрядные" },
+          { url: "iso_odnoryadnye", name: "Однорядные" },
+          { url: "iso_dvuhryadnye", name: "Двухрядные" },
+          { url: "iso_chetyrehryadnye", name: "Четырехрядные" },
         ],
       },
       {
         subName: "Форма",
         categories: [
-          { url: "iso-standartnye", name: "Обычные" },
-          { url: "iso-konicheskie", name: "Конические" },
-          { url: "iso-sfericheskie", name: "Сферические" },
+          { url: "iso_standartnye", name: "Обычные" },
+          { url: "iso_konicheskie", name: "Конические" },
+          { url: "iso_sfericheskie", name: "Сферические" },
           {
-            url: "iso-samoustanavlivayushchiesya",
+            url: "iso_samoustanavlivayushchiesya",
             name: "Самоустанавливающиеся",
           },
         ],
@@ -523,10 +523,10 @@ export const menuCatalogList: IMenuList[] = [
       {
         subName: "Наличие заглушки",
         categories: [
-          { url: "iso-otkrytye", name: "Открытые" },
-          { url: "iso-zakrytye", name: "Закрытые" },
+          { url: "iso_otkrytye", name: "Открытые" },
+          { url: "iso_zakrytye", name: "Закрытые" },
           {
-            url: "iso-zakrytye-s-odnoy-storony",
+            url: "iso_zakrytye_s_odnoy_storony",
             name: "Закрытые с одной стороны",
           },
         ],
@@ -541,33 +541,33 @@ export const menuCatalogList: IMenuList[] = [
       {
         subName: "Стандарт",
         categories: [
-          { url: "gost-otkrytye", name: "ГОСТ" },
-          { url: "iso-otkrytye", name: "ISO" },
+          { url: "gost_otkrytye", name: "ГОСТ" },
+          { url: "iso_otkrytye", name: "ISO" },
         ],
       },
       {
         subName: "Тело качения",
         categories: [
-          { url: "sharikovye-otkrytye", name: "Шариковые" },
-          { url: "rolikovye-otkrytye", name: "Роликовые" },
-          { url: "igolchatye-otkrytye", name: "Игольчатые" },
+          { url: "sharikovye_otkrytye", name: "Шариковые" },
+          { url: "rolikovye_otkrytye", name: "Роликовые" },
+          { url: "igolchatye_otkrytye", name: "Игольчатые" },
         ],
       },
       {
         subName: "Рядность",
         categories: [
-          { url: "odnoryadnye-otkrytye", name: "Однорядные" },
-          { url: "dvuhryadnye-otkrytye", name: "Двухрядные" },
-          { url: "chetyrehryadnye-otkrytye", name: "Четырехрядные" },
+          { url: "odnoryadnye_otkrytye", name: "Однорядные" },
+          { url: "dvuhryadnye_otkrytye", name: "Двухрядные" },
+          { url: "chetyrehryadnye_otkrytye", name: "Четырехрядные" },
         ],
       },
       {
         subName: "Нагрузка",
         categories: [
-          { url: "radialnye-otkrytye", name: "Радиальные" },
-          { url: "radialno-upornye-otkrytye", name: "Радиально-упорные" },
+          { url: "radialnye_otkrytye", name: "Радиальные" },
+          { url: "radialno_upornye_otkrytye", name: "Радиально_упорные" },
           {
-            url: "upornye-otkrytye",
+            url: "upornye_otkrytye",
             name: "Упорные",
           },
         ],
@@ -575,7 +575,7 @@ export const menuCatalogList: IMenuList[] = [
       {
         subName: "Форма",
         categories: [
-          { url: "standartnye-otkrytye", name: "Обычные" },
+          { url: "standartnye_otkrytye", name: "Обычные" },
           { url: "konicheskie", name: "Конические" },
           { url: "sfericheskie", name: "Сферические" },
           { url: "samoustanavlivayushchiesya", name: "Самоустанавливающиеся" },
@@ -592,80 +592,80 @@ export const menuCatalogList: IMenuList[] = [
       {
         subName: "Стандарт",
         categories: [
-          { url: "gost-zakrytye", name: "ГОСТ" },
-          { url: "iso-zakrytye", name: "ISO" },
+          { url: "gost_zakrytye", name: "ГОСТ" },
+          { url: "iso_zakrytye", name: "ISO" },
         ],
       },
       {
         subName: "Тело качения",
         categories: [
-          { url: "sharikovye-zakrytye", name: "Шариковые" },
-          { url: "rolikovye-zakrytye", name: "Роликовые" },
-          { url: "igolchatye-zakrytye", name: "Игольчатые" },
+          { url: "sharikovye_zakrytye", name: "Шариковые" },
+          { url: "rolikovye_zakrytye", name: "Роликовые" },
+          { url: "igolchatye_zakrytye", name: "Игольчатые" },
         ],
       },
       {
         subName: "Рядность",
         categories: [
-          { url: "odnoryadnye-zakrytye", name: "Однорядные" },
-          { url: "dvuhryadnye-zakrytye", name: "Двухрядные" },
+          { url: "odnoryadnye_zakrytye", name: "Однорядные" },
+          { url: "dvuhryadnye_zakrytye", name: "Двухрядные" },
         ],
       },
       {
         subName: "Нагрузка",
         categories: [
-          { url: "radialnye-zakrytye", name: "Радиальные" },
-          { url: "radialno-upornye-zakrytye", name: "Радиально-упорные" },
+          { url: "radialnye_zakrytye", name: "Радиальные" },
+          { url: "radialno_upornye_zakrytye", name: "Радиально_упорные" },
           {
-            url: "upornye-zakrytye",
+            url: "upornye_zakrytye",
             name: "Упорные",
           },
         ],
       },
       {
         subName: "Форма",
-        categories: [{ url: "standartnye-zakrytye", name: "Обычные" }],
+        categories: [{ url: "standartnye_zakrytye", name: "Обычные" }],
       },
     ],
   },
 
   {
-    url: "/zakrytye-s-odnoy-storony",
+    url: "/zakrytye_s_odnoy_storony",
     img: "iconZakrytyeSOdnoyStorony.png",
     name: "Закрытые с одной стороны",
     subCategories: [
       {
         subName: "Стандарт",
         categories: [
-          { url: "gost-zakrytye-s-odnoy-storony", name: "ГОСТ" },
-          { url: "iso-zakrytye-s-odnoy-storony", name: "ISO" },
+          { url: "gost_zakrytye_s_odnoy_storony", name: "ГОСТ" },
+          { url: "iso_zakrytye_s_odnoy_storony", name: "ISO" },
         ],
       },
       {
         subName: "Тело качения",
         categories: [
-          { url: "sharikovye-zakrytye-s-odnoy-storony", name: "Шариковые" },
-          { url: "rolikovye-zakrytye-s-odnoy-storony", name: "Роликовые" },
-          { url: "igolchatye-zakrytye-s-odnoy-storony", name: "Игольчатые" },
+          { url: "sharikovye_zakrytye_s_odnoy_storony", name: "Шариковые" },
+          { url: "rolikovye_zakrytye_s_odnoy_storony", name: "Роликовые" },
+          { url: "igolchatye_zakrytye_s_odnoy_storony", name: "Игольчатые" },
         ],
       },
       {
         subName: "Рядность",
         categories: [
-          { url: "odnoryadnye-zakrytye-s-odnoy-storony", name: "Однорядные" },
-          { url: "dvuhryadnye-zakrytye-s-odnoy-storony", name: "Двухрядные" },
+          { url: "odnoryadnye_zakrytye_s_odnoy_storony", name: "Однорядные" },
+          { url: "dvuhryadnye_zakrytye_s_odnoy_storony", name: "Двухрядные" },
         ],
       },
       {
         subName: "Нагрузка",
         categories: [
-          { url: "radialnye-zakrytye-s-odnoy-storony", name: "Радиальные" },
+          { url: "radialnye_zakrytye_s_odnoy_storony", name: "Радиальные" },
           {
-            url: "radialno-upornye-zakrytye-s-odnoy-storony",
-            name: "Радиально-упорные",
+            url: "radialno_upornye_zakrytye_s_odnoy_storony",
+            name: "Радиально_упорные",
           },
           {
-            url: "upornye-zakrytye-s-odnoy-storony",
+            url: "upornye_zakrytye_s_odnoy_storony",
             name: "Упорные",
           },
         ],
@@ -673,7 +673,7 @@ export const menuCatalogList: IMenuList[] = [
       {
         subName: "Форма",
         categories: [
-          { url: "standartnye-zakrytye-s-odnoy-storony", name: "Обычные" },
+          { url: "standartnye_zakrytye_s_odnoy_storony", name: "Обычные" },
         ],
       },
     ],

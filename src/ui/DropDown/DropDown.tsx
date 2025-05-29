@@ -16,7 +16,7 @@ export const DropDown: React.FC<IDropDownProps> = ({ list, name, filter }) => {
   };
 
   const handleCheck = (itemId: string) => {
-    const currentValue = queryParams[filter] as string | undefined;
+    const currentValue = queryParams[filter] as string;
     const currentValues = currentValue ? currentValue.split("|") : [];
     if (currentValues.includes(itemId)) {
       const newValues = currentValues.filter((value) => value !== itemId);
@@ -48,7 +48,7 @@ export const DropDown: React.FC<IDropDownProps> = ({ list, name, filter }) => {
             <li key={item.id}>
               <Checkbox
                 id={item.name}
-                isCheck={queryParams[filter]?.includes(item.id)}
+                isCheck={queryParams[filter]?.includes(item.id) || false}
                 handleCheck={() => handleCheck(item.id)}>
                 {item.name}
               </Checkbox>
