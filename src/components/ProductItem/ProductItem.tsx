@@ -9,6 +9,7 @@ import { toggleThanksModal } from "@/store/openModalSlice/openModalSlice";
 import styles from "./ProductItem.module.css";
 import { IBearing } from "@/types/bearing";
 import { CounterQuantityGroup } from "../CounterQuantityGroup/CounterQuantityGroup";
+import LabelList from "../LabelList/LabelList";
 
 interface IProductItemProps {
   product: IBearing;
@@ -24,6 +25,12 @@ export const ProductItem = ({ product }: IProductItemProps) => {
 
   return (
     <article className={styles.card}>
+      <LabelList
+        size={"small"}
+        popular={product.popular}
+        stock={product.stock}
+        newProduct={product.new_product}
+      />
       <Link href={`/product/${product.url}`} className={styles.imgWrapper}>
         <img
           className={styles.img}

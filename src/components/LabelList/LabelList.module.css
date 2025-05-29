@@ -1,0 +1,47 @@
+.labelList {
+  position: absolute;
+  z-index: 5;
+
+  top: 10px;
+  left: 10px;
+
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+
+  font-weight: 300;
+  font-size: 12px;
+
+  line-height: 1.33;
+  color: var(--black);
+}
+
+.labelListBig {
+  top: 20px;
+  left: 20px;
+}
+
+.labelSmall {
+  padding: 4px 8px;
+}
+.labelBig {
+  padding: 8px 16px;
+}
+
+.green {
+  background-color: var(--white);
+  border: 1px solid var(--green);
+  border-radius: 3px;
+}
+
+.orange {
+  background-color: var(--white);
+  border: 1px solid var(--orange);
+  border-radius: 3px;
+}
+
+.blue {
+  background-color: var(--white);
+  border: 1px solid var(--blue);
+  border-radius: 3px;
+}

@@ -2,6 +2,7 @@
 import React from "react";
 import { ISliderCardProps } from "./SliderCard.props";
 import styles from "./SliderCard.module.css";
+import LabelList from "@/components/LabelList/LabelList";
 
 export const SliderCard: React.FC<ISliderCardProps> = ({ product }) => {
   // const [currentSlid, setCurrentSlide] = useState<string>(product.images);
@@ -12,6 +13,12 @@ export const SliderCard: React.FC<ISliderCardProps> = ({ product }) => {
 
   return (
     <div className={styles.slider}>
+      <LabelList
+        size={"big"}
+        popular={product.popular}
+        stock={product.stock}
+        newProduct={product.new_product}
+      />
       <div className={styles.slide}>
         <img
           className={styles.bigImg}

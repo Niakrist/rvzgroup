@@ -13,3 +13,4 @@ export * from "./Range/Range";
 export * from "./MapYandex/MapYandex";
 export * from "./P/P";
 export * from "./Text/Text";
+export * from "./Label/Label";
