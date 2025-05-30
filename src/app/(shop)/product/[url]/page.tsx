@@ -13,10 +13,10 @@ import { urlPaths } from "@/app/(shop)/catalog/[category]/page";
 import { Metadata } from "next";
 import React from "react";
 
-export const metadata: Metadata = {
-  title: "Подшипник 6205",
-  description: "Описание подшипника 6205",
-};
+// metadata: Metadata = {
+//   title: "Подшипник 6205",
+//   description: "Описание подшипника 6205",
+// };
 
 interface IProductPageProps {
   params: Promise<{ url: string }>;
@@ -29,6 +29,17 @@ interface ICategory {
   title: string;
   description: string;
   url: string;
+}
+
+export async function generateMetadata({
+  params,
+}: IProductPageProps): Promise<Metadata> {
+  const { url } = await params;
+  const bearingItem = await getItemBearing(url);
+  return {
+    title: bearingItem.title,
+    description: bearingItem.description,
+  };
 }
 
 export default async function ProductPage({ params }: IProductPageProps) {

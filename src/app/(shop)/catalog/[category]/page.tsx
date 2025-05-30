@@ -174,19 +174,19 @@ export const urlPaths: UrlPaths = {
   // widthBearing: {},
 };
 
+export async function generateMetadata() {}
+
 export default async function CategoryPage({
   params,
   searchParams,
 }: ICategoryPageProps) {
   const { category } = await params;
-
   const search = await searchParams;
 
   if (!category) {
     notFound();
   }
 
-  const regex = /(?<!radialno|razemnye|korpusnye|zakrytye)-/;
   const categories = category.split("_");
   const paramsToSend: ISearchParams = {};
   let allPartsFound = true;
