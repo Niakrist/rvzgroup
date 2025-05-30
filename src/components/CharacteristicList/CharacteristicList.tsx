@@ -2,19 +2,20 @@ import React from "react";
 import styles from "./CharacteristicList.module.css";
 import { IBearing } from "@/types/bearing";
 import Link from "next/link";
+import { urlPaths } from "@/app/(shop)/catalog/[category]/page";
 
 interface ICharacteristicListProps {
   bearingItem: IBearing;
   type: "characteristic" | "content" | "delivery";
+  showAll?: true;
 }
 
 export const CharacteristicList = ({
   bearingItem,
   type,
+  showAll,
 }: ICharacteristicListProps): React.JSX.Element => {
   if (!bearingItem) return <div>Загрузка...</div>;
-
-  console.log("bearingItem: ", bearingItem);
 
   switch (type) {
     case "characteristic":
@@ -50,6 +51,14 @@ export const CharacteristicList = ({
               )}
             </span>
           </li>
+          {showAll && (
+            <>
+              <li className={styles.item}>
+                <span className={styles.key}>Масса (кг)</span>
+                <span className={styles.value}>{bearingItem.weight}</span>
+              </li>
+            </>
+          )}
         </ul>
       );
     case "content":

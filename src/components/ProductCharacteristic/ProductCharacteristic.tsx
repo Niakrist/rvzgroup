@@ -52,6 +52,7 @@ export const ProductCharacteristic = ({
             <CharacteristicList
               type="characteristic"
               bearingItem={bearingItem}
+              showAll={true}
             />
           )}
           {isActiveButton === "content" && (
