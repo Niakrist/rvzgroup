@@ -13,11 +13,6 @@ import { urlPaths } from "@/app/(shop)/catalog/[category]/page";
 import { Metadata } from "next";
 import React from "react";
 
-// metadata: Metadata = {
-//   title: "Подшипник 6205",
-//   description: "Описание подшипника 6205",
-// };
-
 interface IProductPageProps {
   params: Promise<{ url: string }>;
 }
@@ -62,7 +57,12 @@ export default async function ProductPage({ params }: IProductPageProps) {
       <ProductCard bearingItem={bearingItem} />
       <ProductCharacteristic bearingItem={bearingItem} />
       <PopularProduct products={products.rows} />
-      <TagList urlsCategory={urlsCategory} />
+      <TagList
+        urlsCategory={urlsCategory}
+        innerDiameter={bearingItem.innerDiameter}
+        outerDiameter={bearingItem.outerDiameter}
+        widthBearing={bearingItem.widthBearing}
+      />
     </>
   );
 }

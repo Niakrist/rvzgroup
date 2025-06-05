@@ -24,7 +24,7 @@ export const menuCatalogList: IMenuList[] = [
         subName: "Нагрузка",
         categories: [
           { url: "sharikovye_radialnye", name: "Радиальные" },
-          { url: "sharikovye_radialno_upornye", name: "Радиально_упорные" },
+          { url: "sharikovye_radialno_upornye", name: "Радиально-упорные" },
           {
             url: "sharikovye_upornye",
             name: "Упорные",
@@ -75,7 +75,7 @@ export const menuCatalogList: IMenuList[] = [
         subName: "Нагрузка",
         categories: [
           { url: "rolikovye_radialnye", name: "Радиальные" },
-          { url: "rolikovye_radialno_upornye", name: "Радиально_упорные" },
+          { url: "rolikovye_radialno_upornye", name: "Радиально-упорные" },
           { url: "rolikovye_upornye", name: "Упорные" },
         ],
       },
@@ -123,7 +123,7 @@ export const menuCatalogList: IMenuList[] = [
         subName: "Нагрузка",
         categories: [
           { url: "igolchatye_radialnye", name: "Радиальные" },
-          { url: "igolchatye_radialno_upornye", name: "Радиально_упорные" },
+          { url: "igolchatye_radialno_upornye", name: "Радиально-упорные" },
           { url: "igolchatye_upornye", name: "Упорные" },
         ],
       },
@@ -209,8 +209,8 @@ export const menuCatalogList: IMenuList[] = [
   },
   {
     url: "/radialno_upornye",
-    img: "iconRadialno_Upornye.png",
-    name: "Радиально_упорные",
+    img: "iconRadialno-Upornye.png",
+    name: "Радиально-упорные",
     subCategories: [
       {
         subName: "Стандарт",
@@ -309,7 +309,7 @@ export const menuCatalogList: IMenuList[] = [
         subName: "Нагрузка",
         categories: [
           { url: "radialnye_odnoryadnye", name: "Радиальные" },
-          { url: "radialno_upornye_odnoryadnye", name: "Радиально_упорные" },
+          { url: "radialno_upornye_odnoryadnye", name: "Радиально-упорные" },
           { url: "upornye_odnoryadnye", name: "Упорные" },
         ],
       },
@@ -358,7 +358,7 @@ export const menuCatalogList: IMenuList[] = [
         subName: "Нагрузка",
         categories: [
           { url: "radialnye_dvuhryadnye", name: "Радиальные" },
-          { url: "radialno_upornye_dvuhryadnye", name: "Радиально_упорные" },
+          { url: "radialno_upornye_dvuhryadnye", name: "Радиально-упорные" },
           { url: "upornye_dvuhryadnye", name: "Упорные" },
         ],
       },
@@ -441,7 +441,7 @@ export const menuCatalogList: IMenuList[] = [
         subName: "Нагрузка",
         categories: [
           { url: "gost_radialnye", name: "Радиальные" },
-          { url: "gost_radialno_upornye", name: "Радиально_упорные" },
+          { url: "gost_radialno_upornye", name: "Радиально-упорные" },
           { url: "gost_upornye", name: "Упорные" },
         ],
       },
@@ -496,7 +496,7 @@ export const menuCatalogList: IMenuList[] = [
         subName: "Нагрузка",
         categories: [
           { url: "iso_radialnye", name: "Радиальные" },
-          { url: "iso_radialno_upornye", name: "Радиально_упорные" },
+          { url: "iso_radialno_upornye", name: "Радиально-упорные" },
           { url: "iso_upornye", name: "Упорные" },
         ],
       },
@@ -565,7 +565,7 @@ export const menuCatalogList: IMenuList[] = [
         subName: "Нагрузка",
         categories: [
           { url: "radialnye_otkrytye", name: "Радиальные" },
-          { url: "radialno_upornye_otkrytye", name: "Радиально_упорные" },
+          { url: "radialno_upornye_otkrytye", name: "Радиально-упорные" },
           {
             url: "upornye_otkrytye",
             name: "Упорные",
@@ -615,7 +615,7 @@ export const menuCatalogList: IMenuList[] = [
         subName: "Нагрузка",
         categories: [
           { url: "radialnye_zakrytye", name: "Радиальные" },
-          { url: "radialno_upornye_zakrytye", name: "Радиально_упорные" },
+          { url: "radialno_upornye_zakrytye", name: "Радиально-упорные" },
           {
             url: "upornye_zakrytye",
             name: "Упорные",
@@ -662,7 +662,7 @@ export const menuCatalogList: IMenuList[] = [
           { url: "radialnye_zakrytye_s_odnoy_storony", name: "Радиальные" },
           {
             url: "radialno_upornye_zakrytye_s_odnoy_storony",
-            name: "Радиально_упорные",
+            name: "Радиально-упорные",
           },
           {
             url: "upornye_zakrytye_s_odnoy_storony",

@@ -3,6 +3,7 @@ import { getFilter } from "@/api/getFilter";
 import Products from "@/components/Products/Products";
 import { ISearchParams } from "@/types/ISearchParams.interface";
 import { getFilteredProducts } from "@/utils/getFilteredProducts";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import React from "react";
 
@@ -169,12 +170,158 @@ export const urlPaths: UrlPaths = {
     razemnye: "1",
     nerazemnye: "2",
   },
-  // innerDiameter: {},
+  // innerDiameter: {
+  //   innerDiameter: "5",
+  // },
   // outerDiameter: {},
   // widthBearing: {},
 };
 
-export async function generateMetadata() {}
+const urls = {
+  miniatyurnye: "миниатюрные",
+  samoustanavlivayushchiesya: "самоустанавливающиеся",
+  sfericheskie: "сферические",
+  kombinirovannye: "комбинированные",
+  konicheskie: "конические",
+  korpusnye: "корпусные",
+  sharnirnye: "шарнирные",
+  rs: "закрытые пластиком RS с одной стороны",
+  z: "закрытые металлом Z с одной стороны",
+  "2rs": "закрытые пластиком 2RS",
+  zz: "закрытые металлом ZZ",
+  kacheniya: "качения",
+  skolzheniya: "скольжения",
+  "s-zakrepitelnoy-vtulkoy": "с закрепительной втулкой",
+  "so-styazhnoy-vtulkoy": "со стяжной втулкой",
+  razemnye: "разъемные",
+  nerazemnye: "неразъемные",
+  "ugol-kontakta-12": "с углом контакта 12 градусов",
+  "ugol-kontakta-15": "с углом контакта 15 градусов",
+  "ugol-kontakta-20": "с углом контакта 20 градусов",
+  "ugol-kontakta-26": "с углом контакта 26 градусов",
+  "ugol-kontakta-36": "с углом контакта 36 градусов",
+  "ugol-kontakta-40": "с углом контакта 40 градусов",
+  "ugol-kontakta-60": "с углом контакта 60 градусов",
+  "s-trehtochechnym-kontaktom": "с трехточечным контактом",
+  "s-chetyrehtochechnym-kontaktom": "с четырехточечным контактом",
+  "bez-kolec": "без колец",
+  "s-capfoy": "с цапфой",
+  "s-ploskim-upornym-kolcom": "с плоским упорным кольцом",
+  "s-fasonnym-upornym-kolcom": "с фасонным упорным кольцом",
+  dyuymovye: "дюймовые",
+  sdvoennye: "сдвоенные",
+  toroidalnye: "тороидальные",
+  vibroustoychivye: "виброустойчивые",
+  "s-kanavkoy-dlya-vvoda-sharikov": "с канавкой для ввода шариков",
+  "s-dlinnymi-cilindricheskimi-rolikami": "с длинными цилиндрическими роликами",
+  "s-korotkimi-cilindricheskimi-rolikami":
+    "с короткими цилиндрическими роликами",
+  "konicheskoe-otverstie": "с коническим отверстием",
+  "cilindricheskoe-otverstie": "с цилиндрическим отверстием",
+  "bez-vnutrennego-kolca": "без внутреннего кольца",
+  "s-bezbortovym-vnutrennim-kolcom": "с безбортовым внутренним кольцом",
+  "s-bortikami-na-vnutrennem-kolce": "с бортиками на внутреннем кольце",
+  "s-vystupayushchim-vnutrennim-kolcom": "с выступающим внутренним кольцом",
+  "s-dvumya-vnutrennimi-kolcami": "с двумя внутренними кольцами",
+  "s-odnobortovym-vnutrennim-kolcom": "с однобортовым внутренним кольцом",
+  "s-razemnym-vnutrennim-kolcom": "с разъемным внутренним кольцом",
+  "s-shirokim-vnutrennim-kolcom": "с широким внутренним кольцом",
+  "so-skosom-na-vnutrennem-kolce": "со скосом на внутреннем кольце",
+  radialnye: "радиальные",
+  "radialno-upornye": "радиально-упорные",
+  upornye: "упорные",
+  "uporno-radialnye": "упорно-радиальные",
+  "s-kanavkoy-dlya-smazki-na-naruzhnom-kolce":
+    "с канавкой для смазки на наружном кольце",
+  "s-kanavkoy-i-otverstiyami-dlya-smazki":
+    "с канавкой и отверстиями для смазки",
+  "s-otverstiem-dlya-smazki-na-naruzhnom-kolce":
+    "с отверстием для смазки на наружном кольце",
+  stalnye: "стальные",
+  nerzhaveyushchie: "нержавеющие",
+  keramicheskie: "керамические",
+  "bez-bortov-na-naruzhnom-kolce": "без бортов на наружном кольце",
+  "bez-naruzhnogo-kolca": "без наружного кольца",
+  "s-bortami-na-naruzhnom-kolce": "с бортами на наружном кольце",
+  "s-dvuhrazlomnym-naruzhnym-kolcom": "с двухразломным наружным кольцом",
+  "s-kanavkoy-na-naruzhnom-kolce": "с канавкой на наружном кольце",
+  "s-odnobortovym-naruzhnym-kolcom": "с однобортовым наружным кольцом",
+  "s-odnorazlomnym-naruzhnym-kolcom": "с одноразломным наружным кольцом",
+  "s-razemnym-naruzhnym-kolcom": "с разъемным наружным кольцом",
+  "s-upornym-bortom-na-naruzhnom-kolce": "с упорным бортом на наружном кольце",
+  "s-flancem-na-naruzhnom-kolce": "с фланцем на наружном кольце",
+  "so-skosom-na-naruzhnom-kolce": "со скосом на наружном кольце",
+  "so-sfericheskoy-poverhnostyu-naruzhnogo-kolca":
+    "со сферической поверхностью наружного кольца",
+  sharikovye: "шариковые",
+  rolikovye: "роликовые",
+  igolchatye: "игольчатые",
+  rolikoigolchatye: "роликоигольчатые",
+  sharikoigolchatye: "шарикоигольчатые",
+  "stal-po-stali": "сталь по стали",
+  odnoryadnye: "однорядные",
+  dvuhryadnye: "двухрядные",
+  trehryadnye: "трехрядные",
+  chetyrehryadnye: "четырехрядные",
+  shestiryadnye: "шестирядные",
+  mnogoryadnye: "многорядные",
+  otkrytye: "открытые",
+  zakrytye: "закрытые",
+  "so-stalnym-separatorom": "со стальным сепаратором",
+  "s-latunnym-separatorom": "с латунным сепаратором",
+  "bez-separatornye": "без сепараторные",
+  "s-poluseparatorom": "с полусепаратором",
+  "s-tekstolitovym-separatorom": "с текстолитовым сепаратором",
+  gost: "ГОСТ",
+  iso: "ISO",
+};
+
+export async function generateMetadata({
+  params,
+}: ICategoryPageProps): Promise<Metadata> {
+  const { category } = await params;
+
+  const categories = category.split("_");
+
+  const pathTitle = categories.map((item) => urls[item]).join(" ");
+
+  let title = "";
+  let description = "";
+
+  console.log("category: ", category);
+
+  title = `Подшипники ${pathTitle}: Купить, характеристики, аналоги`;
+  description = `Купить подшипники ${pathTitle} напрямую от производителя! Высокое качество, широкий ассортимент подшипников, оптимальные цены и доставка по всей России. Закажите сейчас!`;
+
+  if (category.includes("width")) {
+    const widthBearingMatch = category.match(/^width-(\d+)(?:-(\d+))?$/);
+    console.log("widthBearingMatch: ", widthBearingMatch);
+
+    title = `Подшипники с шириной ${widthBearingMatch} мм: Купить, характеристики, аналоги`;
+    description = `Купить подшипники с шириной ${widthBearingMatch} мм напрямую от производителя! Высокое качество, широкий ассортимент подшипников, оптимальные цены и доставка по всей России. Закажите сейчас!`;
+  }
+
+  if (category.includes("inner-diameter")) {
+    const innerВiameterMatch = category.match(
+      /^inner-diameter-(\d+)(?:-(\d+))?$/
+    );
+    title = `Подшипники с внутренним диаметром ${innerВiameterMatch} мм: Купить, характеристики, аналоги`;
+    description = `Купить подшипники с внутренним диаметром ${innerВiameterMatch} мм напрямую от производителя! Высокое качество, широкий ассортимент подшипников, оптимальные цены и доставка по всей России. Закажите сейчас!`;
+  }
+
+  if (category.includes("outer-diameter")) {
+    const outerDiameterMatch = category.match(
+      /^outer-diameter-(\d+)(?:-(\d+))?$/
+    );
+    title = `Подшипники с наружным диаметром ${outerDiameterMatch} мм: Купить, характеристики, аналоги`;
+    description = `Купить подшипники с наружным диаметром ${outerDiameterMatch} мм напрямую от производителя! Высокое качество, широкий ассортимент подшипников, оптимальные цены и доставка по всей России. Закажите сейчас!`;
+  }
+
+  return {
+    title,
+    description,
+  };
+}
 
 export default async function CategoryPage({
   params,
@@ -191,7 +338,16 @@ export default async function CategoryPage({
   const paramsToSend: ISearchParams = {};
   let allPartsFound = true;
   for (const cat of categories) {
-    if (urlPaths.bearingDesignId[cat]) {
+    const innerDiameterMatch = cat.match(/^inner-diameter-(\d+(?:\.\d+)?)$/);
+    const outerDiameterMatch = cat.match(/^outer-diameter-(\d+(?:\.\d+)?)$/);
+    const widthBearingMatch = cat.match(/^width-(\d+(?:\.\d+)?)$/);
+    if (innerDiameterMatch) {
+      paramsToSend.innerDiameter = innerDiameterMatch[1];
+    } else if (outerDiameterMatch) {
+      paramsToSend.outerDiameter = outerDiameterMatch[1];
+    } else if (widthBearingMatch) {
+      paramsToSend.widthBearing = widthBearingMatch[1];
+    } else if (urlPaths.bearingDesignId[cat]) {
       paramsToSend.bearingDesignId = urlPaths.bearingDesignId[cat];
     } else if (urlPaths.bearingSealId[cat]) {
       paramsToSend.bearingSealId = urlPaths.bearingSealId[cat];
