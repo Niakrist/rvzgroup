@@ -9,6 +9,7 @@ export const Button: React.FC<IButtonProps> = ({
   bgColor,
   size,
   className,
+  disabled,
   ...props
 }) => {
   return (
@@ -23,6 +24,7 @@ export const Button: React.FC<IButtonProps> = ({
         [styles.small]: size === "small",
         [styles.medium]: size === "medium",
         [styles.big]: size === "big",
+        [styles.disabled]: disabled,
       })}>
       {children}
     </button>

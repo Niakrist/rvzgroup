@@ -5,11 +5,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { ArticleInStock, Price } from "@/components";
 import { Button } from "@/ui";
 import { AppDispatch, RootState } from "@/store/store";
-import { toggleThanksModal } from "@/store/openModalSlice/openModalSlice";
+import { isGetPriceModal } from "@/store/openModalSlice/openModalSlice";
 import styles from "./ProductItem.module.css";
 import { IBearing } from "@/types/bearing";
 import { CounterQuantityGroup } from "../CounterQuantityGroup/CounterQuantityGroup";
 import LabelList from "../LabelList/LabelList";
+import { addInCommercialApplication } from "@/store/forCommercialApplicationSlice/forCommercialApplicationSlice";
 
 interface IProductItemProps {
   product: IBearing;
@@ -17,10 +18,11 @@ interface IProductItemProps {
 
 export const ProductItem = ({ product }: IProductItemProps) => {
   const dispatch = useDispatch<AppDispatch>();
-  const { isThanksModal } = useSelector((state: RootState) => state.openModal);
+  const { getPriceModal } = useSelector((state: RootState) => state.openModal);
 
   const handleGetCP = () => {
-    dispatch(toggleThanksModal(!isThanksModal));
+    dispatch(isGetPriceModal(!getPriceModal));
+    dispatch(addInCommercialApplication(product.name));
   };
 
   return (

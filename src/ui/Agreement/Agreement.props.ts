@@ -7,4 +7,6 @@ export interface IAgreementProps
   > {
   color: "grey" | "blue";
   id: "getPriceModal" | "subscribe" | "order";
+  isCheck: boolean;
+  handleChange: (isCheck: boolean) => void;
 }

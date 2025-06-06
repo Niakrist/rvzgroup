@@ -1,12 +1,27 @@
+"use client";
 import React from "react";
 import { ArticleInStock, Price, CharacteristicList } from "@/components";
 import { Button, Htag } from "@/ui";
 import { IInfoCardProps } from "./InfoCard.props";
 import styles from "./InfoCard.module.css";
 import { CounterQuantityGroup } from "@/components/CounterQuantityGroup/CounterQuantityGroup";
+import { useDispatch } from "react-redux";
+import { AppDispatch, RootState } from "@/store/store";
+import { isGetPriceModal } from "@/store/openModalSlice/openModalSlice";
+import { useSelector } from "react-redux";
+import { addInCommercialApplication } from "@/store/forCommercialApplicationSlice/forCommercialApplicationSlice";
 
 export const InfoCard = ({ product }: IInfoCardProps): React.JSX.Element => {
   if (!product) return <div>Загрузка InfoCard</div>;
+
+  const dispatch = useDispatch<AppDispatch>();
+  const { getPriceModal } = useSelector((state: RootState) => state.openModal);
+
+  const handleGetCP = () => {
+    dispatch(isGetPriceModal(!getPriceModal));
+    dispatch(addInCommercialApplication(product.name));
+  };
+
   return (
     <div className={styles.content}>
       <Htag tag="h1" size="medium">
@@ -18,6 +33,7 @@ export const InfoCard = ({ product }: IInfoCardProps): React.JSX.Element => {
       <div className={styles.buttonsGroup}>
         <CounterQuantityGroup product={product} />
         <Button
+          onClick={handleGetCP}
           className={styles.button}
           bgColor="border"
           color="blackText"

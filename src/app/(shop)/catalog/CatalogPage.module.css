@@ -1,8 +1,11 @@
 .titleWrapper {
+  background-color: var(--grey2);
+}
+
+.title {
   max-width: 1304px;
   margin: 0 auto;
   padding: 0 20px;
-  background-color: var(--grey2);
 }
 
 .section {

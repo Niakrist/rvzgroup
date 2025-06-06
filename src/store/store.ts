@@ -6,6 +6,7 @@ import bearingItemSlice from "./bearingItemSlice/bearingItemSlice";
 import filterSlice from "./filterSlice/filterSlice";
 import cartSlice from "./cartSlice/cartSlice";
 import { cartLocalStorageMiddleware } from "@/middleware/cartLocalStorageMiddleware";
+import forCommercialApplicationSlice from "./forCommercialApplicationSlice/forCommercialApplicationSlice";
 
 const rootReducer = combineReducers({
   openModal: openModalSlice,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   bearingItem: bearingItemSlice,
   filters: filterSlice,
   cart: cartSlice,
+  forCommercialApplication: forCommercialApplicationSlice,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

@@ -53,9 +53,11 @@ export default async function CategoryPage({
 
   return (
     <>
-      <Htag size="large" tag="h1" className={styles.titleWrapper}>
-        {h1}
-      </Htag>
+      <div className={styles.titleWrapper}>
+        <Htag size="large" tag="h1" className={styles.title}>
+          {h1}
+        </Htag>
+      </div>
       <CatalogNavBar />
       <div className={styles.section}>
         <div className={styles.container}>
