@@ -7,8 +7,7 @@ import {
   ProductCharacteristic,
 } from "@/components";
 import TagList from "@/components/TagList/TagList";
-
-import { urlPaths } from "@/app/(shop)/catalog/[category]/page";
+import { urlPaths } from "@/constants/urlPaths";
 
 import { Metadata } from "next";
 import React from "react";

@@ -21,7 +21,7 @@ export const CounterQuantityForCart = ({
 
   const handleChangeQuantity = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    console.log("value: ", typeof value);
+
     if (/^([1-9]\d*)$/.test(value)) {
       const parsedValue = parseInt(value, 10);
       dispatch(changeInCart({ product: cart.product, count: parsedValue }));

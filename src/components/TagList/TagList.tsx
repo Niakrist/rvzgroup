@@ -54,7 +54,7 @@ const TagList = ({
               <Link
                 className={styles.item}
                 href={`/catalog/outer-diameter-${outerDiameter}`}>
-                Внешний диаметр {outerDiameter} мм
+                Наружный диаметр {outerDiameter} мм
               </Link>
             </li>
             <li>

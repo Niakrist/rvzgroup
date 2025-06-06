@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./CharacteristicList.module.css";
 import { IBearing } from "@/types/bearing";
 import Link from "next/link";
-import { urlPaths } from "@/app/(shop)/catalog/[category]/page";
 
 interface ICharacteristicListProps {
   bearingItem: IBearing;
@@ -30,7 +29,7 @@ export const CharacteristicList = ({
             <span className={styles.value}>{bearingItem.innerDiameter}</span>
           </li>
           <li className={styles.item}>
-            <span className={styles.key}>Внешний диаметр (мм)</span>
+            <span className={styles.key}>Наружный диаметр (мм)</span>
             <span className={styles.value}>{bearingItem.outerDiameter}</span>
           </li>
           <li className={styles.item}>
