@@ -10,6 +10,7 @@ import TagList from "@/components/TagList/TagList";
 import { urlPaths } from "@/constants/urlPaths";
 
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import React from "react";
 
 interface IProductPageProps {
@@ -49,6 +50,12 @@ export default async function ProductPage({ params }: IProductPageProps) {
       const data = await fetchCategory(item);
       urlsCategory.push(data[bearingItem[item] - 1]);
     }
+  }
+
+  console.log("bearingItem: ", bearingItem);
+
+  if (!bearingItem) {
+    notFound();
   }
 
   return (
