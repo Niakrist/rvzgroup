@@ -1,0 +1,19 @@
+.adress {
+  font-style: normal;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.link {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--black);
+  transform: color 0.2s;
+}
+
+.link:hover {
+  color: var(--blue);
+}

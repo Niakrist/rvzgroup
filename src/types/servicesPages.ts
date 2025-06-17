@@ -4,11 +4,12 @@ export interface IServicesPages {
 }
 
 export const servicesPages: Array<IServicesPages> = [
-  { path: "/about", name: "О компании" },
-  { path: "/brand-rvz", name: "Бренд РВЗ" },
-  { path: "/contacts", name: "Контакты" },
-  { path: "/delivery", name: "Доставка и оплата" },
-  { path: "/vacancy", name: "Вакансии" },
+  { path: "about", name: "О компании" },
+  { path: "brand-rvz", name: "Бренд РВЗ" },
+  { path: "contacts", name: "Контакты" },
+  { path: "delivery", name: "Доставка" },
+  { path: "payment", name: "Оплата" },
+  { path: "vacancy", name: "Вакансии" },
   // { path: "/catalog", name: "Каталог" },
   // { path: "/cart", name: "Корзина" },
 ];
@@ -21,7 +22,8 @@ export const shopPages: IServicesPages[] = [
   { path: "about", name: "О компании" },
   { path: "brand-rvz", name: "Бренд РВЗ" },
   { path: "contacts", name: "Контакты" },
-  { path: "delivery", name: "Доставка и оплата" },
+  { path: "delivery", name: "Доставка" },
+  { path: "payment", name: "Оплата" },
   { path: "vacancy", name: "Вакансии" },
   { path: "cart", name: "Корзина" },
   { path: "dvuhryadnye", name: "Двухрядные" },

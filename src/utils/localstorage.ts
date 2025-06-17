@@ -21,8 +21,6 @@ export const saveCartInLocalStorage = (cart: ICartItem) => {
 
     // Сохраняем обновлённую корзину в localStorage
     localStorage.setItem("cart", JSON.stringify(storageCart));
-
-    console.log("storageCart: ", storageCart);
   } else {
     storageCart.push(cart);
     localStorage.setItem("cart", JSON.stringify(storageCart));

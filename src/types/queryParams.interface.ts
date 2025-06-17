@@ -27,4 +27,5 @@ export interface IQueryParams {
   maxWidth?: string;
   minPrice?: string;
   maxPrice?: string;
+  search?: string;
 }

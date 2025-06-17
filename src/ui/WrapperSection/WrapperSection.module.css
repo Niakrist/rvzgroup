@@ -1,0 +1,25 @@
+.section {
+  padding: 0 0 50px 0;
+}
+
+.container {
+  max-width: 1304px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 630px;
+
+  column-gap: 30px;
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.white {
+  background-color: var(--white);
+}
+.grey {
+  background-color: var(--grey1);
+}

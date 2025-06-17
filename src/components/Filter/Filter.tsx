@@ -135,6 +135,23 @@ const connectionIdList: IFilterDropsownList[] = [
   { id: "2", name: "неразъемные" },
 ];
 
+const featureIdList: IFilterDropsownList[] = [
+  { id: "1", name: "дюймовые" },
+  { id: "2", name: "сдвоенные" },
+  { id: "3", name: "тороидальные" },
+  { id: "4", name: "виброустойчивые" },
+  { id: "5", name: "с канавкой для ввода шариков" },
+  { id: "6", name: "с длинными цилиндрическими роликами" },
+  { id: "7", name: "с короткими цилиндрическими роликами" },
+];
+
+const featureId2List: IFilterDropsownList[] = [
+  { id: "1", name: "без колец" },
+  { id: "2", name: "с цапфой" },
+  { id: "3", name: "с плоским упорным кольцом" },
+  { id: "4", name: "с фасонным упорным кольцом" },
+];
+
 export const Filter = () => {
   const pathname = usePathname();
   const dispatch = useDispatch();
@@ -194,6 +211,16 @@ export const Filter = () => {
         filter="connectionId"
         list={connectionIdList}
       />
+      {/* <DropDown
+        name="Специальные характеристики"
+        filter="featureId"
+        list={featureIdList}
+      />
+      <DropDown
+        name="Дополнительные особенности"
+        filter="featureId2"
+        list={featureId2List}
+      /> */}
       <Button
         className={styles.button}
         color="whiteText"

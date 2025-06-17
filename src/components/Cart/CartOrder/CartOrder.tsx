@@ -12,6 +12,12 @@ export const CartOrder = () => {
   const [textAreaValue, setTextAreaValue] = useState<string>("");
   const { cart } = useSelector((state: RootState) => state.cart);
 
+  const [isCheck, setIsCheck] = useState<boolean>(true);
+
+  const handleChangeAgreement = (check: boolean): void => {
+    setIsCheck(!check);
+  };
+
   const cartTotalPrice = convertNumberInCurrency(getTotalPrice(cart));
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -43,10 +49,19 @@ export const CartOrder = () => {
           Прикрепить файл
         </label>
 
-        <Button bgColor="blue" size="medium" color="whiteText">
+        <Button
+          bgColor="blue"
+          size="medium"
+          color="whiteText"
+          disabled={!isCheck}>
           Оформить заказ
         </Button>
-        <Agreement color="grey" id="order" />
+        <Agreement
+          isCheck={isCheck}
+          handleChange={handleChangeAgreement}
+          color="grey"
+          id="order"
+        />
       </form>
     </div>
   );

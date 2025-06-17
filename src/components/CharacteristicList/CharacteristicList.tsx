@@ -6,15 +6,15 @@ import Link from "next/link";
 interface ICharacteristicListProps {
   bearingItem: IBearing;
   type: "characteristic" | "content" | "delivery";
+  showAll?: true;
 }
 
 export const CharacteristicList = ({
   bearingItem,
   type,
+  showAll,
 }: ICharacteristicListProps): React.JSX.Element => {
   if (!bearingItem) return <div>Загрузка...</div>;
-
-  console.log("bearingItem: ", bearingItem);
 
   switch (type) {
     case "characteristic":
@@ -29,7 +29,7 @@ export const CharacteristicList = ({
             <span className={styles.value}>{bearingItem.innerDiameter}</span>
           </li>
           <li className={styles.item}>
-            <span className={styles.key}>Внешний диаметр (мм)</span>
+            <span className={styles.key}>Наружный диаметр (мм)</span>
             <span className={styles.value}>{bearingItem.outerDiameter}</span>
           </li>
           <li className={styles.item}>
@@ -50,6 +50,14 @@ export const CharacteristicList = ({
               )}
             </span>
           </li>
+          {showAll && (
+            <>
+              <li className={styles.item}>
+                <span className={styles.key}>Масса (кг)</span>
+                <span className={styles.value}>{bearingItem.weight}</span>
+              </li>
+            </>
+          )}
         </ul>
       );
     case "content":

@@ -27,4 +27,7 @@ export interface ISearchParams {
   maxWidth?: string;
   minPrice?: string;
   maxPrice?: string;
+  innerDiameter?: string;
+  outerDiameter?: string;
+  widthBearing?: string;
 }
