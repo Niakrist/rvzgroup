@@ -14,8 +14,8 @@ export const Price: React.FC<IPriceProps> = ({
       {!!product.price ? (
         <>
           <span>{convertNumberInGroupNumber(product.price)} ₽/шт.</span>
-          {!!product.stockBearing && (
-            <span className={styles.stock}> {product.stockBearing} ₽/шт.</span>
+          {!!product.stock && (
+            <span className={styles.stock}> {product.stock} ₽/шт.</span>
           )}
         </>
       ) : (
