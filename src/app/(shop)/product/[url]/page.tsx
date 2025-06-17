@@ -42,6 +42,10 @@ export default async function ProductPage({ params }: IProductPageProps) {
   const products = await getCategories();
   const bearingItem = await getItemBearing(url);
 
+  if (!bearingItem) {
+    notFound();
+  }
+
   const urlArray = Object.keys(urlPaths);
   const urlsCategory: ICategory[] = [];
 
@@ -50,12 +54,6 @@ export default async function ProductPage({ params }: IProductPageProps) {
       const data = await fetchCategory(item);
       urlsCategory.push(data[bearingItem[item] - 1]);
     }
-  }
-
-  console.log("bearingItem: ", bearingItem);
-
-  if (!bearingItem) {
-    notFound();
   }
 
   return (
