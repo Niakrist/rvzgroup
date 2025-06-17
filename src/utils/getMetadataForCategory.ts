@@ -1,8 +1,6 @@
 import { urlsForCategory } from "@/constants/urlsForCategory";
 
 const parseDimensionString = (string: string): number => {
-  console.log("string: ", string);
-
   const prefixes = ["width", "inner-diameter", "outer-diameter"];
 
   const prefix = prefixes.find((pref) => string.startsWith(pref));
@@ -25,7 +23,7 @@ export const getMetadataForCategory = (
 
   title = `Подшипники ${pathTitle}: Купить, характеристики, аналоги`;
   description = `Купить подшипники ${pathTitle} напрямую от производителя! Высокое качество, широкий ассортимент подшипников, оптимальные цены и доставка по всей России. Закажите сейчас!`;
-  h1 = `Подшипники ${pathTitle} РВЗ`;
+  h1 = pathTitle;
 
   if (category.includes("width")) {
     const widthMatch = String(parseDimensionString(category));

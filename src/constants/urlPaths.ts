@@ -32,7 +32,7 @@ export const urlPaths: UrlPaths = {
     sfericheskie: "3",
     kombinirovannye: "4",
     konicheskie: "5",
-    korpusnye: "6",
+    "korpusnye-uzly": "6",
     sharnirnye: "7",
   },
   bearingSealId: {

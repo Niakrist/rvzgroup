@@ -1,4 +1,13 @@
 export const urlsForCategory = {
+  "": "Главная",
+  catalog: "Каталог",
+  about: "О компании",
+  "brand-rvz": "Бренд РВЗ",
+  contacts: "Контакты",
+  delivery: "Доставка",
+  payment: "Оплата",
+  vacancy: "Вакансии",
+  cart: "Корзина",
   miniatyurnye: "миниатюрные",
   samoustanavlivayushchiesya: "самоустанавливающиеся",
   sfericheskie: "сферические",

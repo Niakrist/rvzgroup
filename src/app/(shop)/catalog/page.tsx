@@ -1,5 +1,6 @@
 import { getCategories } from "@/api/getCategories";
 import { getFilter } from "@/api/getFilter";
+import { BreadCrumbs } from "@/components";
 import CatalogNavBar from "@/components/CatalogNavBar/CatalogNavBar";
 import Products from "@/components/Products/Products";
 import { SideBar } from "@/components/SideBar/SideBar";

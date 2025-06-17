@@ -11,7 +11,9 @@ export const TopNavMenu: React.FC<ITopNavMenuProps> = ({ size, vertical }) => {
       <ul className={cn(styles.list, { [styles.listVertical]: vertical })}>
         {servicesPages.map((page) => (
           <li key={page.path}>
-            <Link className={cn(styles.link, styles[size])} href={page.path}>
+            <Link
+              className={cn(styles.link, styles[size])}
+              href={`/${page.path}`}>
               {page.name}
             </Link>
           </li>

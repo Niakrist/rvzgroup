@@ -1,5 +1,6 @@
 import { getCategories } from "@/api/getCategories";
 import { getFilter } from "@/api/getFilter";
+import { BreadCrumbs } from "@/components";
 import CatalogNavBar from "@/components/CatalogNavBar/CatalogNavBar";
 import Products from "@/components/Products/Products";
 import { SideBar } from "@/components/SideBar/SideBar";
@@ -39,6 +40,7 @@ export default async function CategoryPage({
   if (!category) notFound();
 
   const { allPartsFound, paramsToSend } = getParamsToSend(category);
+
   const { h1 } = getMetadataForCategory(category);
 
   if (!allPartsFound) return notFound();
@@ -55,7 +57,7 @@ export default async function CategoryPage({
     <>
       <div className={styles.titleWrapper}>
         <Htag size="large" tag="h1" className={styles.title}>
-          {h1}
+          {`Подшипники ${h1} РВЗ`}
         </Htag>
       </div>
       <CatalogNavBar />
