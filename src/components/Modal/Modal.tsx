@@ -15,8 +15,6 @@ export const Modal: React.FC<IModalProps> = ({ children, width, ...props }) => {
   const dispatch = useDispatch();
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    console.log("++++");
-    dispatch(clearCommercialApplication());
     if (
       refModal.current &&
       e.target instanceof HTMLDivElement &&
@@ -24,19 +22,17 @@ export const Modal: React.FC<IModalProps> = ({ children, width, ...props }) => {
     ) {
       dispatch(isGetPriceModal(false));
       dispatch(toggleMenuModal(false));
+      dispatch(clearCommercialApplication());
     }
-  };
-
-  const myClick = () => {
-    console.log("+++");
   };
 
   return (
     <div
-      onClick={handleClick}
-      ref={refModal}
       {...props}
-      className={styles.wrapper}>
+      ref={refModal}
+      onClick={handleClick}
+      className={styles.wrapper}
+    >
       <div className={cn(styles.modal, styles[width])}>{children}</div>
     </div>
   );
