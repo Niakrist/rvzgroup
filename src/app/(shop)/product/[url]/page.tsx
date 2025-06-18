@@ -1,5 +1,6 @@
 import { fetchCategory } from "@/api/fetchCategory";
 import { getCategories } from "@/api/getCategories";
+import { getFilter } from "@/api/getFilter";
 import { getItemBearing } from "@/api/getItemBearing";
 import {
   PopularProduct,
@@ -8,6 +9,7 @@ import {
 } from "@/components";
 import TagList from "@/components/TagList/TagList";
 import { urlPaths } from "@/constants/urlPaths";
+import { IBearinData } from "@/types/product";
 
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -38,6 +40,21 @@ export async function generateMetadata({
     title: bearingItem?.title,
     description: bearingItem?.description,
   };
+}
+
+export async function generateStaticParams(): Promise<Array<{ url: string }>> {
+  try {
+    const allProducts: IBearinData = await getFilter();
+    if (!allProducts?.rows?.length) {
+      return [];
+    }
+    return allProducts.rows.slice(0, 100).map((product) => ({
+      url: product.url,
+    }));
+  } catch (error) {
+    console.error("Error in generateStaticParams:", error);
+    return [];
+  }
 }
 
 export default async function ProductPage({ params }: IProductPageProps) {

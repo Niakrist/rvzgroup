@@ -211,13 +211,9 @@ export const Filter = () => {
         filter="connectionId"
         list={connectionIdList}
       />
+      <DropDown name="Специальные" filter="featureId" list={featureIdList} />
       <DropDown
-        name="Специальные характеристики"
-        filter="featureId"
-        list={featureIdList}
-      />
-      <DropDown
-        name="Дополнительные особенности"
+        name="Дополнительные"
         filter="feature2Id"
         list={feature2IdList}
       />

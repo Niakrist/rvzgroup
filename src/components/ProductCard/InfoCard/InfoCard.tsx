@@ -16,7 +16,7 @@ export const InfoCard = ({ product }: IInfoCardProps): React.JSX.Element => {
 
   const handleGetCP = () => {
     dispatch(isGetPriceModal(!getPriceModal));
-    dispatch(addInCommercialApplication(product.name));
+    dispatch(addInCommercialApplication({ product, count: 0 }));
   };
 
   if (!product) return <div>Загрузка InfoCard</div>;

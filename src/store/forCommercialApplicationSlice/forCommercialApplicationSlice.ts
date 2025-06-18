@@ -1,16 +1,23 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { ICartItem } from "@/types/cartItem.interface";
+
+interface ICPState {
+  bearing: ICartItem[];
+}
+
+const initialState: ICPState = {
+  bearing: [],
+};
 
 export const forCommercialApplicationSlice = createSlice({
   name: "forCommercialApplication",
-  initialState: {
-    bearing: "",
-  },
+  initialState,
   reducers: {
-    addInCommercialApplication: (state, action) => {
-      state.bearing = action.payload;
+    addInCommercialApplication: (state, action: PayloadAction<ICartItem>) => {
+      state.bearing.push(action.payload);
     },
     clearCommercialApplication: (state) => {
-      state.bearing = "";
+      state.bearing = [];
     },
   },
 });

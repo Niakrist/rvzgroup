@@ -1,6 +1,7 @@
 "use client";
+import { OrderForm } from "@/components";
 import { RootState } from "@/store/store";
-import { Agreement, Button, InputText, Textarea } from "@/ui";
+import { Agreement, Button, InputText, Text, Textarea } from "@/ui";
 import { convertNumberInCurrency } from "@/utils/convertNumber";
 import { getTotalPrice } from "@/utils/getTotalPrice";
 import React, { useState } from "react";
@@ -24,17 +25,41 @@ export const CartOrder = () => {
     setTextAreaValue(e.target.value);
   };
 
+  const inStock = cart.filter(
+    (item) => item.product.price || item.product.priceRvz
+  ).length;
+  const inCart = cart.length;
+
   return (
     <div className={styles.order}>
       <div className={styles.orderHeader}>
         <h3 className={styles.text}>Ваш заказ</h3>
-        <p className={styles.text}>{cart.length} товара</p>
+        <p className={styles.text}>{inCart} товара</p>
       </div>
       <div className={styles.orderTotal}>
-        <p className={styles.text}>Итого:</p>
-        <p className={styles.totalPrice}>{cartTotalPrice}</p>
+        {inStock === inCart ? (
+          <div className={styles.orderinStock}>
+            <p className={styles.text}>Итого:</p>
+            <p className={styles.totalPrice}>{cartTotalPrice}</p>
+          </div>
+        ) : (
+          <>
+            <div className={styles.orderinStock}>
+              <p className={styles.text}>Итого:</p>
+              <p className={styles.totalPrice}>{cartTotalPrice}</p>
+            </div>
+            <div className={styles.forStock}>
+              <p className={styles.text}>{inCart - inStock} товара</p>
+              <p className={styles.totalPrice}>Под заказ</p>
+            </div>
+          </>
+        )}
+        <Text tag="p" size="small" className={styles.feedBackText}>
+          После получения заявки с вами свяжется менеджер для обсуждения деталей
+        </Text>
       </div>
-      <form className={styles.form} action="">
+      <OrderForm order={cart} />
+      {/* <form className={styles.form} action="">
         <InputText placeholder="Имя" type="text" />
         <InputText placeholder="Телефон" type="text" />
         <InputText placeholder="Email" type="email" />
@@ -62,7 +87,7 @@ export const CartOrder = () => {
           color="grey"
           id="order"
         />
-      </form>
+      </form> */}
     </div>
   );
 };
