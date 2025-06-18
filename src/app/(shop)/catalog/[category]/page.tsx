@@ -3,6 +3,7 @@ import { getFilter } from "@/api/getFilter";
 import CatalogNavBar from "@/components/CatalogNavBar/CatalogNavBar";
 import Products from "@/components/Products/Products";
 import { SideBar } from "@/components/SideBar/SideBar";
+import { urlsForCategory } from "@/constants/urlsForCategory";
 import { ISearchParams } from "@/types/ISearchParams.interface";
 import { Htag } from "@/ui";
 import { getFilteredProducts } from "@/utils/getFilteredProducts";
@@ -14,9 +15,11 @@ import React from "react";
 import styles from "../CatalogPage.module.css";
 
 interface ICategoryPageProps {
-  params: Promise<{ category: string }>;
+  params: Promise<{ category: UrlsForCategoryKey }>;
   searchParams: Promise<ISearchParams>;
 }
+
+type UrlsForCategoryKey = keyof typeof urlsForCategory;
 
 export async function generateMetadata({
   params,

@@ -30,7 +30,7 @@ export const PromoSlider = () => {
       </ul>
       <div className={styles.container}>
         <div className={styles.content}>
-          <h2 className={styles.title}>Подшипники для спецтехники</h2>
+          <h2 className={styles.title}>Подшипники РВЗ</h2>
           <p className={styles.text}>
             Большой выбор товара Доставим за 7–14 дней
           </p>

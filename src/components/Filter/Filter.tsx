@@ -145,7 +145,7 @@ const featureIdList: IFilterDropsownList[] = [
   { id: "7", name: "с короткими цилиндрическими роликами" },
 ];
 
-const featureId2List: IFilterDropsownList[] = [
+const feature2IdList: IFilterDropsownList[] = [
   { id: "1", name: "без колец" },
   { id: "2", name: "с цапфой" },
   { id: "3", name: "с плоским упорным кольцом" },
@@ -211,16 +211,16 @@ export const Filter = () => {
         filter="connectionId"
         list={connectionIdList}
       />
-      {/* <DropDown
+      <DropDown
         name="Специальные характеристики"
         filter="featureId"
         list={featureIdList}
       />
       <DropDown
         name="Дополнительные особенности"
-        filter="featureId2"
-        list={featureId2List}
-      /> */}
+        filter="feature2Id"
+        list={feature2IdList}
+      />
       <Button
         className={styles.button}
         color="whiteText"

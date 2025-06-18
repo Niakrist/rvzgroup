@@ -1,5 +1,7 @@
 import { urlsForCategory } from "@/constants/urlsForCategory";
 
+type UrlsForCategoryKey = keyof typeof urlsForCategory;
+
 const parseDimensionString = (string: string): number => {
   const prefixes = ["width", "inner-diameter", "outer-diameter"];
 
@@ -13,10 +15,12 @@ const parseDimensionString = (string: string): number => {
 };
 
 export const getMetadataForCategory = (
-  category: string
+  category: UrlsForCategoryKey
 ): { title: string; description: string; h1: string } => {
   const categories = category.split("_");
-  const pathTitle = categories.map((item) => urlsForCategory[item]).join(" ");
+  const pathTitle = categories
+    .map((item) => urlsForCategory[item as UrlsForCategoryKey])
+    .join(" ");
   let title = "";
   let description = "";
   let h1: string = "";

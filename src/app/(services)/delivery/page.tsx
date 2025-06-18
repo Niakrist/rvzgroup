@@ -83,8 +83,8 @@ const DeliveryAndPayment = () => {
             Бесплатная доставка до любого терминала ТК в СПб
           </Text>
           <Text className={styles.item} tag="li" size="medium">
-            Специальные условия для грузов отправляемых "Деловыми линиям" или
-            "Возовозом"
+            Специальные условия для грузов отправляемых &quot;Деловыми
+            линиям&quot; или &quot;Возовозом&quot;
           </Text>
         </ul>
         <Text className={styles.text} tag="p" size="medium">

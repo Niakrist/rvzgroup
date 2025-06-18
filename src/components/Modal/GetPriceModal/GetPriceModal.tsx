@@ -54,7 +54,7 @@ export const GetPriceModal = () => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("name", name);
-    formData.append("phane", phone);
+    formData.append("phone", phone);
     formData.append("email", email);
     formData.append("comment", textAreaValue);
     if (file) formData.append("file", file);

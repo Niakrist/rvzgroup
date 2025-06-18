@@ -5,15 +5,12 @@ import { Button, Htag } from "@/ui";
 import { IInfoCardProps } from "./InfoCard.props";
 import styles from "./InfoCard.module.css";
 import { CounterQuantityGroup } from "@/components/CounterQuantityGroup/CounterQuantityGroup";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/store/store";
 import { isGetPriceModal } from "@/store/openModalSlice/openModalSlice";
-import { useSelector } from "react-redux";
 import { addInCommercialApplication } from "@/store/forCommercialApplicationSlice/forCommercialApplicationSlice";
 
 export const InfoCard = ({ product }: IInfoCardProps): React.JSX.Element => {
-  if (!product) return <div>Загрузка InfoCard</div>;
-
   const dispatch = useDispatch<AppDispatch>();
   const { getPriceModal } = useSelector((state: RootState) => state.openModal);
 
@@ -22,6 +19,7 @@ export const InfoCard = ({ product }: IInfoCardProps): React.JSX.Element => {
     dispatch(addInCommercialApplication(product.name));
   };
 
+  if (!product) return <div>Загрузка InfoCard</div>;
   return (
     <div className={styles.content}>
       <Htag tag="h1" size="medium">

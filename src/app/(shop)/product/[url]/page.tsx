@@ -11,6 +11,7 @@ import { urlPaths } from "@/constants/urlPaths";
 
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+
 import React from "react";
 
 interface IProductPageProps {
@@ -26,14 +27,16 @@ interface ICategory {
   url: string;
 }
 
+type UrlPathKey = keyof typeof urlPaths;
+
 export async function generateMetadata({
   params,
 }: IProductPageProps): Promise<Metadata> {
   const { url } = await params;
   const bearingItem = await getItemBearing(url);
   return {
-    title: bearingItem.title,
-    description: bearingItem.description,
+    title: bearingItem?.title,
+    description: bearingItem?.description,
   };
 }
 
@@ -46,13 +49,15 @@ export default async function ProductPage({ params }: IProductPageProps) {
     notFound();
   }
 
-  const urlArray = Object.keys(urlPaths);
+  const urlArray = Object.keys(urlPaths) as UrlPathKey[];
   const urlsCategory: ICategory[] = [];
 
   for (const item of urlArray) {
     if (bearingItem[item]) {
       const data = await fetchCategory(item);
-      urlsCategory.push(data[bearingItem[item] - 1]);
+      if (Array.isArray(data)) {
+        urlsCategory.push(data[bearingItem[item] - 1]);
+      }
     }
   }
 
