@@ -8,12 +8,15 @@ import {
 } from "@/store/openModalSlice/openModalSlice";
 import { IModalProps } from "./Modal.props";
 import styles from "./Modal.module.css";
+import { clearCommercialApplication } from "@/store/forCommercialApplicationSlice/forCommercialApplicationSlice";
 
 export const Modal: React.FC<IModalProps> = ({ children, width, ...props }) => {
   const refModal = useRef<HTMLDivElement>(null);
   const dispatch = useDispatch();
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    console.log("++++");
+    dispatch(clearCommercialApplication());
     if (
       refModal.current &&
       e.target instanceof HTMLDivElement &&
@@ -22,6 +25,10 @@ export const Modal: React.FC<IModalProps> = ({ children, width, ...props }) => {
       dispatch(isGetPriceModal(false));
       dispatch(toggleMenuModal(false));
     }
+  };
+
+  const myClick = () => {
+    console.log("+++");
   };
 
   return (
