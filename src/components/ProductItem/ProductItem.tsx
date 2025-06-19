@@ -25,6 +25,9 @@ export const ProductItem = ({ product }: IProductItemProps) => {
     dispatch(addInCommercialApplication({ product, count: 0 }));
   };
 
+  // const images = JSON.parse(product.images);
+  console.log("images: ", product.images);
+
   return (
     <article className={styles.card}>
       <LabelList
@@ -34,7 +37,11 @@ export const ProductItem = ({ product }: IProductItemProps) => {
         newProduct={product.new_product}
       />
       <Link href={`/product/${product.url}`} className={styles.imgWrapper}>
-        <img className={styles.img} src={`/images/${product.images}`} alt="" />
+        <img
+          className={styles.img}
+          src={`/images/${product.images[0]}`}
+          alt=""
+        />
       </Link>
       <ArticleInStock product={product} />
       <Link className={styles.link} href={`/product/${product.url}`}>

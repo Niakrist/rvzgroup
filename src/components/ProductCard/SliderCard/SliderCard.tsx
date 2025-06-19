@@ -1,15 +1,23 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { ISliderCardProps } from "./SliderCard.props";
 import styles from "./SliderCard.module.css";
 import LabelList from "@/components/LabelList/LabelList";
+import cn from "classnames";
 
 export const SliderCard: React.FC<ISliderCardProps> = ({ product }) => {
-  // const [currentSlid, setCurrentSlide] = useState<string>(product.images);
+  const handleChangeSlide = (slide: string) => {
+    setCurrentSlide(slide);
+  };
 
-  // const handleChangeSlide = (slide: string) => {
-  //   setCurrentSlide(slide);
-  // };
+  const imgArr = [
+    "close.jpg",
+    "open.jpg",
+    "radial.jpg",
+    "conical.jpg",
+    "double-row.jpg",
+  ];
+  const [currentSlid, setCurrentSlide] = useState<string>(imgArr[0]);
 
   return (
     <div className={styles.slider}>
@@ -20,14 +28,10 @@ export const SliderCard: React.FC<ISliderCardProps> = ({ product }) => {
         newProduct={product.new_product}
       />
       <div className={styles.slide}>
-        <img
-          className={styles.bigImg}
-          src={`/images/${product?.images}`}
-          alt="Слайд"
-        />
+        <img className={styles.bigImg} src={`/${currentSlid}`} alt="Слайд" />
       </div>
-      {/* <ul className={styles.smallSlider}>
-        {product.images?.map((item) => (
+      <ul className={styles.smallSlider}>
+        {imgArr?.map((item) => (
           <li
             key={item}
             className={cn(styles.smallSlide, {
@@ -37,7 +41,7 @@ export const SliderCard: React.FC<ISliderCardProps> = ({ product }) => {
             <img className={styles.smallImg} src={`/${item}`} alt="" />
           </li>
         ))}
-      </ul> */}
+      </ul>
     </div>
   );
 };
