@@ -25,11 +25,7 @@ export const CartItem = ({ cart }: ICartItemProps) => {
   return (
     <li className={styles.item}>
       <div className={styles.wrapper}>
-        <img
-          className={styles.img}
-          src={`http://localhost:4000/${product.images}`}
-          alt=""
-        />
+        <img className={styles.img} src={`/images/${product.images}`} alt="" />
         <div className={styles.info}>
           <h3 className={styles.title}>
             <Link href={`/product/${product.url}`}>

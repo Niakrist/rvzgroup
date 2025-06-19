@@ -22,8 +22,8 @@ export const SliderCard: React.FC<ISliderCardProps> = ({ product }) => {
       <div className={styles.slide}>
         <img
           className={styles.bigImg}
-          src={`http://localhost:4000/${product?.images}`}
-          alt=""
+          src={`/images/${product?.images}`}
+          alt="Слайд"
         />
       </div>
       {/* <ul className={styles.smallSlider}>

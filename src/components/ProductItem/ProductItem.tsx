@@ -34,11 +34,7 @@ export const ProductItem = ({ product }: IProductItemProps) => {
         newProduct={product.new_product}
       />
       <Link href={`/product/${product.url}`} className={styles.imgWrapper}>
-        <img
-          className={styles.img}
-          src={`http://localhost:4000/${product.images}`}
-          alt=""
-        />
+        <img className={styles.img} src={`/images/${product.images}`} alt="" />
       </Link>
       <ArticleInStock product={product} />
       <Link className={styles.link} href={`/product/${product.url}`}>
