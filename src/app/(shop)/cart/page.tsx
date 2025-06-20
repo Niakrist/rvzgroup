@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 
 export default async function CartPage() {
   const products = await getCategories();
+  if (!products) return <div>Загрузка</div>;
   return (
     <>
       <Cart />

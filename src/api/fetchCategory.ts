@@ -11,7 +11,7 @@ interface ICategory {
 
 export const fetchCategory = async (
   item: string
-): Promise<ICategory | boolean> => {
+): Promise<ICategory | null> => {
   try {
     const response = await fetch(`http://localhost:4000/api/v1/${item}`);
     const data = await response.json();
@@ -19,6 +19,6 @@ export const fetchCategory = async (
     return data;
   } catch (error) {
     console.log(error);
-    return false;
+    return null;
   }
 };
