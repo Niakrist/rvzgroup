@@ -44,7 +44,7 @@ export async function generateMetadata({
 
 export async function generateStaticParams(): Promise<Array<{ url: string }>> {
   try {
-    const allProducts: IBearinData = await getFilter();
+    const allProducts: IBearinData | null = await getFilter();
     if (!allProducts?.rows?.length) {
       return [];
     }
@@ -77,7 +77,7 @@ export default async function ProductPage({ params }: IProductPageProps) {
       }
     }
   }
-
+  if (!products) return <div>Загрузка</div>;
   return (
     <>
       <ProductCard bearingItem={bearingItem} />
