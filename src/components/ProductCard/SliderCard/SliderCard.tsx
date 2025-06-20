@@ -10,14 +10,7 @@ export const SliderCard: React.FC<ISliderCardProps> = ({ product }) => {
     setCurrentSlide(slide);
   };
 
-  const imgArr = [
-    "close.jpg",
-    "open.jpg",
-    "radial.jpg",
-    "conical.jpg",
-    "double-row.jpg",
-  ];
-  const [currentSlid, setCurrentSlide] = useState<string>(imgArr[0]);
+  const [currentSlid, setCurrentSlide] = useState<string>(product.images[0]);
 
   return (
     <div className={styles.slider}>
@@ -28,17 +21,21 @@ export const SliderCard: React.FC<ISliderCardProps> = ({ product }) => {
         newProduct={product.new_product}
       />
       <div className={styles.slide}>
-        <img className={styles.bigImg} src={`/${currentSlid}`} alt="Слайд" />
+        <img
+          className={styles.bigImg}
+          src={`/images/${currentSlid}`}
+          alt="Слайд"
+        />
       </div>
       <ul className={styles.smallSlider}>
-        {imgArr?.map((item) => (
+        {product.images?.map((item) => (
           <li
             key={item}
             className={cn(styles.smallSlide, {
               [styles.active]: currentSlid === item,
             })}
             onClick={() => handleChangeSlide(item)}>
-            <img className={styles.smallImg} src={`/${item}`} alt="" />
+            <img className={styles.smallImg} src={`/images/${item}`} alt="" />
           </li>
         ))}
       </ul>

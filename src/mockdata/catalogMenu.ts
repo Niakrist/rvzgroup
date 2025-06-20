@@ -411,17 +411,17 @@ export const menuCatalogList: IMenuList[] = [
       },
     ],
   },
-  {
-    url: "/razemnye-korpusa",
-    img: "iconRazemnyeKorpusa.png",
-    name: "Разборный корпусный узел",
-    subCategories: [
-      {
-        subName: "Стандарт",
-        categories: [{ url: "razemnye_korpusa", name: "ISO" }],
-      },
-    ],
-  },
+  // {
+  //   url: "/razemnye-korpusa",
+  //   img: "iconRazemnyeKorpusa.png",
+  //   name: "Разборный корпусный узел",
+  //   subCategories: [
+  //     {
+  //       subName: "Стандарт",
+  //       categories: [{ url: "razemnye_korpusa", name: "ISO" }],
+  //     },
+  //   ],
+  // },
 
   {
     url: "/otkrytye",

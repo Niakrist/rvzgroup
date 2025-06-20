@@ -9,7 +9,7 @@ export const servicesPages: Array<IServicesPages> = [
   { path: "contacts", name: "Контакты" },
   { path: "delivery", name: "Доставка" },
   { path: "payment", name: "Оплата" },
-  { path: "vacancy", name: "Вакансии" },
+  // { path: "vacancy", name: "Вакансии" },
   // { path: "/catalog", name: "Каталог" },
   // { path: "/cart", name: "Корзина" },
 ];
@@ -24,7 +24,8 @@ export const shopPages: IServicesPages[] = [
   { path: "contacts", name: "Контакты" },
   { path: "delivery", name: "Доставка" },
   { path: "payment", name: "Оплата" },
-  { path: "vacancy", name: "Вакансии" },
+  { path: "oferta", name: "Договор оферты" },
+  // { path: "vacancy", name: "Вакансии" },
   { path: "cart", name: "Корзина" },
   { path: "dvuhryadnye", name: "Двухрядные" },
   { path: "gost", name: "ГОСТ" },

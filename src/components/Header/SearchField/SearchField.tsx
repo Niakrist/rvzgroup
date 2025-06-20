@@ -100,7 +100,7 @@ export const SearchField = () => {
                       className={styles.searchItemLink}>
                       <img
                         className={styles.searchItemImg}
-                        src={`/images/${item.images}`}
+                        src={`/images/${item.images[0]}`}
                         alt={item.title}
                       />
                       <p className={styles.title}>{item.name}</p>

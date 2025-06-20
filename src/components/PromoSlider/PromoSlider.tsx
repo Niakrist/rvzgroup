@@ -2,8 +2,7 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import { useSelector, useDispatch } from "react-redux";
-import { Icon } from "@/components";
-import { BubbleList, Button } from "@/ui";
+import { Button } from "@/ui";
 import { RootState } from "@/store/store";
 import { isGetPriceModal } from "@/store/openModalSlice/openModalSlice";
 import styles from "./PromoSlider.module.css";
@@ -31,9 +30,7 @@ export const PromoSlider = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <h2 className={styles.title}>Подшипники РВЗ</h2>
-          <p className={styles.text}>
-            Большой выбор товара Доставим за 7–14 дней
-          </p>
+          <p className={styles.text}>Разумный Выбор Запчастей</p>
           <div className={styles.btnGroup}>
             <Button
               className={styles.buttonPromo}
@@ -53,13 +50,13 @@ export const PromoSlider = () => {
             </Button>
           </div>
         </div>
-        <button className={styles.buttonArrow}>
+        {/* <button className={styles.buttonArrow}>
           <Icon className={styles.arrow} name="iconArrow" />
         </button>
         <button className={styles.buttonArrowRigth}>
           <Icon className={styles.arrowRigth} name="iconArrow" />
-        </button>
-        <BubbleList />
+        </button> */}
+        {/* <BubbleList /> */}
       </div>
     </section>
   );

@@ -25,9 +25,6 @@ export const ProductItem = ({ product }: IProductItemProps) => {
     dispatch(addInCommercialApplication({ product, count: 0 }));
   };
 
-  // const images = JSON.parse(product.images);
-  console.log("images: ", product.images);
-
   return (
     <article className={styles.card}>
       <LabelList

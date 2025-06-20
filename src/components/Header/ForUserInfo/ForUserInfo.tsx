@@ -20,11 +20,11 @@ export const ForUserInfo = () => {
 
   return (
     <>
-      <Link href="/bookmark" className={styles.block}>
+      {/* <Link href="/bookmark" className={styles.block}>
         <Icon name="iconBookmark" className={styles.iconBookmark} />
         <span className={styles.text}>просмотреное</span>
         <span className={styles.quantityBookmark}>10</span>
-      </Link>
+      </Link> */}
       <Link href="/cart" className={styles.block}>
         <Icon name="iconCart" className={styles.iconCart} />
         <span className={styles.text}>корзина</span>

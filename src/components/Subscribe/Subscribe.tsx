@@ -10,9 +10,7 @@ export const Subscribe = () => {
     setIsCheck(!check);
   };
 
-  const handleClick = () => {
-    console.log("click");
-  };
+  const handleClick = () => {};
 
   return (
     <section className={styles.section}>

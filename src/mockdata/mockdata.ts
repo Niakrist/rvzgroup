@@ -6,11 +6,11 @@ export const categoryList: ICategory[] = [
   { path: "igolchatye", name: "Игольчатые", img: "needle-shaped.jpg" },
   { path: "sharnirnye", name: "Шарнирные", img: "articulated.jpg" },
   { path: "korpusnye-uzly", name: "Корпусные", img: "housing.jpg" },
-  {
-    path: "razemnye-korpusa",
-    name: "Разъёмные корпуса",
-    img: "detachable-housings.jpg",
-  },
+  // {
+  //   path: "razemnye-korpusa",
+  //   name: "Разъёмные корпуса",
+  //   img: "detachable-housings.jpg",
+  // },
   { path: "odnoryadnye", name: "Однорядные", img: "single-row.jpg" },
   { path: "dvuhryadnye", name: "Двухрядные", img: "double-row.jpg" },
   { path: "chetyrehryadnye", name: "Четырехрядные", img: "four-row.jpg" },

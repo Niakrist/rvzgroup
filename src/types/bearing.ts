@@ -16,7 +16,7 @@ export interface IBearing {
   brand: string;
   analog: string;
   analogUrl: string;
-  images: string;
+  images: string[];
   content: string;
   innerDiameter: number;
   outerDiameter: number;

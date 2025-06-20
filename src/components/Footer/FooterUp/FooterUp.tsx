@@ -18,7 +18,6 @@ export const FooterUp = () => {
         <Link className={styles.link} href="tel:78126428527">
           +7 812 642-85-27
         </Link>
-        <p className={styles.text}>Санкт-Петербург, улица Ржевская, д. 4</p>
       </address>
     </div>
   );

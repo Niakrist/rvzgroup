@@ -28,8 +28,6 @@ export const GetPriceModal = () => {
     return null;
   }
 
-  console.log("bearing: ", bearing);
-
   return (
     <Modal width="medium">
       <button onClick={handleCloseModal} className={styles.close} />
