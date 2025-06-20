@@ -1,29 +1,18 @@
 "use client";
 import { OrderForm } from "@/components";
 import { RootState } from "@/store/store";
-import { Agreement, Button, InputText, Text, Textarea } from "@/ui";
+import { Text } from "@/ui";
 import { convertNumberInCurrency } from "@/utils/convertNumber";
 import { getTotalPrice } from "@/utils/getTotalPrice";
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 
 import styles from "./CartOrder.module.css";
 
 export const CartOrder = () => {
-  const [textAreaValue, setTextAreaValue] = useState<string>("");
   const { cart } = useSelector((state: RootState) => state.cart);
 
-  const [isCheck, setIsCheck] = useState<boolean>(true);
-
-  const handleChangeAgreement = (check: boolean): void => {
-    setIsCheck(!check);
-  };
-
   const cartTotalPrice = convertNumberInCurrency(getTotalPrice(cart));
-
-  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setTextAreaValue(e.target.value);
-  };
 
   const inStock = cart.filter(
     (item) => item.product.price || item.product.priceRvz
