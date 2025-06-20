@@ -11,6 +11,8 @@ import {
 
 export default async function Home() {
   const products = await getCategories();
+
+  if (!products) return <div>Загрузка</div>;
   return (
     <main>
       <PromoSlider />
