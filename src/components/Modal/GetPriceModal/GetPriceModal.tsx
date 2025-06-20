@@ -1,14 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Agreement, Button, Htag, InputText, Textarea } from "@/ui";
+import { Htag } from "@/ui";
 import { Modal, OrderForm } from "@/components";
 import { useKeyPress } from "@/hooks/useKeayPress";
 import { isGetPriceModal } from "@/store/openModalSlice/openModalSlice";
 import { RootState } from "@/store/store";
 import styles from "./GetPriceModal.module.css";
 import { clearCommercialApplication } from "@/store/forCommercialApplicationSlice/forCommercialApplicationSlice";
-import { sendRequestByEmail } from "@/api/sendRequestByEmail";
 
 export const GetPriceModal = () => {
   const dispatch = useDispatch();
