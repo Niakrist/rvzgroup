@@ -53,6 +53,7 @@ export const SearchField = () => {
       setIsOpenSearch(true);
       const getFilterProducts = async () => {
         const data = await searchProducts(searchDebounce);
+        if (!data) return;
         setSearchList(data.rows);
       };
       getFilterProducts();
