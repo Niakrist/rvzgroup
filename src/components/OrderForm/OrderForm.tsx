@@ -5,7 +5,7 @@ import styles from "./OrderForm.module.css";
 import { Agreement, Button, InputText, Textarea } from "@/ui";
 import { sendRequestByEmail } from "@/api/sendRequestByEmail";
 
-export const OrderForm = ({ order, className, ...props }: IOrderFormProps) => {
+export const OrderForm = ({ order, ...props }: IOrderFormProps) => {
   const [isCheck, setIsCheck] = useState<boolean>(true);
   const [name, setName] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
