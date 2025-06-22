@@ -18,7 +18,7 @@ export const shopPages: IServicesPages[] = [
   { path: "", name: "Главная" },
   { path: "catalog", name: "Каталог" },
   { path: "sfericheskie", name: "Сферические" },
-  { path: "samoustanavlivayuschiesya", name: "Самоустанавливающиеся" },
+  { path: "samoustanavlivayushchiesya", name: "Самоустанавливающиеся" },
   { path: "about", name: "О компании" },
   { path: "brand-rvz", name: "Бренд РВЗ" },
   { path: "contacts", name: "Контакты" },

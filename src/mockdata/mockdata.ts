@@ -17,7 +17,7 @@ export const categoryList: ICategory[] = [
   { path: "sfericheskie", name: "Сферические", img: "spherical.jpg" },
   { path: "konicheskie", name: "Конические", img: "conical.jpg" },
   {
-    path: "samoustanavlivayuschiesya",
+    path: "samoustanavlivayushchiesya",
     name: "Самоустанавливающиеся",
     img: "self-installing.jpg",
   },

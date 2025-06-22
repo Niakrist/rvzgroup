@@ -3,6 +3,7 @@ export const sendRequestByEmail = async (formData: FormData) => {
     const response = await fetch("http://localhost:4000/api/v1/send-email", {
       method: "POST",
       body: formData,
+      headers: new Headers({ "Content-Type": "application/json" }),
     });
 
     if (response.ok) {
