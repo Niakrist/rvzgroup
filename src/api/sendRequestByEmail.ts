@@ -1,6 +1,8 @@
+import { BASE_URL } from "@/constants/base_url";
+
 export const sendRequestByEmail = async (formData: FormData) => {
   try {
-    const response = await fetch("http://localhost:4000/api/v1/send-email", {
+    const response = await fetch(`${BASE_URL}/send-email`, {
       method: "POST",
       body: formData,
       headers: new Headers({ "Content-Type": "application/json" }),

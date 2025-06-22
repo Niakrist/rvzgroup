@@ -1,5 +1,7 @@
 // Для генерации страниц
 
+import { BASE_URL } from "@/constants/base_url";
+
 interface ICategory {
   id: number;
   name: string;
@@ -13,7 +15,7 @@ export const fetchCategory = async (
   item: string
 ): Promise<ICategory | null> => {
   try {
-    const response = await fetch(`http://localhost:4000/api/v1/${item}`);
+    const response = await fetch(`${BASE_URL}/${item}`);
     const data = await response.json();
 
     return data;
