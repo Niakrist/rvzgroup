@@ -5,7 +5,6 @@ export const sendRequestByEmail = async (formData: FormData) => {
     const response = await fetch(`${BASE_URL}/send-email`, {
       method: "POST",
       body: formData,
-      headers: new Headers({ "Content-Type": "application/json" }),
     });
 
     if (response.ok) {
