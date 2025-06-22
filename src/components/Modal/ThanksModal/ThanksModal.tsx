@@ -15,7 +15,7 @@ export const ThanksModal = () => {
 
   const handleCloseModal = () => {
     dispatch(toggleThanksModal(!isThanksModal));
-    router.replace("/about");
+    router.replace("/");
   };
 
   if (!isThanksModal) {
@@ -31,7 +31,8 @@ export const ThanksModal = () => {
         onClick={handleCloseModal}
         bgColor="blue"
         color="whiteText"
-        size="big">
+        size="big"
+      >
         На главную
       </Button>
     </Modal>

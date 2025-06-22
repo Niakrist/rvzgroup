@@ -4,6 +4,11 @@ import { IOrderFormProps } from "./OrderForm.props";
 import styles from "./OrderForm.module.css";
 import { Agreement, Button, InputText, Textarea } from "@/ui";
 import { sendRequestByEmail } from "@/api/sendRequestByEmail";
+import { useDispatch } from "react-redux";
+import {
+  isGetPriceModal,
+  toggleThanksModal,
+} from "@/store/openModalSlice/openModalSlice";
 
 export const OrderForm = ({ order, ...props }: IOrderFormProps) => {
   const [isCheck, setIsCheck] = useState<boolean>(true);
@@ -12,6 +17,8 @@ export const OrderForm = ({ order, ...props }: IOrderFormProps) => {
   const [email, setEmail] = useState<string>("");
   const [textAreaValue, setTextAreaValue] = useState<string>("");
   const [file, setFile] = useState<File | null>(null);
+
+  const dispatch = useDispatch();
 
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
@@ -62,7 +69,20 @@ export const OrderForm = ({ order, ...props }: IOrderFormProps) => {
       formData.append("order", JSON.stringify(orderSend));
     }
 
-    sendRequestByEmail(formData);
+    try {
+      await sendRequestByEmail(formData);
+      // Очищаем поля после успешной отправки
+      setName("");
+      setPhone("");
+      setEmail("");
+      setTextAreaValue("");
+      setFile(null);
+      setIsCheck(true);
+      dispatch(isGetPriceModal(false));
+      dispatch(toggleThanksModal(true));
+    } catch (error) {
+      console.error("Ошибка при отправке формы:", error);
+    }
   };
 
   return (
@@ -101,7 +121,8 @@ export const OrderForm = ({ order, ...props }: IOrderFormProps) => {
         bgColor="blue"
         size="medium"
         color="whiteText"
-        disabled={!isCheck}>
+        disabled={!isCheck}
+      >
         Оформить заказ
       </Button>
 
