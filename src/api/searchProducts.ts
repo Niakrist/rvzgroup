@@ -12,6 +12,7 @@ export const searchProducts = async (
         headers: new Headers({ "Content-Type": "application/json" }),
         method: "POST",
         body: JSON.stringify({ q: search }),
+        mode: "cors", // явное указание режима CORS
       }
     );
     const data = await response.json();
