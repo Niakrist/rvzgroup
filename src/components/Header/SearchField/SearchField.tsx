@@ -77,14 +77,16 @@ export const SearchField = () => {
           <button
             onClick={handleClear}
             type="button"
-            aria-label={"Очистить строку поиска"}>
+            aria-label={"Очистить строку поиска"}
+          >
             <Icon name="iconCross" className={styles.iconSearch} />
           </button>
         )}
         <button
           onClick={handleSearchAll}
           type="button"
-          aria-label={"Выполнить поиск"}>
+          aria-label={"Выполнить поиск"}
+        >
           <Icon name="iconSearch" className={styles.iconSearch} />
         </button>
       </form>
@@ -98,7 +100,8 @@ export const SearchField = () => {
                     <Link
                       onClick={handleClear}
                       href={`/product/${item.url}`}
-                      className={styles.searchItemLink}>
+                      className={styles.searchItemLink}
+                    >
                       <img
                         className={styles.searchItemImg}
                         src={`/images/${item.images[0]}`}
@@ -122,7 +125,8 @@ export const SearchField = () => {
                 bgColor="blue"
                 color="whiteText"
                 size="small"
-                onClick={handleSearchAll}>
+                onClick={handleSearchAll}
+              >
                 Все результаты
               </Button>
             </>
