@@ -1,5 +1,5 @@
 .titleWrapper {
-  background-color: var(--grey2);
+  background-color: var(--grey1);
 }
 
 .title {
@@ -10,7 +10,7 @@
 
 .section {
   padding: 0 0 100px;
-  background-color: var(--grey2);
+  background-color: var(--grey1);
 }
 
 .container {
