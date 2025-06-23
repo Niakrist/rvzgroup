@@ -1,4 +1,4 @@
-import { TopNav, Header, Footer } from "@/components";
+import { TopNav, Header, Footer, YandexMetrika } from "@/components";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ClientProvider } from "./ClientProvider/ClientProvider";
@@ -32,6 +32,7 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          <YandexMetrika />
         </body>
       </ClientProvider>
     </html>

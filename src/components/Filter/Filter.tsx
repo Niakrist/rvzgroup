@@ -12,6 +12,7 @@ import { WidthBearing } from "./WidthBearing/WidthBearing";
 import { RangePrice } from "./RangePrice/RangePrice";
 import ResetButton from "./ResetButton/ResetButton";
 import { resetFilter } from "@/store/filterSlice/filterSlice";
+import { toggleOpenMobileFilter } from "@/store/openModalSlice/openModalSlice";
 
 const bearingDdesignList: IFilterDropsownList[] = [
   { id: "1", name: "Миниатюрные" },
@@ -160,6 +161,10 @@ export const Filter = () => {
     dispatch(resetFilter());
   }, [pathname, dispatch]);
 
+  const handleApplyFilter = () => {
+    dispatch(toggleOpenMobileFilter(false));
+  };
+
   return (
     <div className={styles.filter}>
       <RangePrice />
@@ -217,7 +222,9 @@ export const Filter = () => {
         filter="feature2Id"
         list={feature2IdList}
       />
+
       <Button
+        onClick={handleApplyFilter}
         className={styles.button}
         color="whiteText"
         bgColor="blue"

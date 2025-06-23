@@ -47,7 +47,7 @@ export const CartOrder = () => {
           После получения заявки с вами свяжется менеджер для обсуждения деталей
         </Text>
       </div>
-      <OrderForm order={cart} />
+      <OrderForm isCart={true} order={cart} />
       {/* <form className={styles.form} action="">
         <InputText placeholder="Имя" type="text" />
         <InputText placeholder="Телефон" type="text" />

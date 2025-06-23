@@ -42,3 +42,4 @@ export * from "./About/RvzVision/RvzVision";
 export * from "./Filter/InnerDiameter/InnerDiameter";
 export * from "./CounterQuantityForCart/CounterQuantityForCart";
 export * from "./OrderForm/OrderForm";
+export * from "./YandexMetrika/YandexMetrika";

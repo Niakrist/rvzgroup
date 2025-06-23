@@ -21,6 +21,10 @@
   background-color: var(--white);
 
   border-radius: 16px;
+
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .small {

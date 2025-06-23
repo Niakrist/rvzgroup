@@ -5,11 +5,13 @@ import { MenuCatalog } from "@/components";
 import styles from "./Menu.module.css";
 import { menuCatalogList } from "@/mockdata/catalogMenu";
 import { IMenuList } from "@/types/types";
+import { useDispatch } from "react-redux";
+import { toggleMenuModal } from "../../store/openModalSlice/openModalSlice";
 
 export const Menu = () => {
   const [activeUrl, setActiveUrl] = useState<string>("/sharikovye");
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1025);
-
+  const dispatch = useDispatch();
   const menuList: IMenuList[] = menuCatalogList;
 
   useEffect(() => {
@@ -32,6 +34,7 @@ export const Menu = () => {
       e.preventDefault();
       setActiveUrl(url);
     }
+    dispatch(toggleMenuModal(false));
   };
 
   const handleMouseEnter = (id: string) => {

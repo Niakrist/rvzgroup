@@ -1,4 +1,5 @@
 import { resetFilter } from "@/store/filterSlice/filterSlice";
+import { toggleOpenMobileFilter } from "@/store/openModalSlice/openModalSlice";
 import { AppDispatch } from "@/store/store";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
@@ -14,6 +15,7 @@ const ResetButton = () => {
   const handleResetFilter = (): void => {
     dispatch(resetFilter());
     router.replace(pathname);
+    dispatch(toggleOpenMobileFilter(false));
   };
   return (
     <button onClick={handleResetFilter} className={styles.button}>

@@ -6,4 +6,5 @@ export interface IOrderFormProps
     HTMLFormElement
   > {
   order?: ICartItem[];
+  isCart?: boolean;
 }

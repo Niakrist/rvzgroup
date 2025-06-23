@@ -9,8 +9,9 @@ import {
   isGetPriceModal,
   toggleThanksModal,
 } from "@/store/openModalSlice/openModalSlice";
+import { removeCart } from "@/store/cartSlice/cartSlice";
 
-export const OrderForm = ({ order, ...props }: IOrderFormProps) => {
+export const OrderForm = ({ order, isCart, ...props }: IOrderFormProps) => {
   const [isCheck, setIsCheck] = useState<boolean>(true);
   const [name, setName] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
@@ -80,6 +81,10 @@ export const OrderForm = ({ order, ...props }: IOrderFormProps) => {
       setIsCheck(true);
       dispatch(isGetPriceModal(false));
       dispatch(toggleThanksModal(true));
+
+      if (isCart) {
+        dispatch(removeCart());
+      }
     } catch (error) {
       console.error("Ошибка при отправке формы:", error);
     }
@@ -121,8 +126,7 @@ export const OrderForm = ({ order, ...props }: IOrderFormProps) => {
         bgColor="blue"
         size="medium"
         color="whiteText"
-        disabled={!isCheck}
-      >
+        disabled={!isCheck}>
         Оформить заказ
       </Button>
 
