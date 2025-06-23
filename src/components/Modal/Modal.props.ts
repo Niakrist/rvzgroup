@@ -7,4 +7,5 @@ export interface IModalProps
   > {
   children: React.ReactNode;
   width: "small" | "medium" | "mobileMenu" | "big";
+  height?: "100vh";
 }

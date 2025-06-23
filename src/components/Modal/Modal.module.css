@@ -22,9 +22,12 @@
 
   border-radius: 16px;
 
-  height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
+}
+
+.full {
+  height: 100vh;
 }
 
 .small {

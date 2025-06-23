@@ -5,14 +5,13 @@ export const sendRequestByEmail = async (formData: FormData) => {
       body: formData,
     });
 
-    if (response.ok) {
-      alert("Заказ успешно отправлен!");
-    } else {
+    if (!response.ok) {
       const errorData = await response.json();
-      alert(`Ошибка отправки: ${errorData.message || "Неизвестная ошибка"}`);
+      console.log(
+        `Ошибка отправки: ${errorData.message || "Неизвестная ошибка"}`
+      );
     }
   } catch (error) {
     console.error("Ошибка отправки:", error);
-    alert("Ошибка отправки: Проверьте консоль");
   }
 };

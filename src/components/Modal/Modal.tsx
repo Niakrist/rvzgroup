@@ -10,7 +10,12 @@ import { IModalProps } from "./Modal.props";
 import styles from "./Modal.module.css";
 import { clearCommercialApplication } from "@/store/forCommercialApplicationSlice/forCommercialApplicationSlice";
 
-export const Modal: React.FC<IModalProps> = ({ children, width, ...props }) => {
+export const Modal: React.FC<IModalProps> = ({
+  children,
+  width,
+  height,
+  ...props
+}) => {
   const refModal = useRef<HTMLDivElement>(null);
   const dispatch = useDispatch();
 
@@ -31,9 +36,16 @@ export const Modal: React.FC<IModalProps> = ({ children, width, ...props }) => {
       {...props}
       ref={refModal}
       onClick={handleClick}
-      className={styles.wrapper}
-    >
-      <div className={cn(styles.modal, styles[width])}>{children}</div>
+      className={styles.wrapper}>
+      <div
+        className={cn(
+          styles.modal,
+          { [styles.full]: height === "100vh" },
+
+          styles[width]
+        )}>
+        {children}
+      </div>
     </div>
   );
 };

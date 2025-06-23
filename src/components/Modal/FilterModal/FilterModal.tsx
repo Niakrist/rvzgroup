@@ -19,7 +19,7 @@ export const FilterModal = () => {
   }
 
   return (
-    <Modal width="big">
+    <Modal width="big" height="100vh">
       <button onClick={handleCloseModal} className={styles.close} />
       <div className={styles.title}>
         <Icon name="iconFilter" className={styles.iconFilter} />
