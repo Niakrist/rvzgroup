@@ -1,13 +1,10 @@
-// Переделать на POST запрос отправлять строку и искать ао ней для для выпадающего списка
-// После нажатия ENTER длеать GET зарпос для фильтров через query
-import { BASE_URL } from "@/constants/base_url";
 import { IBearinData } from "@/types/product";
 
 export const searchProducts = async (
   search: string
 ): Promise<IBearinData | null> => {
   try {
-    const response = await fetch(`${BASE_URL}/bearing/search`, {
+    const response = await fetch("/api/v1/bearing/search", {
       headers: {
         "Content-Type": "application/json",
       },
