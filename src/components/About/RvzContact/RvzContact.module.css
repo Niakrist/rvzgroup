@@ -14,3 +14,12 @@
 .mb {
   margin-bottom: 14px;
 }
+
+@media (max-width: 1239px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    flex-direction: column-reverse;
+    column-gap: 0px;
+    row-gap: 30px;
+  }
+}

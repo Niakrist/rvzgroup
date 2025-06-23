@@ -55,7 +55,7 @@ export const MenuBurger = () => {
                       className={styles.images}
                       src={`/icons/${item.img}`}
                       alt=""
-                    />{" "}
+                    />
                     {item.name}
                   </Link>
                 </li>
