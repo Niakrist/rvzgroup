@@ -4,9 +4,12 @@ export const getFilter = async (
   params?: URLSearchParams
 ): Promise<IBearinData | null> => {
   try {
-    const response = await fetch(`/api/v1/bearing/?${params ? params : ""}`, {
-      method: "GET",
-    });
+    const response = await fetch(
+      `https://rvzgroup.ru//api/v1/bearing/?${params ? params : ""}`,
+      {
+        method: "GET",
+      }
+    );
     const data = await response.json();
 
     return data;
