@@ -37,7 +37,7 @@ export const RvzVision = () => {
               </Text>
             </ul>
           </div>
-          <img className={styles.img} src="./rvz-views.png" alt="" />
+          <img className={styles.img} src="/rvz-views.png" alt="" />
         </div>
       </div>
     </section>

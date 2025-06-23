@@ -24,7 +24,7 @@ export const PromoSlider = () => {
     <section className={styles.promoSlider}>
       <ul className={styles.slider}>
         <li className={styles.item}>
-          <img className={styles.img} src="./slide.png" alt="" />
+          <img className={styles.img} src="/slide.png" alt="" />
         </li>
       </ul>
       <div className={styles.container}>

@@ -6,7 +6,7 @@ export const RvzMission = () => {
   return (
     <WrapperSection bgSection="grey">
       <div className={styles.wrapper}>
-        <img className={styles.img} src="./rvz-mission.png" alt="" />
+        <img className={styles.img} src="/rvz-mission.png" alt="" />
         <div className={styles.content}>
           <Htag tag="h2" className={styles.mb} size="large">
             Миссия РВЗ:

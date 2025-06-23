@@ -49,7 +49,7 @@ export const Subscribe = () => {
             </form>
           </div>
           <div className={styles.img}>
-            <img src="./subscribe.jpg" alt="Подписка" />
+            <img src="/subscribe.jpg" alt="Подписка" />
           </div>
         </div>
       </div>

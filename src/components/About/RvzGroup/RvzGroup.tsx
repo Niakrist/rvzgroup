@@ -53,7 +53,7 @@ export const RvzGroup = () => {
             </Text>
           </div>
         </div>
-        <img className={styles.img} src="./rvz-about.jpg" alt="" />
+        <img className={styles.img} src="/rvz-about.jpg" alt="" />
       </div>
     </WrapperSection>
   );

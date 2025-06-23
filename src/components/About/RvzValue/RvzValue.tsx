@@ -51,7 +51,7 @@ export const RvzValue = () => {
             </Text>
           </ul>
         </div>
-        <img className={styles.img} src="./rvz-value.png" alt="" />
+        <img className={styles.img} src="/rvz-value.png" alt="" />
       </div>
     </WrapperSection>
   );

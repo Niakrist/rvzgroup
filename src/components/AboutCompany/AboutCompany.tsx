@@ -41,7 +41,7 @@ export const AboutCompany = () => {
             </Link>
           </div>
           <div className={styles.imgWrapper}>
-            <img className={styles.img} src="./about.jpg" alt="О компании" />
+            <img className={styles.img} src="/about.jpg" alt="О компании" />
           </div>
         </div>
       </div>

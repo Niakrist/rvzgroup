@@ -13,7 +13,7 @@ export const urlsForCategory = {
   sfericheskie: "сферические",
   kombinirovannye: "комбинированные",
   konicheskie: "конические",
-  korpusnye: "корпусные",
+  "korpusnye-uzly": "корпусные",
   sharnirnye: "шарнирные",
   rs: "закрытые пластиком RS с одной стороны",
   z: "закрытые металлом Z с одной стороны",

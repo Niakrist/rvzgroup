@@ -75,14 +75,14 @@ const BrandRvz = () => {
           </div>
           <img
             className={styles.img}
-            src="./certificate.jpg"
+            src="/certificate.jpg"
             alt="Свидетельство о регистрации бренда РВЗ"
           />
         </div>
         <div className={styles.block}>
           <img
             className={styles.img}
-            src="./sert.jpg"
+            src="/sert.jpg"
             alt="Сертификат соответствия"
           />
           <div className={styles.content}>
@@ -197,7 +197,7 @@ const BrandRvz = () => {
               характеристики нашей продукции.
             </Text>
           </div>
-          <img className={styles.img} src="./pasp.jpg" alt="Паспорт качества" />
+          <img className={styles.img} src="/pasp.jpg" alt="Паспорт качества" />
         </div>
       </div>
     </WrapperSection>
