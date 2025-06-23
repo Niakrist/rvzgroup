@@ -72,7 +72,7 @@ export const menuCatalogList: IMenuList[] = [
         subName: "Нагрузка",
         categories: [
           { url: "rolikovye_radialnye", name: "Радиальные" },
-          { url: "rolikovye_radialno_upornye", name: "Радиально-упорные" },
+          { url: "rolikovye_radialno-upornye", name: "Радиально-упорные" },
           { url: "rolikovye_upornye", name: "Упорные" },
         ],
       },
@@ -398,7 +398,7 @@ export const menuCatalogList: IMenuList[] = [
     ],
   },
   {
-    url: "/korpusnye",
+    url: "/korpusnye-uzly",
     img: "iconKorpusnyeUzly.png",
     name: "Корпусные узлы",
     subCategories: [
