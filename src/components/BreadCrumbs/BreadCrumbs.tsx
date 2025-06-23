@@ -43,12 +43,14 @@ export const BreadCrumbs = () => {
 
   const breadCrumbsUrl = createBreadCrumbs();
 
+  console.log("breadCrumbsUrl: ", breadCrumbsUrl);
+
   return (
     <section className={styles.section}>
       <ul className={styles.container}>
         {breadCrumbsUrl.map((item) => (
           <li className={styles.item} key={item.name}>
-            <Link href={`/${item.path}`}>{item.name}</Link>
+            <Link href={`./${item.path}`}>{item.name}</Link>
           </li>
         ))}
         {/* <li className={styles.item}>

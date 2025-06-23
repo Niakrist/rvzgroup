@@ -4,8 +4,8 @@ import { Cart, PopularProduct } from "@/components";
 import { getCategories } from "@/api/getCategories";
 
 export const metadata: Metadata = {
-  title: "Подшипник 204",
-  description: "Купить подшипник 204",
+  title: "Корзина",
+  description: "Корзина с товаром",
 };
 
 export default async function CartPage() {
