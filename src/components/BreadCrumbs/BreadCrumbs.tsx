@@ -31,17 +31,31 @@ export const BreadCrumbs = () => {
         });
       }
     } else if (params.includes("product")) {
+      const regex = /^(gost|iso)(?:-(\d+))?(?:-([a-z]+))?(?:-([a-z\d]+))?$/i;
+
+      function formatStandard(str: string) {
+        return str.replace(regex, (match, p1, p2, p3, p4) => {
+          const standard =
+            p1.toLowerCase() === "gost" ? "ГОСТ" : p1.toUpperCase();
+          const number = p2 || "";
+          const part1 = p3 || "";
+          const part2 = p4 || "";
+
+          return [standard, number, part1, part2].filter(Boolean).join(" ");
+        });
+      }
+
       breadCrumbsUrl.push({
         path: "/",
         name: "Главная",
       });
       breadCrumbsUrl.push({
         path: "/catalog",
-        name: "Каталог",
+        name: "Подшипники",
       });
       breadCrumbsUrl.push({
         path: `/product/${categories[1]}`,
-        name: "Пошипник",
+        name: formatStandard(categories[1]),
       });
     } else {
       for (const item of categories) {
