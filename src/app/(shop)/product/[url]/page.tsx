@@ -3,6 +3,7 @@ import { getCategories } from "@/api/getCategories";
 import { getFilter } from "@/api/getFilter";
 import { getItemBearing } from "@/api/getItemBearing";
 import {
+  BreadCrumbs,
   PopularProduct,
   ProductCard,
   ProductCharacteristic,
@@ -66,6 +67,8 @@ export default async function ProductPage({ params }: IProductPageProps) {
     notFound();
   }
 
+  console.log("bearingItem: ", bearingItem);
+
   const urlArray = Object.keys(urlPaths) as UrlPathKey[];
   const urlsCategory: ICategory[] = [];
 
@@ -80,15 +83,18 @@ export default async function ProductPage({ params }: IProductPageProps) {
   if (!products) return <div>Загрузка</div>;
   return (
     <>
-      <ProductCard bearingItem={bearingItem} />
-      <ProductCharacteristic bearingItem={bearingItem} />
-      <PopularProduct products={products.rows} />
-      <TagList
-        urlsCategory={urlsCategory}
-        innerDiameter={bearingItem.innerDiameter}
-        outerDiameter={bearingItem.outerDiameter}
-        widthBearing={bearingItem.widthBearing}
-      />
+      <BreadCrumbs />
+      <div>
+        <ProductCard bearingItem={bearingItem} />
+        <ProductCharacteristic bearingItem={bearingItem} />
+        <PopularProduct products={products.rows} />
+        <TagList
+          urlsCategory={urlsCategory}
+          innerDiameter={bearingItem.innerDiameter}
+          outerDiameter={bearingItem.outerDiameter}
+          widthBearing={bearingItem.widthBearing}
+        />
+      </div>
     </>
   );
 }

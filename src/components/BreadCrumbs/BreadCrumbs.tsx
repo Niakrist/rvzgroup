@@ -10,20 +10,21 @@ type UrlsForCategoryKey = keyof typeof urlsForCategory;
 
 export const BreadCrumbs = () => {
   const params = usePathname();
-
   const createBreadCrumbs = () => {
     const breadCrumbsUrl = [];
+    const categories = params.split("/").filter(Boolean); // Удаляем пустые элементы
 
-    const categories = params.split("/").filter(Boolean);
     if (params.includes("catalog")) {
+      // Добавляем главную страницу
       breadCrumbsUrl.push({
         path: "/",
         name: "Главная",
       });
 
+      // Обрабатываем остальные категории
       let currentPath = "";
       for (const item of categories) {
-        currentPath += `./${item}`;
+        currentPath += `/${item}`;
         const categoryName = getMetadataForCategory(item as UrlsForCategoryKey);
         breadCrumbsUrl.push({
           path: currentPath,
@@ -33,6 +34,7 @@ export const BreadCrumbs = () => {
         });
       }
     } else if (params.includes("product")) {
+      console.log("params: ", params);
     } else {
       for (const item of categories) {
         const categoryName = getMetadataForCategory(item as UrlsForCategoryKey);
@@ -52,9 +54,9 @@ export const BreadCrumbs = () => {
   return (
     <section className={styles.section}>
       <ul className={styles.container}>
-        {breadCrumbsUrl.map((item) => (
-          <li className={styles.item} key={item.name}>
-            <Link href={`/${item.path}`}>{item.name}</Link>
+        {breadCrumbsUrl.map((item, index) => (
+          <li className={styles.item} key={index}>
+            <Link href={item.path}>{item.name}</Link>
           </li>
         ))}
       </ul>
