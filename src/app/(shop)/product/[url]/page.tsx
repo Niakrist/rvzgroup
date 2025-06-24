@@ -3,7 +3,6 @@ import { getCategories } from "@/api/getCategories";
 import { getFilter } from "@/api/getFilter";
 import { getItemBearing } from "@/api/getItemBearing";
 import {
-  BreadCrumbs,
   PopularProduct,
   ProductCard,
   ProductCharacteristic,
