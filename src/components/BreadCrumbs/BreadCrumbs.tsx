@@ -14,12 +14,19 @@ export const BreadCrumbs = () => {
   const createBreadCrumbs = () => {
     const breadCrumbsUrl = [];
 
+    const categories = params.split("/").filter(Boolean);
     if (params.includes("catalog")) {
-      const categories = params.split("/");
+      breadCrumbsUrl.push({
+        path: "/",
+        name: "Главная",
+      });
+
+      let currentPath = "";
       for (const item of categories) {
+        currentPath += `./${item}`;
         const categoryName = getMetadataForCategory(item as UrlsForCategoryKey);
         breadCrumbsUrl.push({
-          path: item,
+          path: currentPath,
           name:
             categoryName.h1.slice(0, 1).toUpperCase() +
             categoryName.h1.slice(1),
@@ -27,7 +34,6 @@ export const BreadCrumbs = () => {
       }
     } else if (params.includes("product")) {
     } else {
-      const categories = params.split("/");
       for (const item of categories) {
         const categoryName = getMetadataForCategory(item as UrlsForCategoryKey);
         breadCrumbsUrl.push({
@@ -43,20 +49,14 @@ export const BreadCrumbs = () => {
 
   const breadCrumbsUrl = createBreadCrumbs();
 
-  console.log("breadCrumbsUrl: ", breadCrumbsUrl);
-
   return (
     <section className={styles.section}>
       <ul className={styles.container}>
         {breadCrumbsUrl.map((item) => (
           <li className={styles.item} key={item.name}>
-            <Link href={`./${item.path}`}>{item.name}</Link>
+            <Link href={`/${item.path}`}>{item.name}</Link>
           </li>
         ))}
-        {/* <li className={styles.item}>
-          <Link href="/">Главная</Link>
-        </li>
-        <li className={styles.item}>{name?.name}</li> */}
       </ul>
     </section>
   );
