@@ -12,16 +12,13 @@ export const BreadCrumbs = () => {
   const params = usePathname();
   const createBreadCrumbs = () => {
     const breadCrumbsUrl = [];
-    const categories = params.split("/").filter(Boolean); // Удаляем пустые элементы
 
+    const categories = params.split("/").filter(Boolean);
     if (params.includes("catalog")) {
-      // Добавляем главную страницу
       breadCrumbsUrl.push({
         path: "/",
         name: "Главная",
       });
-
-      // Обрабатываем остальные категории
       let currentPath = "";
       for (const item of categories) {
         currentPath += `/${item}`;
@@ -34,7 +31,18 @@ export const BreadCrumbs = () => {
         });
       }
     } else if (params.includes("product")) {
-      console.log("params: ", params);
+      breadCrumbsUrl.push({
+        path: "/",
+        name: "Главная",
+      });
+      breadCrumbsUrl.push({
+        path: "/catalog",
+        name: "Каталог",
+      });
+      breadCrumbsUrl.push({
+        path: `/product/${categories[1]}`,
+        name: "Пошипник",
+      });
     } else {
       for (const item of categories) {
         const categoryName = getMetadataForCategory(item as UrlsForCategoryKey);
