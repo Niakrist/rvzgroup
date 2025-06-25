@@ -10,6 +10,7 @@ import {
 import TagList from "@/components/TagList/TagList";
 import { urlPaths } from "@/constants/urlPaths";
 import { IBearinData } from "@/types/product";
+import { combineSlices } from "@reduxjs/toolkit";
 
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -41,6 +42,7 @@ export async function generateMetadata({
   const {
     title,
     description,
+    name,
     price,
     images,
     innerDiameter,
@@ -49,9 +51,9 @@ export async function generateMetadata({
   } = bearingItem;
   const imageUrl = images?.[0];
 
-  const metaDescription = `Купить подшипник ${title} ${
+  const metaDescription = `Купить подшипник ${name} ${
     price ? "за " + price + " ₽" : " низкой цене"
-  }. Характеристики подшипника ${title}: ⌀ внутрений диаметр ${innerDiameter} мм, наружный диаметр ${outerDiameter} мм, ширина ${widthBearing} мм. Собственное производство, высокое качество, выгодные цены. Доставка по всей России. В наличии на складе!"`;
+  }. Характеристики подшипника ${name}: ⌀ внутрений диаметр ${innerDiameter} мм, наружный диаметр ${outerDiameter} мм, ширина ${widthBearing} мм. Собственное производство, высокое качество, выгодные цены. Доставка по всей России. В наличии на складе!"`;
 
   return {
     title,
@@ -68,7 +70,7 @@ export async function generateMetadata({
           url: imageUrl,
           width: 400,
           height: 400,
-          alt: `Подшипник РВЗ ${title}`,
+          alt: `Подшипник РВЗ ${name}`,
         },
       ],
       type: "website",
@@ -109,7 +111,7 @@ export default async function ProductPage({ params }: IProductPageProps) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: bearingItem.title,
+    name: `Подшипник ${bearingItem.name}`,
     description: bearingItem.description,
     brand: {
       "@type": "Brand",
