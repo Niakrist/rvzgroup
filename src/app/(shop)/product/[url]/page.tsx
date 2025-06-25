@@ -10,7 +10,6 @@ import {
 import TagList from "@/components/TagList/TagList";
 import { urlPaths } from "@/constants/urlPaths";
 import { IBearinData } from "@/types/product";
-import { combineSlices } from "@reduxjs/toolkit";
 
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
