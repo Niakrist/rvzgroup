@@ -26,9 +26,13 @@ export async function generateMetadata({
 }: ICategoryPageProps): Promise<Metadata> {
   const { category } = await params;
   const { title, description } = getMetadataForCategory(category);
+
   return {
     title,
     description,
+    alternates: {
+      canonical: `https://rvzgroup.ru/catalog/${category}`,
+    },
   };
 }
 

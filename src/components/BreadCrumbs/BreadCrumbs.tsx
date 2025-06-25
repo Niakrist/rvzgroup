@@ -14,11 +14,11 @@ export const BreadCrumbs = () => {
     const breadCrumbsUrl = [];
 
     const categories = params.split("/").filter(Boolean);
+    breadCrumbsUrl.push({
+      path: "/",
+      name: "Главная",
+    });
     if (params.includes("catalog")) {
-      breadCrumbsUrl.push({
-        path: "/",
-        name: "Главная",
-      });
       let currentPath = "";
       for (const item of categories) {
         currentPath += `/${item}`;
@@ -44,11 +44,6 @@ export const BreadCrumbs = () => {
           return [standard, number, part1, part2].filter(Boolean).join(" ");
         });
       }
-
-      breadCrumbsUrl.push({
-        path: "/",
-        name: "Главная",
-      });
       breadCrumbsUrl.push({
         path: "/catalog",
         name: "Подшипники",
@@ -60,6 +55,7 @@ export const BreadCrumbs = () => {
     } else {
       for (const item of categories) {
         const categoryName = getMetadataForCategory(item as UrlsForCategoryKey);
+
         breadCrumbsUrl.push({
           path: item,
           name:

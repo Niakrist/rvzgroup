@@ -31,14 +31,54 @@ interface ICategory {
 
 type UrlPathKey = keyof typeof urlPaths;
 
+// SEO
 export async function generateMetadata({
   params,
 }: IProductPageProps): Promise<Metadata> {
   const { url } = await params;
   const bearingItem = await getItemBearing(url);
+  if (!bearingItem) notFound();
+  const {
+    title,
+    description,
+    price,
+    images,
+    innerDiameter,
+    outerDiameter,
+    widthBearing,
+  } = bearingItem;
+  const imageUrl = images?.[0];
+
+  const metaDescription = `Купить подшипник ${title} ${
+    price ? "за " + price + " ₽" : " низкой цене"
+  }. Характеристики подшипника ${title}: ⌀ внутрений диаметр ${innerDiameter} мм, наружный диаметр ${outerDiameter} мм, ширина ${widthBearing} мм. Собственное производство, высокое качество, выгодные цены. Доставка по всей России. В наличии на складе!"`;
+
   return {
-    title: bearingItem?.title,
-    description: bearingItem?.description,
+    title,
+    description: metaDescription,
+    alternates: {
+      canonical: `https://rvzgroup.ru/products/${url}`,
+    },
+    openGraph: {
+      title,
+      description,
+      url: `https://rvzgroup.ru/products/${url}`,
+      images: [
+        {
+          url: imageUrl,
+          width: 400,
+          height: 400,
+          alt: `Подшипник РВЗ ${title}`,
+        },
+      ],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [imageUrl],
+    },
   };
 }
 
@@ -66,6 +106,28 @@ export default async function ProductPage({ params }: IProductPageProps) {
     notFound();
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: bearingItem.title,
+    description: bearingItem.description,
+    brand: {
+      "@type": "Brand",
+      name: bearingItem.brand || "РВЗ",
+    },
+    offers: {
+      "@type": "Offer",
+      price: bearingItem.price ? bearingItem.price : "По запросу",
+      priceCurrency: "RUB",
+      availability:
+        bearingItem.price > 0 || bearingItem.priceRvz > 0
+          ? "https://schema.org/InStock"
+          : "https://schema.org/PreOrder",
+      url: `https://rvzgroup.ru/products/${bearingItem.url}`,
+    },
+    image: bearingItem.images?.[0] || "",
+  };
+
   const urlArray = Object.keys(urlPaths) as UrlPathKey[];
   const urlsCategory: ICategory[] = [];
 
@@ -81,6 +143,10 @@ export default async function ProductPage({ params }: IProductPageProps) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <ProductCard bearingItem={bearingItem} />
       <ProductCharacteristic bearingItem={bearingItem} />
       <PopularProduct products={products.rows} />

@@ -11,8 +11,13 @@ import React from "react";
 import styles from "./CatalogPage.module.css";
 
 export const metadata: Metadata = {
-  title: "Каталог подшипников",
-  description: "",
+  title:
+    "Каталог подшипников с доставкой по России и СНГ | Гарантия качества от надежного поставщика",
+  description:
+    "Каталог подшипников с доставкой по России и СНГ. Широкий ассортимент, оптовые поставки, выгодные цены, быстрая доставка. Закажите прямо сейчас!",
+  alternates: {
+    canonical: "https://rvzgroup.ru/catalog",
+  },
 };
 
 interface ICatalogPageProps {
