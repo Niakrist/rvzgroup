@@ -4,8 +4,34 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
-        source: "/images/:path*", // Захватываем все запросы к /images/
-        destination: "http://localhost:4000/:path*", // Перенаправляем их на бэкенд
+        source: "/images/:path*",
+        destination: "http://localhost:4000/:path*",
+      },
+    ];
+  },
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "rvzgroup.ru",
+          },
+        ],
+        destination: "https://rvzgroup.ru/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "www.rvzgroup.ru",
+          },
+        ],
+        destination: "https://rvzgroup.ru/:path*",
+        permanent: true,
       },
     ];
   },
