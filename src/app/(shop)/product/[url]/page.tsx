@@ -51,7 +51,7 @@ export async function generateMetadata({
   const imageUrl = images?.[0];
 
   const metaDescription = `Купить подшипник ${name} ${
-    price ? "за " + price + " ₽" : "низкой цене"
+    price ? "за " + price + " ₽" : "по низкой цене"
   }. Характеристики подшипника ${name}: ⌀ внутрений диаметр ${innerDiameter} мм, наружный диаметр ${outerDiameter} мм, ширина ${widthBearing} мм. Собственное производство, высокое качество, выгодные цены. Доставка по всей России. В наличии на складе!`;
 
   return {
