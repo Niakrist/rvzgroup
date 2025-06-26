@@ -1,6 +1,6 @@
 import { IBearinData } from "@/types/product";
 
-export const fetchProducts = async (
+const fetchProducts = async (
   method: "GET" | "POST",
   params?: Record<string, string> | URLSearchParams
 ): Promise<IBearinData> => {

@@ -5,7 +5,7 @@ export const getFilter = async (
 ): Promise<IBearinData | null> => {
   try {
     const response = await fetch(
-      `https://rvzgroup.ru//api/v1/bearing/?${params ? params : ""}`,
+      `https://rvzgroup.ru/api/v1/bearing/?${params ? params : ""}`,
       {
         method: "GET",
       }
