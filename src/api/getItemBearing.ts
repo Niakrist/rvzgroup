@@ -1,4 +1,3 @@
-import { revalidate } from "@/app/sitemap";
 import { IBearing } from "@/types/bearing";
 
 export const getItemBearing = async (url: string): Promise<IBearing | null> => {
