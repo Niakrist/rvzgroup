@@ -169,7 +169,7 @@ export const sitemapSpecifications = [
 ];
 
 export const sitemapServicesPage = [
-  "/",
+  "",
   "catalog",
   "about",
   "brand-rvz",
