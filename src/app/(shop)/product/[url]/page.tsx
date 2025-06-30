@@ -124,7 +124,7 @@ export default async function ProductPage({ params }: IProductPageProps) {
         bearingItem.price > 0 || bearingItem.priceRvz > 0
           ? "https://schema.org/InStock"
           : "https://schema.org/PreOrder",
-      url: `https://rvzgroup.ru/products/${bearingItem.url}`,
+      url: `https://rvzgroup.ru/product/${bearingItem.url}`,
     },
     image: bearingItem.images?.[0] || "",
   };
