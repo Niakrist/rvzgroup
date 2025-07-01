@@ -114,8 +114,21 @@
 }
 
 @media (max-width: 767px) {
+  .form {
+    height: 38px;
+  }
+
+  .search {
+    padding: 10px 0;
+  }
+
   .search::placeholder {
     font-size: 12px;
+  }
+
+  .iconSearch {
+    width: 16px;
+    height: 16px;
   }
 }
 

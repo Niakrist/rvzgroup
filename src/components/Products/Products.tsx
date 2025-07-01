@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { PaginationList, ProductItem, Icon } from "@/components";
+import { PaginationList, ProductItem, Icon, TagCategory } from "@/components";
 import { toggleOpenMobileFilter } from "@/store/openModalSlice/openModalSlice";
 import styles from "./Products.module.css";
 
@@ -26,6 +26,7 @@ const Products = ({ bearingList, count }: IProductsProps) => {
         <span className={styles.name}>Фильтр</span>
         <Icon name="iconArrow" className={styles.iconArrow} />
       </button>
+      <TagCategory />
       <ul className={styles.list}>
         {bearingList.map((product: IBearing) => (
           <li key={product.id}>

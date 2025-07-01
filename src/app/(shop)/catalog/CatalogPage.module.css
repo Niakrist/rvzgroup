@@ -29,3 +29,9 @@
     column-gap: 0px;
   }
 }
+
+@media (max-width: 767px) {
+  .section {
+    padding: 0 0 50px;
+  }
+}

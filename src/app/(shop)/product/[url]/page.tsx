@@ -62,7 +62,7 @@ export async function generateMetadata({
     },
     openGraph: {
       title,
-      description,
+      description: metaDescription,
       url: `https://rvzgroup.ru/products/${url}`,
       images: [
         {
@@ -77,7 +77,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title,
-      description,
+      description: metaDescription,
       images: [imageUrl],
     },
   };
@@ -118,7 +118,7 @@ export default async function ProductPage({ params }: IProductPageProps) {
     },
     offers: {
       "@type": "Offer",
-      price: bearingItem.price ? bearingItem.price : "По запросу",
+      price: bearingItem.price || null,
       priceCurrency: "RUB",
       availability:
         bearingItem.price > 0 || bearingItem.priceRvz > 0
