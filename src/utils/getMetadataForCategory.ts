@@ -34,21 +34,21 @@ export const getMetadataForCategory = (
 
     title = `Подшипники с шириной ${widthMatch} мм: Купить, характеристики, аналоги`;
     description = `Купить подшипники с шириной ${widthMatch} мм напрямую от производителя! Высокое качество, широкий ассортимент подшипников, оптимальные цены и доставка по всей России. Закажите сейчас!`;
-    h1 = `Подшипники с шириной ${widthMatch} мм`;
+    h1 = `с шириной ${widthMatch} мм`;
   }
 
   if (category.includes("inner-diameter")) {
     const innerDiameterMatch = parseDimensionString(category);
     title = `Подшипники с внутренним диаметром ${innerDiameterMatch} мм: Купить, характеристики, аналоги`;
     description = `Купить подшипники с внутренним диаметром ${innerDiameterMatch} мм напрямую от производителя! Высокое качество, широкий ассортимент подшипников, оптимальные цены и доставка по всей России. Закажите сейчас!`;
-    h1 = `Подшипники с внутренним диаметром ${innerDiameterMatch} мм`;
+    h1 = `с внутренним диаметром ${innerDiameterMatch} мм`;
   }
 
   if (category.includes("outer-diameter")) {
     const outerDiameterMatch = parseDimensionString(category);
     title = `Подшипники с наружным диаметром ${outerDiameterMatch} мм: Купить, характеристики, аналоги`;
     description = `Купить подшипники с наружным диаметром ${outerDiameterMatch} мм напрямую от производителя! Высокое качество, широкий ассортимент подшипников, оптимальные цены и доставка по всей России. Закажите сейчас!`;
-    h1 = `Подшипники с наружным диаметром ${outerDiameterMatch} мм`;
+    h1 = `с наружным диаметром ${outerDiameterMatch} мм`;
   }
 
   return { title, description, h1 };

@@ -40,7 +40,6 @@ export async function generateMetadata({
   if (!bearingItem) notFound();
   const {
     title,
-    description,
     name,
     price,
     images,
