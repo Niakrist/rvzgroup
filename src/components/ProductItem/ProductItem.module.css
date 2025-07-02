@@ -9,7 +9,7 @@
   border: 1px solid var(--grey3); */
 }
 
-.imgWrapper {
+.imgLink {
   display: block;
   padding: 10px 0;
   margin-bottom: 20px;
@@ -18,7 +18,7 @@
   position: relative;
 }
 
-.imgWrapper::before {
+.imgLink::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -27,12 +27,17 @@
   transition: background-color 0.2s ease;
 }
 
-.imgWrapper:hover::before {
+.imgLink:hover::before {
   background-color: rgba(2, 119, 189, 0.1);
 }
 
-.img {
+.imgWrapper {
+  width: 240px;
   height: 240px;
+  margin: 0 auto;
+}
+
+.productImage {
   object-fit: contain;
 }
 

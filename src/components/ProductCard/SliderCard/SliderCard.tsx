@@ -4,6 +4,7 @@ import { ISliderCardProps } from "./SliderCard.props";
 import styles from "./SliderCard.module.css";
 import LabelList from "@/components/LabelList/LabelList";
 import cn from "classnames";
+import Image from "next/image";
 
 export const SliderCard: React.FC<ISliderCardProps> = ({ product }) => {
   const handleChangeSlide = (slide: string) => {
@@ -21,21 +22,29 @@ export const SliderCard: React.FC<ISliderCardProps> = ({ product }) => {
         newProduct={product.new_product}
       />
       <div className={styles.slide}>
-        <img
+        <Image
+          width={400}
+          height={400}
           className={styles.bigImg}
           src={`/images/${currentSlid}`}
-          alt="Слайд"
+          alt={`Подшипник ${product.name}`}
         />
       </div>
       <ul className={styles.smallSlider}>
-        {product.images?.map((item) => (
+        {product.images?.map((item, index) => (
           <li
             key={item}
             className={cn(styles.smallSlide, {
               [styles.active]: currentSlid === item,
             })}
             onClick={() => handleChangeSlide(item)}>
-            <img className={styles.smallImg} src={`/images/${item}`} alt="" />
+            <Image
+              width={91}
+              height={91}
+              className={styles.smallImg}
+              src={`/images/${item}`}
+              alt={`Подшипник ${product.name} фото ${index}`}
+            />
           </li>
         ))}
       </ul>

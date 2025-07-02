@@ -7,9 +7,9 @@ import styles from "./OurProducts.module.css";
 export const OurProducts = () => {
   return (
     <ul className={styles.ourProducts}>
-      {categoryList.map((category: ICategory) => (
+      {categoryList.map((category: ICategory, index: number) => (
         <li className={styles.item} key={category.path}>
-          <CategoryItem category={category} />
+          <CategoryItem category={category} index={index} />
         </li>
       ))}
     </ul>

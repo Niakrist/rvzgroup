@@ -28,9 +28,9 @@ const Products = ({ bearingList, count }: IProductsProps) => {
       </button>
       <TagCategory />
       <ul className={styles.list}>
-        {bearingList.map((product: IBearing) => (
+        {bearingList.map((product: IBearing, index: number) => (
           <li key={product.id}>
-            <ProductItem product={product} />
+            <ProductItem product={product} index={index} />
           </li>
         ))}
       </ul>

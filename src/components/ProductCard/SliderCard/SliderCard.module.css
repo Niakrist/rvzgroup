@@ -1,23 +1,32 @@
 .slider {
   position: relative;
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
 }
 
 .slide {
   padding: 20px;
-  margin-bottom: 12px;
+  margin: 0 auto;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  width: 442px;
+  height: 442px;
+
+  max-width: 100%;
+  max-height: 100%;
 
   border: 1px solid var(--grey2);
   border-radius: 8px;
 }
 
 .bigImg {
-  max-width: 400px;
-  height: 400px;
   object-fit: contain;
+  /* width: 100%;
+  height: 100%; */
 }
 
 .smallSlider {
@@ -45,8 +54,6 @@
 }
 
 .smallImg {
-  width: 91px;
-  height: 91px;
   object-fit: contain;
 }
 
@@ -55,25 +62,38 @@
 }
 
 @media (max-width: 1239px) {
+  .slide {
+    margin: unset;
+  }
+
   .slider {
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
     align-items: center;
-  }
-
-  .slide {
-    max-width: 592px;
-    width: 100%;
-  }
-
-  .bigImg {
-    height: auto;
+    justify-content: center;
   }
 
   .smallSlider {
-    display: none;
-    overflow-x: hidden;
-    overflow-y: auto;
+    flex-direction: column;
+  }
+  .smallImg {
+    /* width: 90px;
+    height: 90px; */
+  }
+}
+
+@media (max-width: 600px) {
+  .slider {
+    flex-direction: column;
+  }
+  .smallSlider {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide {
+    width: 100%;
     height: auto;
   }
 }
