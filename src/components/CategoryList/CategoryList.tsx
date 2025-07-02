@@ -55,9 +55,9 @@ export const CategoryList = (): React.JSX.Element => {
           },
         }}
         navigation>
-        {categoryList.map((category: ICategory) => (
+        {categoryList.map((category: ICategory, index: number) => (
           <SwiperSlide className={styles.item} key={category.path}>
-            <CategoryItem category={category} />
+            <CategoryItem index={index} category={category} />
           </SwiperSlide>
         ))}
       </Swiper>
