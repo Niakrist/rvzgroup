@@ -7,6 +7,7 @@ import { menuCatalogList } from "@/mockdata/catalogMenu";
 import { IMenuList } from "@/types/types";
 import { useDispatch } from "react-redux";
 import { toggleMenuModal } from "../../store/openModalSlice/openModalSlice";
+import Image from "next/image";
 
 export const Menu = () => {
   const [activeUrl, setActiveUrl] = useState<string>("/sharikovye");
@@ -52,10 +53,12 @@ export const Menu = () => {
       />
       <div className={styles.additionalMenu}>
         <div className={styles.activeItem}>
-          <img
+          <Image
+            width={24}
+            height={24}
             className={styles.images}
             src={`/icons/${activeItem?.img}`}
-            alt=""
+            alt={activeItem?.name as string}
           />{" "}
           {activeItem?.name}
         </div>

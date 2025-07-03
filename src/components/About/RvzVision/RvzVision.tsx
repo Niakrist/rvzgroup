@@ -1,4 +1,5 @@
 import { Htag, Text } from "@/ui";
+import Image from "next/image";
 import React from "react";
 import styles from "./RvzVision.module.css";
 
@@ -37,7 +38,13 @@ export const RvzVision = () => {
               </Text>
             </ul>
           </div>
-          <img className={styles.img} src="/rvz-views.png" alt="" />
+          <Image
+            width={515}
+            height={334}
+            className={styles.img}
+            src="/rvz-views.png"
+            alt="Видение РВЗ Групп"
+          />
         </div>
       </div>
     </section>

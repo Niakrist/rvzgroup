@@ -39,8 +39,8 @@ export const SliderCard: React.FC<ISliderCardProps> = ({ product }) => {
             })}
             onClick={() => handleChangeSlide(item)}>
             <Image
-              width={91}
-              height={91}
+              width={90}
+              height={90}
               className={styles.smallImg}
               src={`/images/${item}`}
               alt={`Подшипник ${product.name} фото ${index}`}

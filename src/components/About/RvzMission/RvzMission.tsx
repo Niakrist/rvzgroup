@@ -1,4 +1,5 @@
 import { Htag, Text, WrapperSection } from "@/ui";
+import Image from "next/image";
 import React from "react";
 import styles from "./RvzMission.module.css";
 
@@ -6,7 +7,13 @@ export const RvzMission = () => {
   return (
     <WrapperSection bgSection="grey">
       <div className={styles.wrapper}>
-        <img className={styles.img} src="/rvz-mission.png" alt="" />
+        <Image
+          width={425}
+          height={268}
+          className={styles.img}
+          src="/rvz-mission.png"
+          alt="Миссия РВЗ групп"
+        />
         <div className={styles.content}>
           <Htag tag="h2" className={styles.mb} size="large">
             Миссия РВЗ:

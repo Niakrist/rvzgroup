@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Agreement, Button, Htag } from "@/ui";
 import styles from "./Subscribe.module.css";
+import Image from "next/image";
 
 export const Subscribe = () => {
   const [isCheck, setIsCheck] = useState<boolean>(true);
@@ -49,7 +50,12 @@ export const Subscribe = () => {
             </form>
           </div>
           <div className={styles.img}>
-            <img src="/subscribe.jpg" alt="Подписка" />
+            <Image
+              width={653}
+              height={381}
+              src="/subscribe.jpg"
+              alt="Подписка"
+            />
           </div>
         </div>
       </div>

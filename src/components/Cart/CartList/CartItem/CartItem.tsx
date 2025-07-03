@@ -6,6 +6,7 @@ import { AppDispatch } from "@/store/store";
 import { IBearing } from "@/types/bearing";
 import { ICartItem } from "@/types/cartItem.interface";
 import { convertNumberInGroupNumber } from "@/utils/convertNumber";
+import Image from "next/image";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
 import styles from "./CartItem.module.css";
@@ -25,11 +26,15 @@ export const CartItem = ({ cart }: ICartItemProps) => {
   return (
     <li className={styles.item}>
       <div className={styles.wrapper}>
-        <img
-          className={styles.img}
-          src={`/images/${product.images[0]}`}
-          alt=""
-        />
+        <div className={styles.imgWrapper}>
+          <Image
+            width={70}
+            height={70}
+            className={styles.img}
+            src={`/images/${product.images[0]}`}
+            alt={`Подшипник ${product.name}`}
+          />
+        </div>
         <div className={styles.info}>
           <h3 className={styles.title}>
             <Link href={`/product/${product.url}`}>

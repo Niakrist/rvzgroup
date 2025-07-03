@@ -1,4 +1,5 @@
 import { Htag, Text, WrapperSection } from "@/ui";
+import Image from "next/image";
 import React from "react";
 import styles from "./RvzValue.module.css";
 
@@ -8,7 +9,7 @@ export const RvzValue = () => {
       <div className={styles.wrapper}>
         <div className={styles.content}>
           <Htag tag="h2" className={styles.mb} size="large">
-            Видение РВЗ:
+            Ценности РВЗ:
           </Htag>
           <ul>
             <Text className={styles.item} tag="li" size="medium">
@@ -51,7 +52,13 @@ export const RvzValue = () => {
             </Text>
           </ul>
         </div>
-        <img className={styles.img} src="/rvz-value.png" alt="" />
+        <Image
+          width={515}
+          height={576}
+          className={styles.img}
+          src="/rvz-value.png"
+          alt="Ценности РВЗ Групп"
+        />
       </div>
     </WrapperSection>
   );

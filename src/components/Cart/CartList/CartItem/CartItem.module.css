@@ -12,9 +12,12 @@
   column-gap: 10px;
 }
 
-.img {
+.imgWrapper {
   width: 70px;
   height: 70px;
+}
+
+.img {
   border-radius: 8px;
   object-fit: contain;
 }
@@ -90,7 +93,7 @@
     flex-direction: column;
   }
 
-  .img {
+  .imgWrapper {
     width: 50px;
     height: 50px;
   }

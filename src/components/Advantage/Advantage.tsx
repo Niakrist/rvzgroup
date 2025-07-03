@@ -1,6 +1,7 @@
 import React from "react";
 import { Htag, Text } from "@/ui";
 import styles from "./Advantage.module.css";
+import Image from "next/image";
 
 export const Advantage = () => {
   return (
@@ -11,7 +12,9 @@ export const Advantage = () => {
         </Htag>
         <ul className={styles.list}>
           <li className={styles.item}>
-            <img
+            <Image
+              width={50}
+              height={50}
               className={styles.img}
               src="/icons/brand.png"
               alt="Бренд РВЗ"
@@ -27,7 +30,9 @@ export const Advantage = () => {
             </div>
           </li>
           <li className={styles.item}>
-            <img
+            <Image
+              width={50}
+              height={50}
               className={styles.img}
               src="/icons/factory.png"
               alt="Производство"
@@ -44,7 +49,9 @@ export const Advantage = () => {
             </div>
           </li>
           <li className={styles.item}>
-            <img
+            <Image
+              width={50}
+              height={50}
               className={styles.img}
               src="/icons/gost.png"
               alt="ГОСТ 520-2011"
@@ -60,7 +67,9 @@ export const Advantage = () => {
             </div>
           </li>
           <li className={styles.item}>
-            <img
+            <Image
+              width={50}
+              height={50}
               className={styles.img}
               src="/icons/certificate.png"
               alt="Сертификаты и паспорта"
@@ -76,7 +85,9 @@ export const Advantage = () => {
             </div>
           </li>
           <li className={styles.item}>
-            <img
+            <Image
+              width={50}
+              height={50}
               className={styles.img}
               src="/icons/warehouse.png"
               alt="Большой склад"
@@ -91,7 +102,9 @@ export const Advantage = () => {
             </div>
           </li>
           <li className={styles.item}>
-            <img
+            <Image
+              width={50}
+              height={50}
               className={styles.img}
               src="/icons/assortment.png"
               alt="Ассортимент"
@@ -108,7 +121,9 @@ export const Advantage = () => {
             </div>
           </li>
           <li className={styles.item}>
-            <img
+            <Image
+              width={50}
+              height={50}
               className={styles.img}
               src="/icons/conditions.png"
               alt="Индивидуальные условия"
@@ -124,7 +139,9 @@ export const Advantage = () => {
             </div>
           </li>
           <li className={styles.item}>
-            <img
+            <Image
+              width={50}
+              height={50}
               className={styles.img}
               src="/icons/expert.png"
               alt="Экспертность"
@@ -140,7 +157,9 @@ export const Advantage = () => {
             </div>
           </li>
           <li className={styles.item}>
-            <img
+            <Image
+              width={50}
+              height={50}
               className={styles.img}
               src="/icons/service.png"
               alt="Высокий уровень сервиса"

@@ -6,6 +6,7 @@ import { Button } from "@/ui";
 import { RootState } from "@/store/store";
 import { isGetPriceModal } from "@/store/openModalSlice/openModalSlice";
 import styles from "./PromoSlider.module.css";
+import Image from "next/image";
 
 export const PromoSlider = () => {
   const dispatch = useDispatch();
@@ -24,7 +25,13 @@ export const PromoSlider = () => {
     <section className={styles.promoSlider}>
       <ul className={styles.slider}>
         <li className={styles.item}>
-          <img className={styles.img} src="/slide.png" alt="" />
+          <Image
+            width={1920}
+            height={700}
+            className={styles.img}
+            src="/slide.png"
+            alt="Подшипники РВЗ - Разумный Выбор Запчастей"
+          />
         </li>
       </ul>
       <div className={styles.container}>

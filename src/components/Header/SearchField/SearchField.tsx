@@ -10,6 +10,7 @@ import Link from "next/link";
 import { IBearing } from "@/types/bearing";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export const SearchField = () => {
   const [search, setSearch] = useState<string>("");
@@ -77,16 +78,14 @@ export const SearchField = () => {
           <button
             onClick={handleClear}
             type="button"
-            aria-label={"Очистить строку поиска"}
-          >
+            aria-label={"Очистить строку поиска"}>
             <Icon name="iconCross" className={styles.iconSearch} />
           </button>
         )}
         <button
           onClick={handleSearchAll}
           type="button"
-          aria-label={"Выполнить поиск"}
-        >
+          aria-label={"Выполнить поиск"}>
           <Icon name="iconSearch" className={styles.iconSearch} />
         </button>
       </form>
@@ -100,9 +99,10 @@ export const SearchField = () => {
                     <Link
                       onClick={handleClear}
                       href={`/product/${item.url}`}
-                      className={styles.searchItemLink}
-                    >
-                      <img
+                      className={styles.searchItemLink}>
+                      <Image
+                        width={50}
+                        height={50}
                         className={styles.searchItemImg}
                         src={`/images/${item.images[0]}`}
                         alt={item.title}
@@ -125,8 +125,7 @@ export const SearchField = () => {
                 bgColor="blue"
                 color="whiteText"
                 size="small"
-                onClick={handleSearchAll}
-              >
+                onClick={handleSearchAll}>
                 Все результаты
               </Button>
             </>

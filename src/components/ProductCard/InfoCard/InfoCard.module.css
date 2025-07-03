@@ -18,6 +18,9 @@
 }
 
 .email {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: var(--blue3);
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 16px;

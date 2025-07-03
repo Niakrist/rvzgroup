@@ -8,6 +8,7 @@ import { RootState } from "@/store/store";
 import { toggleMenuBurger } from "@/store/openModalSlice/openModalSlice";
 import { menuCatalogList } from "@/mockdata/catalogMenu";
 import styles from "./MenuBurger.module.css";
+import Image from "next/image";
 
 export const MenuBurger = () => {
   const [isOpenMobileCatalog, setIsOpenMobileCatalog] =
@@ -51,10 +52,12 @@ export const MenuBurger = () => {
                   <Link
                     className={styles.linkCatalog}
                     href={`/catalog/${item.url}`}>
-                    <img
+                    <Image
+                      width={24}
+                      height={24}
                       className={styles.images}
                       src={`/icons/${item.img}`}
-                      alt=""
+                      alt={item.name}
                     />
                     {item.name}
                   </Link>

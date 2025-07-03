@@ -4,6 +4,7 @@ import cn from "classnames";
 
 import { IMenuCatalogProps } from "./MenuCatalog.props";
 import styles from "./MenuCatalog.module.css";
+import Image from "next/image";
 
 export const MenuCatalog: React.FC<IMenuCatalogProps> = ({
   menuList,
@@ -24,10 +25,12 @@ export const MenuCatalog: React.FC<IMenuCatalogProps> = ({
                 [styles.active]: activeUrl === item.url,
               })}
               href={`/catalog${item.url}`}>
-              <img
+              <Image
+                width={24}
+                height={24}
                 className={styles.images}
                 src={`/icons/${item.img}`}
-                alt=""
+                alt={item.name}
               />{" "}
               {item.name}
             </Link>

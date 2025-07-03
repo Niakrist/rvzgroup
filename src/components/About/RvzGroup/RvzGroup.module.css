@@ -49,8 +49,7 @@
 .img {
   border-radius: 8px;
   padding: 10px;
-  /* min-width: 434px;
-  height: 515px; */
+  max-width: 434px;
   object-fit: cover;
   width: 100%;
 }
@@ -63,10 +62,7 @@
     row-gap: 30px;
   }
   .img {
-    /* min-width: 650px;
-    height: auto; */
     margin: 0 auto;
-
     order: -1;
   }
 }
@@ -75,9 +71,5 @@
   .wrapper {
     row-gap: 10px;
     padding: 10px;
-  }
-  .img {
-    /* min-width: 325px;
-    height: auto; */
   }
 }

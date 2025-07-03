@@ -1,6 +1,7 @@
 import React from "react";
 import { Htag, Text, WrapperSection } from "@/ui";
 import styles from "./RvzGroup.module.css";
+import Image from "next/image";
 
 export const RvzGroup = () => {
   return (
@@ -53,7 +54,13 @@ export const RvzGroup = () => {
             </Text>
           </div>
         </div>
-        <img className={styles.img} src="/rvz-about.jpg" alt="" />
+        <Image
+          width={434}
+          height={515}
+          className={styles.img}
+          src="/rvz-about.jpg"
+          alt="Подшипники РВЗ"
+        />
       </div>
     </WrapperSection>
   );

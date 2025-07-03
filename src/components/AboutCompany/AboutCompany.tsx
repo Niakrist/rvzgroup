@@ -3,6 +3,7 @@ import Link from "next/link";
 import cn from "classnames";
 import { Htag, Text } from "@/ui";
 import styles from "./AboutCompany.module.css";
+import Image from "next/image";
 
 export const AboutCompany = () => {
   return (
@@ -41,7 +42,13 @@ export const AboutCompany = () => {
             </Link>
           </div>
           <div className={styles.imgWrapper}>
-            <img className={styles.img} src="/about.jpg" alt="О компании" />
+            <Image
+              width={566}
+              height={421}
+              className={styles.img}
+              src="/about.jpg"
+              alt="О компании"
+            />
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { Htag, Text, WrapperSection } from "@/ui";
 import { Metadata } from "next";
+import Image from "next/image";
 import React from "react";
 import styles from "./page.module.css";
 
@@ -73,14 +74,18 @@ const BrandRvz = () => {
               заявленным характеристикам.
             </Text>
           </div>
-          <img
+          <Image
+            width={560}
+            height={600}
             className={styles.img}
             src="/certificate.jpg"
             alt="Свидетельство о регистрации бренда РВЗ"
           />
         </div>
         <div className={styles.block}>
-          <img
+          <Image
+            width={393}
+            height={562}
             className={styles.img}
             src="/sert.jpg"
             alt="Сертификат соответствия"
@@ -197,7 +202,13 @@ const BrandRvz = () => {
               характеристики нашей продукции.
             </Text>
           </div>
-          <img className={styles.img} src="/pasp.jpg" alt="Паспорт качества" />
+          <Image
+            width={560}
+            height={385}
+            className={styles.img}
+            src="/pasp.jpg"
+            alt="Паспорт качества"
+          />
         </div>
       </div>
     </WrapperSection>

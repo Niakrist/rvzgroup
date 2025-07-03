@@ -53,6 +53,7 @@
 }
 
 .imgWrapper {
+  max-width: 566px;
   width: 100%;
   flex-grow: 1;
   border-radius: 8px;
@@ -64,10 +65,13 @@
     column-gap: 0;
     row-gap: 30px;
   }
+  .imgWrapper {
+    max-width: 648px;
+    height: 290px;
+  }
 
   .img {
     border-radius: 8px;
-    height: 290px;
     object-fit: cover;
   }
 
