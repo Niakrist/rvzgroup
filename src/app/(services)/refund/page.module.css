@@ -1,0 +1,38 @@
+.wrapper {
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.mb {
+  margin-bottom: 40px;
+}
+
+.margin {
+  margin: 40px 0;
+}
+
+.text {
+  margin-bottom: 16px;
+}
+
+.list {
+  margin-bottom: 20px;
+}
+
+.item {
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.item::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--blue);
+  border-radius: 100%;
+}

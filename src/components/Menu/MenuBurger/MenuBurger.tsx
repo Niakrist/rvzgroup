@@ -103,11 +103,11 @@ export const MenuBurger = () => {
                   Оплата
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link className={styles.link} href="vacancy">
                   Вакансии
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link className={styles.link} href="contacts">
                   Контакты

@@ -9,6 +9,7 @@ export const servicesPages: Array<IServicesPages> = [
   { path: "contacts", name: "Контакты" },
   { path: "delivery", name: "Доставка" },
   { path: "payment", name: "Оплата" },
+  { path: "refund", name: "Возврат" },
   // { path: "vacancy", name: "Вакансии" },
   // { path: "/catalog", name: "Каталог" },
   // { path: "/cart", name: "Корзина" },

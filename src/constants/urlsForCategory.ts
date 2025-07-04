@@ -7,6 +7,7 @@ export const urlsForCategory = {
   delivery: "Доставка",
   payment: "Оплата",
   vacancy: "Вакансии",
+  refund: "Возврат",
   cart: "Корзина",
   miniatyurnye: "миниатюрные",
   samoustanavlivayushchiesya: "самоустанавливающиеся",
