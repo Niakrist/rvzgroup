@@ -24,7 +24,9 @@ export default async function Home() {
     <main>
       <PromoSlider />
       <CategoryBlock />
-      {!!popularProducts && <PopularProduct products={popularProducts} />}
+      {!!popularProducts.length && (
+        <PopularProduct products={popularProducts} />
+      )}
       <Advantage />
       <AboutCompany />
       <WeWork />
