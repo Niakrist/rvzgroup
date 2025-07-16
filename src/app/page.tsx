@@ -1,4 +1,3 @@
-import { getProducts } from "@/api/getProducts";
 import { getProductsWithoutPagination } from "@/api/getProductsWithoutPagination";
 import {
   AboutCompany,
@@ -11,15 +10,16 @@ import {
 } from "@/components";
 
 export default async function Home() {
-  const products = await getProducts();
-
-  const params = new URLSearchParams({
+  const paramsForPopularProduct = new URLSearchParams({
     popular: "true",
   });
 
-  const popularProducts = await getProductsWithoutPagination(params);
+  const popularProducts = await getProductsWithoutPagination(
+    paramsForPopularProduct
+  );
+  // const products = await getProducts();
 
-  if (!products) return <div>Загрузка</div>;
+  if (!!!popularProducts.length) return <div>Загрузка</div>;
   return (
     <main>
       <PromoSlider />
