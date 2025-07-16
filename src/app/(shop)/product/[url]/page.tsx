@@ -150,7 +150,7 @@ export default async function ProductPage({ params }: IProductPageProps) {
     paramsForPopularProduct
   );
 
-  if (!products || !popularProducts) return <div>Загрузка</div>;
+  if (!products) return <div>Загрузка</div>;
 
   return (
     <>
@@ -160,7 +160,9 @@ export default async function ProductPage({ params }: IProductPageProps) {
       />
       <ProductCard bearingItem={bearingItem} />
       <ProductCharacteristic bearingItem={bearingItem} />
-      <PopularProduct products={popularProducts} />
+      {!!popularProducts.length && (
+        <PopularProduct products={popularProducts} />
+      )}
       <TagList
         urlsCategory={urlsCategory}
         innerDiameter={bearingItem.innerDiameter}
