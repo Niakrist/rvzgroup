@@ -45,11 +45,14 @@ export const PopularProduct = ({
               },
             }}
             navigation>
-            {products.map((product: IBearing) => (
-              <SwiperSlide className={styles.item} key={product.id}>
-                <ProductItem product={product} />
-              </SwiperSlide>
-            ))}
+            {products.map(
+              (product: IBearing) =>
+                (product.price || product.priceRvz) && (
+                  <SwiperSlide className={styles.item} key={product.id}>
+                    <ProductItem product={product} />
+                  </SwiperSlide>
+                )
+            )}
           </Swiper>
         </div>
       </div>

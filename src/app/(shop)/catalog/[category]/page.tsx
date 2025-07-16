@@ -1,4 +1,4 @@
-import { getCategories } from "@/api/getCategories";
+import { getProducts } from "@/api/getProducts";
 import { getFilter } from "@/api/getFilter";
 import CatalogNavBar from "@/components/CatalogNavBar/CatalogNavBar";
 import Products from "@/components/Products/Products";
@@ -55,7 +55,7 @@ export default async function CategoryPage({
 
   const products = searchParamsToSend.size
     ? await getFilter(searchParamsToSend)
-    : await getCategories(paramsToSend);
+    : await getProducts(paramsToSend);
 
   if (!products) return;
 

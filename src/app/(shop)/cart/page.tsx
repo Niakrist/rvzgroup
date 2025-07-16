@@ -1,7 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 import { Cart, PopularProduct } from "@/components";
-import { getCategories } from "@/api/getCategories";
+import { getProducts } from "@/api/getProducts";
 
 export const metadata: Metadata = {
   title: "Корзина",
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default async function CartPage() {
-  const products = await getCategories();
+  const products = await getProducts();
   if (!products) return <div>Загрузка</div>;
   return (
     <>

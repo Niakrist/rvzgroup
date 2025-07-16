@@ -1,4 +1,4 @@
-import { getCategories, getFilter } from "@/api/fetchProducts";
+import { getProducts, getFilter } from "@/api/fetchProducts";
 import { notFound } from "next/navigation";
 
 interface IFilterParams {
@@ -112,6 +112,6 @@ async function getFilteredProducts(
     }
     return await getFilter(searchParams);
   } else {
-    return await getCategories(categoryFilters);
+    return await getProducts(categoryFilters);
   }
 }

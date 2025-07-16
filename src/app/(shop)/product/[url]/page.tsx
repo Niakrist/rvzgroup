@@ -1,5 +1,5 @@
 import { fetchCategory } from "@/api/fetchCategory";
-import { getCategories } from "@/api/getCategories";
+import { getProducts } from "@/api/getProducts";
 import { getFilter } from "@/api/getFilter";
 import { getItemBearing } from "@/api/getItemBearing";
 import {
@@ -15,6 +15,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import React from "react";
+import { getProductsWithoutPagination } from "@/api/getProductsWithoutPagination";
 
 interface IProductPageProps {
   params: Promise<{ url: string }>;
@@ -99,7 +100,7 @@ export async function generateStaticParams(): Promise<Array<{ url: string }>> {
 
 export default async function ProductPage({ params }: IProductPageProps) {
   const { url } = await params;
-  const products = await getCategories();
+  const products = await getProducts();
   const bearingItem = await getItemBearing(url);
 
   if (!bearingItem) {
@@ -140,7 +141,16 @@ export default async function ProductPage({ params }: IProductPageProps) {
       }
     }
   }
-  if (!products) return <div>Загрузка</div>;
+
+  const paramsForPopularProduct = new URLSearchParams({
+    popular: "true",
+  });
+
+  const popularProducts = await getProductsWithoutPagination(
+    paramsForPopularProduct
+  );
+
+  if (!products || !popularProducts) return <div>Загрузка</div>;
 
   return (
     <>
@@ -150,7 +160,7 @@ export default async function ProductPage({ params }: IProductPageProps) {
       />
       <ProductCard bearingItem={bearingItem} />
       <ProductCharacteristic bearingItem={bearingItem} />
-      <PopularProduct products={products.rows} />
+      <PopularProduct products={popularProducts} />
       <TagList
         urlsCategory={urlsCategory}
         innerDiameter={bearingItem.innerDiameter}
