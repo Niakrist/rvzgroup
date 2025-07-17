@@ -5,7 +5,7 @@ export const getProductsWithoutPagination = async (
 ): Promise<IBearing[] | []> => {
   try {
     const response = await fetch(
-      `http://localhost:4000/api/v1/bearing/all?${params}`,
+      `https://rvzgroup.ru/api/v1/bearing/all?${params}`,
       {
         next: { revalidate: 10800 },
       }

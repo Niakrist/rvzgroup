@@ -125,8 +125,8 @@ export const urlPaths: UrlPaths = {
     dvuhryadnye: "2",
     trehryadnye: "3",
     chetyrehryadnye: "4",
-    shestiryadnye: "6",
-    mnogoryadnye: "7",
+    shestiryadnye: "5",
+    mnogoryadnye: "6",
   },
   sealId: {
     otkrytye: "1",

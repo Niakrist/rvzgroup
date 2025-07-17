@@ -1,6 +1,6 @@
 export const sendRequestByEmail = async (formData: FormData) => {
   try {
-    const response = await fetch("https://rvzgroup.ru//api/v1/send-email", {
+    const response = await fetch("https://rvzgroup.ru/api/v1/send-email", {
       method: "POST",
       body: formData,
     });

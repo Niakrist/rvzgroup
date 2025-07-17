@@ -4,7 +4,7 @@ export const searchProducts = async (
   search: string
 ): Promise<IBearinData | null> => {
   try {
-    const response = await fetch("https://rvzgroup.ru//api/v1/bearing/search", {
+    const response = await fetch("https://rvzgroup.ru/api/v1/bearing/search", {
       headers: {
         "Content-Type": "application/json",
       },

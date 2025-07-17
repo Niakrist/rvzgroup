@@ -36,13 +36,17 @@ const TagList = ({
           </Htag>
 
           <ul className={styles.list}>
-            {urlsCategory.map((item) => (
-              <li key={item.url}>
-                <Link className={styles.item} href={`/catalog/${item.url}`}>
-                  {item.name}
-                </Link>
-              </li>
-            ))}
+            {urlsCategory.map((item) => {
+              return (
+                item?.url && (
+                  <li key={item.url}>
+                    <Link className={styles.item} href={`/catalog/${item.url}`}>
+                      {item.name}
+                    </Link>
+                  </li>
+                )
+              );
+            })}
             <li>
               <Link
                 className={styles.item}
