@@ -133,7 +133,8 @@ export default async function ProductPage({ params }: IProductPageProps) {
     if (bearingItem[item]) {
       const data = await fetchCategory(item);
       if (Array.isArray(data)) {
-        urlsCategory.push(data[bearingItem[item] - 1]);
+        const tag = data.find((elem) => elem.id === bearingItem[item]);
+        urlsCategory.push(tag);
       }
     }
   }
