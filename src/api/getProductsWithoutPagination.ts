@@ -7,7 +7,7 @@ export const getProductsWithoutPagination = async (
     const response = await fetch(
       `https://rvzgroup.ru/api/v1/bearing/all?${params}`,
       {
-        next: { revalidate: 10800 },
+        next: { revalidate: 10 },
       }
     );
     const data = await response.json();

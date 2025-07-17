@@ -8,7 +8,7 @@ export const getFilter = async (
       `https://rvzgroup.ru/api/v1/bearing/?${params ? params : ""}`,
       {
         method: "GET",
-        next: { revalidate: 10800 },
+        next: { revalidate: 10 },
       }
     );
     const data = await response.json();

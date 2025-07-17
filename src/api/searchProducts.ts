@@ -10,7 +10,8 @@ export const searchProducts = async (
       },
       method: "POST",
       body: JSON.stringify({ q: search }),
-      mode: "cors", // явное указание режима CORS
+      mode: "cors",
+      next: { revalidate: 10 },
     });
     const data = await response.json();
     return data;
