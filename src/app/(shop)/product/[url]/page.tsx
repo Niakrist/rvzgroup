@@ -102,7 +102,6 @@ export default async function ProductPage({ params }: IProductPageProps) {
   const { url } = await params;
   const products = await getProducts();
   const bearingItem = await getItemBearing(url);
-  console.log("bearingItem: ", bearingItem);
 
   if (!bearingItem) {
     notFound();
