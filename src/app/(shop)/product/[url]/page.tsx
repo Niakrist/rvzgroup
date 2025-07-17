@@ -117,17 +117,13 @@ export default async function ProductPage({ params }: IProductPageProps) {
       "@type": "Brand",
       name: bearingItem.brand || "РВЗ",
     },
-    ...(bearingItem.price > 0 || bearingItem.priceRvz > 0
-      ? {
-          offers: {
-            "@type": "Offer",
-            price: bearingItem.price || bearingItem.priceRvz,
-            priceCurrency: "RUB",
-            availability: "https://schema.org/InStock",
-            url: `https://rvzgroup.ru/product/${bearingItem.url}`,
-          },
-        }
-      : {}),
+    offers: {
+      "@type": "Offer",
+      price: bearingItem.price || bearingItem.priceRvz,
+      priceCurrency: "RUB",
+      availability: "https://schema.org/InStock",
+      url: `https://rvzgroup.ru/product/${bearingItem.url}`,
+    },
     image: bearingItem.images?.[0] || "",
   };
 
