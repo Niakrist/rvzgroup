@@ -38,7 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `https://rvzgroup.ru/${url}`,
       lastModified: new Date(),
       changeFrequency: "daily" as const,
-      priority: 1,
+      priority: 0.6,
     })),
   ];
 
