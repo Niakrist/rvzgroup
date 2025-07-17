@@ -8,6 +8,7 @@ export const getProducts = async (
       headers: new Headers({ "Content-Type": "application/json" }),
       method: "POST",
       body: JSON.stringify(params),
+      next: { revalidate: 10 },
     });
     const data = await response.json();
 
