@@ -20,7 +20,7 @@ const RefundPage = () => {
           поставленной продукции, мы всегда готовы оперативно рассмотреть вашу
           заявку и найти оптимальное решение.
         </Text>
-        <Htag className={styles.margin} size="large" tag="h2">
+        <Htag className={styles.mb} size="large" tag="h2">
           Порядок обращения с претензией
         </Htag>
         <Text className={styles.text} tag="p" size="medium">
@@ -35,7 +35,7 @@ const RefundPage = () => {
           бланке вашей организации, подписана уполномоченным лицом и заверена
           печатью.
         </Text>
-        <Htag className={styles.margin} size="large" tag="h2">
+        <Htag className={styles.mb} size="large" tag="h2">
           Подготовка письменной претензии
         </Htag>
         <Text className={styles.text} tag="p" size="medium">
@@ -61,7 +61,7 @@ const RefundPage = () => {
           замена товара, компенсация).
         </Text>
 
-        <Htag className={styles.margin} size="large" tag="h2">
+        <Htag className={styles.mb} size="large" tag="h2">
           Рассмотрение претензии и принятие решения
         </Htag>
         <Text className={styles.text} tag="p" size="medium">

@@ -18,7 +18,7 @@
 .block {
   display: grid;
   grid-template-columns: 90px 1fr;
-  column-gap: 20px;
+  gap: 20px;
 
   padding: 14px;
   border-radius: 8px;
@@ -69,7 +69,13 @@
 
 @media (max-width: 767px) {
   .wrapper {
-    row-gap: 10px;
-    padding: 10px;
+    row-gap: 20px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .block {
+    grid-template-columns: 1fr;
   }
 }

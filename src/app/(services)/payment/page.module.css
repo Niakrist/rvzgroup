@@ -5,11 +5,7 @@
 }
 
 .mb {
-  margin-bottom: 40px;
-}
-
-.margin {
-  margin: 40px 0;
+  margin-bottom: 20px;
 }
 
 .text {
@@ -35,4 +31,10 @@
   height: 8px;
   background-color: var(--blue);
   border-radius: 100%;
+}
+
+@media (max-width: 575px) {
+  .wrapper {
+    padding: 20px;
+  }
 }

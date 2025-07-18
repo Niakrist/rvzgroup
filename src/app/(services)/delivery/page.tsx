@@ -19,7 +19,7 @@ const DeliveryAndPayment = () => {
           и стран СНГ. Наши условия доставки разработаны с учетом потребностей
           промышленных предприятий.
         </Text>
-        <Htag className={styles.margin} size="large" tag="h2">
+        <Htag className={styles.mb} size="large" tag="h2">
           Самовывоз со склада в Санкт-Петербурге
         </Htag>
 
@@ -45,7 +45,7 @@ const DeliveryAndPayment = () => {
           предусмотрели бесплатную парковку и зону погрузки.
         </Text>
 
-        <Htag className={styles.margin} size="large" tag="h2">
+        <Htag className={styles.mb} size="large" tag="h2">
           Бесплатная доставка в пределах СПб и Ленинградской области
         </Htag>
         <Text className={styles.text} tag="p" size="medium">
@@ -68,7 +68,7 @@ const DeliveryAndPayment = () => {
           заказа.
         </Text>
 
-        <Htag className={styles.margin} size="large" tag="h2">
+        <Htag className={styles.mb} size="large" tag="h2">
           Отправка в регионы России
         </Htag>
         <Text className={styles.text} tag="p" size="medium">
@@ -92,7 +92,7 @@ const DeliveryAndPayment = () => {
           груза.
         </Text>
 
-        <Htag className={styles.margin} size="large" tag="h2">
+        <Htag className={styles.mb} size="large" tag="h2">
           Сроки и условия отгрузки
         </Htag>
         <Text className={styles.text} tag="p" size="medium">
@@ -117,7 +117,7 @@ const DeliveryAndPayment = () => {
           решения.
         </Text>
 
-        <Htag className={styles.margin} size="large" tag="h2">
+        <Htag className={styles.mb} size="large" tag="h2">
           Дополнительные услуги
         </Htag>
         <Text className={styles.text} tag="p" size="medium">
@@ -140,7 +140,7 @@ const DeliveryAndPayment = () => {
           связанных с доставкой.
         </Text>
 
-        <Htag className={styles.margin} size="large" tag="h2">
+        <Htag className={styles.mb} size="large" tag="h2">
           Как оформить доставку?
         </Htag>
         <Text className={styles.text} tag="p" size="medium">

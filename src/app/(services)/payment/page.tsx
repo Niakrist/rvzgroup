@@ -19,7 +19,7 @@ const Payment = () => {
           для наших клиентов. Поэтому мы предлагаем различные варианты оплаты,
           чтобы процесс сотрудничества был максимально комфортным.
         </Text>
-        <Htag className={styles.margin} size="large" tag="h2">
+        <Htag className={styles.mb} size="large" tag="h2">
           Наличный расчет
         </Htag>
 
@@ -41,7 +41,7 @@ const Payment = () => {
           Этот вариант идеально подходит для срочных заказов небольшого объема.
         </Text>
 
-        <Htag className={styles.margin} size="large" tag="h2">
+        <Htag className={styles.mb} size="large" tag="h2">
           Безналичный расчет
         </Htag>
         <Text className={styles.text} tag="p" size="medium">
@@ -62,7 +62,7 @@ const Payment = () => {
           Все платежные документы оформляются в день совершения сделки.
         </Text>
 
-        <Htag className={styles.margin} size="large" tag="h2">
+        <Htag className={styles.mb} size="large" tag="h2">
           Специальные условия для постоянных партнеров
         </Htag>
         <Text className={styles.text} tag="p" size="medium">
@@ -89,7 +89,7 @@ const Payment = () => {
           условий обратитесь к вашему персональному менеджеру.
         </Text>
 
-        <Htag className={styles.margin} size="large" tag="h2">
+        <Htag className={styles.mb} size="large" tag="h2">
           Как оформить заказ?
         </Htag>
         <Text className={styles.text} tag="p" size="medium">

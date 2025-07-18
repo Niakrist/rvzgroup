@@ -1,4 +1,4 @@
-import { Htag, MapYandex, WrapperSection, Contact } from "@/ui";
+import { Htag, MapYandex, WrapperSection, Contact, Requisites } from "@/ui";
 import { Metadata } from "next";
 import React from "react";
 import styles from "./page.module.css";
@@ -15,6 +15,7 @@ const Contacts = () => {
           Контакты
         </Htag>
         <Contact className={styles.margin} />
+        <Requisites />
         <MapYandex />
       </div>
     </WrapperSection>

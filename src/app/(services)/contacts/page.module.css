@@ -5,5 +5,11 @@
 }
 
 .margin {
-  margin: 40px 0;
+  margin: 20px 0;
+}
+
+@media (max-width: 575px) {
+  .wrapper {
+    padding: 20px;
+  }
 }

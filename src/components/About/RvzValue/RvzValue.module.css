@@ -52,7 +52,7 @@
 
 @media (max-width: 767px) {
   .wrapper {
-    row-gap: 10px;
-    padding: 10px;
+    row-gap: 20px;
+    padding: 20px;
   }
 }

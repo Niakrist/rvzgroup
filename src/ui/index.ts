@@ -15,3 +15,4 @@ export * from "./P/P";
 export * from "./Text/Text";
 export * from "./WrapperSection/WrapperSection";
 export * from "./Contact/Contact";
+export * from "./Requisites/Requisites";

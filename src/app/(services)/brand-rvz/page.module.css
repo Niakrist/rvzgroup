@@ -12,9 +12,21 @@
   display: flex;
   gap: 24px;
 }
-.img {
+
+.imgWrapper1 {
   max-width: 560px;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+.imgWrapper2 {
+  max-width: 393px;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+
+.img {
   object-fit: contain;
+  max-width: 100%;
 }
 
 .text {
@@ -40,4 +52,23 @@
   height: 8px;
   background-color: var(--blue);
   border-radius: 100%;
+}
+
+@media (max-width: 1199px) {
+  .block1 {
+    flex-direction: column-reverse;
+  }
+  .block2 {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 575px) {
+  .wrapper {
+    padding: 20px;
+  }
+
+  .block {
+    gap: 0;
+  }
 }

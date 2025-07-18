@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
 import styles from "./page.module.css";
+import cn from "classnames";
 
 export const metadata: Metadata = {
   title: "Подшипники бренд РВЗ",
@@ -23,7 +24,7 @@ const BrandRvz = () => {
           высокое качество, долговечность и доступную цену.
         </Text>
 
-        <div className={styles.block}>
+        <div className={cn(styles.block, styles.block1)}>
           <div className={styles.content}>
             <Htag className={styles.margin} tag="h2" size="large">
               История и развитие бренда РВЗ
@@ -74,22 +75,26 @@ const BrandRvz = () => {
               заявленным характеристикам.
             </Text>
           </div>
-          <Image
-            width={560}
-            height={600}
-            className={styles.img}
-            src="/certificate.jpg"
-            alt="Свидетельство о регистрации бренда РВЗ"
-          />
+          <div className={styles.imgWrapper1}>
+            <Image
+              width={560}
+              height={600}
+              className={styles.img}
+              src="/certificate.jpg"
+              alt="Свидетельство о регистрации бренда РВЗ"
+            />
+          </div>
         </div>
-        <div className={styles.block}>
-          <Image
-            width={393}
-            height={562}
-            className={styles.img}
-            src="/sert.jpg"
-            alt="Сертификат соответствия"
-          />
+        <div className={cn(styles.block, styles.block2)}>
+          <div className={styles.imgWrapper2}>
+            <Image
+              width={393}
+              height={562}
+              className={styles.img}
+              src="/sert.jpg"
+              alt="Сертификат соответствия"
+            />
+          </div>
           <div className={styles.content}>
             <Htag className={styles.margin} tag="h2" size="large">
               Преимущества подшипников
@@ -170,7 +175,7 @@ const BrandRvz = () => {
           поставки и готовы подтвердить это документально.
         </Text>
 
-        <div className={styles.block}>
+        <div className={cn(styles.block, styles.block1)}>
           <div className={styles.content}>
             <Htag className={styles.margin} tag="h2" size="large">
               Сферы применения
@@ -202,13 +207,15 @@ const BrandRvz = () => {
               характеристики нашей продукции.
             </Text>
           </div>
-          <Image
-            width={560}
-            height={385}
-            className={styles.img}
-            src="/pasp.jpg"
-            alt="Паспорт качества"
-          />
+          <div className={styles.imgWrapper1}>
+            <Image
+              width={560}
+              height={385}
+              className={styles.img}
+              src="/pasp.jpg"
+              alt="Паспорт качества"
+            />
+          </div>
         </div>
       </div>
     </WrapperSection>

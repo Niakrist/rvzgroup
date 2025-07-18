@@ -6,7 +6,7 @@
   display: grid;
   grid-template-columns: 1fr 630px;
   background-color: var(--grey1);
-  column-gap: 30px;
+  gap: 20px;
   padding: 40px;
   border-radius: 8px;
 }
@@ -19,7 +19,11 @@
   .wrapper {
     grid-template-columns: 1fr;
     flex-direction: column-reverse;
-    column-gap: 0px;
-    row-gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 20px;
   }
 }

@@ -1,28 +1,22 @@
-.address {
-  font-style: normal;
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: 16px;
+.mt {
+  margin-top: 40px;
 }
 
-.link {
+.address {
+  margin: 20px 0;
+  font-style: normal;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 14px;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.4;
   color: var(--black);
-  transform: color 0.2s;
-}
-
-.link:hover {
-  color: var(--blue);
 }
 
 @media (max-width: 575px) {
   .address {
     grid-template-columns: 1fr;
-  }
-
-  .link {
     font-size: 16px;
   }
 }
