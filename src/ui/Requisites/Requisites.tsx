@@ -10,7 +10,7 @@ export const Requisites = () => {
       </Htag>
       <address className={styles.address}>
         <p>Наименование:</p>
-        <p>ООО "РВЗ ГРУПП"</p>
+        <p>ООО &quot;РВЗ ГРУПП&quot;</p>
         <p>ИНН:</p>
         <p>4706084345</p>
         <p>КПП:</p>
