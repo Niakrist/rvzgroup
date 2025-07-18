@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/store/store";
 import { isGetPriceModal } from "@/store/openModalSlice/openModalSlice";
 import { addInCommercialApplication } from "@/store/forCommercialApplicationSlice/forCommercialApplicationSlice";
+import { EMAIL_SALES } from "@/constants/contacts";
 
 export const InfoCard = ({ product }: IInfoCardProps): React.JSX.Element => {
   const dispatch = useDispatch<AppDispatch>();
@@ -43,9 +44,9 @@ export const InfoCard = ({ product }: IInfoCardProps): React.JSX.Element => {
         Отправить заявку на почту{" "}
         <a
           className={styles.link}
-          href="mailto:sales@rvzgroup.ru"
+          href={`mailto:${EMAIL_SALES}`}
           target="_blank">
-          sales@rvzgroup.ru
+          {EMAIL_SALES}
         </a>
       </address>
     </div>

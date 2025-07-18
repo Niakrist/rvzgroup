@@ -1,3 +1,4 @@
+import { ADDRESS } from "@/constants/contacts";
 import { Htag, Text, WrapperSection } from "@/ui";
 import { Metadata } from "next";
 import React from "react";
@@ -29,9 +30,7 @@ const DeliveryAndPayment = () => {
         </Text>
         <ul className={styles.list}>
           <Text className={styles.item} tag="li" size="medium">
-            Адрес склада: Ленинградская область, м.р-н Всеволожский, г.п.
-            Заневское, п. ж/д ст. Мяглово, тер. Соржа-Старая Производно
-            Складская Зона, проезд 1-Й, здание 10.
+            Адрес склада: {ADDRESS}
           </Text>
           <Text className={styles.item} tag="li" size="medium">
             График работы самовывоза: с 8:30 до 16:30 (понедельник-пятница)

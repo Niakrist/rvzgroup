@@ -6,6 +6,7 @@ import { CatalogButton } from "./CatalogButton/CatalogButton";
 import { BurgerButton } from "./BurgerButton/BurgerButton";
 import { ForUserInfo } from "./ForUserInfo/ForUserInfo";
 import { SearchField } from "./SearchField/SearchField";
+import { EMAIL_SALES } from "@/constants/contacts";
 
 export const Header = () => {
   return (
@@ -20,8 +21,8 @@ export const Header = () => {
       </div>
       <div className={styles.forCustomer}>
         <div className={styles.block}>
-          <a className={styles.email} href="mailto:sales@rvzgroup.ru">
-            sales@rvzgroup.ru
+          <a className={styles.email} href={`mailto:${EMAIL_SALES}`}>
+            {EMAIL_SALES}
           </a>
           <span className={styles.textEmail}>почта для заявок</span>
         </div>

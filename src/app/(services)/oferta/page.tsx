@@ -1,3 +1,4 @@
+import { ADDRESS_LEGAL, EMAIL_INFO } from "@/constants/contacts";
 import { WrapperSection } from "@/ui";
 import { Metadata } from "next";
 import React from "react";
@@ -22,11 +23,7 @@ const OfertaPage = () => {
           <ul>
             <li>
               <strong>Исполнитель:</strong> ООО &quot;РВЗ ГРУПП&quot;,
-              юридическое лицо, зарегистрированное по адресу 188681,
-              Ленинградская область, м.р-н Всеволожский, г.п. Заневское, п. ж/д
-              ст. Мяглово, тер. Соржа-Старая Производ-Но Складская Зона, проезд
-              1-Й, здание 10, предлагающее услуги/товары в соответствии с
-              настоящей Офертой.
+              юридическое лицо, зарегистрированное по адресу {ADDRESS_LEGAL}
             </li>
             <li>
               <strong>Клиент:</strong> любое физическое или юридическое лицо,
@@ -71,7 +68,7 @@ const OfertaPage = () => {
           <p>
             <strong>2.2.</strong> Информация об услугах/товарах, размещённая на
             Сайте, носит справочный характер. Клиент может запросить
-            дополнительные сведения у Исполнителя по адресу info@rvzgroup.ru.
+            дополнительные сведения у Исполнителя по адресу ${EMAIL_INFO}.
           </p>
           <p>
             <strong>2.3.</strong> Исполнитель вправе привлекать третьих лиц для
@@ -242,7 +239,7 @@ const OfertaPage = () => {
           </p>
           <p>
             <strong>10.4.</strong> Клиент может отозвать согласие на обработку
-            данных, направив запрос на info@rvzgroup.ru.
+            данных, направив запрос на {EMAIL_INFO}.
           </p>
         </div>
       </div>
@@ -287,7 +284,7 @@ const OfertaPage = () => {
           </p>
           <p>
             <strong>13.2.</strong> Все уведомления направляются по адресу
-            info@rvzgroup.ru или через сайт https://rvzgroup.ru.
+            {EMAIL_INFO} или через сайт https://rvzgroup.ru.
           </p>
           <p>
             <strong>13.3.</strong> Оферта вступает в силу с момента её
@@ -307,9 +304,7 @@ const OfertaPage = () => {
             <strong>Название:</strong> ООО &quot;РВЗ ГРУПП&quot;
           </p>
           <p>
-            <strong>Юридический адрес:</strong> 188681, Ленинградская область,
-            м.р-н Всеволожский, г.п. Заневское, п. ж/д ст. Мяглово, тер.
-            Соржа-Старая Производ-Но Складская Зона, проезд 1-Й, здание 10
+            <strong>Юридический адрес:</strong> {ADDRESS_LEGAL}
           </p>
           <p>
             <strong>ИНН:</strong> 4706084345
@@ -318,7 +313,7 @@ const OfertaPage = () => {
             <strong>Сайт:</strong> https://rvzgroup.ru
           </p>
           <p>
-            <strong>Email:</strong> info@rvzgroup.ru
+            <strong>Email:</strong> {EMAIL_INFO}
           </p>
         </div>
       </div>
