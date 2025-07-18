@@ -9,6 +9,12 @@ import { toggleMenuBurger } from "@/store/openModalSlice/openModalSlice";
 import { menuCatalogList } from "@/mockdata/catalogMenu";
 import styles from "./MenuBurger.module.css";
 import Image from "next/image";
+import {
+  ADDRESS,
+  EMAIL_SALES,
+  PHONE_SPB,
+  PHONE_SPB_LINK,
+} from "@/constants/contacts";
 
 export const MenuBurger = () => {
   const [isOpenMobileCatalog, setIsOpenMobileCatalog] =
@@ -115,11 +121,10 @@ export const MenuBurger = () => {
               </li>
             </ul>
           </nav>
-
           <address className={styles.address}>
-            <a href="mailto:sales@rvzgroup.ru">sales@rvzgroup.ru</a>
-            <a href="tel:78126428527">+7 812 642-85-27</a>
-            <p>Санкт-Петербург, улица Ржевская, д. 4</p>
+            <a href={`mailto:${EMAIL_SALES}`}>{EMAIL_SALES}</a>
+            <a href={`tel:${PHONE_SPB_LINK}`}>{PHONE_SPB}</a>
+            <p>{ADDRESS}</p>
           </address>
         </>
       )}

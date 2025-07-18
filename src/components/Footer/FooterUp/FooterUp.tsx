@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Icon, TopNavMenu } from "@/components";
 import styles from "./FooterUp.module.css";
+import { EMAIL_SALES, PHONE_SPB, PHONE_SPB_LINK } from "@/constants/contacts";
 
 export const FooterUp = () => {
   return (
@@ -12,11 +13,11 @@ export const FooterUp = () => {
       </div>
       <TopNavMenu size="medium" vertical={true} />
       <address className={styles.address}>
-        <Link className={styles.link} href="mailto:sales@rvzgroup.ru">
-          sales@rvzgroup.ru
+        <Link className={styles.link} href={`mailto:${EMAIL_SALES}`}>
+          {EMAIL_SALES}
         </Link>
-        <Link className={styles.link} href="tel:78126428527">
-          +7 812 642-85-27
+        <Link className={styles.link} href={`tel:${PHONE_SPB_LINK}`}>
+          {PHONE_SPB}
         </Link>
       </address>
     </div>
