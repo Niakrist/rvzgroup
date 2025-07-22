@@ -24,7 +24,7 @@ export const InfoCard = ({ product }: IInfoCardProps): React.JSX.Element => {
   return (
     <div className={styles.content}>
       <Htag tag="h1" size="medium">
-        Пошипник {product.name}
+        Подшипник {product.name}
       </Htag>
       <ArticleInStock product={product} />
       <Price fontSize="fs18" product={product} />
