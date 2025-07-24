@@ -23,7 +23,7 @@ export default async function CatalogPage() {
   if (!products) return <div>Загрузка products</div>;
 
   return (
-    <Suspense fallback={<div>Загрузка фильтров...</div>}>
+    <>
       <div className={styles.titleWrapper}>
         <Htag size="large" tag="h1" className={styles.title}>
           Каталог подшипников
@@ -32,10 +32,12 @@ export default async function CatalogPage() {
       <CatalogNavBar />
       <div className={styles.section}>
         <div className={styles.container}>
-          <SideBar />
+          <Suspense fallback={<div>Загрузка фильтров...</div>}>
+            <SideBar />
+          </Suspense>
           <Products bearingList={products.rows} count={products.count} />
         </div>
       </div>
-    </Suspense>
+    </>
   );
 }
