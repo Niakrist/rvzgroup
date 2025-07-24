@@ -4,7 +4,7 @@ import Products from "@/components/Products/Products";
 import { SideBar } from "@/components/SideBar/SideBar";
 import { Htag } from "@/ui";
 import { Metadata } from "next";
-import React from "react";
+import React, { Suspense } from "react";
 import styles from "./CatalogPage.module.css";
 
 export const metadata: Metadata = {
@@ -23,7 +23,7 @@ export default async function CatalogPage() {
   if (!products) return <div>Загрузка products</div>;
 
   return (
-    <>
+    <Suspense fallback={<div>Загрузка фильтров...</div>}>
       <div className={styles.titleWrapper}>
         <Htag size="large" tag="h1" className={styles.title}>
           Каталог подшипников
@@ -36,6 +36,6 @@ export default async function CatalogPage() {
           <Products bearingList={products.rows} count={products.count} />
         </div>
       </div>
-    </>
+    </Suspense>
   );
 }
