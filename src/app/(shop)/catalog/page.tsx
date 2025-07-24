@@ -1,10 +1,10 @@
-import { getFilter } from "@/api/getFilter";
+import { getProducts } from "@/api/getProducts";
 import CatalogNavBar from "@/components/CatalogNavBar/CatalogNavBar";
 import Products from "@/components/Products/Products";
 import { SideBar } from "@/components/SideBar/SideBar";
 import { Htag } from "@/ui";
 import { Metadata } from "next";
-import React from "react";
+import React, { Suspense } from "react";
 import styles from "./CatalogPage.module.css";
 
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 export default async function CatalogPage() {
-  const products = await getFilter();
+  const products = await getProducts();
 
   if (!products) return <div>Загрузка products</div>;
 
@@ -32,7 +32,9 @@ export default async function CatalogPage() {
       <CatalogNavBar />
       <div className={styles.section}>
         <div className={styles.container}>
-          <SideBar />
+          <Suspense fallback={<div>Загрузка фильтров...</div>}>
+            <SideBar />
+          </Suspense>
           <Products bearingList={products.rows} count={products.count} />
         </div>
       </div>
