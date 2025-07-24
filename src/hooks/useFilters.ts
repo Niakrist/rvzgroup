@@ -43,8 +43,6 @@ export const useFilter = () => {
       replace(pathname + `?${newParams.toString()}`);
     } else if (newParams.size) {
       replace("/filter" + `?${newParams.toString()}`);
-    } else {
-      replace("/");
     }
   };
 
