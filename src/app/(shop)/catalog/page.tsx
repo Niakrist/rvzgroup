@@ -1,11 +1,8 @@
 import { getProducts } from "@/api/getProducts";
-import { getFilter } from "@/api/getFilter";
 import CatalogNavBar from "@/components/CatalogNavBar/CatalogNavBar";
 import Products from "@/components/Products/Products";
 import { SideBar } from "@/components/SideBar/SideBar";
-import { ISearchParams } from "@/types/ISearchParams.interface";
 import { Htag } from "@/ui";
-import { getFilteredProducts } from "@/utils/getFilteredProducts";
 import { Metadata } from "next";
 import React from "react";
 import styles from "./CatalogPage.module.css";
