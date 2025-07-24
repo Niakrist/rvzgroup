@@ -32,9 +32,7 @@ export default async function CatalogPage() {
       <CatalogNavBar />
       <div className={styles.section}>
         <div className={styles.container}>
-          <Suspense fallback={<div>Загрузка фильтров...</div>}>
-            <SideBar />
-          </Suspense>
+          <SideBar />
           <Suspense fallback={<div>Загрузка фильтров...</div>}>
             <Products bearingList={products.rows} count={products.count} />
           </Suspense>
