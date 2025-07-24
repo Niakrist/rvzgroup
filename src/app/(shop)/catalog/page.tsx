@@ -35,7 +35,9 @@ export default async function CatalogPage() {
           <Suspense fallback={<div>Загрузка фильтров...</div>}>
             <SideBar />
           </Suspense>
-          <Products bearingList={products.rows} count={products.count} />
+          <Suspense fallback={<div>Загрузка фильтров...</div>}>
+            <Products bearingList={products.rows} count={products.count} />
+          </Suspense>
         </div>
       </div>
     </>
