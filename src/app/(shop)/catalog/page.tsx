@@ -1,4 +1,4 @@
-import { getProducts } from "@/api/getProducts";
+import { getFilter } from "@/api/getFilter";
 import CatalogNavBar from "@/components/CatalogNavBar/CatalogNavBar";
 import Products from "@/components/Products/Products";
 import { SideBar } from "@/components/SideBar/SideBar";
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 export default async function CatalogPage() {
-  const products = await getProducts();
+  const products = await getFilter();
 
   if (!products) return <div>Загрузка products</div>;
 
