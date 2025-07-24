@@ -14,7 +14,7 @@ interface IFilterPageProps {
   searchParams: Promise<ISearchParams>;
 }
 
-export const metagata: Metadata = {
+export const metadata: Metadata = {
   title: "Подобрать подшипники по размерам, характеристикам и параметрам",
   description:
     "Подберите нужный подшипник с помощью удобного фильтра по размерам, характеристикам и параметрам и получите выгодные условия покупки.",
