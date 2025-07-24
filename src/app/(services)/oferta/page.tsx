@@ -5,13 +5,15 @@ import React from "react";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Публичная оферта",
+  title: "Публичная оферта: Условия сотрудничества с РВЗ Групп",
+  description:
+    "Ознакомьтесь с текстом публичной оферты РВЗ Групп. Данный документ определяет условия продажи подшипников “Разумный Выбор Запчастей” на нашем сайте.",
 };
 
 const OfertaPage = () => {
   return (
     <WrapperSection bgSection="grey">
-      <h1>Публичная оферта</h1>
+      <h1>Публичная оферта РВЗ Групп: Условия продажи подшипников</h1>
 
       <div className={styles.section}>
         <h2>1. Термины и определения</h2>

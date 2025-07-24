@@ -4,7 +4,9 @@ import React from "react";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Возврат и обмен продукции",
+  title: "Возврат и обмен подшипников РВЗ: Условия и порядок | rvzgroup.ru",
+  description:
+    "Ознакомьтесь с политикой возврата и обмена подшипников РВЗ. Подробная информация об условиях, сроках и порядке возврата подшипников “Разумный Выбор Запчастей”.",
 };
 
 const RefundPage = () => {

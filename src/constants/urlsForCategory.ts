@@ -9,6 +9,7 @@ export const urlsForCategory = {
   vacancy: "Вакансии",
   refund: "Возврат",
   cart: "Корзина",
+  filter: "Поиск по параметрам",
   miniatyurnye: "миниатюрные",
   samoustanavlivayushchiesya: "самоустанавливающиеся",
   sfericheskie: "сферические",

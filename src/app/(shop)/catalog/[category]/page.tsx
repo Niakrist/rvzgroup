@@ -1,12 +1,9 @@
 import { getProducts } from "@/api/getProducts";
-import { getFilter } from "@/api/getFilter";
 import CatalogNavBar from "@/components/CatalogNavBar/CatalogNavBar";
 import Products from "@/components/Products/Products";
 import { SideBar } from "@/components/SideBar/SideBar";
 import { urlsForCategory } from "@/constants/urlsForCategory";
-import { ISearchParams } from "@/types/ISearchParams.interface";
 import { Htag } from "@/ui";
-import { getFilteredProducts } from "@/utils/getFilteredProducts";
 import { getMetadataForCategory } from "@/utils/getMetadataForCategory";
 import { getParamsToSend } from "@/utils/getParamsToSend";
 import { Metadata } from "next";
@@ -16,7 +13,6 @@ import styles from "../CatalogPage.module.css";
 
 interface ICategoryPageProps {
   params: Promise<{ category: UrlsForCategoryKey }>;
-  searchParams: Promise<ISearchParams>;
 }
 
 type UrlsForCategoryKey = keyof typeof urlsForCategory;
@@ -36,12 +32,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function CategoryPage({
-  params,
-  searchParams,
-}: ICategoryPageProps) {
+export default async function CategoryPage({ params }: ICategoryPageProps) {
   const { category } = await params;
-  const search = await searchParams;
 
   if (!category) notFound();
 
@@ -51,11 +43,7 @@ export default async function CategoryPage({
 
   if (!allPartsFound) return notFound();
 
-  const searchParamsToSend = getFilteredProducts(search, paramsToSend);
-
-  const products = searchParamsToSend.size
-    ? await getFilter(searchParamsToSend)
-    : await getProducts(paramsToSend);
+  const products = await getProducts(paramsToSend);
 
   if (!products) return;
 

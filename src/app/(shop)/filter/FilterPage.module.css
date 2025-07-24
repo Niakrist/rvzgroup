@@ -1,0 +1,37 @@
+.titleWrapper {
+  background-color: var(--grey1);
+}
+
+.title {
+  max-width: 1304px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 0 0 100px;
+  background-color: var(--grey1);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  column-gap: 20px;
+
+  max-width: 1304px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 921.9px) {
+  .container {
+    grid-template-columns: 1fr;
+    column-gap: 0px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 0 0 50px;
+  }
+}

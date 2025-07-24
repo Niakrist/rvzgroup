@@ -20,20 +20,8 @@ export const metadata: Metadata = {
   },
 };
 
-interface ICatalogPageProps {
-  searchParams: Promise<ISearchParams>;
-}
-
-export default async function CatalogPage({
-  searchParams,
-}: ICatalogPageProps): Promise<React.JSX.Element> {
-  const search = await searchParams;
-
-  const searchParamsToSend = getFilteredProducts(search);
-
-  const products = searchParamsToSend.size
-    ? await getFilter(searchParamsToSend)
-    : await getProducts();
+export default async function CatalogPage() {
+  const products = await getProducts();
 
   if (!products) return <div>Загрузка products</div>;
 

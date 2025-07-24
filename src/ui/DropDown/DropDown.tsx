@@ -9,6 +9,7 @@ import { useFilter } from "@/hooks/useFilters";
 
 export const DropDown: React.FC<IDropDownProps> = ({ list, name, filter }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [condition, setCondition] = useState<boolean>(false);
   const { queryParams, updateQueryParams } = useFilter();
 
   const handleToggleModal = () => {
@@ -20,6 +21,7 @@ export const DropDown: React.FC<IDropDownProps> = ({ list, name, filter }) => {
     const currentValues = currentValue ? currentValue.split("|") : [];
     if (currentValues.includes(itemId)) {
       const newValues = currentValues.filter((value) => value !== itemId);
+
       updateQueryParams(
         filter,
         newValues.length > 0 ? newValues.join("|") : ""
@@ -34,26 +36,33 @@ export const DropDown: React.FC<IDropDownProps> = ({ list, name, filter }) => {
     <div className={styles.wrapperDwopDown}>
       <button
         onClick={handleToggleModal}
-        className={cn(styles.button, { [styles.open]: isOpen })}>
+        className={cn(styles.button, {
+          [styles.open]: isOpen,
+          [styles.condition]: queryParams[filter],
+        })}>
         {name}
 
         <Icon
           name="iconArrow"
-          className={cn(styles.iconArrow, isOpen && styles.iconArrowOpen)}
+          className={cn(styles.iconArrow, {
+            [styles.iconArrowOpen]: isOpen,
+          })}
         />
       </button>
       {isOpen && (
         <ul className={styles.list}>
-          {list.map((item) => (
-            <li key={item.id}>
-              <Checkbox
-                id={item.name}
-                isCheck={queryParams[filter]?.includes(item.id) || false}
-                handleCheck={() => handleCheck(item.id)}>
-                {item.name}
-              </Checkbox>
-            </li>
-          ))}
+          {list.map((item) => {
+            return (
+              <li key={item.id}>
+                <Checkbox
+                  id={item.name}
+                  isCheck={queryParams[filter]?.includes(item.id) || false}
+                  handleCheck={() => handleCheck(item.id)}>
+                  {item.name}
+                </Checkbox>
+              </li>
+            );
+          })}
         </ul>
       )}
     </div>

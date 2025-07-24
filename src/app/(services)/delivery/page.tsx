@@ -5,7 +5,9 @@ import React from "react";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Доставка",
+  title: "Доставка подшипников РВЗ: Быстрая и надежная доставка | rvzgroup.ru",
+  description:
+    "Быстрая и надежная доставка подшипников РВЗ Групп по всей России и странам СНГ. Узнайте о доступных способах доставки и выберите наиболее удобный для вас.",
 };
 
 const DeliveryAndPayment = () => {
@@ -13,7 +15,7 @@ const DeliveryAndPayment = () => {
     <WrapperSection bgSection="grey">
       <div className={styles.wrapper}>
         <Htag className={styles.mb} size="large" tag="h1">
-          Доставка — удобные и выгодные условия
+          Доставка подшипников РВЗ Групп: Условия и способы
         </Htag>
         <Text className={styles.text} tag="p" size="medium">
           Мы предлагаем комплексные логистические решения для клиентов из России

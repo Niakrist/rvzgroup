@@ -4,7 +4,10 @@ import React from "react";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Оплата",
+  title:
+    "Оплата подшипников РВЗ - Условия: наличный, безналичный, отсрочка | rvzgroup.ru",
+  description:
+    "Оплатите подшипники РВЗ Групп удобным способом: по счету, наличными при получении или после отсрочки. Выбирайте удобный вариант оплаты для вашей покупки.",
 };
 
 const Payment = () => {
@@ -12,7 +15,7 @@ const Payment = () => {
     <WrapperSection bgSection="grey">
       <div className={styles.wrapper}>
         <Htag className={styles.mb} size="large" tag="h1">
-          Гибкие варианты оплаты
+          Способы оплаты подшипников РВЗ
         </Htag>
         <Text className={styles.text} tag="p" size="medium">
           Мы понимаем, насколько важна гибкость и удобство в финансовых вопросах

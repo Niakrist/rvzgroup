@@ -177,6 +177,7 @@ export const sitemapServicesPage = [
   "delivery",
   "payment",
   "cart",
+  "filter",
 ];
 
 export const sitemapBearings = [

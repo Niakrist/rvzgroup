@@ -39,7 +39,14 @@ export const useFilter = () => {
     } else {
       newParams.delete(key);
     }
-    replace(pathname + `?${newParams.toString()}`);
+
+    if (pathname.includes("catalog") && newParams.has("page")) {
+      replace(pathname + `?${newParams.toString()}`);
+    } else if (newParams.size) {
+      replace("/filter" + `?${newParams.toString()}`);
+    } else {
+      replace("/");
+    }
   };
 
   return { queryParams, updateQueryParams };
