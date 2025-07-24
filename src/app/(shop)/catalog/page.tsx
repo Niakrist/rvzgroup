@@ -4,7 +4,7 @@ import Products from "@/components/Products/Products";
 import { SideBar } from "@/components/SideBar/SideBar";
 import { Htag } from "@/ui";
 import { Metadata } from "next";
-import React, { Suspense } from "react";
+import React from "react";
 import styles from "./CatalogPage.module.css";
 
 export const metadata: Metadata = {
@@ -32,9 +32,7 @@ export default async function CatalogPage() {
       <CatalogNavBar />
       <div className={styles.section}>
         <div className={styles.container}>
-          <Suspense fallback={<div>Загрузка фильтров...</div>}>
-            <SideBar />
-          </Suspense>
+          <SideBar />
           <Products bearingList={products.rows} count={products.count} />
         </div>
       </div>

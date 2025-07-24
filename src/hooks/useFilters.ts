@@ -14,6 +14,8 @@ export const useFilter = () => {
   const pathname = usePathname();
   const { replace } = useRouter();
 
+  const isClient = typeof window !== "undefined";
+
   const dispatch = useDispatch<AppDispatch>();
   const { queryParams } = useSelector((state: RootState) => state.filters);
 
@@ -28,6 +30,7 @@ export const useFilter = () => {
   }, [searchParams, dispatch]);
 
   const updateQueryParams = async (key: keyof IQueryParams, value: string) => {
+    if (!isClient || !searchParams) return;
     await dispatch(updateQueryParamAsync({ key, value }));
     const newParams = new URLSearchParams(searchParams.toString());
 
