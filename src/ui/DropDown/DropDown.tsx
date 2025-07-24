@@ -9,7 +9,6 @@ import { useFilter } from "@/hooks/useFilters";
 
 export const DropDown: React.FC<IDropDownProps> = ({ list, name, filter }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [condition, setCondition] = useState<boolean>(false);
   const { queryParams, updateQueryParams } = useFilter();
 
   const handleToggleModal = () => {
