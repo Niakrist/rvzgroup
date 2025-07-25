@@ -13,6 +13,8 @@ export const BreadCrumbs = () => {
   const createBreadCrumbs = () => {
     const breadCrumbsUrl = [];
 
+    console.log("params: ", params);
+
     const categories = params.split("/").filter(Boolean);
     breadCrumbsUrl.push({
       path: "/",

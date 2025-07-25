@@ -17,26 +17,6 @@
   white-space: nowrap;
 }
 
-.email {
-  padding: 8px 16px;
-  border-radius: 8px;
-  background-color: var(--blue3);
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.56;
-  text-align: center;
-  color: var(--black);
-  font-style: normal;
-}
-.link {
-  color: var(--blue);
-  transition: color 0.2s;
-}
-.link:hover {
-  color: var(--blue2);
-}
-
 @media (max-width: 767.9px) {
   .buttonsGroup {
     grid-template-columns: 1fr;

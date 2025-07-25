@@ -33,7 +33,7 @@ export default async function CatalogPage() {
       <div className={styles.section}>
         <div className={styles.container}>
           <SideBar />
-          <Suspense fallback={<div>Загрузка фильтров...</div>}>
+          <Suspense fallback={<div>Загрузка products...</div>}>
             <Products bearingList={products.rows} count={products.count} />
           </Suspense>
         </div>

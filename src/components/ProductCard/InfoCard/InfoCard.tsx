@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { ArticleInStock, Price, CharacteristicList } from "@/components";
-import { Button, Htag } from "@/ui";
+import { Button, EmailCTA, Htag } from "@/ui";
 import { IInfoCardProps } from "./InfoCard.props";
 import styles from "./InfoCard.module.css";
 import { CounterQuantityGroup } from "@/components/CounterQuantityGroup/CounterQuantityGroup";
@@ -9,7 +9,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/store/store";
 import { isGetPriceModal } from "@/store/openModalSlice/openModalSlice";
 import { addInCommercialApplication } from "@/store/forCommercialApplicationSlice/forCommercialApplicationSlice";
-import { EMAIL_SALES } from "@/constants/contacts";
 
 export const InfoCard = ({ product }: IInfoCardProps): React.JSX.Element => {
   const dispatch = useDispatch<AppDispatch>();
@@ -40,15 +39,7 @@ export const InfoCard = ({ product }: IInfoCardProps): React.JSX.Element => {
           Получить КП в 1 клик
         </Button>
       </div>
-      <address className={styles.email}>
-        Отправить заявку на почту{" "}
-        <a
-          className={styles.link}
-          href={`mailto:${EMAIL_SALES}`}
-          target="_blank">
-          {EMAIL_SALES}
-        </a>
-      </address>
+      <EmailCTA />
     </div>
   );
 };
