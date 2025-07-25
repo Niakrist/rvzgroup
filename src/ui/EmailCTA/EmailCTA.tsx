@@ -4,11 +4,10 @@ import styles from "./EmailCTA.module.css";
 
 import cn from "classnames";
 
-interface IEmailCTAProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLElement>,
-    HTMLElement
-  > {}
+type IEmailCTAProps = React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLElement>,
+  HTMLElement
+>;
 
 export const EmailCTA: React.FC<IEmailCTAProps> = ({ className, ...props }) => {
   return (
