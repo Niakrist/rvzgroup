@@ -23,7 +23,7 @@ export default function NotFound() {
                 size="medium"
                 tag="li"
                 className={styles.item}>
-                <Link href={category.path}>{category.name}</Link>
+                <Link href={`/catalog/${category.path}`}>{category.name}</Link>
               </P>
             ))}
           </ul>
