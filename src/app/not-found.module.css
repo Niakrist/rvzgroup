@@ -1,3 +1,7 @@
+.section {
+  padding-top: 80px 0 50px;
+}
+
 .wrapper {
   display: flex;
   justify-content: space-between;
