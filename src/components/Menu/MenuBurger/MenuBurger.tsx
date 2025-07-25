@@ -90,22 +90,22 @@ export const MenuBurger = () => {
                 </button>
               </li>
               <li>
-                <Link className={styles.link} href="about">
+                <Link className={styles.link} href="/about">
                   О компании
                 </Link>
               </li>
               <li>
-                <Link className={styles.link} href="brand-rvz">
+                <Link className={styles.link} href="/brand-rvz">
                   Бренд РВЗ
                 </Link>
               </li>
               <li>
-                <Link className={styles.link} href="delivery">
+                <Link className={styles.link} href="/delivery">
                   Доставка
                 </Link>
               </li>
               <li>
-                <Link className={styles.link} href="payment">
+                <Link className={styles.link} href="/payment">
                   Оплата
                 </Link>
               </li>
@@ -115,7 +115,7 @@ export const MenuBurger = () => {
                 </Link>
               </li> */}
               <li>
-                <Link className={styles.link} href="contacts">
+                <Link className={styles.link} href="/contacts">
                   Контакты
                 </Link>
               </li>
