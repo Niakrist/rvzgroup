@@ -5,7 +5,7 @@ import { Icon } from "../../Icon/Icon";
 import { useDebounce } from "@/hooks/useDebounce";
 import styles from "./SearchField.module.css";
 import { searchProducts } from "@/api/searchProducts";
-import { Button } from "@/ui";
+import { Button, EmailCTA, P } from "@/ui";
 import Link from "next/link";
 import { IBearing } from "@/types/bearing";
 import { useClickOutside } from "@/hooks/useClickOutside";
@@ -145,9 +145,12 @@ export const SearchField = () => {
               </Button>
             </>
           ) : (
-            <p className={styles.notFound}>
-              По вашему запросу ничего не найдено
-            </p>
+            <>
+              <P tag="p" size="large" className={styles.notFound}>
+                По вашему запросу ничего не найдено
+              </P>
+              <EmailCTA bgColor="blue" />
+            </>
           )}
         </div>
       )}

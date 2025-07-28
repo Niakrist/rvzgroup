@@ -27,7 +27,7 @@ export default function NotFound() {
               </P>
             ))}
           </ul>
-          <EmailCTA bgColor="grey" />
+          <EmailCTA bgColor="blue" />
 
           <div className={styles.home}>
             <P size="medium" tag="p">
