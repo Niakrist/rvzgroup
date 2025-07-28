@@ -1,7 +1,7 @@
 import { IBearing } from "@/types/bearing";
 
 export const getProductsWithoutPagination = async (
-  params: URLSearchParams
+  params?: URLSearchParams
 ): Promise<IBearing[] | []> => {
   try {
     const response = await fetch(

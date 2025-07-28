@@ -45,3 +45,23 @@
   border: 1px solid var(--blue);
   border-radius: 3px;
 }
+
+@media (max-width: 1239px) {
+  .labelListBig {
+    top: 20px;
+    left: unset;
+    right: 20px;
+  }
+}
+
+@media (max-width: 599px) {
+  .labelListBig {
+    top: 10px;
+    left: 10px;
+    right: unset;
+  }
+
+  .labelBig {
+    padding: 4px 8px;
+  }
+}
