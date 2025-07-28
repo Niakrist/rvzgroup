@@ -1,7 +1,6 @@
 .email {
   padding: 8px 16px;
   border-radius: 8px;
-  background-color: var(--blue3);
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 16px;
@@ -9,11 +8,24 @@
   text-align: center;
   color: var(--black);
   font-style: normal;
+  cursor: pointer;
 }
-.link {
+
+.bgBlue {
+  background-color: var(--blue3);
+}
+.bgGrey {
+  background-color: var(--grey3);
+}
+
+.emailAdress {
   color: var(--blue);
   transition: color 0.2s;
 }
-.link:hover {
+.emailAdress:hover {
   color: var(--blue2);
+}
+
+.copy {
+  background-color: #a7d9a7;
 }

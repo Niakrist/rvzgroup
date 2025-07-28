@@ -4,7 +4,7 @@
 } */
 
 .notFound {
-  padding: 1rem;
+  padding: 16px;
   text-align: center;
   color: #666;
 }
@@ -64,6 +64,22 @@
   left: 0px;
   width: 100%;
   background-color: var(--white);
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 5px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--blue);
+  animation: spin 1s ease-in-out infinite;
 }
 
 .searchList {
@@ -135,5 +151,11 @@
 @media (max-width: 639px) {
   .searchItemPrice {
     display: none;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }

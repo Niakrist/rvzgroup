@@ -6,6 +6,7 @@ import styles from "./Products.module.css";
 
 import { IBearing } from "@/types/bearing";
 import { useAppDispatch } from "@/store/store";
+import { ProfuctNotFound } from "@/ui";
 
 interface IProductsProps {
   bearingList: IBearing[];
@@ -27,14 +28,19 @@ const Products = ({ bearingList, count }: IProductsProps) => {
         <Icon name="iconArrow" className={styles.iconArrow} />
       </button>
       <TagCategory />
-      <ul className={styles.list}>
-        {bearingList.map((product: IBearing, index: number) => (
-          <li key={product.id}>
-            <ProductItem product={product} index={index} />
-          </li>
-        ))}
-      </ul>
-      {count && count > 12 && <PaginationList count={count} />}
+      {bearingList.length ? (
+        <ul className={styles.list}>
+          {bearingList.map((product: IBearing, index: number) => (
+            <li key={product.id}>
+              <ProductItem product={product} index={index} />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <ProfuctNotFound />
+      )}
+
+      {!!count && count > 12 && <PaginationList count={count} />}
     </div>
   );
 };
