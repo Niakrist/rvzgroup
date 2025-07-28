@@ -16,6 +16,7 @@ export const SearchField = () => {
   const [search, setSearch] = useState<string>("");
   const [searchList, setSearchList] = useState<IBearing[]>([]);
   const [isOpenSearch, setIsOpenSearch] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const refSearchContainer = useRef<HTMLDivElement>(null);
 
@@ -51,15 +52,24 @@ export const SearchField = () => {
 
   useEffect(() => {
     if (searchDebounce) {
+      setIsLoading(true);
       setIsOpenSearch(true);
       const getFilterProducts = async () => {
-        const data = await searchProducts(searchDebounce);
-        if (!data) return;
-        setSearchList(data.rows);
+        try {
+          const data = await searchProducts(searchDebounce);
+          if (!data) return;
+          setSearchList(data.rows);
+        } catch (error) {
+          console.error("Search error:", error);
+          setSearchList([]);
+        } finally {
+          setIsLoading(false);
+        }
       };
       getFilterProducts();
     } else {
       setIsOpenSearch(false);
+      setIsLoading(false);
     }
   }, [searchDebounce]);
 
@@ -91,7 +101,12 @@ export const SearchField = () => {
       </form>
       {isOpenSearch && (
         <div className={styles.searchListWrapper}>
-          {searchList?.length && searchList.length ? (
+          {isLoading ? (
+            <div className={styles.loading}>
+              <div className={styles.spinner}></div>
+              <p className={styles.searchItemPrice}>Поиск...</p>
+            </div>
+          ) : searchList?.length && searchList.length ? (
             <>
               <ul className={styles.searchList}>
                 {searchList.map((item) => (
