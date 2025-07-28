@@ -17,3 +17,4 @@ export * from "./WrapperSection/WrapperSection";
 export * from "./Contact/Contact";
 export * from "./Requisites/Requisites";
 export * from "./EmailCTA/EmailCTA";
+export * from "./ProfuctNotFound/ProfuctNotFound";

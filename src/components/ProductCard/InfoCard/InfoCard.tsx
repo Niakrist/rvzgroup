@@ -39,7 +39,7 @@ export const InfoCard = ({ product }: IInfoCardProps): React.JSX.Element => {
           Получить КП в 1 клик
         </Button>
       </div>
-      <EmailCTA />
+      <EmailCTA bgColor="grey" />
     </div>
   );
 };

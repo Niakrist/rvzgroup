@@ -1,0 +1,10 @@
+.mb {
+  margin-bottom: 16px;
+}
+.link {
+  color: var(--blue);
+  transition: color 0.2s;
+}
+.link:hover {
+  color: var(--blue2);
+}
