@@ -1,6 +1,5 @@
 import { fetchCategory } from "@/api/fetchCategory";
 import { getProducts } from "@/api/getProducts";
-import { getFilter } from "@/api/getFilter";
 import { getItemBearing } from "@/api/getItemBearing";
 import {
   PopularProduct,
@@ -9,13 +8,13 @@ import {
 } from "@/components";
 import TagList from "@/components/TagList/TagList";
 import { urlPaths } from "@/constants/urlPaths";
-import { IBearinData } from "@/types/product";
 
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import React from "react";
 import { getProductsWithoutPagination } from "@/api/getProductsWithoutPagination";
+import { IBearing } from "@/types/bearing";
 
 interface IProductPageProps {
   params: Promise<{ url: string }>;
@@ -85,11 +84,11 @@ export async function generateMetadata({
 
 export async function generateStaticParams(): Promise<Array<{ url: string }>> {
   try {
-    const allProducts: IBearinData | null = await getFilter();
-    if (!allProducts?.rows?.length) {
+    const allProducts: IBearing[] | [] = await getProductsWithoutPagination();
+    if (!allProducts?.length) {
       return [];
     }
-    return allProducts.rows.slice(0, 100).map((product) => ({
+    return allProducts.slice(0, 100).map((product) => ({
       url: product.url,
     }));
   } catch (error) {

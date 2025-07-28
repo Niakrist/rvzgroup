@@ -17,7 +17,6 @@ export default async function Home() {
   const popularProducts = await getProductsWithoutPagination(
     paramsForPopularProduct
   );
-  // const products = await getProducts();
 
   if (!!!popularProducts.length) return <div>Загрузка</div>;
   return (
