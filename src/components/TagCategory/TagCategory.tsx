@@ -15,6 +15,8 @@ export const TagCategory = () => {
     return null;
   }
 
+  console.log("category: ", category);
+
   const typedCategory = category as keyof typeof categories;
 
   if (!categories[typedCategory]) {

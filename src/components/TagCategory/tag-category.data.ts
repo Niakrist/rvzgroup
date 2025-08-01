@@ -308,4 +308,23 @@ export const categories = {
     //   name: "Роликовые конические упорные",
     // },
   ],
+
+  igolchatye: [
+    {
+      url: "/catalog/igolchatye_odnoryadnye",
+      name: "Игольчатые однорядные",
+    },
+    {
+      url: "/catalog/igolchatye_dvuhryadnye",
+      name: "Игольчатые двухрядные",
+    },
+    {
+      url: "/catalog/igolchatye_radialnye",
+      name: "Игольчатые радиальные",
+    },
+    {
+      url: "/catalog/igolchatye_radialno-upornye",
+      name: "Игольчатые радиально-упорные",
+    },
+  ],
 };
