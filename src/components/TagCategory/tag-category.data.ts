@@ -327,4 +327,58 @@ export const categories = {
       name: "Игольчатые радиально-упорные",
     },
   ],
+  odnoryadnye: [
+    { url: "/catalog/sharikovye_odnoryadnye", name: "Шариковые однорядные" },
+    { url: "/catalog/rolikovye_odnoryadnye", name: "Роликовые однорядные" },
+    {
+      url: "/catalog/igolchatye_odnoryadnye",
+      name: "Игольчатые однорядные",
+    },
+    { url: "/catalog/upornye_odnoryadnye", name: "Упорные однорядные" },
+    { url: "/catalog/upornye_odnoryadnye", name: "Упорные однорядные" },
+    { url: "/catalog/radialnye_odnoryadnye", name: "Радиальные однорядные" },
+    {
+      url: "/catalog/odnoryadnye_radialno-upornye",
+      name: "Радиально-упорные однорядные",
+    },
+    {
+      url: "/catalog/sfericheskie_odnoryadnye",
+      name: "Сферические однорядные",
+    },
+
+    { url: "/catalog/odnoryadnye_otkrytye", name: "Открытые однорядные" },
+    { url: "/catalog/odnoryadnye_zakrytye", name: "Закрытые однорядные" },
+    { url: "/catalog/radialnye_odnoryadnye", name: "Радиальные однорядные" },
+    { url: "/catalog/konicheskie_odnoryadnye", name: "Конические однорядные" },
+  ],
+  radialnye_odnoryadnye: [
+    {
+      url: "/catalog/sharikovye_radialnye_odnoryadnye",
+      name: "Шариковые радиальные однорядные",
+    },
+    {
+      url: "/catalog/rolikovye_radialnye_odnoryadnye",
+      name: "Роликовые радиальные однорядные",
+    },
+  ],
+  upornye_odnoryadnye: [
+    {
+      url: "/catalog/sharikovye_upornye_odnoryadnye",
+      name: "Шариковые упорные однорядные",
+    },
+    {
+      url: "/catalog/rolikovye_upornye_odnoryadnye",
+      name: "Роликовые упорные однорядные",
+    },
+  ],
+  "odnoryadnye_radialno-upornye": [
+    {
+      url: "/catalog/sharikovye_radialno-upornye_odnoryadnye",
+      name: "Шариковые радиально-упорные однорядные",
+    },
+    {
+      url: "/catalog/rolikovye_radialno-upornye_odnoryadnye",
+      name: "Роликовые радиально-упорные однорядные",
+    },
+  ],
 };
