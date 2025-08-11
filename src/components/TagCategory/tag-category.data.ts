@@ -381,4 +381,12 @@ export const categories = {
       name: "Роликовые радиально-упорные однорядные",
     },
   ],
+  dvuhryadnye: [
+    { url: "/catalog/sharikovye_dvuhryadnye", name: "Шариковые двухрядные" },
+    { url: "/catalog/rolikovye_dvuhryadnye", name: "Роликовые двухрядные" },
+    {
+      url: "/catalog/igolchatye_dvuhryadnye",
+      name: "Игольчатые двухрядные",
+    },
+  ],
 };
