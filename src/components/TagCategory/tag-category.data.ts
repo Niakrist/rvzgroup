@@ -388,5 +388,29 @@ export const categories = {
       url: "/catalog/igolchatye_dvuhryadnye",
       name: "Игольчатые двухрядные",
     },
+    {
+      url: "https://rvzgroup.ru/catalog/sfericheskie_dvuhryadnye",
+      name: "Сферические двухрядные",
+    },
+    {
+      url: "https://rvzgroup.ru/catalog/konicheskie_dvuhryadnye",
+      name: "Конические двухрядные",
+    },
+    {
+      url: "https://rvzgroup.ru/catalog/radialnye_dvuhryadnye",
+      name: "Радиальные двухрядные",
+    },
+    {
+      url: "https://rvzgroup.ru/catalog/dvuhryadnye_radialno-upornye",
+      name: "Радиально-упорные двухрядные",
+    },
+    {
+      url: "https://rvzgroup.ru/catalog/upornye_dvuhryadnye",
+      name: "Упорные двухрядные",
+    },
+    {
+      url: "https://rvzgroup.ru/catalog/dvuhryadnye_zakrytye",
+      name: "Закрытые двухрядные",
+    },
   ],
 };
