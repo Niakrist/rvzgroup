@@ -10,9 +10,11 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import React from "react";
 import styles from "../CatalogPage.module.css";
+import { ISearchParams } from "@/types/ISearchParams.interface";
 
 interface ICategoryPageProps {
   params: Promise<{ category: UrlsForCategoryKey }>;
+  searchParams?: Promise<ISearchParams>;
 }
 
 type UrlsForCategoryKey = keyof typeof urlsForCategory;
@@ -21,6 +23,7 @@ export async function generateMetadata({
   params,
 }: ICategoryPageProps): Promise<Metadata> {
   const { category } = await params;
+
   const { title, description } = getMetadataForCategory(category);
 
   return {
@@ -32,8 +35,12 @@ export async function generateMetadata({
   };
 }
 
-export default async function CategoryPage({ params }: ICategoryPageProps) {
+export default async function CategoryPage({
+  params,
+  searchParams,
+}: ICategoryPageProps) {
   const { category } = await params;
+  const search = await searchParams;
 
   if (!category) notFound();
 
@@ -42,8 +49,11 @@ export default async function CategoryPage({ params }: ICategoryPageProps) {
   const { h1 } = getMetadataForCategory(category);
 
   if (!allPartsFound) return notFound();
-
-  const products = await getProducts(paramsToSend);
+  const finalParams = {
+    ...paramsToSend,
+    ...search,
+  };
+  const products = await getProducts(finalParams);
 
   if (!products) return;
 

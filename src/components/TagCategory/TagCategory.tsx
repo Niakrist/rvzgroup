@@ -15,8 +15,6 @@ export const TagCategory = () => {
     return null;
   }
 
-  console.log("category: ", category);
-
   const typedCategory = category as keyof typeof categories;
 
   if (!categories[typedCategory]) {
@@ -40,13 +38,15 @@ export const TagCategory = () => {
         />
       </button>
       <ul className={cn(styles.list, { [styles.show]: isShow })}>
-        {categories[typedCategory].map((item) => (
-          <li key={item.url}>
-            <Link className={styles.item} href={item.url}>
-              {item.name}
-            </Link>
-          </li>
-        ))}
+        {categories[typedCategory].map((item) => {
+          return (
+            <li key={item.url}>
+              <Link className={styles.item} href={item.url}>
+                {item.name}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

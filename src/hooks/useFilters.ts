@@ -39,11 +39,23 @@ export const useFilter = () => {
       newParams.delete(key);
     }
 
-    if (pathname.includes("catalog") && newParams.has("page")) {
-      replace(pathname + `?${newParams.toString()}`);
-    } else if (newParams.size) {
-      replace("/filter" + `?${newParams.toString()}`);
+    // if (pathname.includes("catalog") && newParams.has("page")) {
+    //   replace(pathname + `?${newParams.toString()}`);
+    // } else if (newParams.size) {
+    //   replace("/filter" + `?${newParams.toString()}`);
+    // }
+
+    // Удаляем page только если меняем не page
+    if (key !== "page") {
+      newParams.delete("page");
+      await dispatch(resetQueryParamAsync("page"));
     }
+
+    // Обновляем URL
+    const queryString = newParams.toString();
+    const newUrl = queryString ? `${pathname}?${queryString}` : pathname;
+
+    replace(newUrl, { scroll: false });
   };
 
   return { queryParams, updateQueryParams };

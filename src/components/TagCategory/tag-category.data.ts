@@ -335,7 +335,6 @@ export const categories = {
       name: "Игольчатые однорядные",
     },
     { url: "/catalog/upornye_odnoryadnye", name: "Упорные однорядные" },
-    { url: "/catalog/upornye_odnoryadnye", name: "Упорные однорядные" },
     { url: "/catalog/radialnye_odnoryadnye", name: "Радиальные однорядные" },
     {
       url: "/catalog/odnoryadnye_radialno-upornye",
@@ -348,7 +347,6 @@ export const categories = {
 
     { url: "/catalog/odnoryadnye_otkrytye", name: "Открытые однорядные" },
     { url: "/catalog/odnoryadnye_zakrytye", name: "Закрытые однорядные" },
-    { url: "/catalog/radialnye_odnoryadnye", name: "Радиальные однорядные" },
     { url: "/catalog/konicheskie_odnoryadnye", name: "Конические однорядные" },
   ],
   radialnye_odnoryadnye: [
@@ -411,6 +409,33 @@ export const categories = {
     {
       url: "https://rvzgroup.ru/catalog/dvuhryadnye_zakrytye",
       name: "Закрытые двухрядные",
+    },
+  ],
+
+  konicheskie: [
+    {
+      url: "/catalog/konicheskie_odnoryadnye",
+      name: "Конические однорядные",
+    },
+    {
+      url: "/catalog/konicheskie_dvuhryadnye",
+      name: "Конические двухрядные",
+    },
+    {
+      url: "/catalog/konicheskie_chetyrehryadnye",
+      name: "Конические четырехрядные",
+    },
+    {
+      url: "/catalog/konicheskie_radialno-upornye",
+      name: "Конические радиально-упорные",
+    },
+    {
+      url: "/catalog/rolikovye_konicheskie",
+      name: "Роликовые конические",
+    },
+    {
+      url: "/catalog/kacheniya_konicheskie",
+      name: "Качения конические",
     },
   ],
 };
