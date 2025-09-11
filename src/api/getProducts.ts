@@ -4,7 +4,6 @@ export const getProducts = async (
   params?: object
 ): Promise<IBearinData | null> => {
   try {
-    console.log("getProducts: ", params);
     const response = await fetch("https://rvzgroup.ru/api/v1/bearing", {
       headers: new Headers({ "Content-Type": "application/json" }),
       method: "POST",

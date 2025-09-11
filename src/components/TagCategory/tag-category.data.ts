@@ -438,4 +438,15 @@ export const categories = {
       name: "Качения конические",
     },
   ],
+  upornye: [
+    {
+      url: "/catalog/upornye_odnoryadnye",
+      name: "Упорные однорядные",
+    },
+    {
+      url: "https://rvzgroup.ru/catalog/upornye_dvuhryadnye",
+      name: "Упорные двухрядные",
+    },
+    { url: "/catalog/sharikovye_upornye", name: "Шариковые упорные" },
+  ],
 };

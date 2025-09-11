@@ -3,8 +3,6 @@ import { IBearinData } from "@/types/product";
 export const getFilter = async (
   params?: URLSearchParams
 ): Promise<IBearinData | null> => {
-  console.log("filter: ", params);
-
   try {
     const response = await fetch(
       `https://rvzgroup.ru/api/v1/bearing/?${params ? params : ""}`,
