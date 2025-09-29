@@ -449,4 +449,18 @@ export const categories = {
     },
     { url: "/catalog/sharikovye_upornye", name: "Шариковые упорные" },
   ],
+  sfericheskie: [
+    {
+      url: "/catalog/sfericheskie_odnoryadnye",
+      name: "Сферические однорядные",
+    },
+    {
+      url: "/catalog/sfericheskie_dvuhryadnye",
+      name: "Сферические двухрядные",
+    },
+    {
+      url: "/catalog/rolikovye_sfericheskie",
+      name: "Роликовые сферические",
+    },
+  ],
 };
