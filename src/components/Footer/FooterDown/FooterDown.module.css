@@ -21,6 +21,7 @@
 
 .copy,
 .forUser {
+  margin-right: 20px;
   font-family: var(--font-family);
   font-weight: 300;
   font-size: 14px;
@@ -31,6 +32,12 @@
 
 .forUser:hover {
   color: var(--blue);
+}
+
+.containerDown {
+  max-width: 1304px;
+  margin: 10px auto 0;
+  padding: 0px 20px;
 }
 
 @media (max-width: 767px) {

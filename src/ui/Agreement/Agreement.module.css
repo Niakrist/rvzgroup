@@ -1,10 +1,13 @@
-.label {
+.wrapper {
   display: flex;
   column-gap: 8px;
   font-family: var(--font-family);
   font-weight: 300;
   font-size: 14px;
   line-height: 1.4;
+}
+
+.label {
   cursor: pointer;
   user-select: none;
 }
@@ -41,6 +44,14 @@
 
 .blue .iconCheckbox {
   border: 2px solid var(--blue);
+}
+
+.link {
+  color: var(--blue);
+}
+
+.link:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 767px) {

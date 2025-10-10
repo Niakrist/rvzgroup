@@ -4,15 +4,11 @@ import { Icon } from "@/components";
 import cn from "classnames";
 import { IAgreementProps } from "./Agreement.props";
 import styles from "./Agreement.module.css";
+import Link from "next/link";
 
-export const Agreement: React.FC<IAgreementProps> = ({
-  color,
-  id,
-  isCheck,
-  handleChange,
-}) => {
+export const Agreement: React.FC<IAgreementProps> = ({ color, id, isCheck, handleChange }) => {
   return (
-    <>
+    <div className={styles.wrapper}>
       <input
         className={styles.checkbox}
         checked={isCheck}
@@ -25,9 +21,14 @@ export const Agreement: React.FC<IAgreementProps> = ({
         <div className={styles.iconCheckbox}>
           {isCheck && <Icon name="iconCheckbox" className={styles.icon} />}
         </div>
-        Нажимая на кнопку вы соглашаетесь с обработкой персональных данных и
-        политикой конфиденциальности.
       </label>
-    </>
+      <p>
+        Я соглашаюсь с{" "}
+        <Link className={styles.link} href="/privacy">
+          Политикой конфиденциальности
+        </Link>{" "}
+        и даю согласие на обработку моих персональных данных
+      </p>
+    </div>
   );
 };

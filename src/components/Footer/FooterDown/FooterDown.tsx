@@ -3,6 +3,7 @@ import { ADDRESS } from "@/constants/contacts";
 import React from "react";
 
 import styles from "./FooterDown.module.css";
+import Link from "next/link";
 
 export const FooterDown: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -12,13 +13,15 @@ export const FooterDown: React.FC = () => {
         <span className={styles.copy}>@ {currentYear} Все права защищены</span>
         <div className={styles.forUsers}>
           <p className={styles.copy}>{ADDRESS}</p>
-          {/* <Link className={styles.forUser} href="#">
-            Пользовательское соглашение
-          </Link>
-          <Link className={styles.forUser} href="#">
-            Договор оферты
-          </Link> */}
         </div>
+      </div>
+      <div className={styles.containerDown}>
+        <Link className={styles.forUser} href="#">
+          Пользовательское соглашение
+        </Link>
+        <Link className={styles.forUser} href="/oferta">
+          Договор оферты
+        </Link>
       </div>
     </div>
   );

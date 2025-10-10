@@ -5,7 +5,7 @@ import styles from "./Subscribe.module.css";
 import Image from "next/image";
 
 export const Subscribe = () => {
-  const [isCheck, setIsCheck] = useState<boolean>(true);
+  const [isCheck, setIsCheck] = useState<boolean>(false);
 
   const handleChange = (check: boolean): void => {
     setIsCheck(!check);
@@ -23,11 +23,7 @@ export const Subscribe = () => {
             </Htag>
 
             <form className={styles.form}>
-              <input
-                className={styles.input}
-                type="text"
-                placeholder="Электронная почта"
-              />
+              <input className={styles.input} type="text" placeholder="Электронная почта" />
 
               <Button
                 onClick={handleClick}
@@ -35,7 +31,8 @@ export const Subscribe = () => {
                 bgColor="blue"
                 size="small"
                 color="whiteText"
-                disabled={!isCheck}>
+                disabled={!isCheck}
+              >
                 Подписаться
               </Button>
 
@@ -50,12 +47,7 @@ export const Subscribe = () => {
             </form>
           </div>
           <div className={styles.img}>
-            <Image
-              width={653}
-              height={381}
-              src="/subscribe.jpg"
-              alt="Подписка"
-            />
+            <Image width={653} height={381} src="/subscribe.jpg" alt="Подписка" />
           </div>
         </div>
       </div>

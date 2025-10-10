@@ -5,14 +5,11 @@ import styles from "./OrderForm.module.css";
 import { Agreement, Button, InputText, Textarea } from "@/ui";
 import { sendRequestByEmail } from "@/api/sendRequestByEmail";
 import { useDispatch } from "react-redux";
-import {
-  isGetPriceModal,
-  toggleThanksModal,
-} from "@/store/openModalSlice/openModalSlice";
+import { isGetPriceModal, toggleThanksModal } from "@/store/openModalSlice/openModalSlice";
 import { removeCart } from "@/store/cartSlice/cartSlice";
 
 export const OrderForm = ({ order, isCart, ...props }: IOrderFormProps) => {
-  const [isCheck, setIsCheck] = useState<boolean>(true);
+  const [isCheck, setIsCheck] = useState<boolean>(false);
   const [name, setName] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
   const [email, setEmail] = useState<string>("");
@@ -48,7 +45,11 @@ export const OrderForm = ({ order, isCart, ...props }: IOrderFormProps) => {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    console.log("isCheck: ", isCheck);
+    console.log("order?.length: ", order?.length);
+
     e.preventDefault();
+    if (!isCheck || !order?.length) return;
     const formData = new FormData();
     formData.append("name", name);
     formData.append("phone", phone);
@@ -92,24 +93,9 @@ export const OrderForm = ({ order, isCart, ...props }: IOrderFormProps) => {
 
   return (
     <form {...props} className={styles.form} onSubmit={handleSubmit}>
-      <InputText
-        value={name}
-        onChange={handleNameChange}
-        placeholder="Имя"
-        type="text"
-      />
-      <InputText
-        value={phone}
-        onChange={handlePhoneChange}
-        placeholder="Телефон"
-        type="text"
-      />
-      <InputText
-        value={email}
-        onChange={handleEmailChange}
-        placeholder="Email"
-        type="email"
-      />
+      <InputText value={name} onChange={handleNameChange} placeholder="Имя" type="text" />
+      <InputText value={phone} onChange={handlePhoneChange} placeholder="Телефон" type="text" />
+      <InputText value={email} onChange={handleEmailChange} placeholder="Email" type="email" />
       {/* {bearing && <p>Подшипник {bearing}</p>} */}
       <Textarea
         placeholder="Комментарий..."
@@ -123,19 +109,16 @@ export const OrderForm = ({ order, isCart, ...props }: IOrderFormProps) => {
       </label>
 
       <Button
+        type="button"
         bgColor="blue"
         size="medium"
         color="whiteText"
-        disabled={!isCheck}>
+        disabled={!isCheck || !order?.length}
+      >
         Оформить заказ
       </Button>
 
-      <Agreement
-        isCheck={isCheck}
-        handleChange={handleChangeAgreement}
-        color="grey"
-        id="order"
-      />
+      <Agreement isCheck={isCheck} handleChange={handleChangeAgreement} color="grey" id="order" />
     </form>
   );
 };

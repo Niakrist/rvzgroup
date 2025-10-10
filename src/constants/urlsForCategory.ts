@@ -9,6 +9,8 @@ export const urlsForCategory = {
   vacancy: "Вакансии",
   refund: "Возврат",
   cart: "Корзина",
+  oferta: "Оферта",
+  privacy: "Политики обработки персональных данных",
   filter: "Поиск по параметрам",
   miniatyurnye: "миниатюрные",
   samoustanavlivayushchiesya: "самоустанавливающиеся",
@@ -46,8 +48,7 @@ export const urlsForCategory = {
   vibroustoychivye: "виброустойчивые",
   "s-kanavkoy-dlya-vvoda-sharikov": "с канавкой для ввода шариков",
   "s-dlinnymi-cilindricheskimi-rolikami": "с длинными цилиндрическими роликами",
-  "s-korotkimi-cilindricheskimi-rolikami":
-    "с короткими цилиндрическими роликами",
+  "s-korotkimi-cilindricheskimi-rolikami": "с короткими цилиндрическими роликами",
   "konicheskoe-otverstie": "с коническим отверстием",
   "cilindricheskoe-otverstie": "с цилиндрическим отверстием",
   "bez-vnutrennego-kolca": "без внутреннего кольца",
@@ -63,12 +64,9 @@ export const urlsForCategory = {
   "radialno-upornye": "радиально-упорные",
   upornye: "упорные",
   "uporno-radialnye": "упорно-радиальные",
-  "s-kanavkoy-dlya-smazki-na-naruzhnom-kolce":
-    "с канавкой для смазки на наружном кольце",
-  "s-kanavkoy-i-otverstiyami-dlya-smazki":
-    "с канавкой и отверстиями для смазки",
-  "s-otverstiem-dlya-smazki-na-naruzhnom-kolce":
-    "с отверстием для смазки на наружном кольце",
+  "s-kanavkoy-dlya-smazki-na-naruzhnom-kolce": "с канавкой для смазки на наружном кольце",
+  "s-kanavkoy-i-otverstiyami-dlya-smazki": "с канавкой и отверстиями для смазки",
+  "s-otverstiem-dlya-smazki-na-naruzhnom-kolce": "с отверстием для смазки на наружном кольце",
   stalnye: "стальные",
   nerzhaveyushchie: "нержавеющие",
   keramicheskie: "керамические",
@@ -83,8 +81,7 @@ export const urlsForCategory = {
   "s-upornym-bortom-na-naruzhnom-kolce": "с упорным бортом на наружном кольце",
   "s-flancem-na-naruzhnom-kolce": "с фланцем на наружном кольце",
   "so-skosom-na-naruzhnom-kolce": "со скосом на наружном кольце",
-  "so-sfericheskoy-poverhnostyu-naruzhnogo-kolca":
-    "со сферической поверхностью наружного кольца",
+  "so-sfericheskoy-poverhnostyu-naruzhnogo-kolca": "со сферической поверхностью наружного кольца",
   sharikovye: "шариковые",
   rolikovye: "роликовые",
   igolchatye: "игольчатые",
