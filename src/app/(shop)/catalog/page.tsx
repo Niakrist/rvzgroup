@@ -6,7 +6,6 @@ import { Htag } from "@/ui";
 import { Metadata } from "next";
 import React, { Suspense } from "react";
 import styles from "./CatalogPage.module.css";
-import { ISearchParams } from "@/types/ISearchParams.interface";
 
 interface ICatalogPageProps {
   searchParams?: Promise<{ page: string }>;
