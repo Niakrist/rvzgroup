@@ -6,6 +6,11 @@ import { Htag } from "@/ui";
 import { Metadata } from "next";
 import React, { Suspense } from "react";
 import styles from "./CatalogPage.module.css";
+import { ISearchParams } from "@/types/ISearchParams.interface";
+
+interface ICatalogPageProps {
+  searchParams?: Promise<{ page: string }>;
+}
 
 export const metadata: Metadata = {
   title:
@@ -17,8 +22,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function CatalogPage() {
-  const products = await getProducts();
+export default async function CatalogPage({ searchParams }: ICatalogPageProps) {
+  const search = await searchParams;
+
+  const hasValidPage = search && "page" in search && search.page;
+
+  const products = await getProducts(hasValidPage ? search : undefined);
 
   if (!products) return <div>Загрузка products</div>;
 

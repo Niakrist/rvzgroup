@@ -45,9 +45,6 @@ export const OrderForm = ({ order, isCart, ...props }: IOrderFormProps) => {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    console.log("isCheck: ", isCheck);
-    console.log("order?.length: ", order?.length);
-
     e.preventDefault();
     if (!isCheck || !order?.length) return;
     const formData = new FormData();

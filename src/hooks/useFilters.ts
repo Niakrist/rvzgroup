@@ -1,8 +1,5 @@
 "use client";
-import {
-  resetQueryParamAsync,
-  updateQueryParamAsync,
-} from "@/store/filterSlice/filterSlice";
+import { resetQueryParamAsync, updateQueryParamAsync } from "@/store/filterSlice/filterSlice";
 import { AppDispatch, RootState } from "@/store/store";
 import { IQueryParams } from "@/types/queryParams.interface";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
@@ -20,9 +17,7 @@ export const useFilter = () => {
     if (!searchParams) return;
     const params = Array.from(searchParams.entries());
     params.forEach(([key, value]) => {
-      dispatch(
-        updateQueryParamAsync({ key: key as keyof IQueryParams, value })
-      );
+      dispatch(updateQueryParamAsync({ key: key as keyof IQueryParams, value }));
     });
   }, [searchParams, dispatch]);
 
@@ -39,23 +34,11 @@ export const useFilter = () => {
       newParams.delete(key);
     }
 
-    // if (pathname.includes("catalog") && newParams.has("page")) {
-    //   replace(pathname + `?${newParams.toString()}`);
-    // } else if (newParams.size) {
-    //   replace("/filter" + `?${newParams.toString()}`);
-    // }
-
-    // Удаляем page только если меняем не page
-    if (key !== "page") {
-      newParams.delete("page");
-      await dispatch(resetQueryParamAsync("page"));
+    if (pathname.includes("catalog") && newParams.has("page")) {
+      replace(pathname + `?${newParams.toString()}`);
+    } else if (newParams.size) {
+      replace("/filter" + `?${newParams.toString()}`);
     }
-
-    // Обновляем URL
-    const queryString = newParams.toString();
-    const newUrl = queryString ? `${pathname}?${queryString}` : pathname;
-
-    replace(newUrl, { scroll: false });
   };
 
   return { queryParams, updateQueryParams };
