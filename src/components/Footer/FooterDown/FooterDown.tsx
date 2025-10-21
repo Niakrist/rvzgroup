@@ -1,4 +1,3 @@
-// import Link from "next/link";
 import { ADDRESS } from "@/constants/contacts";
 import React from "react";
 
@@ -16,7 +15,7 @@ export const FooterDown: React.FC = () => {
         </div>
       </div>
       <div className={styles.containerDown}>
-        <Link className={styles.forUser} href="#">
+        <Link className={styles.forUser} href="/privacy">
           Пользовательское соглашение
         </Link>
         <Link className={styles.forUser} href="/oferta">
