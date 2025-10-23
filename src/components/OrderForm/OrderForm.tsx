@@ -92,7 +92,13 @@ export const OrderForm = ({ order, isCart, ...props }: IOrderFormProps) => {
     <form {...props} className={styles.form} onSubmit={handleSubmit}>
       <InputText value={name} onChange={handleNameChange} placeholder="Имя" type="text" />
       <InputText value={phone} onChange={handlePhoneChange} placeholder="Телефон" type="text" />
-      <InputText value={email} onChange={handleEmailChange} placeholder="Email" type="email" />
+      <InputText
+        required
+        value={email}
+        onChange={handleEmailChange}
+        placeholder="Email"
+        type="email"
+      />
       {/* {bearing && <p>Подшипник {bearing}</p>} */}
       <Textarea
         placeholder="Комментарий..."
@@ -114,6 +120,11 @@ export const OrderForm = ({ order, isCart, ...props }: IOrderFormProps) => {
       >
         Оформить заказ
       </Button>
+      {!isCheck && (
+        <span className={styles.info}>
+          Для отправки формы подтвердите галочкой о согласии на обработку персональных данных
+        </span>
+      )}
 
       <Agreement isCheck={isCheck} handleChange={handleChangeAgreement} color="grey" id="order" />
     </form>

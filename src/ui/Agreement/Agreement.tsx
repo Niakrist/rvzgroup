@@ -6,7 +6,13 @@ import { IAgreementProps } from "./Agreement.props";
 import styles from "./Agreement.module.css";
 import Link from "next/link";
 
-export const Agreement: React.FC<IAgreementProps> = ({ color, id, isCheck, handleChange }) => {
+export const Agreement: React.FC<IAgreementProps> = ({
+  color,
+  id,
+  isCheck,
+
+  handleChange,
+}) => {
   return (
     <div className={styles.wrapper}>
       <input
@@ -15,7 +21,8 @@ export const Agreement: React.FC<IAgreementProps> = ({ color, id, isCheck, handl
         onChange={() => handleChange(isCheck)}
         id={id}
         type="checkbox"
-        name=""
+        name={id}
+        required
       />
       <label className={cn(styles.label, styles[color])} htmlFor={id}>
         <div className={styles.iconCheckbox}>

@@ -28,3 +28,8 @@
   color: var(--blue);
   border: 1px solid var(--blue);
 }
+
+.info {
+  font-size: 14px;
+  color: tomato;
+}

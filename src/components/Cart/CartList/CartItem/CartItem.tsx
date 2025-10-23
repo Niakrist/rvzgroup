@@ -23,6 +23,8 @@ export const CartItem = ({ cart }: ICartItemProps) => {
     dispatch(deleteFromCart({ product }));
   };
 
+  console.log("product.price: ", product);
+
   return (
     <li className={styles.item}>
       <div className={styles.wrapper}>
@@ -37,24 +39,17 @@ export const CartItem = ({ cart }: ICartItemProps) => {
         </div>
         <div className={styles.info}>
           <h3 className={styles.title}>
-            <Link href={`/product/${product.url}`}>
-              Подшипник {product.name}
-            </Link>
+            <Link href={`/product/${product.url}`}>Подшипник {product.name}</Link>
           </h3>
           <ArticleInStock product={product} />
         </div>
       </div>
       <div className={styles.priceInfo}>
         <CounterQuantityForCart cart={cart} size="large" bgColor="grey" />
-        <div className={product.price ? styles.price : styles.zakaz}>
-          {!!product.price
-            ? convertNumberInGroupNumber(product.price) + " ₽/шт."
-            : "Под заказ"}
+        <div className={product.price || product.priceRvz ? styles.price : styles.zakaz}>
+          {convertNumberInGroupNumber(product.price || product.priceRvz) + " ₽/шт." || "Под заказ"}
         </div>
-        <button
-          onClick={() => handleDeleteFromCart(product)}
-          className={styles.removeProduct}
-        />
+        <button onClick={() => handleDeleteFromCart(product)} className={styles.removeProduct} />
       </div>
     </li>
   );
