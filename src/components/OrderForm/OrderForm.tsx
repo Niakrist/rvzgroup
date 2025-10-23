@@ -106,7 +106,7 @@ export const OrderForm = ({ order, isCart, ...props }: IOrderFormProps) => {
       </label>
 
       <Button
-        type="button"
+        type="submit"
         bgColor="blue"
         size="medium"
         color="whiteText"
