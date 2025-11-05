@@ -40,3 +40,39 @@
 .analogLink:hover {
   color: var(--blue2);
 }
+
+.content p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--black);
+  margin: 16px 0;
+}
+
+.content li {
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 10px;
+}
+.content li::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: var(--blue);
+  border-radius: 100%;
+}
+
+.imgWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+@media (max-width: 767px) {
+  .imgWrapper {
+    flex-direction: column;
+  }
+}
