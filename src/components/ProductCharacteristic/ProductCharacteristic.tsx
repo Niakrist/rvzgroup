@@ -1,9 +1,10 @@
 "use client";
-import React, { useState } from "react";
-import cn from "classnames";
+import React from "react";
 import { CharacteristicList } from "@/components";
 import styles from "./ProductCharacteristic.module.css";
 import { IBearing } from "@/types/bearing";
+import Link from "next/link";
+import { Htag, WrapperSection } from "@/ui";
 
 interface IProductCharacteristicProps {
   bearingItem: IBearing;
@@ -12,57 +13,49 @@ interface IProductCharacteristicProps {
 export const ProductCharacteristic = ({
   bearingItem,
 }: IProductCharacteristicProps): React.JSX.Element => {
-  const [isActiveButton, setIsActiveButton] =
-    useState<string>("characteristic");
-
   return (
-    <section>
-      <div className={styles.container}>
-        <div className={styles.wrapper}>
-          <ul className={styles.nav}>
-            <li>
-              <button
-                onClick={() => setIsActiveButton("characteristic")}
-                className={cn(styles.button, {
-                  [styles.active]: isActiveButton === "characteristic",
-                })}>
-                Характеристики
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => setIsActiveButton("content")}
-                className={cn(styles.button, {
-                  [styles.active]: isActiveButton === "content",
-                })}>
-                Описание
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => setIsActiveButton("delivery")}
-                className={cn(styles.button, {
-                  [styles.active]: isActiveButton === "delivery",
-                })}>
-                Доставка и оплата
-              </button>
-            </li>
-          </ul>
-          {isActiveButton === "characteristic" && (
-            <CharacteristicList
-              type="characteristic"
-              bearingItem={bearingItem}
-              showAll={true}
-            />
-          )}
-          {isActiveButton === "content" && (
-            <CharacteristicList type="content" bearingItem={bearingItem} />
-          )}
-          {isActiveButton === "delivery" && (
-            <CharacteristicList type="delivery" bearingItem={bearingItem} />
-          )}
-        </div>
-      </div>
-    </section>
+    <div className={styles.wrapper}>
+      <WrapperSection bgSection="white" className={styles.wrapperNav}>
+        <ul className={styles.nav}>
+          <li className={styles.link}>
+            <Link href={"#characteristic"}>Характеристики</Link>
+          </li>
+          <li className={styles.link}>
+            <Link href={"#content"}>Описание</Link>
+          </li>
+          <li className={styles.link}>
+            <Link href={"#delivery"}>Доставка и оплата</Link>
+          </li>
+          <li className={styles.link}>
+            <Link href={"#guarantee"}>Гарантия качества</Link>
+          </li>
+        </ul>
+      </WrapperSection>
+
+      <WrapperSection bgSection="white" className={styles.wrapperSection}>
+        <Htag className={styles.title} id="characteristic" size="medium" tag="h2">
+          Характеристики
+        </Htag>
+        <CharacteristicList type="characteristic" bearingItem={bearingItem} showAll={true} />
+      </WrapperSection>
+      <WrapperSection bgSection="white" className={styles.wrapperSection}>
+        <Htag className={styles.title} id="content" size="medium" tag="h2">
+          Описание
+        </Htag>
+        <CharacteristicList type="content" bearingItem={bearingItem} />
+      </WrapperSection>
+      <WrapperSection bgSection="white" className={styles.wrapperSection}>
+        <Htag className={styles.title} id="delivery" size="medium" tag="h2">
+          Доставка и оплата
+        </Htag>
+        <CharacteristicList type="delivery" bearingItem={bearingItem} />
+      </WrapperSection>
+      <WrapperSection bgSection="white" className={styles.wrapperSection}>
+        <Htag className={styles.title} id="guarantee" size="medium" tag="h2">
+          Гарантия качества
+        </Htag>
+        <CharacteristicList type="guarantee" bearingItem={bearingItem} />
+      </WrapperSection>
+    </div>
   );
 };
