@@ -34,7 +34,7 @@ export const ProductCharacteristic = ({
 
       <WrapperSection bgSection="white" className={styles.wrapperSection}>
         <Htag className={styles.title} id="characteristic" size="medium" tag="h2">
-          Характеристики
+          Технические характеристики
         </Htag>
         <CharacteristicList type="characteristic" bearingItem={bearingItem} showAll={true} />
       </WrapperSection>
