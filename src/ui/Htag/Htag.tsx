@@ -22,7 +22,8 @@ export const Htag = ({
             [styles.medium]: size === "medium",
             [styles.large]: size === "large",
             [styles.verySmall]: size === "verySmall",
-          })}>
+          })}
+        >
           {children}
         </h1>
       );
@@ -32,7 +33,8 @@ export const Htag = ({
           {...props}
           className={cn(styles.title, styles[size], className, {
             [styles.center]: position,
-          })}>
+          })}
+        >
           {children}
         </h2>
       );
@@ -42,7 +44,8 @@ export const Htag = ({
           {...props}
           className={cn(styles.title, styles[size], className, {
             [styles.center]: position,
-          })}>
+          })}
+        >
           {children}
         </h3>
       );
@@ -52,7 +55,8 @@ export const Htag = ({
           {...props}
           className={cn(styles.title, styles[size], className, {
             [styles.center]: position,
-          })}>
+          })}
+        >
           {children}
         </h4>
       );

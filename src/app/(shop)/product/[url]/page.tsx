@@ -1,11 +1,7 @@
 import { fetchCategory } from "@/api/fetchCategory";
 import { getProducts } from "@/api/getProducts";
 import { getItemBearing } from "@/api/getItemBearing";
-import {
-  PopularProduct,
-  ProductCard,
-  ProductCharacteristic,
-} from "@/components";
+import { PopularProduct, ProductCard, ProductCharacteristic } from "@/components";
 import TagList from "@/components/TagList/TagList";
 import { urlPaths } from "@/constants/urlPaths";
 
@@ -32,26 +28,16 @@ interface ICategory {
 type UrlPathKey = keyof typeof urlPaths;
 
 // SEO
-export async function generateMetadata({
-  params,
-}: IProductPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: IProductPageProps): Promise<Metadata> {
   const { url } = await params;
   const bearingItem = await getItemBearing(url);
   if (!bearingItem) notFound();
-  const {
-    title,
-    name,
-    price,
-    images,
-    innerDiameter,
-    outerDiameter,
-    widthBearing,
-  } = bearingItem;
+  const { title, name, price, images, innerDiameter, outerDiameter, widthBearing } = bearingItem;
   const imageUrl = images?.[0];
 
   const metaDescription = `Купить подшипник ${name} ${
     price ? "за " + price + " ₽" : "по низкой цене"
-  }. Характеристики подшипника ${name}: ⌀ внутрений диаметр ${innerDiameter} мм, наружный диаметр ${outerDiameter} мм, ширина ${widthBearing} мм. Собственное производство, высокое качество, выгодные цены. Доставка по всей России. В наличии на складе!`;
+  }. Характеристики подшипника ${name}: ⌀ внутренний диаметр ${innerDiameter} мм, наружный диаметр ${outerDiameter} мм, ширина ${widthBearing} мм. Собственное производство, высокое качество, выгодные цены. Доставка по всей России. В наличии на складе!`;
 
   return {
     title,
@@ -142,9 +128,7 @@ export default async function ProductPage({ params }: IProductPageProps) {
     popular: "true",
   });
 
-  const popularProducts = await getProductsWithoutPagination(
-    paramsForPopularProduct
-  );
+  const popularProducts = await getProductsWithoutPagination(paramsForPopularProduct);
 
   if (!products) return <div>Загрузка</div>;
 
@@ -156,9 +140,7 @@ export default async function ProductPage({ params }: IProductPageProps) {
       />
       <ProductCard bearingItem={bearingItem} />
       <ProductCharacteristic bearingItem={bearingItem} />
-      {!!popularProducts.length && (
-        <PopularProduct products={popularProducts} />
-      )}
+      {!!popularProducts.length && <PopularProduct products={popularProducts} />}
       <TagList
         urlsCategory={urlsCategory}
         innerDiameter={bearingItem.innerDiameter}
