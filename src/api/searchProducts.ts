@@ -1,8 +1,6 @@
 import { IBearinData } from "@/types/product";
 
-export const searchProducts = async (
-  search: string
-): Promise<IBearinData | null> => {
+export const searchProducts = async (search: string): Promise<IBearinData | null> => {
   try {
     const response = await fetch("https://rvzgroup.ru/api/v1/bearing/search", {
       headers: {
@@ -11,7 +9,7 @@ export const searchProducts = async (
       method: "POST",
       body: JSON.stringify({ q: search }),
       mode: "cors",
-      next: { revalidate: 10 },
+      next: { revalidate: 10800 },
     });
     const data = await response.json();
     return data;
