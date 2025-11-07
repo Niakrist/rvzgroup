@@ -31,5 +31,5 @@
 
 .info {
   font-size: 14px;
-  color: tomato;
+  color: var(--red);
 }

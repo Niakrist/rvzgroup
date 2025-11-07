@@ -24,7 +24,10 @@ export const Agreement: React.FC<IAgreementProps> = ({
         name={id}
         required
       />
-      <label className={cn(styles.label, styles[color])} htmlFor={id}>
+      <label
+        className={cn(styles.label, { [styles[color]]: !isCheck, [styles.grey]: isCheck })}
+        htmlFor={id}
+      >
         <div className={styles.iconCheckbox}>
           {isCheck && <Icon name="iconCheckbox" className={styles.icon} />}
         </div>
