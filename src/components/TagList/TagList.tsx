@@ -17,6 +17,7 @@ interface ICategoryProps {
   innerDiameter: number;
   outerDiameter: number;
   widthBearing: number;
+  size?: string;
 }
 
 const TagList = ({
@@ -24,6 +25,7 @@ const TagList = ({
   innerDiameter,
   outerDiameter,
   widthBearing,
+  size,
 }: ICategoryProps) => {
   if (!urlsCategory.length) return <div>Загрузка тегов</div>;
 
@@ -48,26 +50,27 @@ const TagList = ({
               );
             })}
             <li>
-              <Link
-                className={styles.item}
-                href={`/catalog/inner-diameter-${innerDiameter}`}>
+              <Link className={styles.item} href={`/catalog/inner-diameter-${innerDiameter}`}>
                 Внутренний диаметр {innerDiameter} мм
               </Link>
             </li>
             <li>
-              <Link
-                className={styles.item}
-                href={`/catalog/outer-diameter-${outerDiameter}`}>
+              <Link className={styles.item} href={`/catalog/outer-diameter-${outerDiameter}`}>
                 Наружный диаметр {outerDiameter} мм
               </Link>
             </li>
             <li>
-              <Link
-                className={styles.item}
-                href={`/catalog/width-${widthBearing}`}>
+              <Link className={styles.item} href={`/catalog/width-${widthBearing}`}>
                 Ширина {widthBearing} мм
               </Link>
             </li>
+            {size && (
+              <li>
+                <Link className={styles.item} href={`/catalog/size-${size}`}>
+                  Размер подшипника {size} мм
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
       </div>

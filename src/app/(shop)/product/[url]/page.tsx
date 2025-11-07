@@ -132,6 +132,8 @@ export default async function ProductPage({ params }: IProductPageProps) {
 
   if (!products) return <div>Загрузка</div>;
 
+  console.log("bearingItem: ", bearingItem);
+
   return (
     <>
       <script
@@ -142,6 +144,7 @@ export default async function ProductPage({ params }: IProductPageProps) {
       <ProductCharacteristic bearingItem={bearingItem} />
       {!!popularProducts.length && <PopularProduct products={popularProducts} />}
       <TagList
+        size={bearingItem.size}
         urlsCategory={urlsCategory}
         innerDiameter={bearingItem.innerDiameter}
         outerDiameter={bearingItem.outerDiameter}
