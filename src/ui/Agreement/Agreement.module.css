@@ -13,7 +13,11 @@
 }
 
 .checkbox {
-  display: none;
+  opacity: 0;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 }
 
 .iconCheckbox {
@@ -36,6 +40,10 @@
 
 .grey .iconCheckbox {
   border: 2px solid var(--grey3);
+}
+
+.red .iconCheckbox {
+  border: 2px solid var(--red);
 }
 
 .blue {

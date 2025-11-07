@@ -126,7 +126,7 @@ export const OrderForm = ({ order, isCart, ...props }: IOrderFormProps) => {
         </span>
       )}
 
-      <Agreement isCheck={isCheck} handleChange={handleChangeAgreement} color="grey" id="order" />
+      <Agreement isCheck={isCheck} handleChange={handleChangeAgreement} color="red" id="order" />
     </form>
   );
 };
