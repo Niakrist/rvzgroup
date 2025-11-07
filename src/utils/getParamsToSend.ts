@@ -9,12 +9,17 @@ export const getParamsToSend = (category: string) => {
     const innerDiameterMatch = cat.match(/^inner-diameter-(\d+(?:\.\d+)?)$/);
     const outerDiameterMatch = cat.match(/^outer-diameter-(\d+(?:\.\d+)?)$/);
     const widthBearingMatch = cat.match(/^width-(\d+(?:\.\d+)?)$/);
+    const sizeMatch = cat.match(/^size-((?:\d+(?:\.\d+)?x)*\d+(?:\.\d+)?)$/);
+    console.log("sizeMatch: ", sizeMatch);
+    console.log("widthBearingMatch: ", widthBearingMatch);
     if (innerDiameterMatch) {
       paramsToSend.innerDiameter = innerDiameterMatch[1];
     } else if (outerDiameterMatch) {
       paramsToSend.outerDiameter = outerDiameterMatch[1];
     } else if (widthBearingMatch) {
       paramsToSend.widthBearing = widthBearingMatch[1];
+    } else if (sizeMatch) {
+      paramsToSend.size = sizeMatch[1];
     } else if (urlPaths.bearingDesignId[cat]) {
       paramsToSend.bearingDesignId = urlPaths.bearingDesignId[cat];
     } else if (urlPaths.bearingSealId[cat]) {

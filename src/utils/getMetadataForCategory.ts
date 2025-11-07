@@ -2,7 +2,11 @@ import { urlsForCategory } from "@/constants/urlsForCategory";
 
 type UrlsForCategoryKey = keyof typeof urlsForCategory;
 
-const parseDimensionString = (string: string): number => {
+const parseDimensionString = (string: string): number | string => {
+  if (string.startsWith("size")) {
+    return string.replace("size-", "");
+  }
+
   const prefixes = ["width", "inner-diameter", "outer-diameter"];
 
   const prefix = prefixes.find((pref) => string.startsWith(pref));
@@ -15,12 +19,10 @@ const parseDimensionString = (string: string): number => {
 };
 
 export const getMetadataForCategory = (
-  category: UrlsForCategoryKey
+  category: UrlsForCategoryKey,
 ): { title: string; description: string; h1: string } => {
   const categories = category.split("_");
-  const pathTitle = categories
-    .map((item) => urlsForCategory[item as UrlsForCategoryKey])
-    .join(" ");
+  const pathTitle = categories.map((item) => urlsForCategory[item as UrlsForCategoryKey]).join(" ");
   let title = "";
   let description = "";
   let h1: string = "";
@@ -49,6 +51,12 @@ export const getMetadataForCategory = (
     title = `Подшипники с наружным диаметром ${outerDiameterMatch} мм: Купить, характеристики, аналоги`;
     description = `Купить подшипники с наружным диаметром ${outerDiameterMatch} мм напрямую от производителя! Высокое качество, широкий ассортимент подшипников, оптимальные цены и доставка по всей России. Закажите сейчас!`;
     h1 = `с наружным диаметром ${outerDiameterMatch} мм`;
+  }
+  if (category.includes("size-")) {
+    const sizeMatch = parseDimensionString(category);
+    title = `Подшипники с размером ${sizeMatch} мм: Купить, характеристики, аналоги`;
+    description = `Купить подшипники с размером ${sizeMatch} мм напрямую от производителя! Высокое качество, широкий ассортимент подшипников, оптимальные цены и доставка по всей России. Закажите сейчас!`;
+    h1 = `с размером ${sizeMatch} мм`;
   }
 
   return { title, description, h1 };

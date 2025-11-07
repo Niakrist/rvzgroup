@@ -30,4 +30,5 @@ export interface ISearchParams {
   innerDiameter?: string;
   outerDiameter?: string;
   widthBearing?: string;
+  size?: string;
 }
