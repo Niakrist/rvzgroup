@@ -19,9 +19,7 @@ interface ICategoryPageProps {
 
 type UrlsForCategoryKey = keyof typeof urlsForCategory;
 
-export async function generateMetadata({
-  params,
-}: ICategoryPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: ICategoryPageProps): Promise<Metadata> {
   const { category } = await params;
 
   const { title, description } = getMetadataForCategory(category);
@@ -35,14 +33,13 @@ export async function generateMetadata({
   };
 }
 
-export default async function CategoryPage({
-  params,
-  searchParams,
-}: ICategoryPageProps) {
+export default async function CategoryPage({ params, searchParams }: ICategoryPageProps) {
   const { category } = await params;
   const search = await searchParams;
 
   if (!category) notFound();
+
+  console.log("category: ", category);
 
   const { allPartsFound, paramsToSend } = getParamsToSend(category);
 

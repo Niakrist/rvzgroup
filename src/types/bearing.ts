@@ -48,6 +48,7 @@ export interface IBearing {
   bushingTypeId: number;
   lubricationHoleId: number;
   connectionId: number;
+  size?: string;
 }
 
 // export interface IBearing2 {
