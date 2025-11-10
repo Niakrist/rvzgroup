@@ -10,8 +10,6 @@ export const getParamsToSend = (category: string) => {
     const outerDiameterMatch = cat.match(/^outer-diameter-(\d+(?:\.\d+)?)$/);
     const widthBearingMatch = cat.match(/^width-(\d+(?:\.\d+)?)$/);
     const sizeMatch = cat.match(/^size-((?:\d+(?:\.\d+)?x)*\d+(?:\.\d+)?)$/);
-    console.log("sizeMatch: ", sizeMatch);
-    console.log("widthBearingMatch: ", widthBearingMatch);
     if (innerDiameterMatch) {
       paramsToSend.innerDiameter = innerDiameterMatch[1];
     } else if (outerDiameterMatch) {

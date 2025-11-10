@@ -23,8 +23,6 @@ export const CartItem = ({ cart }: ICartItemProps) => {
     dispatch(deleteFromCart({ product }));
   };
 
-  console.log("product.price: ", product);
-
   return (
     <li className={styles.item}>
       <div className={styles.wrapper}>
