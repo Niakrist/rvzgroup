@@ -132,8 +132,6 @@ export default async function ProductPage({ params }: IProductPageProps) {
 
   if (!products) return <div>Загрузка</div>;
 
-  console.log("bearingItem: ", bearingItem);
-
   return (
     <>
       <script

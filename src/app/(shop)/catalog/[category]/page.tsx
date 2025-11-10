@@ -39,8 +39,6 @@ export default async function CategoryPage({ params, searchParams }: ICategoryPa
 
   if (!category) notFound();
 
-  console.log("category: ", category);
-
   const { allPartsFound, paramsToSend } = getParamsToSend(category);
 
   const { h1 } = getMetadataForCategory(category);
