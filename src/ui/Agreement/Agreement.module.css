@@ -34,16 +34,20 @@
   min-height: 8px;
 }
 
+.red {
+  color: var(--red);
+}
+
+.red .iconCheckbox {
+  border: 2px solid var(--red);
+}
+
 .grey {
   color: var(--grey3);
 }
 
 .grey .iconCheckbox {
   border: 2px solid var(--grey3);
-}
-
-.red .iconCheckbox {
-  border: 2px solid var(--red);
 }
 
 .blue {
