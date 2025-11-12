@@ -6,13 +6,9 @@ import { IAgreementProps } from "./Agreement.props";
 import styles from "./Agreement.module.css";
 import Link from "next/link";
 
-export const Agreement: React.FC<IAgreementProps> = ({
-  color,
-  id,
-  isCheck,
-
-  handleChange,
-}) => {
+export const Agreement: React.FC<IAgreementProps> = ({ color, id, isCheck, handleChange }) => {
+  console.log("color:", color);
+  console.log("isCheck:", isCheck);
   return (
     <div className={styles.wrapper}>
       <input
@@ -24,10 +20,7 @@ export const Agreement: React.FC<IAgreementProps> = ({
         name={id}
         required
       />
-      <label
-        className={cn(styles.label, { [styles[color]]: !isCheck, [styles.grey]: isCheck })}
-        htmlFor={id}
-      >
+      <label className={cn(styles.label, styles[color], { [styles.grey]: isCheck })} htmlFor={id}>
         <div className={styles.iconCheckbox}>
           {isCheck && <Icon name="iconCheckbox" className={styles.icon} />}
         </div>
