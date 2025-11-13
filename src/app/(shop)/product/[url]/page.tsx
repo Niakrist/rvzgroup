@@ -114,19 +114,22 @@ export default async function ProductPage({ params }: IProductPageProps) {
       "@type": "Brand",
       name: bearingItem.brand || "РВЗ",
     },
-    ...(getValidPrice(bearingItem) && {
-      offers: {
-        "@type": "Offer",
-        price: getValidPrice(bearingItem),
-        priceCurrency: "RUB",
-        availability: getAvailability(bearingItem),
-        url: `https://rvzgroup.ru/product/${bearingItem.url}`,
-        itemCondition: "https://schema.org/NewCondition",
-        priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1))
-          .toISOString()
-          .split("T")[0],
-      },
-    }),
+    offers: {
+      "@type": "Offer",
+      price: getValidPrice(bearingItem),
+      priceCurrency: "RUB",
+      availability: getAvailability(bearingItem),
+      url: `https://rvzgroup.ru/product/${bearingItem.url}`,
+      itemCondition: "https://schema.org/NewCondition",
+      priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1))
+        .toISOString()
+        .split("T")[0],
+    },
+    priceSpecification: {
+      "@type": "UnitPriceSpecification",
+      priceCurrency: "RUB",
+      description: "Цена по запросу",
+    },
     image: bearingItem.images || [],
     category: bearingItem.group,
     additionalProperty: [
