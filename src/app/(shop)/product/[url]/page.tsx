@@ -146,11 +146,6 @@ export default async function ProductPage({ params }: IProductPageProps) {
       name: bearingItem.brand || "РВЗ",
     },
     offers: createOffer(bearingItem),
-    priceSpecification: {
-      "@type": "UnitPriceSpecification",
-      priceCurrency: "RUB",
-      description: "Цена по запросу",
-    },
     image: bearingItem.images || [],
     category: bearingItem.group,
     additionalProperty: [
