@@ -129,6 +129,7 @@ export default async function ProductPage({ params }: IProductPageProps) {
           "@type": "UnitPriceSpecification",
           priceCurrency: "RUB",
           description: "Цена по запросу",
+          price: "",
         },
       };
     }
