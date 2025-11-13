@@ -103,6 +103,37 @@ export default async function ProductPage({ params }: IProductPageProps) {
     return hasStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock";
   };
 
+  const createOffer = (bearingItem: IBearing) => {
+    const baseOffer = {
+      "@type": "Offer",
+      priceCurrency: "RUB",
+      availability: getAvailability(bearingItem),
+      url: `https://rvzgroup.ru/product/${bearingItem.url}`,
+      itemCondition: "https://schema.org/NewCondition",
+    };
+
+    const price = getValidPrice(bearingItem);
+
+    if (price) {
+      return {
+        ...baseOffer,
+        price: price,
+        priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1))
+          .toISOString()
+          .split("T")[0],
+      };
+    } else {
+      return {
+        ...baseOffer,
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          priceCurrency: "RUB",
+          description: "Цена по запросу",
+        },
+      };
+    }
+  };
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -114,17 +145,7 @@ export default async function ProductPage({ params }: IProductPageProps) {
       "@type": "Brand",
       name: bearingItem.brand || "РВЗ",
     },
-    offers: {
-      "@type": "Offer",
-      price: getValidPrice(bearingItem),
-      priceCurrency: "RUB",
-      availability: getAvailability(bearingItem),
-      url: `https://rvzgroup.ru/product/${bearingItem.url}`,
-      itemCondition: "https://schema.org/NewCondition",
-      priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1))
-        .toISOString()
-        .split("T")[0],
-    },
+    offers: createOffer(bearingItem),
     priceSpecification: {
       "@type": "UnitPriceSpecification",
       priceCurrency: "RUB",
