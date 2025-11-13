@@ -92,23 +92,78 @@ export default async function ProductPage({ params }: IProductPageProps) {
     notFound();
   }
 
+  const getValidPrice = (bearingItem: IBearing) => {
+    // Проверяем, что цена существует и является положительным числом
+    const price = bearingItem.price || bearingItem.priceRvz;
+    return price && price > 0 ? price : undefined;
+  };
+
+  const getAvailability = (bearingItem: IBearing) => {
+    const hasStock = bearingItem.quantity > 0 || bearingItem.quantityRvz > 0;
+    return hasStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock";
+  };
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: `Подшипник ${bearingItem.name}`,
     description: bearingItem.description,
+    productID: bearingItem.id1c || bearingItem.id,
+    sku: bearingItem.id1cRvz || bearingItem.id,
     brand: {
       "@type": "Brand",
       name: bearingItem.brand || "РВЗ",
     },
     offers: {
       "@type": "Offer",
-      price: bearingItem.price || bearingItem.priceRvz,
+      price: getValidPrice(bearingItem),
       priceCurrency: "RUB",
-      availability: "https://schema.org/InStock",
+      availability: getAvailability(bearingItem),
       url: `https://rvzgroup.ru/product/${bearingItem.url}`,
+      itemCondition: "https://schema.org/NewCondition",
+      ...(getValidPrice(bearingItem) && {
+        priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1))
+          .toISOString()
+          .split("T")[0],
+      }),
     },
-    image: bearingItem.images?.[0] || "",
+    image: bearingItem.images || [],
+    category: bearingItem.group,
+    additionalProperty: [
+      {
+        "@type": "PropertyValue",
+        name: "Внутренний диаметр",
+        value: bearingItem.innerDiameter,
+        unitCode: "MMT",
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Наружный диаметр",
+        value: bearingItem.outerDiameter,
+        unitCode: "MMT",
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Ширина",
+        value: bearingItem.widthBearing,
+        unitCode: "MMT",
+      },
+      { "@type": "PropertyValue", name: "Вес", value: bearingItem.weight, unitCode: "KGM" },
+      { "@type": "PropertyValue", name: "Серия", value: bearingItem.series },
+      { "@type": "PropertyValue", name: "Тип подшипника", value: bearingItem.bearingTypeId },
+      { "@type": "PropertyValue", name: "Количество рядов", value: bearingItem.rowCountId },
+      { "@type": "PropertyValue", name: "Конструкция", value: bearingItem.bearingDesignId },
+      { "@type": "PropertyValue", name: "Материал", value: bearingItem.materialId },
+      { "@type": "PropertyValue", name: "Тип уплотнения", value: bearingItem.sealId },
+      { "@type": "PropertyValue", name: "Угол контакта", value: bearingItem.cornerId },
+    ].filter((prop) => prop.value !== undefined && prop.value !== null),
+    ...(bearingItem.analog && {
+      isSimilarTo: {
+        "@type": "Product",
+        name: bearingItem.analog,
+        url: bearingItem.analogUrl,
+      },
+    }),
   };
 
   const urlArray = Object.keys(urlPaths) as UrlPathKey[];
