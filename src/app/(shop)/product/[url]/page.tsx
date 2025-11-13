@@ -99,7 +99,7 @@ export default async function ProductPage({ params }: IProductPageProps) {
   };
 
   const getAvailability = (bearingItem: IBearing) => {
-    const hasStock = bearingItem.quantity > 0 || bearingItem.quantityRvz > 0;
+    const hasStock = bearingItem.price > 0 || bearingItem.priceRvz > 0;
     return hasStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock";
   };
 
