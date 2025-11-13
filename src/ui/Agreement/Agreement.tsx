@@ -7,8 +7,6 @@ import styles from "./Agreement.module.css";
 import Link from "next/link";
 
 export const Agreement: React.FC<IAgreementProps> = ({ color, id, isCheck, handleChange }) => {
-  console.log("color:", color);
-  console.log("isCheck:", isCheck);
   return (
     <div className={styles.wrapper}>
       <input
