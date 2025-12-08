@@ -99,8 +99,40 @@ export default async function ProductPage({ params }: IProductPageProps) {
   };
 
   const getAvailability = (bearingItem: IBearing) => {
-    const hasStock = bearingItem.quantity > 0 || bearingItem.quantityRvz > 0;
+    const hasStock = bearingItem.price > 0 || bearingItem.priceRvz > 0;
     return hasStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock";
+  };
+
+  const createOffer = (bearingItem: IBearing) => {
+    const baseOffer = {
+      "@type": "Offer",
+      priceCurrency: "RUB",
+      availability: getAvailability(bearingItem),
+      url: `https://rvzgroup.ru/product/${bearingItem.url}`,
+      itemCondition: "https://schema.org/NewCondition",
+    };
+
+    const price = getValidPrice(bearingItem);
+
+    if (price) {
+      return {
+        ...baseOffer,
+        price: price,
+        priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1))
+          .toISOString()
+          .split("T")[0],
+      };
+    } else {
+      return {
+        ...baseOffer,
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          priceCurrency: "RUB",
+          description: "Цена по запросу",
+          price: "",
+        },
+      };
+    }
   };
 
   const jsonLd = {
@@ -114,19 +146,7 @@ export default async function ProductPage({ params }: IProductPageProps) {
       "@type": "Brand",
       name: bearingItem.brand || "РВЗ",
     },
-    offers: {
-      "@type": "Offer",
-      price: getValidPrice(bearingItem),
-      priceCurrency: "RUB",
-      availability: getAvailability(bearingItem),
-      url: `https://rvzgroup.ru/product/${bearingItem.url}`,
-      itemCondition: "https://schema.org/NewCondition",
-      ...(getValidPrice(bearingItem) && {
-        priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1))
-          .toISOString()
-          .split("T")[0],
-      }),
-    },
+    offers: createOffer(bearingItem),
     image: bearingItem.images || [],
     category: bearingItem.group,
     additionalProperty: [
