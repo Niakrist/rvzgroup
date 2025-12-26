@@ -14,18 +14,15 @@ export default async function Home() {
     popular: "true",
   });
 
-  const popularProducts = await getProductsWithoutPagination(
-    paramsForPopularProduct
-  );
+  const popularProducts = await getProductsWithoutPagination(paramsForPopularProduct);
 
   if (!!!popularProducts.length) return <div>Загрузка</div>;
+
   return (
     <main>
       <PromoSlider />
       <CategoryBlock />
-      {!!popularProducts.length && (
-        <PopularProduct products={popularProducts} />
-      )}
+      {!!popularProducts.length && <PopularProduct products={popularProducts} />}
       <Advantage />
       <AboutCompany />
       <WeWork />

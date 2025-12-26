@@ -9,7 +9,7 @@ interface ICategory {
 
 export const fetchCategory = async (item: string): Promise<ICategory | null> => {
   try {
-    const response = await fetch(`https://rvzgroup.ru/api/v1/${item}`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/${item}`, {
       next: { revalidate: 10800 },
     });
     const data = await response.json();
