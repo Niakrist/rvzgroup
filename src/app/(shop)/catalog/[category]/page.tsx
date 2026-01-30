@@ -50,6 +50,8 @@ export default async function CategoryPage({ params, searchParams }: ICategoryPa
   };
   const products = await getProducts(finalParams);
 
+  console.log("products:", products);
+
   if (!products) return;
 
   return (

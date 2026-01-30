@@ -41,7 +41,7 @@ export const ProductItem = ({ product, index }: IProductItemProps) => {
             className={styles.productImage}
             width={240}
             height={240}
-            quality={80}
+            quality={75}
             priority={index ? index < 3 : false}
             loading={index && index > 2 ? "lazy" : "eager"}
             alt={product.h1}
@@ -54,16 +54,14 @@ export const ProductItem = ({ product, index }: IProductItemProps) => {
         Подшипник {product.name}
       </Link>
       <Price product={product} fontSize="fs16" className={styles.price} />
-      <CounterQuantityGroup
-        className={styles.counterQuantityGroup}
-        product={product}
-      />
+      <CounterQuantityGroup className={styles.counterQuantityGroup} product={product} />
       <Button
         className={styles.btn}
         onClick={handleGetCP}
         color="blackText"
         bgColor="border"
-        size="small">
+        size="small"
+      >
         Получить КП в 1 клик
       </Button>
     </article>

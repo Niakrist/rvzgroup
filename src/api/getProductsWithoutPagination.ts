@@ -6,6 +6,7 @@ export const getProductsWithoutPagination = async (
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/bearing/all?${params}`, {
       next: { revalidate: 10800 },
+      cache: "no-store",
     });
     const data = await response.json();
     return data;
