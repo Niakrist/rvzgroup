@@ -19,7 +19,7 @@ export const CategoryItem: React.FC<ICategoryProps> = ({ category, index }) => {
           className={styles.img}
           width={90}
           height={90}
-          quality={80}
+          quality={75}
           priority={index ? index < 4 : false}
           loading={index && index > 3 ? "lazy" : "eager"}
           alt={category.name}
