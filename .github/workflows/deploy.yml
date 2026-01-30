@@ -1,49 +1,94 @@
-name: Deploy to VPS
+name: Deploy to Production
 
 on:
   push:
     branches: [master]
+  workflow_dispatch: # Разрешить ручной запуск
+
+env:
+  NODE_VERSION: "22.14.0"
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "22.14.0"
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
 
-      - name: Install and Build
+      - name: Install dependencies
+        run: npm ci --only=production
+
+      - name: Build Next.js app
         run: |
-          npm ci --only=production
+          echo "🔨 Building with Node.js $(node -v)"
           NODE_OPTIONS="--max-old-space-size=2048" npm run build
+          echo "✅ Build completed successfully"
 
-      - name: Deploy
+      - name: Deploy to VPS
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            # Активируем Node.js
+            set -e  # Остановить при ошибке
+            echo "🚀 Starting deployment at $(date)"
+            echo "================================="
+
+            # Активируем нужную версию Node.js
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-            nvm use 22.14.0
+            nvm use ${{ env.NODE_VERSION }}
 
+            # Переходим в проект
             cd /root/projects/client
+            echo "📂 Working in: $(pwd)"
+
+            # Получаем обновления
+            echo "📥 Fetching latest code..."
             git fetch origin
             git reset --hard origin/master
+            echo "✅ Code updated to: $(git log --oneline -1)"
 
+            # Устанавливаем зависимости
+            echo "📦 Installing dependencies..."
             npm ci --only=production
-            NODE_OPTIONS="--max-old-space-size=2048" npm run build
 
-            # Критично важное исправление прав
+            # Собираем проект
+            echo "🔨 Building Next.js..."
+            export NODE_OPTIONS="--max-old-space-size=2048"
+            npm run build
+
+            # Исправляем права доступа
+            echo "🔧 Fixing permissions..."
             sudo chown -R www-data:www-data .next
+            sudo chmod -R 755 .next
             sudo find .next/static -type f -exec chmod 644 {} \;
 
+            # Перезапускаем приложение
+            echo "🔄 Restarting application..."
             pm2 restart rvz-client
+
+            # Перезагружаем nginx
+            echo "🌐 Reloading nginx..."
             sudo nginx -t && sudo systemctl reload nginx
+
+            echo "✅ Deployment completed successfully!"
+            echo "🌍 Site: https://rvzgroup.ru"
+            echo "⏰ Finished at: $(date)"
+
+      - name: Health Check
+        run: |
+          echo "🏥 Performing health check..."
+          sleep 10
+          echo "Checking site..."
+          curl -s -o /dev/null -w "HTTP Status: %{http_code}\n" https://rvzgroup.ru
+          echo "Health check completed"
