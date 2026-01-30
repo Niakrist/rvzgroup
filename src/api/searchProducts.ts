@@ -2,7 +2,7 @@ import { IBearinData } from "@/types/product";
 
 export const searchProducts = async (search: string): Promise<IBearinData | null> => {
   try {
-    const response = await fetch("https://rvzgroup.ru/api/v1/bearing/search", {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/bearing/search`, {
       headers: {
         "Content-Type": "application/json",
       },

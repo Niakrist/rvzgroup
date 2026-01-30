@@ -2,7 +2,7 @@ import { IBearing } from "@/types/bearing";
 
 export const getItemBearing = async (url: string): Promise<IBearing | null> => {
   try {
-    const response = await fetch(`https://rvzgroup.ru/api/v1/bearing/${url}`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/bearing/${url}`, {
       next: { revalidate: 10800 },
     });
 

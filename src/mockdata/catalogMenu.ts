@@ -228,9 +228,7 @@ export const menuCatalogList: IMenuList[] = [
       },
       {
         subName: "Форма",
-        categories: [
-          { url: "konicheskie_radialno-upornye", name: "Конические" },
-        ],
+        categories: [{ url: "konicheskie_radialno-upornye", name: "Конические" }],
       },
       {
         subName: "Наличие заглушки",
@@ -506,10 +504,10 @@ export const menuCatalogList: IMenuList[] = [
       {
         subName: "Материал",
         categories: [
-          { url: "z", name: "Радиальные" },
-          { url: "zz", name: "Радиально-упорные" },
-          { url: "rs", name: "Радиально-упорные" },
-          { url: "2rs", name: "Радиально-упорные" },
+          { url: "z", name: "Z" },
+          { url: "zz", name: "ZZ" },
+          { url: "rs", name: "RS" },
+          { url: "2rs", name: "2RS" },
         ],
       },
     ],
