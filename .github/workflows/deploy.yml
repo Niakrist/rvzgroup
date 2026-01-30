@@ -1,16 +1,49 @@
-name: Deploy Client
-on: [push]
+name: Deploy to VPS
+
+on:
+  push:
+    branches: [master]
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.9.0
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      - name: Deploy
+          node-version: "22.14.0"
+
+      - name: Install and Build
         run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-          ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "bash -i /home/deployer/deploy-client.sh"
+          npm ci --only=production
+          NODE_OPTIONS="--max-old-space-size=2048" npm run build
+
+      - name: Deploy
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            # Активируем Node.js
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            nvm use 22.14.0
+
+            cd /root/projects/client
+            git fetch origin
+            git reset --hard origin/master
+
+            npm ci --only=production
+            NODE_OPTIONS="--max-old-space-size=2048" npm run build
+
+            # Критично важное исправление прав
+            sudo chown -R www-data:www-data .next
+            sudo find .next/static -type f -exec chmod 644 {} \;
+
+            pm2 restart rvz-client
+            sudo nginx -t && sudo systemctl reload nginx
