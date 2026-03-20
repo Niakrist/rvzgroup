@@ -44,50 +44,138 @@ jobs:
             echo "🚀 Starting deployment at $(date)"
             echo "================================="
 
+            # Активируем нужную версию Node.js
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            nvm use ${{ env.NODE_VERSION }}
+
             # Переходим в проект
             cd /root/projects/client
             echo "📂 Working in: $(pwd)"
 
-            # Получаем обновления кода (без node_modules)
+            # Сохраняем текущую версию для возможного отката
+            if [ -d ".next" ]; then
+              echo "💾 Backing up current build..."
+              rm -rf .next-backup
+              cp -r .next .next-backup || true
+            fi
+
+            # Получаем обновления
             echo "📥 Fetching latest code..."
             git fetch origin
             git reset --hard origin/master
+            echo "✅ Code updated to: $(git log --oneline -1)"
 
-            # Очищаем старую сборку
-            echo "🧹 Cleaning old build..."
+            # Полная очистка перед сборкой
+            echo "🧹 Full cleanup..."
             rm -rf .next
             rm -rf node_modules/.cache
 
-      - name: Copy built files to server
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
-          source: ".next,package.json,package-lock.json,public"
-          target: "/root/projects/client"
-          strip_components: 0
+            # Устанавливаем зависимости
+            echo "📦 Installing dependencies..."
+            npm ci
 
-      - name: Restart application
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
-          script: |
-            cd /root/projects/client
+            # Собираем проект с оптимизацией памяти
+            echo "🔨 Building Next.js with memory optimization..."
+            export NODE_OPTIONS="--max-old-space-size=1024"
+            export NEXT_TELEMETRY_DISABLED=1
 
-            # Устанавливаем только production зависимости
-            npm ci --only=production
+            # Пробуем собрать, если не получается - уменьшаем потребление памяти
+            npm run build -- --no-lint || {
+              echo "⚠️ Build failed, retrying with more aggressive memory settings..."
+              export NODE_OPTIONS="--max-old-space-size=768 --gc-interval=100"
+              npm run build -- --no-lint
+            }
 
             # Исправляем права доступа
+            echo "🔧 Fixing permissions..."
             sudo chown -R www-data:www-data .next
             sudo chmod -R 755 .next
+            sudo find .next -type d -exec chmod 755 {} \;
+            sudo find .next -type f -exec chmod 644 {} \;
 
-            # Перезапускаем приложение
-            pm2 restart rvz-client || pm2 start npm --name "rvz-client" -- start
+            # Очищаем кэш и перезапускаем приложение
+            echo "🔄 Clearing cache and restarting application..."
+
+            # Очищаем кэш Next.js
+            echo "   Cleaning Next.js cache..."
+            rm -rf .next/cache
+
+            # Останавливаем текущее приложение
+            echo "   Stopping current PM2 process..."
+            pm2 stop rvz-client || true
+            pm2 delete rvz-client || true
+
+            # Запускаем заново с ограничением памяти
+            echo "   Starting application with PM2..."
+            pm2 start npm --name "rvz-client" -- start -- --max-old-space-size=512
+            pm2 save
+
+            # Даем время приложению запуститься
+            echo "   Waiting for application to start..."
+            sleep 5
+
+            # Проверяем, что приложение запустилось
+            pm2 status rvz-client
 
             # Перезагружаем nginx
+            echo "🌐 Reloading nginx..."
             sudo nginx -t && sudo systemctl reload nginx
 
-            echo "✅ Deployment completed!"
+            # Финальная проверка
+            echo "🔍 Performing local health check..."
+            HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:3000 || echo "Failed")
+            if [ "$HTTP_STATUS" = "200" ] || [ "$HTTP_STATUS" = "301" ] || [ "$HTTP_STATUS" = "302" ]; then
+              echo "✅ Local health check passed (Status: $HTTP_STATUS)"
+              # Удаляем бэкап после успешного деплоя
+              rm -rf .next-backup
+            else
+              echo "❌ Local health check failed (Status: $HTTP_STATUS)"
+              echo "⚠️ Rolling back to previous version..."
+              if [ -d ".next-backup" ]; then
+                rm -rf .next
+                mv .next-backup .next
+                pm2 restart rvz-client
+                echo "✅ Rollback completed"
+              else
+                echo "❌ No backup available for rollback"
+              fi
+              exit 1
+            fi
+
+            echo "✅ Deployment completed successfully!"
+            echo "🌍 Site: https://rvzgroup.ru"
+            echo "⏰ Finished at: $(date)"
+
+      - name: Health Check
+        run: |
+          echo "🏥 Performing external health check..."
+          sleep 10
+          echo "Checking site availability..."
+
+          # Проверяем несколько раз с интервалом
+          for i in {1..3}; do
+            echo "Attempt $i/3..."
+            HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://rvzgroup.ru -L || echo "Failed")
+            if [ "$HTTP_STATUS" = "200" ] || [ "$HTTP_STATUS" = "301" ] || [ "$HTTP_STATUS" = "302" ]; then
+              echo "✅ Site is available (Status: $HTTP_STATUS)"
+              exit 0
+            fi
+            sleep 5
+          done
+
+          echo "❌ Health check failed after 3 attempts"
+          exit 1
+
+      - name: Notify success
+        if: success()
+        run: |
+          echo "✅ Deployment successful!"
+          echo "Site: https://rvzgroup.ru"
+          echo "Time: $(date)"
+
+      - name: Notify failure
+        if: failure()
+        run: |
+          echo "❌ Deployment failed!"
+          echo "Check the logs above for details"
