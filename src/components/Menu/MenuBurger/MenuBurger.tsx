@@ -13,12 +13,13 @@ import {
   ADDRESS,
   EMAIL_SALES,
   PHONE_SPB,
+  PHONE_SPB_2,
   PHONE_SPB_LINK,
+  PHONE_SPB_LINK_2,
 } from "@/constants/contacts";
 
 export const MenuBurger = () => {
-  const [isOpenMobileCatalog, setIsOpenMobileCatalog] =
-    useState<boolean>(false);
+  const [isOpenMobileCatalog, setIsOpenMobileCatalog] = useState<boolean>(false);
   const params = usePathname();
 
   const dispatch = useDispatch();
@@ -55,9 +56,7 @@ export const MenuBurger = () => {
             <ul className={styles.listCatalog}>
               {menuCatalogList.map((item) => (
                 <li key={item.url}>
-                  <Link
-                    className={styles.linkCatalog}
-                    href={`/catalog/${item.url}`}>
+                  <Link className={styles.linkCatalog} href={`/catalog/${item.url}`}>
                     <Image
                       width={24}
                       height={24}
@@ -82,11 +81,8 @@ export const MenuBurger = () => {
                 </Link>
               </li>
               <li>
-                <button
-                  onClick={toggleMobileCatalog}
-                  className={styles.catalog}>
-                  Каталог{" "}
-                  <Icon className={styles.iconArrowDown} name="iconArrowDown" />{" "}
+                <button onClick={toggleMobileCatalog} className={styles.catalog}>
+                  Каталог <Icon className={styles.iconArrowDown} name="iconArrowDown" />{" "}
                 </button>
               </li>
               <li>
@@ -124,6 +120,7 @@ export const MenuBurger = () => {
           <address className={styles.address}>
             <a href={`mailto:${EMAIL_SALES}`}>{EMAIL_SALES}</a>
             <a href={`tel:${PHONE_SPB_LINK}`}>{PHONE_SPB}</a>
+            <a href={`tel:${PHONE_SPB_LINK_2}`}>{PHONE_SPB_2}</a>
             <p>{ADDRESS}</p>
           </address>
         </>

@@ -12,6 +12,12 @@
   justify-content: space-between;
 }
 
+.phoneGroup {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
 @media (max-width: 767px) {
   .topNav {
     display: none;

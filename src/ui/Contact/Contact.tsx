@@ -5,14 +5,15 @@ import {
   ADDRESS,
   EMAIL_SALES,
   PHONE_SPB,
+  PHONE_SPB_2,
   PHONE_SPB_LINK,
+  PHONE_SPB_LINK_2,
 } from "@/constants/contacts";
 
-interface IContactPrsop
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLElement>,
-    HTMLElement
-  > {
+interface IContactPrsop extends React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLElement>,
+  HTMLElement
+> {
   className?: string;
 }
 
@@ -26,6 +27,10 @@ export const Contact = ({ className, ...props }: IContactPrsop) => {
       <p>Телефон: </p>
       <a className={styles.link} href={`tel:${PHONE_SPB_LINK}`}>
         {PHONE_SPB}
+      </a>
+      <p>Телефон: </p>
+      <a className={styles.link} href={`tel:${PHONE_SPB_LINK_2}`}>
+        {PHONE_SPB_2}
       </a>
       <p>Адрес:</p>
       <p>{ADDRESS}</p>
