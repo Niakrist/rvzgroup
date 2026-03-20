@@ -24,12 +24,13 @@ jobs:
           cache: "npm"
 
       - name: Install dependencies
-        run: npm ci # Убрал --only=production, чтобы установить TypeScript
+        run: npm ci
 
       - name: Build Next.js app
         run: |
           echo "🔨 Building with Node.js $(node -v)"
-          NODE_OPTIONS="--max-old-space-size=2048" npm run build
+          export NODE_OPTIONS="--max-old-space-size=2048"
+          npm run build
           echo "✅ Build completed successfully"
 
       - name: Deploy to VPS
@@ -43,64 +44,50 @@ jobs:
             echo "🚀 Starting deployment at $(date)"
             echo "================================="
 
-            # Активируем нужную версию Node.js
-            export NVM_DIR="$HOME/.nvm"
-            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-            nvm use ${{ env.NODE_VERSION }}
-
             # Переходим в проект
             cd /root/projects/client
             echo "📂 Working in: $(pwd)"
 
-            # Получаем обновления
+            # Получаем обновления кода (без node_modules)
             echo "📥 Fetching latest code..."
             git fetch origin
             git reset --hard origin/master
-            echo "✅ Code updated to: $(git log --oneline -1)"
 
-            # ВАЖНО: Очищаем кэш Next.js перед сборкой
-            echo "🧹 Cleaning Next.js cache..."
+            # Очищаем старую сборку
+            echo "🧹 Cleaning old build..."
             rm -rf .next
             rm -rf node_modules/.cache
-            mkdir -p .next
 
-            # Устанавливаем зависимости (включая dev зависимости для TypeScript)
-            echo "📦 Installing dependencies..."
-            npm ci  # Убрал --only=production
+      - name: Copy built files to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          source: ".next,package.json,package-lock.json,public"
+          target: "/root/projects/client"
+          strip_components: 0
 
-            # Собираем проект
-            echo "🔨 Building Next.js..."
-            export NODE_OPTIONS="--max-old-space-size=2048"
-            npm run build
+      - name: Restart application
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            cd /root/projects/client
+
+            # Устанавливаем только production зависимости
+            npm ci --only=production
 
             # Исправляем права доступа
-            echo "🔧 Fixing permissions..."
             sudo chown -R www-data:www-data .next
             sudo chmod -R 755 .next
-            sudo find .next -type d -exec chmod 755 {} \;
-            sudo find .next/static -type f -exec chmod 644 {} \;
 
             # Перезапускаем приложение
-            echo "🔄 Restarting application..."
             pm2 restart rvz-client || pm2 start npm --name "rvz-client" -- start
 
             # Перезагружаем nginx
-            echo "🌐 Reloading nginx..."
             sudo nginx -t && sudo systemctl reload nginx
 
-            echo "✅ Deployment completed successfully!"
-            echo "🌍 Site: https://rvzgroup.ru"
-            echo "⏰ Finished at: $(date)"
-
-      - name: Health Check
-        run: |
-          echo "🏥 Performing health check..."
-          sleep 10
-          echo "Checking site..."
-          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://rvzgroup.ru || echo "Failed")
-          echo "HTTP Status: $HTTP_STATUS"
-          if [ "$HTTP_STATUS" != "200" ] && [ "$HTTP_STATUS" != "301" ] && [ "$HTTP_STATUS" != "302" ]; then
-            echo "❌ Health check failed with status $HTTP_STATUS"
-            exit 1
-          fi
-          echo "✅ Health check completed successfully"
+            echo "✅ Deployment completed!"
