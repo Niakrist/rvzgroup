@@ -1,5 +1,5 @@
 "use client";
-import { Htag, InputText } from "@/ui";
+import { Button, Htag, InputText } from "@/ui";
 import styles from "./PickUpPoints.module.css";
 import { pickUpPoints } from "./pickUpPoints";
 import React, { useState } from "react";
@@ -11,6 +11,10 @@ export const PickUpPoints = () => {
     setSearchTerm(e.target.value);
   };
 
+  const handleClean = () => {
+    setSearchTerm("");
+  };
+
   const cropPick = serchTerm
     ? pickUpPoints.filter((pick) => pick.city.toLowerCase().includes(serchTerm.toLowerCase()))
     : pickUpPoints;
@@ -20,14 +24,24 @@ export const PickUpPoints = () => {
       <Htag className={styles.mt} size="large" tag="h2">
         Пункты выдачи
       </Htag>
-
-      <InputText
-        onChange={handleSearch}
-        value={serchTerm}
-        type="email"
-        placeholder="Введите город"
-        className={styles.inputSearch}
-      />
+      <div className={styles.wrapper}>
+        <InputText
+          onChange={handleSearch}
+          value={serchTerm}
+          type="email"
+          placeholder="Введите город"
+          className={styles.inputSearch}
+        />
+        <Button
+          onClick={handleClean}
+          bgColor="blue"
+          color="whiteText"
+          size="medium"
+          className={styles.button}
+        >
+          Сбросить
+        </Button>
+      </div>
 
       <div className={styles.addresses}>
         {cropPick.length ? (

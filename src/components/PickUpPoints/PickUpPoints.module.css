@@ -2,8 +2,16 @@
   margin-top: 40px;
 }
 
-.inputSearch {
+.wrapper {
   margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.inputSearch,
+.button {
+  height: 46px;
 }
 
 /* Сетка адресов */
@@ -39,4 +47,13 @@
 
 .street {
   color: var(--grey4);
+}
+
+@media (max-width: 575px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .button {
+    width: 100%;
+  }
 }
