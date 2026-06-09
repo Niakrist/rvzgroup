@@ -65,6 +65,17 @@ const getBearingType = (id: number): string => {
   }
 };
 
+const getBushingType = (id: number): string => {
+  switch (id) {
+    case 1:
+      return "С закрепительной втулкой";
+    case 2:
+      return "Со стяжной втулкой";
+    default:
+      return "";
+  }
+};
+
 export const CharacteristicList = ({
   bearingItem,
   type,
@@ -140,6 +151,18 @@ export const CharacteristicList = ({
                 <li className={styles.item}>
                   <span className={styles.key}>Тела</span>
                   <span className={styles.value}>{getBearingType(bearingItem.bearingTypeId)}</span>
+                </li>
+              )}
+              {!!bearingItem.bushing && (
+                <li className={styles.item}>
+                  <span className={styles.key}>Втулка</span>
+                  <span className={styles.value}>{bearingItem.bushing}</span>
+                </li>
+              )}
+              {!!bearingItem.bushingTypeId && (
+                <li className={styles.item}>
+                  <span className={styles.key}>Вид втулки</span>
+                  <span className={styles.value}>{getBushingType(bearingItem.bearingTypeId)}</span>
                 </li>
               )}
             </>
