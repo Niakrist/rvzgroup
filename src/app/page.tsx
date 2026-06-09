@@ -16,13 +16,17 @@ export default async function Home() {
 
   const popularProducts = await getProductsWithoutPagination(paramsForPopularProduct);
 
-  if (!!popularProducts.length) return <div>Загрузка</div>;
+  console.log("popularProducts: ", popularProducts);
 
   return (
     <>
       <PromoSlider />
       <CategoryBlock />
-      {!!popularProducts.length && <PopularProduct products={popularProducts} />}
+      {!popularProducts.length ? (
+        <div>Загрузка...</div>
+      ) : (
+        <PopularProduct products={popularProducts} />
+      )}
       <Advantage />
       <AboutCompany />
       <WeWork />

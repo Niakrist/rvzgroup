@@ -31,6 +31,7 @@ export const PromoSlider = () => {
             className={styles.img}
             src="/slide.png"
             alt="Подшипники РВЗ - Разумный Выбор Запчастей"
+            loading="eager"
           />
         </li>
       </ul>
@@ -44,7 +45,8 @@ export const PromoSlider = () => {
               onClick={handleClick}
               size="big"
               bgColor="blue"
-              color="whiteText">
+              color="whiteText"
+            >
               Перейти в каталог
             </Button>
             <Button
@@ -52,7 +54,8 @@ export const PromoSlider = () => {
               onClick={handleToggleModal}
               size="big"
               bgColor="white"
-              color="whiteText">
+              color="whiteText"
+            >
               Оставить заявку
             </Button>
           </div>

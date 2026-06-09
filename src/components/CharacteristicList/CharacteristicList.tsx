@@ -68,9 +68,45 @@ const getBearingType = (id: number): string => {
 const getBushingType = (id: number): string => {
   switch (id) {
     case 1:
-      return "С закрепительной втулкой";
+      return "Закрепительная втулка";
     case 2:
-      return "Со стяжной втулкой";
+      return "Стяжная втулка";
+    default:
+      return "";
+  }
+};
+
+const getCorner = (id: number): string => {
+  switch (id) {
+    case 1:
+      return "12 градусов";
+    case 2:
+      return "15 градусов";
+    case 3:
+      return "20 градусов";
+    case 4:
+      return "26 градусов";
+    case 5:
+      return "36 градусов";
+    case 6:
+      return "40 градусов";
+    case 7:
+      return "60 градусов";
+    case 8:
+      return "Трехточечный";
+    case 9:
+      return "Четырехточечный";
+    default:
+      return "";
+  }
+};
+
+const getHole = (id: number): string => {
+  switch (id) {
+    case 1:
+      return "Коническое";
+    case 2:
+      return "Цилиндрическое";
     default:
       return "";
   }
@@ -163,6 +199,24 @@ export const CharacteristicList = ({
                 <li className={styles.item}>
                   <span className={styles.key}>Вид втулки</span>
                   <span className={styles.value}>{getBushingType(bearingItem.bearingTypeId)}</span>
+                </li>
+              )}
+              {!!bearingItem.cornerId && (
+                <li className={styles.item}>
+                  <span className={styles.key}>Угол контакта</span>
+                  <span className={styles.value}>{getCorner(bearingItem.cornerId)}</span>
+                </li>
+              )}
+              {!!bearingItem.corpus && (
+                <li className={styles.item}>
+                  <span className={styles.key}>Корпус</span>
+                  <span className={styles.value}>{bearingItem.corpus}</span>
+                </li>
+              )}
+              {!!bearingItem.group && (
+                <li className={styles.item}>
+                  <span className={styles.key}>Вид</span>
+                  <span className={styles.value}>{bearingItem.group}</span>
                 </li>
               )}
             </>

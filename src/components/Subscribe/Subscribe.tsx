@@ -46,8 +46,14 @@ export const Subscribe = () => {
               </div>
             </form>
           </div>
-          <div className={styles.img}>
-            <Image width={653} height={381} src="/subscribe.jpg" alt="Подписка" />
+          <div className={styles.imgWrapper}>
+            <Image
+              className={styles.img}
+              width={653}
+              height={381}
+              src="/subscribe.jpg"
+              alt="Подписка"
+            />
           </div>
         </div>
       </div>
