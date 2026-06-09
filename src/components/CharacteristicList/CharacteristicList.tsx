@@ -10,6 +10,61 @@ interface ICharacteristicListProps {
   showAll?: true;
 }
 
+const getStandart = (standart: number): string => {
+  if (standart === 1) {
+    return "ГОСТ";
+  } else {
+    return "ISO";
+  }
+};
+
+const getBearingDesign = (id: number): string => {
+  switch (id) {
+    case 1:
+      return "Миниатюрный";
+    case 2:
+      return "Самоустанавливающийся";
+    case 3:
+      return "Сферический";
+    case 4:
+      return "Комбинированный";
+    case 5:
+      return "Конический";
+    case 6:
+      return "Корпусный узел";
+    case 7:
+      return "Шарнирные";
+    default:
+      return "";
+  }
+};
+
+const getBearingSeal = (id: number): string => {
+  switch (id) {
+    case 1:
+      return "RS";
+    case 2:
+      return "Z";
+    case 3:
+      return "2RS";
+    case 4:
+      return "ZZ";
+    default:
+      return "";
+  }
+};
+
+const getBearingType = (id: number): string => {
+  switch (id) {
+    case 1:
+      return "Качения";
+    case 2:
+      return "Скольжения";
+    default:
+      return "";
+  }
+};
+
 export const CharacteristicList = ({
   bearingItem,
   type,
@@ -25,6 +80,12 @@ export const CharacteristicList = ({
             <span className={styles.key}>Бренд</span>
             <span className={styles.value}>{bearingItem.brand}</span>
           </li>
+          {bearingItem.standartId && (
+            <li className={styles.item}>
+              <span className={styles.key}>Стандарт</span>
+              <span className={styles.value}>{getStandart(bearingItem.standartId)}</span>
+            </li>
+          )}
           <li className={styles.item}>
             <span className={styles.key}>Внутренний диаметр (мм)</span>
             <span className={styles.value}>{bearingItem.innerDiameter}</span>
@@ -55,6 +116,32 @@ export const CharacteristicList = ({
                 <span className={styles.key}>Масса (кг)</span>
                 <span className={styles.value}>{bearingItem.weight}</span>
               </li>
+              {!!bearingItem.size && (
+                <li className={styles.item}>
+                  <span className={styles.key}>Размеры (мм)</span>
+                  <span className={styles.value}>{bearingItem.size}</span>
+                </li>
+              )}
+              {!!bearingItem.bearingDesignId && (
+                <li className={styles.item}>
+                  <span className={styles.key}>Тип</span>
+                  <span className={styles.value}>
+                    {getBearingDesign(bearingItem.bearingDesignId)}
+                  </span>
+                </li>
+              )}
+              {!!bearingItem.bearingSealId && (
+                <li className={styles.item}>
+                  <span className={styles.key}>Заглушка</span>
+                  <span className={styles.value}>{getBearingSeal(bearingItem.bearingSealId)}</span>
+                </li>
+              )}
+              {!!bearingItem.bearingTypeId && (
+                <li className={styles.item}>
+                  <span className={styles.key}>Тела</span>
+                  <span className={styles.value}>{getBearingType(bearingItem.bearingTypeId)}</span>
+                </li>
+              )}
             </>
           )}
         </ul>

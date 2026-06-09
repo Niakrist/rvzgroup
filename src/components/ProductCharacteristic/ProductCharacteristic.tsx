@@ -13,6 +13,8 @@ interface IProductCharacteristicProps {
 export const ProductCharacteristic = ({
   bearingItem,
 }: IProductCharacteristicProps): React.JSX.Element => {
+  console.log("bearingItem: ", bearingItem);
+
   return (
     <div className={styles.wrapper}>
       <WrapperSection bgSection="white" className={styles.wrapperNav}>
