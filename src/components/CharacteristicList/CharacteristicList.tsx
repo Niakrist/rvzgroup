@@ -112,6 +112,98 @@ const getHole = (id: number): string => {
   }
 };
 
+const getLoadType = (id: number): string => {
+  switch (id) {
+    case 1:
+      return "Радиальная";
+    case 2:
+      return "Радиально-упорная";
+    case 3:
+      return "Упорная";
+    case 4:
+      return "Упорно-радиальная";
+    default:
+      return "";
+  }
+};
+
+const getMaterial = (id: number): string => {
+  switch (id) {
+    case 1:
+      return "Сталь";
+    case 2:
+      return "Нержавеющие";
+    case 3:
+      return "Керамические";
+    default:
+      return "";
+  }
+};
+
+const getRollerType = (id: number): string => {
+  switch (id) {
+    case 1:
+      return "Шариковый";
+    case 2:
+      return "Шариковый";
+    case 3:
+      return "Роликоигольчатый";
+    case 4:
+      return "Шарикоигольчатый";
+    case 5:
+      return "Сталь по стали";
+    default:
+      return "";
+  }
+};
+
+const getRowCount = (id: number): string => {
+  switch (id) {
+    case 1:
+      return "Однорядные";
+    case 2:
+      return "Двухрядные";
+    case 3:
+      return "Трехрядные";
+    case 4:
+      return "Четырехрядные";
+    case 5:
+      return "Шестирядные";
+    case 6:
+      return "Многорядные";
+    default:
+      return "н/д";
+  }
+};
+
+const getSeal = (id: number): string => {
+  switch (id) {
+    case 1:
+      return "Открытые";
+    case 2:
+      return "Закрытые";
+    default:
+      return "н/д";
+  }
+};
+
+const getSep = (id: number): string => {
+  switch (id) {
+    case 1:
+      return "Стальной";
+    case 2:
+      return "Латунный";
+    case 3:
+      return "Без сепаратора";
+    case 4:
+      return "С полусепаратором";
+    case 5:
+      return "Текстолитовый";
+    default:
+      return "н/д";
+  }
+};
+
 export const CharacteristicList = ({
   bearingItem,
   type,
@@ -159,6 +251,12 @@ export const CharacteristicList = ({
           </li>
           {showAll && (
             <>
+              {!!bearingItem.group && (
+                <li className={styles.item}>
+                  <span className={styles.key}>Вид</span>
+                  <span className={styles.value}>{bearingItem.group}</span>
+                </li>
+              )}
               <li className={styles.item}>
                 <span className={styles.key}>Масса (кг)</span>
                 <span className={styles.value}>{bearingItem.weight}</span>
@@ -185,8 +283,14 @@ export const CharacteristicList = ({
               )}
               {!!bearingItem.bearingTypeId && (
                 <li className={styles.item}>
-                  <span className={styles.key}>Тела</span>
+                  <span className={styles.key}>Тело</span>
                   <span className={styles.value}>{getBearingType(bearingItem.bearingTypeId)}</span>
+                </li>
+              )}
+              {!!bearingItem.rollerTypeId && (
+                <li className={styles.item}>
+                  <span className={styles.key}>Вид тела</span>
+                  <span className={styles.value}>{getRollerType(bearingItem.rollerTypeId)}</span>
                 </li>
               )}
               {!!bearingItem.bushing && (
@@ -213,10 +317,40 @@ export const CharacteristicList = ({
                   <span className={styles.value}>{bearingItem.corpus}</span>
                 </li>
               )}
-              {!!bearingItem.group && (
+              {!!bearingItem.holeId && (
                 <li className={styles.item}>
-                  <span className={styles.key}>Вид</span>
-                  <span className={styles.value}>{bearingItem.group}</span>
+                  <span className={styles.key}>Отверстие</span>
+                  <span className={styles.value}>{getHole(bearingItem.holeId)}</span>
+                </li>
+              )}
+              {!!bearingItem.loadTypeId && (
+                <li className={styles.item}>
+                  <span className={styles.key}>Нагрузка</span>
+                  <span className={styles.value}>{getLoadType(bearingItem.loadTypeId)}</span>
+                </li>
+              )}
+              {!!bearingItem.materialId && (
+                <li className={styles.item}>
+                  <span className={styles.key}>Материал</span>
+                  <span className={styles.value}>{getMaterial(bearingItem.materialId)}</span>
+                </li>
+              )}
+              {!!bearingItem.rowCountId && (
+                <li className={styles.item}>
+                  <span className={styles.key}>Рядность</span>
+                  <span className={styles.value}>{getRowCount(bearingItem.rowCountId)}</span>
+                </li>
+              )}
+              {!!bearingItem.sealId && (
+                <li className={styles.item}>
+                  <span className={styles.key}>Конструкция</span>
+                  <span className={styles.value}>{getSeal(bearingItem.sealId)}</span>
+                </li>
+              )}
+              {!!bearingItem.sepId && (
+                <li className={styles.item}>
+                  <span className={styles.key}>Сепаратор</span>
+                  <span className={styles.value}>{getSep(bearingItem.sepId)}</span>
                 </li>
               )}
             </>
