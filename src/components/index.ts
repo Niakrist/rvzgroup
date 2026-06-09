@@ -44,3 +44,4 @@ export * from "./CounterQuantityForCart/CounterQuantityForCart";
 export * from "./OrderForm/OrderForm";
 export * from "./YandexMetrika/YandexMetrika";
 export * from "./TagCategory/TagCategory";
+export * from "./PickUpPoints/PickUpPoints";

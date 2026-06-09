@@ -1,0 +1,42 @@
+.mt {
+  margin-top: 40px;
+}
+
+.inputSearch {
+  margin: 20px 0;
+}
+
+/* Сетка адресов */
+.addresses {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+/* Карточка адреса */
+.card {
+  background: #f9f9f9;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border-left: 4px solid var(--blue); /* акцент */
+  transition: all 0.2s ease;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.card:hover {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Город (можно жирным) */
+.city {
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--black);
+}
+
+.street {
+  color: var(--grey4);
+}
