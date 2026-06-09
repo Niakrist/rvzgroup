@@ -16,10 +16,10 @@ export default async function Home() {
 
   const popularProducts = await getProductsWithoutPagination(paramsForPopularProduct);
 
-  if (!!!popularProducts.length) return <div>Загрузка</div>;
+  if (!!popularProducts.length) return <div>Загрузка</div>;
 
   return (
-    <main>
+    <>
       <PromoSlider />
       <CategoryBlock />
       {!!popularProducts.length && <PopularProduct products={popularProducts} />}
@@ -27,6 +27,6 @@ export default async function Home() {
       <AboutCompany />
       <WeWork />
       <Subscribe />
-    </main>
+    </>
   );
 }
