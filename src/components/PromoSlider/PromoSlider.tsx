@@ -31,7 +31,10 @@ export const PromoSlider = () => {
             className={styles.img}
             src="/slide.png"
             alt="Подшипники РВЗ - Разумный Выбор Запчастей"
-            loading="eager"
+            priority
+            fetchPriority="high"
+            sizes="100vw"
+            quality={70}
           />
         </li>
       </ul>

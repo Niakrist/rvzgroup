@@ -26,6 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
+      <head>
+        <link rel="preload" as="image" href="/slide.png" fetchPriority="high" />
+      </head>
       <ClientProvider>
         <body className={`${geistSans.variable} ${geistMono.variable}`}>
           <TopNav />
