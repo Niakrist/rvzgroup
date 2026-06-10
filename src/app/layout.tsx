@@ -32,6 +32,85 @@ export default function RootLayout({
         {/* preconnect для сторонних ресурсов */}
         {/* <link rel="preconnect" href="https://mc.yandex.ru" />
         <link rel="preconnect" href="https://mc.yandex.com" /> */}
+
+        <link
+          rel="preload"
+          href="/fonts/montserrat-v29-cyrillic_latin-300.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/montserrat-v29-cyrillic_latin-regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/montserrat-v29-cyrillic_latin-500.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/montserrat-v29-cyrillic_latin-600.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+
+        <link
+          rel="preload"
+          href="/fonts/manrope-v15-cyrillic_latin-500.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/open-sans-v40-cyrillic_latin-regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/roboto-mono-v23-cyrillic_latin-regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/roboto-v47-cyrillic_latin-300.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/roboto-v47-cyrillic_latin-regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/rubik-v28-cyrillic_latin-300.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/rubik-v28-cyrillic_latin-regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
       </head>
       <ClientProvider>
         <body className={`${geistSans.variable} ${geistMono.variable}`}>
