@@ -8,7 +8,6 @@ import { urlPaths } from "@/constants/urlPaths";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import React from "react";
 import { getProductsWithoutPagination } from "@/api/getProductsWithoutPagination";
 import { IBearing } from "@/types/bearing";
 
@@ -43,12 +42,12 @@ export async function generateMetadata({ params }: IProductPageProps): Promise<M
     title,
     description: metaDescription,
     alternates: {
-      canonical: `https://rvzgroup.ru/products/${url}`,
+      canonical: `https://rvzgroup.ru/product/${url}`,
     },
     openGraph: {
       title,
       description: metaDescription,
-      url: `https://rvzgroup.ru/products/${url}`,
+      url: `https://rvzgroup.ru/product/${url}`,
       images: [
         {
           url: imageUrl,
