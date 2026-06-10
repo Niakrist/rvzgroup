@@ -1,37 +1,37 @@
 import { getProductsWithoutPagination } from "@/api/getProductsWithoutPagination";
 import {
-  // AboutCompany,
-  // Advantage,
+  AboutCompany,
+  Advantage,
   CategoryBlock,
   PopularProduct,
   PromoSlider,
-  // Subscribe,
-  // WeWork,
+  Subscribe,
+  WeWork,
 } from "@/components";
 
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 
-const AboutCompany = dynamic(
-  () => import("@/components/AboutCompany/AboutCompany").then((mod) => mod.AboutCompany),
-  {
-    ssr: false,
-  },
-);
-const Advantage = dynamic(
-  () => import("@/components/Advantage/Advantage").then((mod) => mod.Advantage),
-  {
-    ssr: false,
-  },
-);
-const WeWork = dynamic(() => import("@/components/WeWork/WeWork").then((mod) => mod.WeWork), {
-  ssr: false,
-});
-const Subscribe = dynamic(
-  () => import("@/components/Subscribe/Subscribe").then((mod) => mod.Subscribe),
-  {
-    ssr: false,
-  },
-);
+// const AboutCompany = dynamic(
+//   () => import("@/components/AboutCompany/AboutCompany").then((mod) => mod.AboutCompany),
+//   {
+//     ssr: false,
+//   },
+// );
+// const Advantage = dynamic(
+//   () => import("@/components/Advantage/Advantage").then((mod) => mod.Advantage),
+//   {
+//     ssr: false,
+//   },
+// );
+// const WeWork = dynamic(() => import("@/components/WeWork/WeWork").then((mod) => mod.WeWork), {
+//   ssr: false,
+// });
+// const Subscribe = dynamic(
+//   () => import("@/components/Subscribe/Subscribe").then((mod) => mod.Subscribe),
+//   {
+//     ssr: false,
+//   },
+// );
 
 export default async function Home() {
   const paramsForPopularProduct = new URLSearchParams({
