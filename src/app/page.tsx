@@ -11,10 +11,27 @@ import {
 
 import dynamic from "next/dynamic";
 
-const AboutCompany = dynamic(() => import("@/components").then((mod) => mod.AboutCompany));
-const Advantage = dynamic(() => import("@/components").then((mod) => mod.Advantage));
-const WeWork = dynamic(() => import("@/components").then((mod) => mod.WeWork));
-const Subscribe = dynamic(() => import("@/components").then((mod) => mod.Subscribe));
+const AboutCompany = dynamic(
+  () => import("@/components/AboutCompany/AboutCompany").then((mod) => mod.AboutCompany),
+  {
+    ssr: false,
+  },
+);
+const Advantage = dynamic(
+  () => import("@/components/Advantage/Advantage").then((mod) => mod.Advantage),
+  {
+    ssr: false,
+  },
+);
+const WeWork = dynamic(() => import("@/components/WeWork/WeWork").then((mod) => mod.WeWork), {
+  ssr: false,
+});
+const Subscribe = dynamic(
+  () => import("@/components/Subscribe/Subscribe").then((mod) => mod.Subscribe),
+  {
+    ssr: false,
+  },
+);
 
 export default async function Home() {
   const paramsForPopularProduct = new URLSearchParams({
