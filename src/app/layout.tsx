@@ -27,7 +27,11 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <head>
+        {/* preload изображения LCP – это разрешено и полезно */}
         <link rel="preload" as="image" href="/slide-up.avif" fetchPriority="high" />
+        {/* preconnect для сторонних ресурсов */}
+        <link rel="preconnect" href="https://mc.yandex.ru" />
+        <link rel="preconnect" href="https://mc.yandex.com" />
       </head>
       <ClientProvider>
         <body className={`${geistSans.variable} ${geistMono.variable}`}>
