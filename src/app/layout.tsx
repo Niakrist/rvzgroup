@@ -1,18 +1,7 @@
 import { TopNav, Header, Footer, YandexMetrika } from "@/components";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { ClientProvider } from "./ClientProvider/ClientProvider";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Подшипники РВЗ",
@@ -27,93 +16,10 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <head>
-        {/* preload изображения LCP – это разрешено и полезно */}
         <link rel="preload" as="image" href="/slide-up.avif" fetchPriority="high" />
-        {/* preconnect для сторонних ресурсов */}
-        {/* <link rel="preconnect" href="https://mc.yandex.ru" />
-        <link rel="preconnect" href="https://mc.yandex.com" /> */}
-
-        {/* <link
-          rel="preload"
-          href="/fonts/montserrat-v29-cyrillic_latin-300.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/montserrat-v29-cyrillic_latin-regular.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/montserrat-v29-cyrillic_latin-500.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/montserrat-v29-cyrillic_latin-600.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-
-        <link
-          rel="preload"
-          href="/fonts/manrope-v15-cyrillic_latin-500.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/open-sans-v40-cyrillic_latin-regular.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/roboto-mono-v23-cyrillic_latin-regular.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/roboto-v47-cyrillic_latin-300.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/roboto-v47-cyrillic_latin-regular.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/rubik-v28-cyrillic_latin-300.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/rubik-v28-cyrillic_latin-regular.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        /> */}
       </head>
       <ClientProvider>
-        <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <body>
           <TopNav />
           <Header />
           <main>{children}</main>

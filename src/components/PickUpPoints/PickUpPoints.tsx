@@ -1,7 +1,7 @@
 "use client";
 import { Button, Htag, InputText } from "@/ui";
 import styles from "./PickUpPoints.module.css";
-import { pickUpPoints } from "./pickUpPoints";
+import { pickUpPointsList } from "./pickUpPointsList";
 import React, { useState } from "react";
 
 export const PickUpPoints = () => {
@@ -16,8 +16,8 @@ export const PickUpPoints = () => {
   };
 
   const cropPick = serchTerm
-    ? pickUpPoints.filter((pick) => pick.city.toLowerCase().includes(serchTerm.toLowerCase()))
-    : pickUpPoints;
+    ? pickUpPointsList.filter((pick) => pick.city.toLowerCase().includes(serchTerm.toLowerCase()))
+    : pickUpPointsList;
 
   return (
     <>

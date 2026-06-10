@@ -1,4 +1,4 @@
-export const pickUpPoints = [
+export const pickUpPointsList = [
   { city: "Москва", address: "1-й Котляковский переулок, 12" },
   { city: "Санкт-Петербург", address: "Соржа-Старая, проезд 1-Й, здание 10" },
   { city: "Апатиты", address: "Сосновая ул., д. 4" },
