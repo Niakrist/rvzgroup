@@ -1,20 +1,28 @@
 import { getProductsWithoutPagination } from "@/api/getProductsWithoutPagination";
 import {
-  AboutCompany,
-  Advantage,
+  // AboutCompany,
+  // Advantage,
   CategoryBlock,
   PopularProduct,
   PromoSlider,
-  Subscribe,
-  WeWork,
+  // Subscribe,
+  // WeWork,
 } from "@/components";
 
-// import dynamic from "next/dynamic";
+import dynamic from "next/dynamic";
 
-// const AboutCompany = dynamic(() => import("@/components").then((mod) => mod.AboutCompany));
-// const Advantage = dynamic(() => import("@/components").then((mod) => mod.Advantage));
-// const WeWork = dynamic(() => import("@/components").then((mod) => mod.WeWork));
-// const Subscribe = dynamic(() => import("@/components").then((mod) => mod.Subscribe));
+const AboutCompany = dynamic(() => import("@/components").then((mod) => mod.AboutCompany), {
+  ssr: false,
+});
+const Advantage = dynamic(() => import("@/components").then((mod) => mod.Advantage), {
+  ssr: false,
+});
+const WeWork = dynamic(() => import("@/components").then((mod) => mod.WeWork), {
+  ssr: false,
+});
+const Subscribe = dynamic(() => import("@/components").then((mod) => mod.Subscribe), {
+  ssr: false,
+});
 
 export default async function Home() {
   const paramsForPopularProduct = new URLSearchParams({
