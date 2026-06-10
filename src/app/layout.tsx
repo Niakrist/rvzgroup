@@ -33,7 +33,7 @@ export default function RootLayout({
         {/* <link rel="preconnect" href="https://mc.yandex.ru" />
         <link rel="preconnect" href="https://mc.yandex.com" /> */}
 
-        <link
+        {/* <link
           rel="preload"
           href="/fonts/montserrat-v29-cyrillic_latin-300.woff2"
           as="font"
@@ -110,7 +110,7 @@ export default function RootLayout({
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
-        />
+        /> */}
       </head>
       <ClientProvider>
         <body className={`${geistSans.variable} ${geistMono.variable}`}>
