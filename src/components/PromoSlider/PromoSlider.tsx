@@ -29,7 +29,7 @@ export const PromoSlider = () => {
             width={1920}
             height={700}
             className={styles.img}
-            src="/slide-up.png"
+            src="/slide.png"
             alt="Подшипники РВЗ - Разумный Выбор Запчастей"
             priority
             fetchPriority="high"
