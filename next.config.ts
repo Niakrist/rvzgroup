@@ -18,6 +18,9 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  experimental: {
+    optimizeCss: true, // Включаем встраивание критического CSS
+  },
 };
 
 export default nextConfig;
